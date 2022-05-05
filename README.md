@@ -26,7 +26,7 @@ Enlever '' autour du nom de la branche.
 
 ```git branch -m 'nouveau nom de la branche'``` => renomme la branche courante.
 
-```git pull main``` => permet de récuperer la version du main.
+```git pull origin main``` => permet de récuperer la version du main.
 
 Pour merge se rendre dans la branch Main et faire un ```git merge 'nom de la branche```.
 
