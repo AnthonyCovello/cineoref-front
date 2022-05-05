@@ -6,6 +6,7 @@ import React from 'react';
 
 // ? Import composants
 import Description from './Description';
+import SearchBarRef from './SearchBarRef';
 // ? Import style
 import './styles.scss';
 
@@ -14,13 +15,7 @@ function Homepage() {
   return (
     <div className="app">
       <Description />
-
-      <form className="searchForm">
-        <label className="searchLabel">
-          Recherchez une citation
-          <input className="searchInput" type="text" placeholder="Rechercher..." />
-        </label>
-      </form>
+      <SearchBarRef />
       <span className="addRefBtn"> Ajouter une ref'</span>
       <div className="randomCitation">
         <span> random citation </span>
