@@ -11,6 +11,7 @@ import SearchBarRef from './SearchBarRef';
 
 // ? Import style
 import './styles.scss';
+import TopContributor from './TopContributor';
 
 // ? Composant
 function Homepage() {
@@ -19,26 +20,9 @@ function Homepage() {
       <Description />
       <SearchBarRef />
       <span className="addRefBtn"> Ajouter une ref'</span>
-      <RandomRef />
-      <div>
-        <h2>Top contributeur</h2>
-        <ul>
-          <li>
-            <a>J-P l'agitateur</a>
-          </li>
-          <li>
-            <a>Jacky</a>
-          </li>
-          <li>
-            <a>XxPussyHunter*$M'Lady$*xX</a>
-          </li>
-          <li>
-            <a>Dark Sasuke</a>
-          </li>
-          <li>
-            <a>AmandineDu38</a>
-          </li>
-        </ul>
+      <div className="line-random-top">
+        <RandomRef />
+        <TopContributor />
       </div>
       <div className="citations">
         <nav className="citation-nav">
