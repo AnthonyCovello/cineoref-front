@@ -6,7 +6,9 @@ import React from 'react';
 
 // ? Import composants
 import Description from './Description';
+import RandomRef from './RandomRef';
 import SearchBarRef from './SearchBarRef';
+
 // ? Import style
 import './styles.scss';
 
@@ -17,19 +19,7 @@ function Homepage() {
       <Description />
       <SearchBarRef />
       <span className="addRefBtn"> Ajouter une ref'</span>
-      <div className="randomCitation">
-        <span> random citation </span>
-        <span> embed </span>
-        <p className="randomCitation-text">
-          Moi je passe pas mal de temps à la taverne.
-          J’ai jamais entendu parlé de celui-là!
-          Mais attendez… Y a une table et des sièges
-          et j’devrais m’farcir toutes les notes à ratifier debout?
-          Déjà à la corne, ils regardent même pas vers ici!
-          Vous pouvez bien agiter tout les drapeaux que vous voudrez!
-        </p>
-        <span>copié</span>
-      </div>
+      <RandomRef />
       <div>
         <h2>Top contributeur</h2>
         <ul>
