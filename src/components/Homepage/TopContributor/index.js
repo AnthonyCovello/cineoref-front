@@ -3,7 +3,7 @@ import React from 'react';
 // ? Import style
 import './styles.scss';
 
-const contributors = ['\'J-P l\'agitateur', 'Jacky', 'XxPussyHunter*$M\'Lady$*xX', 'Dark Sasuke', 'AmandineDu38'];
+const contributors = ['J-P l\'agitateur', 'Jacky', 'XxPussyHunter*$M\'Lady$*xX', 'Dark Sasuke', 'AmandineDu38'];
 
 function TopContributor() {
   return (
