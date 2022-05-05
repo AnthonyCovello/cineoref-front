@@ -1,9 +1,44 @@
-.app {
-  width: 500px;
-  margin: 1em auto;
-  text-align: center;
-}
+.header {
+  background-color: #30377A;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  padding: 0rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-.app img {
-  max-width: 150px;
+  &-brand {
+    display: flex;
+    align-items: center;
+    
+    &-logo {
+      font-size: 2rem;
+      margin-right: 5px;
+    }
+  
+    &-title {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.7rem;
+      text-align: center;
+    }
+  }
+
+  &-navbar {
+    display: flex;
+    gap: 2.5rem;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  &-connexion>span {
+    margin-left: 1rem;
+    background-color: #fff;
+    padding: 0.3rem 0.4rem;
+    border-radius: 5px;
+    font-size: 15px;
+  }
 }
