@@ -8,7 +8,6 @@
   background-image: linear-gradient(171deg,rgba(48,54,123,0),#30367b);
 
   //? opacité
-  // background-color: #1c1f36;
   background-color: rgba(28, 31, 54, 0.85);
 
   &-brand {
@@ -33,7 +32,7 @@
     }
 
     &-title-copyright {
-      display:flexbox;
+      display: flexbox;
     }
   }
 
@@ -64,7 +63,4 @@
       text-shadow: 0 0 15px white;
     }
   }
-
-
-  
 }
