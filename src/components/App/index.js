@@ -2,7 +2,6 @@
 // ? Import modules
 import React from 'react';
 import { FcFilmReel } from 'react-icons/fc';
-import Header from '../Header';
 // import { Routes, Route, useLocation } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,6 +17,8 @@ function App() {
   return (
     <div className="app">
       <Header />
+      <Homepage />
+      <Footer />
     </div>
   );
 }
