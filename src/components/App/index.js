@@ -2,7 +2,7 @@
 // ? Import modules
 import React from 'react';
 import { FcFilmReel } from 'react-icons/fc';
-import {Footer} from '../Footer/index';
+import Footer from '../Footer';
 // import { Routes, Route, useLocation } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
 
@@ -115,8 +115,8 @@ function App() {
         </div>
       </div>
       <span className="backToTop">^</span>
-      <footer className="footer">
-      </footer>
+
+      <Footer />
     </div>
   );
 }
