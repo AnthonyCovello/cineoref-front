@@ -31,7 +31,18 @@ function App() {
           <span className="signUp_button">Inscription</span>
         </div>
       </header>
+      <div className="description">
+        <p className="description-text">
+          Moi je passe pas mal de temps à la taverne.
+          J’ai jamais entendu parlé de celui-là!
+          Mais attendez… Y a une table et des sièges
+          et j’devrais m’farcir toutes les notes à ratifier debout?
+          Déjà à la corne, ils regardent même pas vers ici!
+          Vous pouvez bien agiter tout les drapeaux que vous voudrez!
+        </p>
+      </div>
     </div>
+
   );
 }
 
