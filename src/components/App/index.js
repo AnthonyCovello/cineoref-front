@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React from 'react';
-import { FcFilmReel } from 'react-icons/fc';
 // import { Routes, Route, useLocation } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
 
