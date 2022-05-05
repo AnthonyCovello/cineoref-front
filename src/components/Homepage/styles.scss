@@ -1,0 +1,25 @@
+.addRefBtn {
+  background-color: #FF7A20;
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  // for span center stackoverflow: https://stackoverflow.com/questions/8392211/html-span-align-center-not-working
+  margin: auto;
+  display: table;
+
+  &:hover {
+    cursor: pointer;
+    text-shadow: 0px 10px 15px #fff;
+  }
+
+}
+
+.line-random-top {
+  display: flex;
+  // gap: 15rem;
+  justify-content: center;
+  margin: auto;
+}
