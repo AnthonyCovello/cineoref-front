@@ -40,5 +40,9 @@
     padding: 0.3rem 0.4rem;
     border-radius: 5px;
     font-size: 15px;
+    
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
