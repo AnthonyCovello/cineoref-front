@@ -3,6 +3,7 @@
 ## Technologies utilisées
 
 * [React.js](https://reactjs.org/)
+* [React-icons](https://react-icons.github.io/react-icons)
 * [React-router](https://reactrouterdotcom.fly.dev/)
 * [React-Redux](https://react-redux.js.org/)
 * [Redux Toolkit](https://redux-toolkit.js.org/)
