@@ -1,13 +1,16 @@
 .searchForm {
   text-align: center;
   color: white;
-  margin-top: 2rem;
+  margin: 50px auto;
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: min-content;
 }
 
 .searchLabel {
-  display: flex;
-  flex-direction: column;
+  padding: 1rem;
+
   &:hover{
     text-shadow: 0 0 15px white;
   }
@@ -15,7 +18,8 @@
 
 .searchInput { 
   width: 400px;
-  margin: 1rem auto;
+  margin: 0rem auto;
+  margin-bottom: 1rem;
   border-radius: 10px;
   padding: 10px;
   background-color: #30367b;
@@ -23,6 +27,7 @@
   color: white;
   text-align: center;
   font-size: 16px;
+
   &::placeholder {
     text-align: center;
     font-size: 16px;
