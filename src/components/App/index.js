@@ -8,6 +8,8 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Homepage from '../Homepage';
+import SignUp from '../SignUp';
+
 // ? Import style
 import './styles.scss';
 
@@ -16,7 +18,8 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Homepage />
+      {/* <Homepage /> */}
+      <SignUp />
       <Footer />
     </div>
   );
