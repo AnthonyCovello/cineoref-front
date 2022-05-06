@@ -3,6 +3,9 @@
 import React from 'react';
 import { FcFilmReel } from 'react-icons/fc';
 
+// ? Import component
+import Login from './Login';
+
 // ? Import style
 import './styles.scss';
 
@@ -23,7 +26,7 @@ function Header() {
         <a href="/characters" className="header-navbar-button">Personnages</a>
       </nav>
       <div className="header-connexion">
-        <span className="signIn_button">Connexion</span>
+        <Login />
         <span className="signUp_button">Inscription</span>
       </div>
     </header>
