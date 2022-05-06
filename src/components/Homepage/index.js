@@ -18,8 +18,8 @@ function Homepage() {
   return (
     <div className="app">
       <Description />
-      <SearchBarRef />
       <span className="addRefBtn"> Ajouter une ref'</span>
+      <SearchBarRef />
       <div className="line-random-top">
         <RandomRef />
         <TopContributor />
