@@ -26,12 +26,14 @@ function Login() {
         && (
           <div className="dropdown-content">
             <form>
-              <input className="input-login" type="text" placeholder="Pseudo" />
-              <input className="input-login" type="text" placeholder="Mot de passe" />
+              <input className="content-input" type="text" placeholder="Pseudo" />
+              <input className="content-input" type="text" placeholder="Mot de passe" />
+              <span className="dropdown-content-login"> se connecter </span>
             </form>
           </div>
-        )}
-    </div>
+        )
+      }
+    </div >
 
   );
 }
