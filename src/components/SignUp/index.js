@@ -10,7 +10,7 @@ import './styles.scss';
 // ? Composant
 function SignUp() {
   return (
-    <form className="signUp-form">
+    <form className="signUp-form" action="" method="post">
       <a className="signUp-form-returnButton" href="/" title="Retourner à la page d'accueil">
         <BsFillArrowLeftSquareFill />
       </a>
@@ -19,26 +19,23 @@ function SignUp() {
       <label className="signUp-form-label" htmlFor="pseudo">
         Pseudo
       </label>
-      <input type="text" id="pseudo" placeholder="Pseudo*" data-required="true" />
+      <input type="text" id="pseudo" data-required="true" required />
       <label className="signUp-form-label" htmlFor="email">
         Adresse mail
       </label>
-      <input type="email" id="email" placeholder="Email*" />
+      <input type="email" id="email" required />
       <label className="signUp-form-label" htmlFor="password">
         Mot de passe
       </label>
-      <input type="password" id="password" placeholder="Mot de passe*" />
+      <input type="password" id="password" required />
       <label className="signUp-form-label" htmlFor="confirm_password">
         Confirmer le mot de passe
       </label>
-      <input type="password" id="confirm_password" placeholder="Confirmer le mot de passe*" />
-      <p className="signUp-form-passwordInstruction">
-        Les mots de passe doivent au moins avoir 6 caractères.
-      </p>
+      <input type="password" id="confirm_password" required />
       <label className="signUp-form-label" htmlFor="birthday">
         Date de naissance
       </label>
-      <input type="date" id="birthday" />
+      <input type="date" id="birthday" required />
       <p className="signUp-form-cgu">
         En cliquant sur <strong>S'inscrire</strong>, vous confirmez avoir lu et accepté les <a href="/cgu">Conditions d'utilisation</a>.
       </p>
