@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React from 'react';
-// import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
 
 // ? Import composants
@@ -18,8 +18,16 @@ function App() {
   return (
     <div className="app">
       <Header />
-      {/* <Homepage /> */}
-      <SignUp />
+
+      <Routes>
+
+        <Route path="/" element={<Homepage />} />
+        <Route path="/login" element={{/* Login */}} />
+        <Route path="/registration" element={<SignUp />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
+
+      </Routes>
+
       <Footer />
     </div>
   );
