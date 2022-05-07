@@ -8,7 +8,7 @@ export default [
     ref: 'La loi c\'est moi! Et l\'ordre!',
     user: 'Povik',
     mature: false,
-    status: false,
+    status: true,
   },
   {
     id: 2,
@@ -18,6 +18,8 @@ export default [
     artist: 'Chuck Norris',
     ref: 'Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule.',
     user: 'Luxy',
+    mature: true,
+    status: true,
   },
   {
     id: 3,
@@ -27,6 +29,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'Ne pas fumer me tue, je vais ré-essayer je vous le promet.',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 4,
@@ -36,6 +40,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'J\'aime les panoramas, celui-ci est magnifique.',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 5,
@@ -45,6 +51,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'J\'aime me battre.',
     user: 'Alteka',
+    mature: false,
+    status: true,
   },
   {
     id: 6,
@@ -54,6 +62,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'C\'est toi arrêtez!.',
     user: 'Alteka',
+    mature: false,
+    status: true,
   },
   {
     id: 7,
@@ -63,6 +73,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'Mais il va la fermer sa gueule!',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 8,
@@ -72,6 +84,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'J\'aime me beurrer la biscotte.',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 9,
@@ -81,6 +95,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'Hum, ça ne sert à rien...',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 10,
@@ -90,6 +106,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'Moi je suis dans le poulet et ben je vois rien qu\'au niveau du poulet c\'est un bordel!',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 11,
@@ -99,6 +117,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'J\'aime quand on m\'enduit d\'huile.',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 12,
@@ -108,6 +128,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'En tout cas on peut dire que le soviet éponge.',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 13,
@@ -117,6 +139,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'Tu n\'es pas seulement un lâche tu es un traitre comme ta petite taille le laissait deviner.',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 14,
@@ -126,6 +150,8 @@ export default [
     artist: 'Jean Dujardin',
     ref: 'Tu sais pas jouer Jack, t\'es mauvais!',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 15,
@@ -135,6 +161,8 @@ export default [
     artist: 'Richard Sammel',
     ref: 'Tu te tais ou je te tais!',
     user: 'Alteka',
+    mature: false,
+    status: false,
   },
   {
     id: 16,
@@ -144,6 +172,8 @@ export default [
     artist: 'Pierre Bellemare',
     ref: 'Pour rencontrer M.Lee, vaut mieux une bonne couverture.',
     user: 'Alteka',
+    mature: false,
+    status: true,
   },
   {
     id: 17,
@@ -153,5 +183,7 @@ export default [
     artist: 'Ryan Reynolds',
     ref: 'Vous pouvez reculer? Je sens le bout de votre membre.',
     user: 'Alteka',
+    mature: false,
+    status: true,
   },
 ];

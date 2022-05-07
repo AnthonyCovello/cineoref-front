@@ -6,15 +6,10 @@ import { setTablist } from '../../../features/topNewSlice';
 import './styles.scss';
 
 // ? Data fictives
-import data from '../../../assets/data';
+import listOfRefs from '../../../assets/data';
 
-const topRated = [
-  'J’ai rêvé qu’il y avait des scorpions qui voulaient me piquer. En plus, y en avait un il était mi-ours, mi-scorpion et re mi-ours derrière !',
-  'Moi, je m’en fous, si on me force à y retourner, je retiens ma respiration jusqu’à ce qu’on arrête de me forcer à y retourner.',
-  'Oh vous, toujours vous, mais allez chier dans une fiole, on verra après.',
-  'Ces conneries de gauche et de droite ! Ça veut rien dire ces machins ! Selon comme on est tourné ça change tout !',
-  'Faut pas respirer la compote, ça fait tousser.',
-];
+const cleanRefs = listOfRefs.filter((data) => data.status === true && data.mature === false);
+
 const newests = ['blibli1', 'blibli2', 'blibli3', 'bliblicar', 'blibli5'];
 
 // ? Composant
@@ -49,12 +44,13 @@ function HomeList() {
       <div>
         <ul className="refList">
           {tabList === 'topRated'
-            ? topRated.map((ref) => (
-              <li key={ref} className="refList-item">
-                <p>{ref}</p>
-                <p>Personnage</p>
+            ? cleanRefs.map((data, index) => (
+              index < 5 && (
+              <li key={data.id} className="refList-item">
+                <p>{data.ref}</p>
+                <p>{data.character}</p>
               </li>
-            ))
+              )))
             : newests.map((ref) => (
               <li key={ref} className="refList-item">
                 <p>{ref}</p>
