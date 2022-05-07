@@ -7,12 +7,10 @@ function Description() {
   return (
     <div className="description">
       <p className="description-text">
-        Moi je passe pas mal de temps à la taverne.
-        J’ai jamais entendu parlé de celui-là!
-        Mais attendez… Y a une table et des sièges
-        et j’devrais m’farcir toutes les notes à ratifier debout?
-        Déjà à la corne, ils regardent même pas vers ici!
-        Vous pouvez bien agiter tout les drapeaux que vous voudrez!
+        Bienvenue sur CinéO'Ref !<br />
+        Notre but est de répertorier les citations cinématographiques les plus drôles
+        et permettre à tout le monde de trouver celle qu’il cherche ou de simplement
+        se balader sur le site pour en découvrir de nouvelles et passer un bon moment.
       </p>
     </div>
   );
