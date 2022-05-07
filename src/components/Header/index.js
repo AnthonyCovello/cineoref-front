@@ -8,6 +8,8 @@ import './styles.scss';
 
 // ? Composant
 function Header() {
+  const activeLink = ({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button');
+
   return (
     <header className="header">
       <Link to="/" title="Page d'accueil" className="header-brand">
@@ -15,12 +17,12 @@ function Header() {
         <span className="header-brand-title">Cin<span>O</span>'Ref</span>
       </Link>
       <nav className="header-navbar">
-        <NavLink to="/films" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Films</NavLink>
-        <NavLink to="/series" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Séries</NavLink>
-        <NavLink to="/animes" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Animés</NavLink>
-        <NavLink to="/cartoons" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Dessins animés</NavLink>
-        <NavLink to="/artists" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Artistes</NavLink>
-        <NavLink to="/characters" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Personnages</NavLink>
+        <NavLink to="/films" className={activeLink}>Films</NavLink>
+        <NavLink to="/series" className={activeLink}>Séries</NavLink>
+        <NavLink to="/animes" className={activeLink}>Animés</NavLink>
+        <NavLink to="/cartoons" className={activeLink}>Dessins animés</NavLink>
+        <NavLink to="/artists" className={activeLink}>Artistes</NavLink>
+        <NavLink to="/characters" className={activeLink}>Personnages</NavLink>
       </nav>
       <div className="header-connexion">
         <span className="signIn_button">Connexion</span>
