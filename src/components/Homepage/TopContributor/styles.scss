@@ -4,6 +4,7 @@
   font-weight: 500;
   width: 20%;
   padding: 30px;
+  border: 1px solid black;
   border-radius: 20px;
 
   //? opacité
@@ -14,6 +15,12 @@
   -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
   box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+
+  &:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+    cursor: no-drop;
+  }
 
   &-title {
     font-size: 30px;

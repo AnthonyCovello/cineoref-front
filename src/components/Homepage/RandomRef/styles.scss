@@ -4,13 +4,25 @@
   font-weight: 500;
   width: 40%;
   padding: 30px;
+  border: 1px solid black;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-
+  
   //? opacité
   background-image: linear-gradient(135deg, #30367b, rgba(48,54,123,0));
   background-color: rgba(28, 31, 54, 0.85);
+  
+  //? effet 3D
+  -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+  box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+
+  &:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+    cursor: no-drop;
+  }
 
   &-dice {
     align-self: flex-end;
@@ -42,9 +54,4 @@
       cursor: pointer;
     }
   }
-
-  //? effet 3D
-  -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-  box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
 }

@@ -8,6 +8,7 @@
   margin-left: 12.5%;
   margin-right: 12.5%;
   margin-top: 1.5em;
+  border: 1px solid black;
   border-radius: 20px;
 
   //? opacité
@@ -56,7 +57,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    padding: 1rem;
+    padding: 2.5rem;
 
     &-item {
       padding: 2rem;
@@ -67,6 +68,12 @@
       -webkit-box-shadow: 6px 15px 30px 0px rgba(0,0,0,0.75);
       -moz-box-shadow: 6px 15px 30px 0px rgba(0,0,0,0.75);
       box-shadow: 6px 15px 30px 0px rgba(0,0,0,0.75);
+
+      &:hover {
+        transition: transform 0.3s ease;
+        transform: scale(1.1);
+        cursor: no-drop;
+      }
     }
     
     &-item:nth-of-type(2), &-item:nth-of-type(4) {
