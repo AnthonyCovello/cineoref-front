@@ -14,7 +14,7 @@ function Header() {
     <header className="header">
       <Link to="/" title="Page d'accueil" className="header-brand">
         <FcFilmReel className="header-brand-logo" />
-        <span className="header-brand-title">Cin<span>O</span>'Ref</span>
+        <span className="header-brand-title">Ciné<span>O</span>'Ref</span>
       </Link>
       <nav className="header-navbar">
         <NavLink to="/films" className={activeLink}>Films</NavLink>
