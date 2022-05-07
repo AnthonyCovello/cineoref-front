@@ -1,6 +1,6 @@
 // ? Import modules
 import { configureStore } from '@reduxjs/toolkit';
-import topNewReducer from './feature/topNewSlice';
+import topNewReducer from './features/topNewSlice';
 
 export default configureStore({
   reducer: {

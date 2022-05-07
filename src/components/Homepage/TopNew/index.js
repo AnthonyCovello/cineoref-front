@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTablist } from '../../../feature/topNewSlice';
+import { setTablist } from '../../../features/topNewSlice';
 
 // ? Import style
 import './styles.scss';

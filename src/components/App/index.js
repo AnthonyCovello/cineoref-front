@@ -18,8 +18,8 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Homepage />
-      {/* <SignUp /> */}
+      {/* <Homepage /> */}
+      <SignUp />
       <Footer />
     </div>
   );
