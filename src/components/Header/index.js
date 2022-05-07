@@ -1,6 +1,6 @@
 // ? Import modules
-
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
 
 // ? Import style
@@ -10,21 +10,21 @@ import './styles.scss';
 function Header() {
   return (
     <header className="header">
-      <a href="/" title="Page d'accueil" className="header-brand">
+      <Link to="/" title="Page d'accueil" className="header-brand">
         <FcFilmReel className="header-brand-logo" />
         <span className="header-brand-title">Cin<span>O</span>'Ref</span>
-      </a>
+      </Link>
       <nav className="header-navbar">
-        <a href="/films" className="header-navbar-button">Films</a>
-        <a href="/series" className="header-navbar-button">Séries</a>
-        <a href="/animes" className="header-navbar-button">Animés</a>
-        <a href="/cartoons" className="header-navbar-button">Dessins animés</a>
-        <a href="/artists" className="header-navbar-button">Artistes</a>
-        <a href="/characters" className="header-navbar-button">Personnages</a>
+        <NavLink to="/films" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Films</NavLink>
+        <NavLink to="/series" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Séries</NavLink>
+        <NavLink to="/animes" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Animés</NavLink>
+        <NavLink to="/cartoons" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Dessins animés</NavLink>
+        <NavLink to="/artists" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Artistes</NavLink>
+        <NavLink to="/characters" className={({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button')}>Personnages</NavLink>
       </nav>
       <div className="header-connexion">
         <span className="signIn_button">Connexion</span>
-        <span className="signUp_button">Inscription</span>
+        <Link to="/registration" className="signUp_button">Inscription</Link>
       </div>
     </header>
   );
