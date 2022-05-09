@@ -19,7 +19,7 @@ function RandomRef() {
   return (
     <div className="randomRef">
       <span type="button" className="randomRef-dice">
-        <img src={randomDice} alt="dé à 20 faces" onClick={{/*getNewRandomRef*/}} />
+        <img src={randomDice} alt="dé à 20 faces" onClick={{/* getNewRandomRef */}} />
       </span>
       <p className="randomRef-text">{ref}</p>
       <span className="randomRef-author">{character}</span>
