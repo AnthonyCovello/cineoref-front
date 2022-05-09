@@ -14,11 +14,21 @@
   background-color: rgba(28, 31, 54, 0.85);
   
   //? effet 3D
-  -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+  -ms-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75); /* IE 9 */
+  -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75); /* Safari and Chrome */
+  -o-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75); /* Opera */
+  -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75); /* Firefox */
   box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
 
   &:hover {
+    -ms-transition: transform 0.3s ease; /* IE 9 */
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transition: transform 0.3s ease; /* Safari and Chrome */
+    -webkit-transform: scale(1.1); /* Safari and Chrome */
+    -o-transition: transform 0.3s ease; /* Opera */
+    -o-transform: scale(1.1); /* Opera */
+    -moz-transition: transform 0.3s ease; /* Firefox */
+    -moz-transform: scale(1.1); /* Firefox */
     transition: transform 0.3s ease;
     transform: scale(1.1);
     cursor: no-drop;
@@ -26,15 +36,28 @@
 
   &-dice {
     align-self: flex-end;
-
+    
     &:hover {
       cursor: pointer;
     }
   }
-
+  
   &-dice>img {
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
+
+    &:hover {
+      -ms-transition: transform 5s linear; /* IE 9 */
+      -ms-transform: rotate(1080deg); /* IE 9 */
+      -webkit-transition: transform 5s linear; /* Safari and Chrome */
+      -webkit-transform: rotate(1080deg); /* Safari and Chrome */
+      -o-transition: transform 5s linear; /* Opera */
+      -o-transform: rotate(1080deg); /* Opera */
+      -moz-transition: transform 5s linear; /* Firefox */
+      -moz-transform: rotate(1080deg); /* Firefox */
+      transition: transform 5s linear;
+      transform: rotate(1080deg);
+    }
   }
 
   &-text{
