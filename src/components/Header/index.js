@@ -3,6 +3,9 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
 
+// ? Import component
+import Login from './Login';
+
 // ? Import style
 import './styles.scss';
 
@@ -25,7 +28,7 @@ function Header() {
         <NavLink to="/characters" className={activeLink}>Personnages</NavLink>
       </nav>
       <div className="header-connexion">
-        <span className="signIn_button">Connexion</span>
+        <Login />
         <Link to="/registration" className="signUp_button">Inscription</Link>
       </div>
     </header>
