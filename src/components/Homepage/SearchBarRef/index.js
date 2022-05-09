@@ -7,10 +7,10 @@ import './styles.scss';
 function SearchBarRef() {
   return (
     <form className="searchForm">
-      <label className="searchLabel">
+      <label className="searchLabel" htmlFor="searchInput">
         Recherchez une citation
-        <input className="searchInput" type="text" placeholder="Rechercher..." />
       </label>
+      <input className="searchInput" id="searchInput" type="text" placeholder="Rechercher..." />
     </form>
   );
 }

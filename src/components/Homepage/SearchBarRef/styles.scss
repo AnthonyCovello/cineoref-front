@@ -1,13 +1,16 @@
 .searchForm {
   text-align: center;
   color: white;
-  margin-top: 2rem;
+  margin: 50px auto;
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: min-content;
 }
 
 .searchLabel {
-  display: flex;
-  flex-direction: column;
+  padding: 1rem;
+
   &:hover{
     text-shadow: 0 0 15px white;
   }
@@ -15,22 +18,28 @@
 
 .searchInput { 
   width: 400px;
-  margin: 1rem auto;
+  margin: 0rem auto;
+  margin-bottom: 1rem;
   border-radius: 10px;
   padding: 10px;
   background-color: #30367b;
-  border: 0px;
+  border: 1px solid black;
   color: white;
   text-align: center;
   font-size: 16px;
+
+  //? effet 3D
+  -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+  box-shadow: 12px 15px 81px 0px rgba(0,0,0,0.75);
+
   &::placeholder {
     text-align: center;
     font-size: 16px;
     color: rgb(180, 180, 180);
   }
 
-  //? effet 3D
-  -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-  box-shadow: 12px 15px 81px 0px rgba(0,0,0,0.75);
+  &:focus {
+    box-shadow: 0px 0px 10px #FF7A20;
+  }
 }

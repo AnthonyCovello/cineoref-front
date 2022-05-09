@@ -1,6 +1,6 @@
 // ? Import modules
-
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
 
 // ? Import component
@@ -11,23 +11,25 @@ import './styles.scss';
 
 // ? Composant
 function Header() {
+  const activeLink = ({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button');
+
   return (
     <header className="header">
-      <a href="/" title="Page d'accueil" className="header-brand">
+      <Link to="/" title="Page d'accueil" className="header-brand">
         <FcFilmReel className="header-brand-logo" />
-        <span className="header-brand-title">Cin<span>O</span>'Ref</span>
-      </a>
+        <span className="header-brand-title">Ciné<span>O</span>'Ref</span>
+      </Link>
       <nav className="header-navbar">
-        <a href="/films" className="header-navbar-button">Films</a>
-        <a href="/series" className="header-navbar-button">Séries</a>
-        <a href="/animes" className="header-navbar-button">Animés</a>
-        <a href="/cartoons" className="header-navbar-button">Dessins animés</a>
-        <a href="/artists" className="header-navbar-button">Artistes</a>
-        <a href="/characters" className="header-navbar-button">Personnages</a>
+        <NavLink to="/films" className={activeLink}>Films</NavLink>
+        <NavLink to="/series" className={activeLink}>Séries</NavLink>
+        <NavLink to="/animes" className={activeLink}>Animés</NavLink>
+        <NavLink to="/cartoons" className={activeLink}>Dessins animés</NavLink>
+        <NavLink to="/artists" className={activeLink}>Artistes</NavLink>
+        <NavLink to="/characters" className={activeLink}>Personnages</NavLink>
       </nav>
       <div className="header-connexion">
         <Login />
-        <span className="signUp_button">Inscription</span>
+        <Link to="/registration" className="signUp_button">Inscription</Link>
       </div>
     </header>
   );

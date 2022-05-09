@@ -8,52 +8,24 @@ import React from 'react';
 import Description from './Description';
 import RandomRef from './RandomRef';
 import SearchBarRef from './SearchBarRef';
+import TopContributor from './TopContributor';
 
 // ? Import style
 import './styles.scss';
-import TopContributor from './TopContributor';
+import TopNew from './TopNew';
 
 // ? Composant
 function Homepage() {
   return (
     <div className="app">
       <Description />
-      <span className="addRefBtn"> Ajouter une ref'</span>
       <SearchBarRef />
       <div className="line-random-top">
         <RandomRef />
         <TopContributor />
       </div>
-      <div className="citations">
-        <nav className="citation-nav">
-          <span className="citation-nav-btn">Les mieux notées</span>
-          <span className="citation-nav-btn">Les plus récentes</span>
-        </nav>
-        <div>
-          <ul>
-            <li>
-              <p> citation</p>
-              <span>copié</span>
-            </li>
-            <li>
-              <p> citation</p>
-              <span>copié</span>
-            </li>
-            <li>
-              <p> citation</p>
-              <span>copié</span>
-            </li>
-            <li>
-              <p> citation</p>
-              <span>copié</span>
-            </li>
-            <li>
-              <p> citation</p>
-              <span>copié</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <span className="addRefBtn"> Ajouter une ref'</span>
+      <TopNew />
       <span className="backToTop">^</span>
     </div>
   );
