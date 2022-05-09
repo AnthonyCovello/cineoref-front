@@ -7,6 +7,8 @@
 * [React-router](https://reactrouterdotcom.fly.dev/)
 * [React-Redux](https://react-redux.js.org/)
 * [Redux Toolkit](https://redux-toolkit.js.org/)
+* [Formik](https://formik.org/)
+* [Yup](https://docs.yup.io/)
 * [Axios](https://axios-http.com/)
 * [ESLint](https://eslint.org/)
 * [Webpack](https://webpack.js.org/)
