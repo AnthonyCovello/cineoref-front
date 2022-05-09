@@ -1,9 +1,11 @@
 // ? Import modules
 import { configureStore } from '@reduxjs/toolkit';
-import loginReducer from './feature/loginSlice';
+import dropDownloginReducer from './feature/dropDownLoginSlice';
+import authReducer from './feature/auth/authSlice';
 
 export default configureStore({
   reducer: {
-    login: loginReducer,
+    dropDownlogin: dropDownloginReducer,
+    auth: authReducer,
   },
 });

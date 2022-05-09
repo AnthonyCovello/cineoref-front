@@ -1,7 +1,7 @@
 // ? Import modules
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setLoginDropDown } from '../../../feature/loginSlice';
+import { setLoginDropDown } from '../../../feature/dropDownLoginSlice';
 
 // ? Import style
 import './styles.scss';
@@ -9,10 +9,12 @@ import './styles.scss';
 // ? Composant
 function Login() {
   const dispatch = useDispatch();
-  function toggleDropdown() {
+
+  // handle toggle menu login
+  const toggleDropdown = () => {
     dispatch(setLoginDropDown());
-  }
-  const isOpen = useSelector(({ login }) => login.dropdown);
+  };
+  const isOpen = useSelector(({ dropDownlogin }) => dropDownlogin.dropdown);
 
   return (
     <div className="dropdown">
@@ -26,15 +28,21 @@ function Login() {
         && (
           <div className="dropdown-content">
             <form>
-              <input className="content-input" type="text" placeholder="Pseudo" />
-              <input className="content-input" type="text" placeholder="Mot de passe" />
-              <span className="dropdown-content-login"> se connecter </span>
+              <input
+                className="content-input"
+                type="text"
+                placeholder="Pseudo"
+              />
+              <input
+                className="content-input"
+                type="text"
+                placeholder="Mot de passe"
+              />
+              <button type="submit" className="dropdown-content-login"> se connecter </button>
             </form>
           </div>
-        )
-      }
-    </div >
-
+        )}
+    </div>
   );
 }
 
