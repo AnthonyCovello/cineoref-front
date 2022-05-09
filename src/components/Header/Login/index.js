@@ -1,7 +1,7 @@
 // ? Import modules
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setLoginDropDown } from '../../../feature/dropDownLoginSlice';
+import { setLoginDropDown } from '../../../features/dropDownLoginSlice';
 
 // ? Import style
 import './styles.scss';
