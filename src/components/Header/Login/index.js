@@ -34,6 +34,8 @@ function Login(props) {
     password: Yup.string().required('This field is required!'),
   });
 
+  const islogged = useSelector(({ auth }) => auth.isLoggedIn);
+
   const handleLogin = (formValue) => {
     const { username, password } = formValue;
     setLoading(true);
@@ -42,11 +44,9 @@ function Login(props) {
       .catch(() => {
         setLoading(false);
       });
-  };
-
-  const handlerLogin = (event) => {
-    event.preventDefault();
-    handleLogin();
+    if (islogged) {
+      dispatch(setLoginDropDown());
+    }
   };
 
   // handle toggle menu login
