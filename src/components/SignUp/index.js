@@ -54,11 +54,11 @@ function SignUp() {
 
   const handleRegister = (formValue) => {
     const {
-      username, email, password, birthday,
+      username, email, birthday, password,
     } = formValue;
     setSuccessful(false);
     dispatch(register({
-      username, email, password, birthday,
+      username, email, birthday, password,
     }))
       .unwrap()
       .then(() => {
