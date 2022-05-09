@@ -58,10 +58,11 @@
     }
   }
 
-  .signUp_button, .signIn_button {
+  .signUp_button {
     background-color: #FF7A20;
     color: #fff;
     padding: 0.2rem 0.5rem;
+    margin-left: 1rem;
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
@@ -71,9 +72,6 @@
       cursor: pointer;
       text-shadow: 0px 10px 15px #fff;
     }
-  }
-  .signUp_button {
-    margin-left: 1rem;
   }
 }
 

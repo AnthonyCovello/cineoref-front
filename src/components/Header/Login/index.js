@@ -14,9 +14,10 @@ import './styles.scss';
 
 // ? Composant
 function Login(props) {
-  // state
   const [loading, setLoading] = useState(false);
   const { message } = useSelector((state) => state.message);
+  const islogged = useSelector(({ auth }) => auth.isLoggedIn);
+  const isOpen = useSelector(({ dropDownlogin }) => dropDownlogin.dropdown);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,8 +35,6 @@ function Login(props) {
     password: Yup.string().required('This field is required!'),
   });
 
-  const islogged = useSelector(({ auth }) => auth.isLoggedIn);
-
   const handleLogin = (formValue) => {
     const { username, password } = formValue;
     setLoading(true);
@@ -49,18 +48,14 @@ function Login(props) {
     }
   };
 
-  // handle toggle menu login
+  // ouverture du menu de connexion
   const toggleDropdown = () => {
     dispatch(setLoginDropDown());
   };
-  const isOpen = useSelector(({ dropDownlogin }) => dropDownlogin.dropdown);
 
   return (
     <div className="dropdown">
-      <span
-        className="signIn_button"
-        onClick={toggleDropdown}
-      >
+      <span className="signIn_button" onClick={toggleDropdown}>
         Connexion
       </span>
       {isOpen
@@ -94,7 +89,7 @@ function Login(props) {
                   component="div"
                 // className="alert alert-danger"
                 />
-                <button type="submit" className="dropdown-content-login"> se connecter </button>
+                <button type="submit" className="dropdown-content-login"> Se connecter </button>
               </Form>
             </Formik>
           </div>
