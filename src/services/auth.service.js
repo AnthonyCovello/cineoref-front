@@ -2,11 +2,11 @@ import axios from 'axios';
 
 const API_URL = 'https://cinoref-api.herokuapp.com/';
 
-const register = (username, email, password, birthday) => axios.post(`${API_URL}signup`, {
+const register = (username, email, birthday, password) => axios.post(`${API_URL}signup`, {
   username,
   email,
-  password,
   birthday,
+  password,
 });
 
 const login = (username, password) => axios.post(`${API_URL}login`, {

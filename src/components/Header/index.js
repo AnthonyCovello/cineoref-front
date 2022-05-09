@@ -1,5 +1,6 @@
 // ? Import modules
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
 
@@ -30,6 +31,10 @@ function Header() {
       <div className="header-connexion">
         <Login />
         <Link to="/registration" className="signUp_button">Inscription</Link>
+      </div>
+      <div className="header-logged">
+        <span> profil </span>
+        <span> deconnection </span>
       </div>
     </header>
   );
