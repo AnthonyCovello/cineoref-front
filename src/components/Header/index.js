@@ -28,6 +28,7 @@ function Header() {
         <NavLink to="/cartoons" className={activeLink}>Dessins animés</NavLink>
         <NavLink to="/artists" className={activeLink}>Artistes</NavLink>
         <NavLink to="/characters" className={activeLink}>Personnages</NavLink>
+        {islogged && (<NavLink to="/favoris" className={activeLink}>Favoris</NavLink>)}
       </nav>
       {!islogged && (
         <div className="header-connexion">
