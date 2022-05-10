@@ -1,9 +1,8 @@
 // ? Import modules
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+
+import { useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
-import { CgProfile } from 'react-icons/cg';
 // ? Import component
 import Login from './Login';
 import Profile from './Profile';

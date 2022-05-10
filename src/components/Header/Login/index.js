@@ -60,51 +60,51 @@ function Login(props) {
           Connexion
         </span>
         {isOpen
-        && (
-          <div className="dropdown-content">
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={handleLogin}
-            >
-              <Form>
-                <div className="form-group-login">
-                  <Field
-                    className="content-input"
-                    name="username"
-                    type="text"
-                    placeholder="Pseudo"
-                  />
-                  <ErrorMessage
-                    name="username"
-                    component="div"
-                    className="alert-login"
-                  />
+          && (
+            <div className="dropdown-content">
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleLogin}
+              >
+                <Form>
+                  <div className="form-group-login">
+                    <Field
+                      className="content-input"
+                      name="username"
+                      type="text"
+                      placeholder="Pseudo"
+                    />
+                    <ErrorMessage
+                      name="username"
+                      component="div"
+                      className="alert-login"
+                    />
+                  </div>
+                  <div className="form-group-login">
+                    <Field
+                      className="content-input"
+                      name="password"
+                      type="password"
+                      placeholder="Mot de passe"
+                    />
+                    <ErrorMessage
+                      name="password"
+                      component="div"
+                      className="alert-login"
+                    />
+                  </div>
+                  <button type="submit" className="dropdown-content-login"> Se connecter </button>
+                </Form>
+              </Formik>
+              {message ? (
+                <div className="connection-alert-login" role="alert">
+                  {message}
                 </div>
-                <div className="form-group-login">
-                  <Field
-                    className="content-input"
-                    name="password"
-                    type="password"
-                    placeholder="Mot de passe"
-                  />
-                  <ErrorMessage
-                    name="password"
-                    component="div"
-                    className="alert-login"
-                  />
-                </div>
-                <button type="submit" className="dropdown-content-login"> Se connecter </button>
-              </Form>
-            </Formik>
-            {message ? (
-              <div className="connection-alert-login" role="alert">
-                {message}
-              </div>
-            )
-              : ''}
-          </div>
-        )}
+              )
+                : ''}
+            </div>
+          )}
       </div>
     </div>
   );
