@@ -68,11 +68,13 @@ function ProposalForm() {
           <BsFillArrowLeftSquareFill />
         </Link>
         <h1 className="proposal-form-title">Proposition de citation</h1>
-        <p className="proposal-form-instructions">Le pseudo doit être unique et sera visible des autres utilisateur.</p>
+        <p className="proposal-form-instructions">
+          Veuillez vérifier les informations avant de valider la proposition.
+        </p>
         <label className="proposal-form-label" htmlFor="title">
           Titre
         </label>
-        <Field type="text" name="title" required />
+        <Field type="text" className="input" name="title" required />
         <ErrorMessage
           name="title"
           component="div"
@@ -81,7 +83,7 @@ function ProposalForm() {
         <label className="proposal-form-label" htmlFor="category">
           Média
         </label>
-        <Field as={Select} defaultValue={options[0].value} options={options} name="category" />
+        <Select className="selectInput" defaultValue={options[0].value} options={options} name="category" />
         <ErrorMessage
           name="category"
           component="div"
@@ -90,7 +92,7 @@ function ProposalForm() {
         <label className="proposal-form-label" htmlFor="character">
           Personnage
         </label>
-        <Field type="text" name="character" required />
+        <Field type="text" className="input" name="character" required />
         <ErrorMessage
           name="character"
           component="div"
@@ -99,7 +101,7 @@ function ProposalForm() {
         <label className="proposal-form-label" htmlFor="artist">
           Artiste
         </label>
-        <Field type="text" name="artist" required />
+        <Field type="text" className="input" name="artist" required />
         <ErrorMessage
           name="artist"
           component="div"
@@ -108,7 +110,7 @@ function ProposalForm() {
         <label className="proposal-form-label" htmlFor="ref">
           Citation
         </label>
-        <Field as="textarea" name="ref" required />
+        <Field as="textarea" className="input" name="ref" required />
         <ErrorMessage
           name="ref"
           component="div"
