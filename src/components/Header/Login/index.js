@@ -54,11 +54,12 @@ function Login(props) {
   };
 
   return (
-    <div className="dropdown">
-      <span className="signIn_button" onClick={toggleDropdown}>
-        Connexion
-      </span>
-      {isOpen
+    <div className="connection">
+      <div className="dropdown">
+        <span className="signIn_button" onClick={toggleDropdown}>
+          Connexion
+        </span>
+        {isOpen
         && (
           <div className="dropdown-content">
             <Formik
@@ -82,19 +83,26 @@ function Login(props) {
                   type="password"
                   placeholder="Mot de passe"
                   required
+                  onInvalid={(e) => e.target.setCustomValidity('N\'oubliez pas votre mot de passe')}
+                  onInput={(e) => e.target.setCustomValidity('')}
                 />
                 <button type="submit" className="dropdown-content-login"> Se connecter </button>
               </Form>
             </Formik>
+            {message ? (
+              <div className="connection-alert-login" role="alert">
+                {message}
+              </div>
+            )
+              : ''}
           </div>
         )}
-      {message && (
-        <div className="form-group-login">
-          <div className="alert-login alert-danger" role="alert">
-            {message}
-          </div>
+        {/* {message && (
+        <div className="connection-alert-login" role="alert">
+          {message}
         </div>
-      )}
+        )} */}
+      </div>
     </div>
   );
 }
