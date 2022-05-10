@@ -73,22 +73,15 @@ function Login(props) {
                   type="text"
                   placeholder="Pseudo"
                   required
-                />
-                <ErrorMessage
-                  name="username"
-                  component="div"
-                  className="alert-login alert-danger"
+                  onInvalid={(e) => e.target.setCustomValidity('N\'oubliez pas votre pseudo')}
+                  onInput={(e) => e.target.setCustomValidity('')}
                 />
                 <Field
                   className="content-input"
                   name="password"
                   type="password"
                   placeholder="Mot de passe"
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="alert-login alert-danger"
+                  required
                 />
                 <button type="submit" className="dropdown-content-login"> Se connecter </button>
               </Form>
