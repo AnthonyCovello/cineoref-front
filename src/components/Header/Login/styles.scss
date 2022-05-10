@@ -17,9 +17,12 @@
 }
 
 .connection-alert-login{
-  color:#d3d3d3;
+  background-color: #F8D7DA;
+  color: #82212F;
+  border-radius: 5px;
+  padding: 6px;
+  margin-top: 1rem;
   text-align: center;
-  padding-top: 1rem;
 }
 
 .dropdown {
@@ -44,19 +47,22 @@
       margin: auto;
       display: table;
       margin-top: 10px;
+      margin-bottom: 15px;
       font-weight: bold;
-      padding: 12px;
+      padding: 8px 12px;
       border-radius: 10px;
+      font-size: 16px;
     }
 
     & input {
       color: black;
       padding: 12px 16px;
-      margin-top: 5px;
       background-color: #d3d3d3;
+      border-radius: 10px;
 
       &::placeholder{
         color: rgba(0, 0, 0, 0.76);
+        font-size: 16px;
       }
     }
   }
@@ -66,3 +72,16 @@
   }
 }
 
+.alert-login {
+  background-color: #F8D7DA;
+  color: #82212F;
+  border-radius: 5px;
+  padding: 8px 25px;
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 14px;
+}
+
+.form-group-login{
+  margin-top:1rem;
+}
