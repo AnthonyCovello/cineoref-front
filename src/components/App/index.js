@@ -9,6 +9,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Homepage from '../Homepage';
 import SignUp from '../SignUp';
+import ProposalForm from '../ProposalForm';
 
 // ? Import style
 import './styles.scss';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={{/* Login */}} />
         <Route path="/registration" element={<SignUp />} />
+        <Route path="/proposal" element={<ProposalForm />} />
         {/* <Route path="*" element={<NotFound />} /> */}
 
       </Routes>
