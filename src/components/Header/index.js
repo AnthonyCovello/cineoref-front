@@ -13,6 +13,7 @@ import './styles.scss';
 // ? Composant
 function Header() {
   const activeLink = ({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button');
+  const islogged = useSelector(({ auth }) => auth.isLoggedIn);
 
   return (
     <header className="header">
@@ -27,15 +28,20 @@ function Header() {
         <NavLink to="/cartoons" className={activeLink}>Dessins animés</NavLink>
         <NavLink to="/artists" className={activeLink}>Artistes</NavLink>
         <NavLink to="/characters" className={activeLink}>Personnages</NavLink>
+        {islogged && (<NavLink to="/favoris" className={activeLink}>Favoris</NavLink>)}
       </nav>
-      <div className="header-connexion">
-        <Login />
-        <Link to="/registration" className="signUp_button">Inscription</Link>
-      </div>
-      <div className="header-logged">
-        <span> profil </span>
-        <span> deconnection </span>
-      </div>
+      {!islogged && (
+        <div className="header-connexion">
+          <Login />
+          <Link to="/registration" className="signUp_button">Inscription</Link>
+        </div>
+      )}
+      {islogged && (
+        <div className="header-logged">
+          <span> profil </span>
+          <span> deconnection </span>
+        </div>
+      )}
     </header>
   );
 }

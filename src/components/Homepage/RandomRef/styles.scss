@@ -47,16 +47,15 @@
     height: 45px;
 
     &:hover {
-      -ms-transition: transform 5s linear; /* IE 9 */
-      -ms-transform: rotate(1080deg); /* IE 9 */
-      -webkit-transition: transform 5s linear; /* Safari and Chrome */
-      -webkit-transform: rotate(1080deg); /* Safari and Chrome */
-      -o-transition: transform 5s linear; /* Opera */
-      -o-transform: rotate(1080deg); /* Opera */
-      -moz-transition: transform 5s linear; /* Firefox */
-      -moz-transform: rotate(1080deg); /* Firefox */
-      transition: transform 5s linear;
-      transform: rotate(1080deg);
+      animation: loading 3s linear infinite;
+        @keyframes loading {
+          0% { 
+            transform: rotate(0); 
+          }
+          100% { 
+            transform: rotate(360deg);
+          }
+        }
     }
   }
 

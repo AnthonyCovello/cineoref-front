@@ -42,7 +42,7 @@ function Login(props) {
 
   const handleLogin = (formValue) => {
     const { username, password } = formValue;
-    setLoading(true);
+    // setLoading(true);
     dispatch(login({ username, password }))
       .unwrap()
       .catch(() => {
@@ -72,22 +72,16 @@ function Login(props) {
                   name="username"
                   type="text"
                   placeholder="Pseudo"
-                />
-                <ErrorMessage
-                  name="username"
-                  component="div"
-                // className="alert alert-danger"
+                  required
+                  onInvalid={(e) => e.target.setCustomValidity('N\'oubliez pas votre pseudo')}
+                  onInput={(e) => e.target.setCustomValidity('')}
                 />
                 <Field
                   className="content-input"
                   name="password"
                   type="password"
                   placeholder="Mot de passe"
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                // className="alert alert-danger"
+                  required
                 />
                 <button type="submit" className="dropdown-content-login"> Se connecter </button>
               </Form>
@@ -95,8 +89,8 @@ function Login(props) {
           </div>
         )}
       {message && (
-        <div className="form-group">
-          <div className="alert alert-danger" role="alert">
+        <div className="form-group-login">
+          <div className="alert-login alert-danger" role="alert">
             {message}
           </div>
         </div>
