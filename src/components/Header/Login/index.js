@@ -37,7 +37,7 @@ function Login(props) {
 
   const handleLogin = (formValue) => {
     const { username, password } = formValue;
-    setLoading(true);
+    // setLoading(true);
     dispatch(login({ username, password }))
       .unwrap()
       .catch(() => {
