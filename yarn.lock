@@ -4929,6 +4929,11 @@ react-fast-compare@^2.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
 
+react-floating-input@^2.1.10:
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/react-floating-input/-/react-floating-input-2.1.10.tgz#4ed7a7099ef3b7c8e81a0badfb87adc3fceba01f"
+  integrity sha512-+Fee/uA3MKX+M/roU70Sdk5MkhpuzrFpQD7cCdpdvvroDWs8bj1Cfs0BfoSnhbMpmuoOhdB56kNThw1h8Bge6Q==
+
 react-icons@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
