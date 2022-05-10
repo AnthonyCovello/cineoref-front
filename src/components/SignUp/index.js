@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React, { useEffect, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
@@ -63,7 +63,6 @@ function SignUp() {
       .unwrap()
       .then(() => {
         setSuccessful(true);
-        // return <Redirect to="/profile" />;
       })
       .catch(() => {
         setSuccessful(false);
