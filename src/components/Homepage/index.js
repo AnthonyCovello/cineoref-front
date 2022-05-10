@@ -3,8 +3,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import { Routes, Route, useLocation } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setLoginDropdown } from '../../features/dropDownSlice';
 // ? Import composants
 import Description from './Description';
 import RandomRef from './RandomRef';
@@ -17,6 +18,17 @@ import './styles.scss';
 
 // ? Composant
 function Homepage() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isLogged = useSelector(({ auth }) => auth.isLoggedIn)
+  const handleAddRef = () => {
+    if (isLogged) {
+      navigate('/proposal');
+    }
+    else {
+      dispatch(setLoginDropdown());
+    }
+  };
   return (
     <div className="app">
       <Description />
@@ -25,7 +37,11 @@ function Homepage() {
         <RandomRef />
         <TopContributor />
       </div>
-      <Link to="/proposal" className="addRefBtn"> Ajouter une ref'</Link>
+      <span
+        className="addRefBtn"
+        onClick={handleAddRef}
+      > Ajouter une ref'
+      </span>
       <TopNew />
       <span className="backToTop">^</span>
     </div>

@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import {
   Formik, Field, Form, ErrorMessage,
 } from 'formik';
-import { setLoginDropDown } from '../../../features/dropDownLoginSlice';
+import { setLoginDropdown } from '../../../features/dropDownSlice';
 import { login } from '../../../features/authSlice';
 import { clearMessage } from '../../../features/messageSlice';
 
@@ -17,7 +17,7 @@ function Login(props) {
   const [loading, setLoading] = useState(false);
   const { message } = useSelector((state) => state.message);
   const islogged = useSelector(({ auth }) => auth.isLoggedIn);
-  const isOpen = useSelector(({ dropDownlogin }) => dropDownlogin.dropdown);
+  const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,10 +49,13 @@ function Login(props) {
         setLoading(false);
       });
     if (islogged) {
-      toggleDropdown();
+      dispatch(setLoginDropdown());
     }
   };
-
+  // ouverture du menu de connexion
+  const toggleDropdown = () => {
+    dispatch(setLoginDropdown());
+  };
   return (
     <div className="dropdown">
       <span className="signIn_button" onClick={toggleDropdown}>

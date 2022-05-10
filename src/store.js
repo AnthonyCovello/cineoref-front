@@ -1,12 +1,12 @@
 // ? Import modules
 import { configureStore } from '@reduxjs/toolkit';
-import dropDownloginReducer from './features/dropDownLoginSlice';
+import dropdownReducer from './features/dropDownSlice';
 import topNewReducer from './features/topNewSlice';
 import authReducer from './features/authSlice';
 import messageReducer from './features/messageSlice';
 
 const reducer = {
-  dropDownlogin: dropDownloginReducer,
+  dropdown: dropdownReducer,
   topNew: topNewReducer,
   auth: authReducer,
   message: messageReducer,

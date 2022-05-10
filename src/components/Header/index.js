@@ -3,9 +3,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
-
+import { CgProfile } from 'react-icons/cg';
 // ? Import component
 import Login from './Login';
+import Profile from './Profile';
 
 // ? Import style
 import './styles.scss';
@@ -38,8 +39,7 @@ function Header() {
       )}
       {islogged && (
         <div className="header-logged">
-          <span> profil </span>
-          <span> deconnection </span>
+          <Profile />
         </div>
       )}
     </header>

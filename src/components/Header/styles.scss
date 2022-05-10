@@ -15,7 +15,10 @@
 
   //? opacité
   background-color: rgba(28, 31, 54, 0.85);
-
+  &-logged_profil{
+    font-size: 2rem;
+    color: white;
+  }
   &-brand {
     display: flex;
     align-items: center;
@@ -80,3 +83,4 @@
   color: #FF7A20;
   text-shadow: 0px 0px 15px #FF7A20;
 }
+
