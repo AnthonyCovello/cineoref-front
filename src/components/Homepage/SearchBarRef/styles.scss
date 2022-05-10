@@ -23,10 +23,15 @@
   border-radius: 10px;
   padding: 10px;
   background-color: #30367b;
-  border: 1px solid black;
   color: white;
   text-align: center;
   font-size: 16px;
+  border-radius: 10px;
+  border-top-color: #212121;
+  border-right-color: #767676;
+  border-bottom-color: #767676;
+  border-left-color: #212121;
+  border-width: 2px;
 
   //? effet 3D
   -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);

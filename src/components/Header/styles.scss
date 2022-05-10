@@ -18,6 +18,9 @@
   &-logged_profil{
     font-size: 2rem;
     color: white;
+    &:hover{
+      cursor: pointer;
+    }
   }
   &-brand {
     display: flex;
