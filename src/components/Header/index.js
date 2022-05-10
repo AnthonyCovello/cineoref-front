@@ -1,8 +1,9 @@
 // ? Import modules
-
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
+
 // ? Import component
 import Login from './Login';
 import Profile from './Profile';
