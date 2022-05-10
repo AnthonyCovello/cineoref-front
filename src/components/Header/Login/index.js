@@ -72,11 +72,12 @@ function Login(props) {
                   name="username"
                   type="text"
                   placeholder="Pseudo"
+                  required
                 />
                 <ErrorMessage
                   name="username"
                   component="div"
-                // className="alert alert-danger"
+                  className="alert-login alert-danger"
                 />
                 <Field
                   className="content-input"
@@ -87,7 +88,7 @@ function Login(props) {
                 <ErrorMessage
                   name="password"
                   component="div"
-                // className="alert alert-danger"
+                  className="alert-login alert-danger"
                 />
                 <button type="submit" className="dropdown-content-login"> Se connecter </button>
               </Form>
@@ -95,8 +96,8 @@ function Login(props) {
           </div>
         )}
       {message && (
-        <div className="form-group">
-          <div className="alert alert-danger" role="alert">
+        <div className="form-group-login">
+          <div className="alert-login alert-danger" role="alert">
             {message}
           </div>
         </div>
