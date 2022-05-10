@@ -90,33 +90,29 @@ function SignUp() {
             <Field
               type="text"
               name="username"
-              data-required="true"
-              required
-              onInvalid={(e) => e.target.setCustomValidity('N\'oubliez pas votre pseudo')}
-              onInput={(e) => e.target.setCustomValidity('')}
             />
-            {/* <ErrorMessage
-            name="username"
-            component="div"
-            className="alert alert-danger"
-          /> */}
+            <ErrorMessage
+              name="username"
+              component="div"
+              className="alert alert-danger"
+            />
           </div>
           <div className="form-group">
             <label className="signUp-form-label" htmlFor="email">
               Adresse mail
             </label>
-            <Field type="email" name="email" required />
-            {/* <ErrorMessage
-            name="email"
-            component="div"
-            className="alert alert-danger"
-          /> */}
+            <Field type="email" name="email" />
+            <ErrorMessage
+              name="email"
+              component="div"
+              className="alert alert-danger"
+            />
           </div>
           <div className="form-group">
             <label className="signUp-form-label" htmlFor="password">
               Mot de passe
             </label>
-            <Field type="password" name="password" required />
+            <Field type="password" name="password" />
             <ErrorMessage
               name="password"
               component="div"
@@ -127,12 +123,12 @@ function SignUp() {
             <label className="signUp-form-label" htmlFor="birthday">
               Date de naissance
             </label>
-            <Field type="date" name="birthday" required />
-            {/* <ErrorMessage
-            name="birthday"
-            component="div"
-            className="alert alert-danger"
-          /> */}
+            <Field type="date" name="birthday" />
+            <ErrorMessage
+              name="birthday"
+              component="div"
+              className="alert alert-danger"
+            />
           </div>
           <p className="signUp-form-cgu">
             En cliquant sur <strong>S'inscrire</strong>, vous confirmez avoir lu et accepté les <Link to="/cgu">Conditions d'utilisation</Link>.

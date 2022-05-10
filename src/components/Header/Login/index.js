@@ -31,8 +31,8 @@ function Login(props) {
 
   // * Schéma de validation
   const validationSchema = Yup.object().shape({
-    username: Yup.string().required('This field is required!'),
-    password: Yup.string().required('This field is required!'),
+    username: Yup.string().required('Identifiant requis!'),
+    password: Yup.string().required('Mot de passe requis!'),
   });
 
   const handleLogin = (formValue) => {
@@ -54,11 +54,12 @@ function Login(props) {
   };
 
   return (
-    <div className="dropdown">
-      <span className="signIn_button" onClick={toggleDropdown}>
-        Connexion
-      </span>
-      {isOpen
+    <div className="connection">
+      <div className="dropdown">
+        <span className="signIn_button" onClick={toggleDropdown}>
+          Connexion
+        </span>
+        {isOpen
         && (
           <div className="dropdown-content">
             <Formik
@@ -67,34 +68,44 @@ function Login(props) {
               onSubmit={handleLogin}
             >
               <Form>
-                <Field
-                  className="content-input"
-                  name="username"
-                  type="text"
-                  placeholder="Pseudo"
-                  required
-                  onInvalid={(e) => e.target.setCustomValidity('N\'oubliez pas votre pseudo')}
-                  onInput={(e) => e.target.setCustomValidity('')}
-                />
-                <Field
-                  className="content-input"
-                  name="password"
-                  type="password"
-                  placeholder="Mot de passe"
-                  required
-                />
+                <div className="form-group-login">
+                  <Field
+                    className="content-input"
+                    name="username"
+                    type="text"
+                    placeholder="Pseudo"
+                  />
+                  <ErrorMessage
+                    name="username"
+                    component="div"
+                    className="alert-login"
+                  />
+                </div>
+                <div className="form-group-login">
+                  <Field
+                    className="content-input"
+                    name="password"
+                    type="password"
+                    placeholder="Mot de passe"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="div"
+                    className="alert-login"
+                  />
+                </div>
                 <button type="submit" className="dropdown-content-login"> Se connecter </button>
               </Form>
             </Formik>
+            {message ? (
+              <div className="connection-alert-login" role="alert">
+                {message}
+              </div>
+            )
+              : ''}
           </div>
         )}
-      {message && (
-        <div className="form-group-login">
-          <div className="alert-login alert-danger" role="alert">
-            {message}
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }

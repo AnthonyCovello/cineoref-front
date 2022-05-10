@@ -32,7 +32,7 @@ function Header() {
         {islogged && (<NavLink to="/favoris" className={activeLink}>Favoris</NavLink>)}
       </nav>
       {!islogged && (
-        <div className="header-connexion">
+        <div className="header-connection">
           <Login />
           <Link to="/registration" className="signUp_button">Inscription</Link>
         </div>
