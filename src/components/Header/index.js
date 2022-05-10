@@ -6,6 +6,7 @@ import { FcFilmReel } from 'react-icons/fc';
 import { CgProfile } from 'react-icons/cg';
 // ? Import component
 import Login from './Login';
+import Profile from './Profile';
 
 // ? Import style
 import './styles.scss';
@@ -38,8 +39,7 @@ function Header() {
       )}
       {islogged && (
         <div className="header-logged">
-          <CgProfile className="header-logged_profil" />
-          <span className="header-logged_logout"> deconnection </span>
+          <Profile />
         </div>
       )}
     </header>

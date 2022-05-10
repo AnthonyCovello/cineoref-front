@@ -2,7 +2,8 @@
 import React from 'react';
 import { CgProfile } from 'react-icons/cg';
 import { useDispatch, useSelector } from 'react-redux';
-import { setProfileDropdown } from '../../../features/dropDownLoginSlice';
+import { setProfileDropdown } from '../../../features/dropDownSlice';
+import { logout } from '../../../features/authSlice';
 
 // ? Import style
 import './styles.scss';
@@ -15,6 +16,10 @@ function Profile() {
   const toggleDropdown = () => {
     dispatch(setProfileDropdown());
   };
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <div className="dropdown">
       <CgProfile
@@ -24,9 +29,13 @@ function Profile() {
       {isOpen && (
         <div className="dropdown-content">
           <span className="content-btn"> Profil </span>
-          <span className="content-btn"> ajouter ref' </span>
-          <span className="content-btn"> favoris </span>
-          <span className="content-btn"> déconnexion </span>
+          <span className="content-btn"> Ajouter une ref' </span>
+          <span className="content-btn"> Favoris </span>
+          <span
+            className="content-btn"
+            onClick={handleLogout}
+          > Déconnexion
+          </span>
         </div>
       )}
     </div>
