@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Routes, Route, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -10,10 +11,10 @@ import Description from './Description';
 import RandomRef from './RandomRef';
 import SearchBarRef from './SearchBarRef';
 import TopContributor from './TopContributor';
+import TopNew from './TopNew';
 
 // ? Import style
 import './styles.scss';
-import TopNew from './TopNew';
 
 // ? Composant
 function Homepage() {

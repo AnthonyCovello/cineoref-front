@@ -35,6 +35,11 @@ function Login(props) {
     password: Yup.string().required('This field is required!'),
   });
 
+  // ouverture du menu de connexion
+  const toggleDropdown = () => {
+    dispatch(setLoginDropDown());
+  };
+
   const handleLogin = (formValue) => {
     const { username, password } = formValue;
     // setLoading(true);
@@ -47,12 +52,10 @@ function Login(props) {
       dispatch(setLoginDropdown());
     }
   };
-
   // ouverture du menu de connexion
   const toggleDropdown = () => {
     dispatch(setLoginDropdown());
   };
-
   return (
     <div className="dropdown">
       <span className="signIn_button" onClick={toggleDropdown}>
