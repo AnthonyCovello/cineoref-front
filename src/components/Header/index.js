@@ -1,8 +1,9 @@
 // ? Import modules
-
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
+
 // ? Import component
 import Login from './Login';
 import Profile from './Profile';
@@ -28,7 +29,7 @@ function Header() {
         <NavLink to="/cartoons" className={activeLink}>Dessins animés</NavLink>
         <NavLink to="/artists" className={activeLink}>Artistes</NavLink>
         <NavLink to="/characters" className={activeLink}>Personnages</NavLink>
-        {islogged && (<NavLink to="/favoris" className={activeLink}>Favoris</NavLink>)}
+        {islogged && (<NavLink to="/bookmarks" className={activeLink}>Favoris</NavLink>)}
       </nav>
       {!islogged && (
         <div className="header-connection">
