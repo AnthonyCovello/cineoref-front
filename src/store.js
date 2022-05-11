@@ -10,6 +10,7 @@ const reducer = {
   topNew: topNewReducer,
   auth: authReducer,
   message: messageReducer,
+
 };
 
 // ? Store
