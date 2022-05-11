@@ -27,7 +27,7 @@ function Profile() {
 
   return (
     <div
-      className="dropdown"
+      className="dropdownProfil"
       onClick={toggleDropdown}
     >
       <span className="header-logged_profil">{user}</span>
@@ -35,7 +35,7 @@ function Profile() {
         className="header-logged_logo"
       />
       {isOpen && (
-        <div className="dropdown-content">
+        <div className="dropdownProfil-content">
           <Link className="content-btn" to="/profile"> Profil </Link>
           <Link className="content-btn" to="/proposal"> Ajouter une ref' </Link>
           <Link className="content-btn" to="/bookmarks"> Favoris </Link>
