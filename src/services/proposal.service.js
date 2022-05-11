@@ -1,0 +1,17 @@
+import axios from 'axios';
+
+const API_URL = 'https://cinoref-api.herokuapp.com/';
+
+const proposal = (title, category, character, artist, reference) => axios.post(`${API_URL}form/submit`, {
+  title,
+  category,
+  character,
+  artist,
+  reference,
+}).then((response) => response.data);
+
+const proposalService = {
+  proposal,
+};
+
+export default proposalService;
