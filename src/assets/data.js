@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     title: 'Judge Dredd',
-    show: 'Film',
+    category: 'Film',
     character: 'Dredd',
     artist: 'Sylvester Stallon',
     ref: 'La loi c\'est moi! Et l\'ordre!',
@@ -13,7 +13,7 @@ export default [
   {
     id: 2,
     title: 'Missing in Action III',
-    show: 'Film',
+    category: 'Film',
     character: 'Braddock',
     artist: 'Chuck Norris',
     ref: 'Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule.',
@@ -24,7 +24,7 @@ export default [
   {
     id: 3,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'Ne pas fumer me tue, je vais ré-essayer je vous le promet.',
@@ -35,7 +35,7 @@ export default [
   {
     id: 4,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'J\'aime les panoramas, celui-ci est magnifique.',
@@ -46,7 +46,7 @@ export default [
   {
     id: 5,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'J\'aime me battre.',
@@ -57,7 +57,7 @@ export default [
   {
     id: 6,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'C\'est toi arrêtez!.',
@@ -68,7 +68,7 @@ export default [
   {
     id: 7,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'Mais il va la fermer sa gueule!',
@@ -79,7 +79,7 @@ export default [
   {
     id: 8,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'J\'aime me beurrer la biscotte.',
@@ -90,7 +90,7 @@ export default [
   {
     id: 9,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'Hum, ça ne sert à rien...',
@@ -101,7 +101,7 @@ export default [
   {
     id: 10,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'Moi je suis dans le poulet et ben je vois rien qu\'au niveau du poulet c\'est un bordel!',
@@ -112,7 +112,7 @@ export default [
   {
     id: 11,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'J\'aime quand on m\'enduit d\'huile.',
@@ -123,7 +123,7 @@ export default [
   {
     id: 12,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'En tout cas on peut dire que le soviet éponge.',
@@ -134,7 +134,7 @@ export default [
   {
     id: 13,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'Tu n\'es pas seulement un lâche tu es un traitre comme ta petite taille le laissait deviner.',
@@ -145,7 +145,7 @@ export default [
   {
     id: 14,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Hubert Bonisseur de la Bath',
     artist: 'Jean Dujardin',
     ref: 'Tu sais pas jouer Jack, t\'es mauvais!',
@@ -156,7 +156,7 @@ export default [
   {
     id: 15,
     title: 'OSS 117 : Le Caire, nid d’espions',
-    show: 'Film',
+    category: 'Film',
     character: 'Colonel Gerhard Moeller',
     artist: 'Richard Sammel',
     ref: 'Tu te tais ou je te tais!',
@@ -167,7 +167,7 @@ export default [
   {
     id: 16,
     title: 'OSS 117 : Rio ne répond plus',
-    show: 'Film',
+    category: 'Film',
     character: 'Armand Lesignac',
     artist: 'Pierre Bellemare',
     ref: 'Pour rencontrer M.Lee, vaut mieux une bonne couverture.',
@@ -178,7 +178,7 @@ export default [
   {
     id: 17,
     title: '6 Underground',
-    show: 'Film',
+    category: 'Film',
     character: 'Numéro 1',
     artist: 'Ryan Reynolds',
     ref: 'Vous pouvez reculer? Je sens le bout de votre membre.',

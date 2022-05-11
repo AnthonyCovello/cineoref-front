@@ -1,8 +1,15 @@
-.dropdown {
+.dropdownProfil {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  &:hover{
+    cursor: pointer;
+  }
 
   &-content{
+    top: 30px;
     text-align: center;
     position: absolute;
     min-width: 160px;
@@ -19,6 +26,13 @@
   // &:hover .dropdown-content{
   //   display: block;
   // }
+}
+
+.header-logged_profil{
+  font-size: 1.5rem;
+}
+.header-logged_logo {
+  font-size: 2rem;
 }
 
 .content-btn{
