@@ -13,6 +13,7 @@ import './styles.scss';
 function Profile() {
   const dispatch = useDispatch();
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownProfile);
+  const user = useSelector(({ auth }) => auth.user.pseudo);
   // open profile menue
   const toggleDropdown = () => {
     dispatch(setProfileDropdown());
@@ -22,10 +23,13 @@ function Profile() {
     dispatch(logout());
   };
   return (
-    <div className="dropdown">
+    <div
+      className="dropdown"
+      onClick={toggleDropdown}
+    >
+      <span className="header-logged_profil">{user}</span>
       <CgProfile
-        className="header-logged_profil"
-        onClick={toggleDropdown}
+        className="header-logged_logo"
       />
       {isOpen && (
         <div className="dropdown-content">
