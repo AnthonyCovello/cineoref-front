@@ -1,0 +1,31 @@
+.bottom-to-top{
+  position: relative;
+}
+.icon-position-style{
+  position: fixed;
+  bottom: 40px;
+  right: 25px;
+  z-index: 20;
+  background-color: #FF7A20;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all .5s ease-in-out;
+
+  &:hover{
+  animation: none;
+  background: #fff;
+  color: #551B54;
+  border: 2px solid #551B54;
+}
+}
+
+@keyframes movebtn {
+  0%{transform: translateY(10px)}
+  50%{transform: translateY(-10px)}
+  100%{transform: translateY(10px)}
+}
