@@ -1,5 +1,5 @@
 // ? Import modules
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import {
@@ -13,8 +13,7 @@ import { clearMessage } from '../../../features/messageSlice';
 import './styles.scss';
 
 // ? Composant
-function Login(props) {
-  const [loading, setLoading] = useState(false);
+function Login() {
   const { message } = useSelector((state) => state.message);
   const islogged = useSelector(({ auth }) => auth.isLoggedIn);
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
@@ -42,11 +41,10 @@ function Login(props) {
 
   const handleLogin = (formValue) => {
     const { username, password } = formValue;
-    // setLoading(true);
     dispatch(login({ username, password }))
       .unwrap()
-      .catch(() => {
-        setLoading(false);
+      .catch((error) => {
+        console.log('Connexion échouée - ', error);
       });
     if (islogged) {
       toggleDropdown();
