@@ -35,6 +35,11 @@ function Login(props) {
     password: Yup.string().required('Mot de passe requis!'),
   });
 
+  // ouverture du menu de connexion
+  const toggleDropdown = () => {
+    dispatch(setLoginDropdown());
+  };
+
   const handleLogin = (formValue) => {
     const { username, password } = formValue;
     // setLoading(true);
@@ -44,13 +49,8 @@ function Login(props) {
         setLoading(false);
       });
     if (islogged) {
-      dispatch(setLoginDropdown());
+      toggleDropdown();
     }
-  };
-
-  // ouverture du menu de connexion
-  const toggleDropdown = () => {
-    dispatch(setLoginDropdown());
   };
 
   return (

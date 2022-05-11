@@ -1,5 +1,5 @@
 // ? Import modules
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CgProfile } from 'react-icons/cg';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,9 @@ import './styles.scss';
 // ? Composant
 function Profile() {
   const dispatch = useDispatch();
+  const islogged = useSelector(({ auth }) => auth.isLoggedIn);
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownProfile);
+
   // open profile menue
   const toggleDropdown = () => {
     dispatch(setProfileDropdown());
@@ -20,7 +22,9 @@ function Profile() {
 
   const handleLogout = () => {
     dispatch(logout());
+    toggleDropdown();
   };
+
   return (
     <div className="dropdown">
       <CgProfile
