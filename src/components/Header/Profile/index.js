@@ -14,6 +14,7 @@ function Profile() {
   const dispatch = useDispatch();
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownProfile);
   const user = useSelector(({ auth }) => auth.user.pseudo);
+  
   // open profile menue
   const toggleDropdown = () => {
     dispatch(setProfileDropdown());
@@ -21,7 +22,9 @@ function Profile() {
 
   const handleLogout = () => {
     dispatch(logout());
+    toggleDropdown();
   };
+
   return (
     <div
       className="dropdown"

@@ -1,5 +1,5 @@
 // ? Import modules
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import {
@@ -13,8 +13,7 @@ import { clearMessage } from '../../../features/messageSlice';
 import './styles.scss';
 
 // ? Composant
-function Login(props) {
-  const [loading, setLoading] = useState(false);
+function Login() {
   const { message } = useSelector((state) => state.message);
   const islogged = useSelector(({ auth }) => auth.isLoggedIn);
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
@@ -35,22 +34,21 @@ function Login(props) {
     password: Yup.string().required('Mot de passe requis!'),
   });
 
-  const handleLogin = (formValue) => {
-    const { username, password } = formValue;
-    // setLoading(true);
-    dispatch(login({ username, password }))
-      .unwrap()
-      .catch(() => {
-        setLoading(false);
-      });
-    if (islogged) {
-      dispatch(setLoginDropdown());
-    }
-  };
-
   // ouverture du menu de connexion
   const toggleDropdown = () => {
     dispatch(setLoginDropdown());
+  };
+
+  const handleLogin = (formValue) => {
+    const { username, password } = formValue;
+    dispatch(login({ username, password }))
+      .unwrap()
+      .catch((error) => {
+        console.log('Connexion échouée - ', error);
+      });
+    if (islogged) {
+      toggleDropdown();
+    }
   };
 
   return (
