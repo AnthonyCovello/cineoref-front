@@ -1,23 +1,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React from 'react';
-import { Link } from 'react-router-dom';
 // import { Routes, Route, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 // ? Import composants
-import Description from './Description';
-import RandomRef from './RandomRef';
-import SearchBarRef from './SearchBarRef';
-import TopContributor from './TopContributor';
-import TopNew from './TopNew';
+import SearchBarRef from '../Homepage/SearchBarRef';
 
 // ? Import style
 import './styles.scss';
+import '../../styles/index.scss';
 
 // ? Composant
-function Homepage() {
+function Lists() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
@@ -31,21 +27,15 @@ function Homepage() {
   };
   return (
     <div className="app">
-      <Description />
       <SearchBarRef />
-      <div className="line-random-top">
-        <RandomRef />
-        <TopContributor />
-      </div>
       <span
         className="addRefBtn"
         onClick={handleAddRef}
       > Ajouter une ref'
       </span>
-      <TopNew />
       <span className="backToTop">^</span>
     </div>
   );
 }
 
-export default React.memo(Homepage);
+export default React.memo(Lists);
