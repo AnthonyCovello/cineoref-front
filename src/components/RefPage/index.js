@@ -9,6 +9,7 @@ import './styles.scss';
 // ? Data fictives
 import listOfRefs from '../../assets/data';
 
+// ! Refaire la page avec Tailwind ! \\
 // ? Composant
 function RefPage() {
   const fakeRef = listOfRefs[16]; //* données fictives
