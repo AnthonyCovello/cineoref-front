@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
-import Select from 'react-select';
+// import Select from 'react-select';
 import {
   Formik, Field, Form, ErrorMessage,
 } from 'formik';
+import { proposal } from '../../features/proposalSlice';
 import { clearMessage } from '../../features/messageSlice';
 
 // ? Import style
@@ -26,11 +27,12 @@ function ProposalForm() {
 
   const initialValues = {
     title: '',
-    category: '',
+    category: '--choisissez un média--',
     character: '',
     artist: '',
-    ref: '',
+    reference: '',
   };
+
   // Todo: ErrorMessage à régler
   const validationSchema = Yup.object().shape({
     title: Yup.string(),
@@ -40,29 +42,32 @@ function ProposalForm() {
     ref: Yup.string(),
   });
 
-  const handleSubmit = (formValue) => {
+  const handleSubmit = (formValue, actions) => {
     const {
-      title, category, character, artist, ref,
+      title, category, character, artist, reference,
     } = formValue;
     setSuccessful(false);
-    dispatch({/*AsyncThunk à faire*/}({
-      title, category, character, artist, ref,
-    }))
+    dispatch(
+      proposal({
+        title, category, character, artist, reference,
+      }),
+    )
       .unwrap()
       .then(() => {
         setSuccessful(true);
         // afficher un message
+        actions.resetForm();
       })
       .catch(() => setSuccessful(false));
   };
 
   // options pour <Select />
-  const options = [
-    { value: 'film', label: 'Film' },
-    { value: 'serie', label: 'Série' },
-    { value: 'anime', label: 'Animé' },
-    { value: 'cartoon', label: 'Dessins animés' },
-  ];
+  // const options = [
+  //   { value: 'film', label: 'Film' },
+  //   { value: 'serie', label: 'Série' },
+  //   { value: 'anime', label: 'Animé' },
+  //   { value: 'cartoon', label: 'Dessins animés' },
+  // ];
 
   return (
     <>
@@ -91,7 +96,15 @@ function ProposalForm() {
           <label className="proposal-form-label" htmlFor="category">
             Média
           </label>
-          <Select className="selectInput" defaultValue={options[0].value} options={options} name="category" />
+          {/* <Select className="selectInput"
+          defaultValue={options[0].value} options={options} name="category" /> */}
+          <Field as="select" name="category" className="selectInput">
+            <option className="selectInput-options"> --choisissez un média-- </option>
+            <option className="selectInput-options" value="film">film</option>
+            <option className="selectInput-options" value="serie">serie</option>
+            <option className="selectInput-options" value="anime">anime</option>
+            <option className="selectInput-options" value="cartoon">cartoon</option>
+          </Field>
           <ErrorMessage
             name="category"
             component="div"
@@ -115,12 +128,12 @@ function ProposalForm() {
             component="div"
           // className="alert alert-danger"
           />
-          <label className="proposal-form-label" htmlFor="ref">
+          <label className="proposal-form-label" htmlFor="reference">
             Citation
           </label>
-          <Field as="textarea" className="input" name="ref" required />
+          <Field as="textarea" className="input" name="reference" required />
           <ErrorMessage
-            name="ref"
+            name="reference"
             component="div"
           // className="alert alert-danger"
           />
