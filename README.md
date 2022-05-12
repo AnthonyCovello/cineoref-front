@@ -15,6 +15,10 @@
 * [Webpack](https://webpack.js.org/)
 * [Babel](https://babeljs.io/)
 
+## Commande Tailwind
+
+```npx tailwindcss -i ./src/styles/globals.css -o ./public/output.css```
+
 ## Commande git
 
 ### **UNE BRANCHE === UNE FONCTIONNALITÉ**
