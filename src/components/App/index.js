@@ -29,7 +29,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Homepage />} />
-        <Route path="/profil" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/registration" element={<SignUp />} />
 
         {/* //* Test 1 */}
@@ -41,7 +41,7 @@ function App() {
         /> */}
 
         <Route path="/ref" element={<RefPage />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<h1>Error</h1>} />
 
       </Routes>
 
