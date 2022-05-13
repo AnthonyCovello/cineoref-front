@@ -19,7 +19,7 @@ function Profile() {
   // Todo: mettre en place Formik + executer modifyForm au submit
 
   return (
-    <div className="profile mx-auto mt-20 p-12 flex flex-wrap justify-around rounded-3xl text-white">
+    <div className="profile mx-auto mt-20 p-12 flex flex-wrap justify-around rounded-3xl">
       <section className="flex flex-col items-center w-2/5 container text-center">
         <img className="avatar h-60 w-60 my-6 rounded-full" src={image} alt="Photo de profil" />
         <p className="profile-bar">Anti-héro</p>

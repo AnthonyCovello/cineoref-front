@@ -23,7 +23,7 @@ function App() {
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
 
   return (
-    <div className="app m-0 tracking-[2px]">
+    <div className="app m-0 tracking-[1.5px]">
       <Header />
 
       <Routes>
