@@ -11,7 +11,7 @@ import '../../../styles/index.scss';
 // const cleanRefs = listOfRefs.filter((data) => data.status === true && data.mature === false);
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-function LetterList() {
+function AnchorListPage() {
   return (
     <div classNeme="ScrollToElement">
       {letters.map((letter) => (
@@ -21,4 +21,4 @@ function LetterList() {
   );
 }
 
-export default React.memo(LetterList);
+export default React.memo(AnchorListPage);

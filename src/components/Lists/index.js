@@ -8,7 +8,8 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 // ? Import composants
 import SearchBarRef from '../Homepage/SearchBarRef';
-import LetterList from './scrollToElement/index';
+import AnchorListMenu from './anchorlistmenu/index';
+import ScrollToTop from './scrolltotop/index';
 // ? Import style
 import '../../styles/index.scss';
 
@@ -27,15 +28,14 @@ function Lists() {
   };
   return (
     <div className="app">
+      <AnchorListMenu />
       <SearchBarRef />
       <span
         className="addRefBtn"
         onClick={handleAddRef}
       > Ajouter une ref'
       </span>
-      <span className="backToTop">^</span>
-      {/* faire un tableau a-z avec anchorlink */}
-      <LetterList />
+
       {/* faire un tableau a-z avec les divs */}
       <div className="bg-white mg-50 py-7" id="A">
         <span>A</span>
@@ -58,6 +58,7 @@ function Lists() {
       <div className="bg-white mg-500" id="C">
         <span>C</span>
       </div>
+      <ScrollToTop />
     </div>
   );
 }
