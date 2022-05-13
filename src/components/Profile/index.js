@@ -44,6 +44,26 @@ function Profile() {
           <button type="submit">Sauvegarder</button>
         </div>
       </form>
+      <section className="profile-contributions">
+        <h2 className="profile-contributions-title">Mes contributions</h2>
+        {/* //Todo: mapper les contributions d'un user */}
+        <div className="profile-contributions-item">
+          <p>Titre de l'oeuvre : 6 Underground</p>
+          <p>Média : Film</p>
+          <p>Personnage : Numéro 1</p>
+          <p>Artiste : Ryan Reynolds</p>
+          <p>Partagé le : 02/05/2022</p>
+          <p>Citation : Vous pouvez reculer? Je sens le bout de votre membre.</p>
+        </div>
+        <div className="profile-contributions-item">
+          <p>Titre de l'oeuvre : OSS 117 : Rio ne répond plus</p>
+          <p>Média : Film</p>
+          <p>Personnage : Armand Lesignac</p>
+          <p>Artiste : Pierre Bellemare</p>
+          <p>Partagé le : 15/04/2022</p>
+          <p>Citation : Pour rencontrer M. Lee, vaut mieux une bonne couverture.</p>
+        </div>
+      </section>
     </div>
   );
 }
