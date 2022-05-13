@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import { Routes, Route, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginDropdown } from '../../features/dropDownSlice';
+
 // ? Import composants
 import Description from './Description';
 import RandomRef from './RandomRef';
@@ -22,6 +21,7 @@ function Homepage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
+  
   const handleAddRef = () => {
     if (isLogged) {
       navigate('/proposal');
@@ -30,6 +30,7 @@ function Homepage() {
       dispatch(setLoginDropdown());
     }
   };
+
   return (
     <div className="app">
       <Description />

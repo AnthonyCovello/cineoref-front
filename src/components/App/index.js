@@ -10,7 +10,7 @@ import Footer from '../Footer';
 import Homepage from '../Homepage';
 import SignUp from '../SignUp';
 import ProposalForm from '../ProposalForm';
-import Lists from '../Lists';
+import RefPage from '../RefPage';
 
 // ? Import style
 import './styles.scss';
@@ -27,7 +27,7 @@ function App() {
         <Route path="/login" element={{/* Login */}} />
         <Route path="/registration" element={<SignUp />} />
         <Route path="/proposal" element={<ProposalForm />} />
-        <Route path="/lists" element={<Lists />} />
+        <Route path="/ref" element={<RefPage />} />
         {/* <Route path="*" element={<NotFound />} /> */}
 
       </Routes>
