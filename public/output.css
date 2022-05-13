@@ -472,23 +472,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: visible;
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+.overflow-hidden {
+  overflow: hidden;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+.text-ellipsis {
+  text-overflow: ellipsis;
 }
 
 .filter {
