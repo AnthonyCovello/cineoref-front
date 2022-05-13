@@ -6,7 +6,7 @@ import { FcFilmReel } from 'react-icons/fc';
 
 // ? Import component
 import Login from './Login';
-import Profile from './Profile';
+import UserMenu from './UserMenu';
 
 // ? Import style
 import './styles.scss';
@@ -39,7 +39,7 @@ function Header() {
       )}
       {islogged && (
         <div className="header-logged">
-          <Profile />
+          <UserMenu />
         </div>
       )}
     </header>
