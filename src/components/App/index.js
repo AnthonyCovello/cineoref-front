@@ -9,6 +9,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Homepage from '../Homepage';
 import SignUp from '../SignUp';
+import Profile from '../Profile';
 import ProposalForm from '../ProposalForm';
 import RefPage from '../RefPage';
 //* Test
@@ -28,7 +29,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Homepage />} />
-        <Route path="/profil" element={{/* profil */}} />
+        <Route path="/profil" element={<Profile />} />
         <Route path="/registration" element={<SignUp />} />
 
         {/* //* Test 1 */}
