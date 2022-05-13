@@ -1,6 +1,8 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTablist } from '../../../features/topNewSlice';
+import { setNewRefData } from '../../../features/refSlice';
 
 // ? Import style
 import './styles.scss';
@@ -10,12 +12,20 @@ import listOfRefs from '../../../assets/data';
 
 const cleanRefs = listOfRefs.filter((data) => data.status === true && data.mature === false);
 
-const newests = ['blibli1', 'blibli2', 'blibli3', 'bliblicar', 'blibli5'];
-
 // ? Composant
 function HomeList() {
   const tabList = useSelector(({ topNew }) => topNew.tabList);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get('https://cinoref-api.herokuapp.com/mostrecent')
+      .then((res) => {
+        dispatch(setNewRefData(res.data));
+        console.log(res);
+      });
+  }, []);
+  const newRef = useSelector(({ ref }) => ref.newRef);
 
   return (
     <div className="citation">
@@ -46,15 +56,15 @@ function HomeList() {
           {tabList === 'topRated'
             ? cleanRefs.map((data, index) => (
               index < 5 && (
-              <li key={data.id} className="refList-item">
-                <p>{data.ref}</p>
-                <p>{data.character}</p>
-              </li>
+                <li key={data.id} className="refList-item">
+                  <p>{data.ref}</p>
+                  <p>{data.character}</p>
+                </li>
               )))
-            : newests.map((ref) => (
-              <li key={ref} className="refList-item">
-                <p>{ref}</p>
-                <p>Personnage</p>
+            : newRef.map((ref) => (
+              <li key={ref.ref} className="refList-item">
+                <p>{ref.ref}</p>
+                <p>{ref.character}</p>
               </li>
             ))}
         </ul>
