@@ -14,10 +14,12 @@
 * [ESLint](https://eslint.org/)
 * [Webpack](https://webpack.js.org/)
 * [Babel](https://babeljs.io/)
+* [tailwind](https://tailwindcss.com/)
+* [React Anchor Link Smooth Scroll](https://github.com/mauricevancooten/react-anchor-link-smooth-scroll#readme)
 
 ## Commande Tailwind
 
-```npx tailwindcss -i ./src/styles/globals.css -o ./public/output.css```
+```yarn build-css```
 
 ## Commande git
 
