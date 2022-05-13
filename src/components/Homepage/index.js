@@ -21,7 +21,7 @@ function Homepage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
-  
+
   const handleAddRef = () => {
     if (isLogged) {
       navigate('/proposal');

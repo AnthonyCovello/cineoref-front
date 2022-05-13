@@ -6,7 +6,8 @@
     "lint": "eslint ./src/** --no-error-on-unmatched-pattern",
     "lint:fix": "eslint --fix ./src/** --no-error-on-unmatched-pattern",
     "clean": "rm -rf dist",
-    "clean:all": "rm -rf dist node_modules yarn.lock package-lock.json"
+    "clean:all": "rm -rf dist node_modules yarn.lock package-lock.json",
+    "build-css": "tailwindcss -i ./src/styles/index.css -o ./public/output.css --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.17.7",
@@ -34,7 +35,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.13",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.4.2",
     "resolve-url-loader": "^5.0.0",
@@ -49,6 +50,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
+    "autoprefixer": "^10.4.7",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
     "prop-types": "^15.8.1",
