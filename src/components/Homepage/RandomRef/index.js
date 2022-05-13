@@ -3,7 +3,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import randomDice from '../../../assets/randomDice.png';
-import findRandomRef from '../../../utlis';
 import { setRandomRefData } from '../../../features/randomRefSlice';
 
 // ? Import style
