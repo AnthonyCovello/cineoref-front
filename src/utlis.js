@@ -12,5 +12,5 @@ export default findRandomRef;
 
 // ? Titre de l'onglet
 export function changeTabTitle(title) {
-  useEffect(() => document.title += ` - ${title}`);
+  useEffect(() => document.title = `CinéO'Ref - ${title}`);
 }

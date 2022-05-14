@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginDropdown } from '../../features/dropDownSlice';
+import { changeTabTitle } from '../../utlis';
 
 // ? Import composants
 import Description from './Description';
@@ -14,7 +15,6 @@ import TopNew from './TopNew';
 
 // ? Import style
 import './styles.scss';
-import { changeTabTitle } from '../../utlis';
 
 // ? Composant
 function Homepage() {

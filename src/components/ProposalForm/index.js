@@ -10,12 +10,15 @@ import {
 } from 'formik';
 import { proposal } from '../../features/proposalSlice';
 import { clearMessage } from '../../features/messageSlice';
+import { changeTabTitle } from '../../utlis';
 
 // ? Import style
 import './styles.scss';
 
 // ? Composant
 function ProposalForm() {
+  changeTabTitle('Proposition de citation');
+
   const dispatch = useDispatch();
   const [successful, setSuccessful] = useState(false);
   const { message } = useSelector((state) => state.message);

@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React, { useState } from 'react';
+import { changeTabTitle } from '../../utlis';
 
 // ? Import style
 import './styles.scss';
@@ -11,6 +12,8 @@ const image = 'https://imgsrc.cineserie.com/2019/10/deadpool-quand-ryan-reynolds
 
 // ? Composant
 function Profile() {
+  changeTabTitle('Mon profil');
+
   const [isDisable, setisDisable] = useState(true);
   const enable = !isDisable ? 'enable' : '';
 
