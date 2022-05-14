@@ -10,12 +10,15 @@ import {
 } from 'formik';
 import { register } from '../../features/authSlice';
 import { clearMessage } from '../../features/messageSlice';
+import { changeTabTitle } from '../../utlis';
 
 // ? Import style
 import './styles.scss';
 
 // ? Composant
 function SignUp() {
+  changeTabTitle('Inscription');
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [successful, setSuccessful] = useState(false);

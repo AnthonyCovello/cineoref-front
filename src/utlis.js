@@ -1,3 +1,6 @@
+/* eslint-disable no-return-assign */
+import { useEffect } from 'react';
+
 // ? Data fictives
 import listOfRefs from './assets/data';
 
@@ -6,3 +9,8 @@ function findRandomRef() {
 }
 
 export default findRandomRef;
+
+// ? Titre de l'onglet
+export function changeTabTitle(title) {
+  useEffect(() => document.title = `CinéO'Ref - ${title}`);
+}
