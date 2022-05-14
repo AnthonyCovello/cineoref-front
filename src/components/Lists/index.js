@@ -6,10 +6,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { setLoginDropdown } from '../../features/dropDownSlice';
+
 // ? Import composants
 import SearchBarRef from '../Homepage/SearchBarRef';
-import AnchorListMenu from './anchorlistmenu/index';
-import ScrollToTop from './scrolltotop/index';
+import AnchorListMenu from './anchorlistmenu';
+
 // ? Import style
 import '../../styles/index.scss';
 
@@ -18,6 +19,7 @@ function Lists() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
+
   const handleAddRef = () => {
     if (isLogged) {
       navigate('/proposal');
@@ -26,6 +28,7 @@ function Lists() {
       dispatch(setLoginDropdown());
     }
   };
+
   return (
     <div className="app">
       <AnchorListMenu />
@@ -58,7 +61,6 @@ function Lists() {
       <div className="bg-white mg-500" id="C">
         <span>C</span>
       </div>
-      <ScrollToTop />
     </div>
   );
 }

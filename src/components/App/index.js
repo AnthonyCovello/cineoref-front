@@ -12,6 +12,7 @@ import SignUp from '../SignUp';
 import Profile from '../Profile';
 import ProposalForm from '../ProposalForm';
 import RefPage from '../RefPage';
+import ScrollToTop from '../ScrollToTop';
 //* Test
 import Protected from '../Protected';
 
@@ -45,6 +46,7 @@ function App() {
 
       </Routes>
 
+      <ScrollToTop />
       <Footer />
     </div>
   );

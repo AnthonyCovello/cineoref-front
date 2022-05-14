@@ -11,7 +11,6 @@ import RandomRef from './RandomRef';
 import SearchBarRef from './SearchBarRef';
 import TopContributor from './TopContributor';
 import TopNew from './TopNew';
-import ScrollToTop from '../Lists/scrolltotop';
 
 // ? Import style
 import './styles.scss';
@@ -45,7 +44,6 @@ function Homepage() {
       > Ajouter une ref'
       </span>
       <TopNew />
-      <ScrollToTop />
     </div>
   );
 }
