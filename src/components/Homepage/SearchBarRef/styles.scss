@@ -1,8 +1,7 @@
 .searchForm {
   text-align: center;
-  color: white;
   margin: 50px auto;
-  font-size: 30px;
+  font-size: 1.9rem;
   display: flex;
   flex-direction: column;
   max-width: min-content;
@@ -23,9 +22,8 @@
   border-radius: 10px;
   padding: 10px;
   background-color: #30367b;
-  color: white;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 10px;
   border-top-color: #212121;
   border-right-color: #767676;
@@ -40,7 +38,6 @@
 
   &::placeholder {
     text-align: center;
-    font-size: 16px;
     color: rgb(180, 180, 180);
   }
 

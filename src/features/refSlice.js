@@ -4,6 +4,7 @@ const initialState = {
   randomRef: {},
   newRef: {},
 };
+
 export const refSlice = createSlice({
   name: 'ref',
   initialState,
@@ -11,7 +12,6 @@ export const refSlice = createSlice({
     setRandomRefData: (state, { payload }) => {
       state.randomRef = payload;
     },
-
     setNewRefData: (state, { payload }) => {
       state.newRef = payload;
     },

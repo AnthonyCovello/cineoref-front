@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
-// import Select from 'react-select';
 import {
   Formik, Field, Form, ErrorMessage,
 } from 'formik';
@@ -27,7 +26,7 @@ function ProposalForm() {
 
   const initialValues = {
     title: '',
-    category: '--choisissez un média--',
+    category: '--Choisissez un média--',
     character: '',
     artist: '',
     reference: '',
@@ -55,19 +54,11 @@ function ProposalForm() {
       .unwrap()
       .then(() => {
         setSuccessful(true);
-        // afficher un message
+        // Todo: afficher un message
         actions.resetForm();
       })
       .catch(() => setSuccessful(false));
   };
-
-  // options pour <Select />
-  // const options = [
-  //   { value: 'film', label: 'Film' },
-  //   { value: 'serie', label: 'Série' },
-  //   { value: 'anime', label: 'Animé' },
-  //   { value: 'cartoon', label: 'Dessins animés' },
-  // ];
 
   return (
     <>
@@ -96,14 +87,12 @@ function ProposalForm() {
           <label className="proposal-form-label" htmlFor="category">
             Média
           </label>
-          {/* <Select className="selectInput"
-          defaultValue={options[0].value} options={options} name="category" /> */}
           <Field as="select" name="category" className="selectInput">
-            <option className="selectInput-options"> --choisissez un média-- </option>
-            <option className="selectInput-options" value="film">film</option>
-            <option className="selectInput-options" value="serie">serie</option>
-            <option className="selectInput-options" value="anime">anime</option>
-            <option className="selectInput-options" value="cartoon">cartoon</option>
+            <option className="selectInput-options"> --Choisissez un média-- </option>
+            <option className="selectInput-options" value="film">Film</option>
+            <option className="selectInput-options" value="serie">Série</option>
+            <option className="selectInput-options" value="anime">Animé</option>
+            <option className="selectInput-options" value="cartoon">Dessins animés</option>
           </Field>
           <ErrorMessage
             name="category"

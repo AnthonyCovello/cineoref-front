@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 // ? Import style
 import './styles.scss';
 
+// ? Image test
 const image = 'https://imgsrc.cineserie.com/2019/10/deadpool-quand-ryan-reynolds-rend-fou-son-equipe-de-maquillage.jpg?ver=1';
 
 // ? Composant

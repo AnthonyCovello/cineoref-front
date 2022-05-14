@@ -1,6 +1,6 @@
 // ? Import modules
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import randomDice from '../../../assets/randomDice.png';
 import { setRandomRefData } from '../../../features/refSlice';
@@ -11,6 +11,8 @@ import './styles.scss';
 // ? Composant
 function RandomRef() {
   const dispatch = useDispatch();
+  const randomRefData = useSelector(({ ref }) => ref.randomRef);
+
   const randomRefApi = () => {
     axios
       .get('https://cinoref-api.herokuapp.com/random')
@@ -18,14 +20,14 @@ function RandomRef() {
         dispatch(setRandomRefData(res.data));
       });
   };
+
   const getNewRandomRef = () => {
     randomRefApi();
   };
+
   useEffect(() => {
     randomRefApi();
   }, []);
-
-  const randomRefData = useSelector(({ ref }) => ref.randomRef);
 
   return (
     <div className="randomRef">

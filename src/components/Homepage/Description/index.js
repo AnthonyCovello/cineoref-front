@@ -1,8 +1,10 @@
+// ? Import modules
 import React from 'react';
+
 // ? Import style
 import './styles.scss';
-// ? Composant
 
+// ? Composant
 function Description() {
   return (
     <div className="description">

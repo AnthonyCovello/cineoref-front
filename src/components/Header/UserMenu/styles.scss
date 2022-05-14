@@ -4,6 +4,7 @@
   align-items: center;
   gap: 0.5rem;
   color: white;
+
   &:hover{
     cursor: pointer;
   }
@@ -22,15 +23,12 @@
     background-image: linear-gradient(135deg,#30367b, rgba(48,54,123,0));
     background-color: rgba(28, 31, 54, 0.85);
   }
-
-  // &:hover .dropdown-content{
-  //   display: block;
-  // }
 }
 
 .header-logged_profil{
   font-size: 1.5rem;
 }
+
 .header-logged_logo {
   font-size: 2rem;
 }
@@ -42,11 +40,11 @@
   display: inline-block;
   cursor: pointer;
   font-weight: bold;
-    &:hover {
-      transition: transform 0.3s ease;
-      transform: scale(1.2);
-      color: #FF7A20;
-      text-shadow: 0px 0px 15px #FF7A20;
-    }
-}
 
+  &:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+    color: #FF7A20;
+    text-shadow: 0px 0px 15px #FF7A20;
+  }
+}

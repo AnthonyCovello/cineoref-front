@@ -38,10 +38,8 @@ function Homepage() {
         <RandomRef />
         <TopContributor />
       </div>
-      <span
-        className="addRefBtn"
-        onClick={handleAddRef}
-      > Ajouter une ref'
+      <span className="addRefBtn" onClick={handleAddRef}>
+        Ajouter une ref'
       </span>
       <TopNew />
     </div>

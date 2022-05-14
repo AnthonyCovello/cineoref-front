@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+// ? Import modules
 import React from 'react';
+
 // ? Import style
 import './styles.scss';
-// ? Composant
 
+// ? Composant
 function SearchBarRef() {
   return (
     <form className="searchForm">

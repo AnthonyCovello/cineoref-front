@@ -26,23 +26,16 @@ function UserMenu() {
   };
 
   return (
-    <div
-      className="dropdownProfil"
-      onClick={toggleDropdown}
-    >
+    <div className="dropdownProfil" onClick={toggleDropdown}>
       <span className="header-logged_profil">{user}</span>
-      <CgProfile
-        className="header-logged_logo"
-      />
+      <CgProfile className="header-logged_logo" />
       {isOpen && (
         <div className="dropdownProfil-content">
           <Link className="content-btn" to="/profile"> Profil </Link>
           <Link className="content-btn" to="/proposal"> Ajouter une ref' </Link>
           <Link className="content-btn" to="/bookmarks"> Favoris </Link>
-          <span
-            className="content-btn"
-            onClick={handleLogout}
-          > Déconnexion
+          <span className="content-btn" onClick={handleLogout}>
+            Déconnexion
           </span>
         </div>
       )}

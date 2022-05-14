@@ -9,10 +9,7 @@ import { setLoginDropdown } from '../../features/dropDownSlice';
 
 // ? Import composants
 import SearchBarRef from '../Homepage/SearchBarRef';
-import AnchorListMenu from './anchorlistmenu';
-
-// ? Import style
-import '../../styles/index.scss';
+import AnchorListMenu from './AnchorListMenu';
 
 // ? Composant
 function Lists() {
@@ -33,10 +30,8 @@ function Lists() {
     <div className="app">
       <AnchorListMenu />
       <SearchBarRef />
-      <span
-        className="addRefBtn"
-        onClick={handleAddRef}
-      > Ajouter une ref'
+      <span className="addRefBtn" onClick={handleAddRef}>
+        Ajouter une ref'
       </span>
 
       {/* faire un tableau a-z avec les divs */}

@@ -17,9 +17,10 @@ import './styles.scss';
 // ? Composant
 function SignUp() {
   const dispatch = useDispatch();
-  const [successful, setSuccessful] = useState(false);
   const navigate = useNavigate();
+  const [successful, setSuccessful] = useState(false);
   const { message } = useSelector((state) => state.message);
+
   useEffect(() => {
     dispatch(clearMessage());
   }, [dispatch]);
@@ -52,6 +53,7 @@ function SignUp() {
       .min(new Date(1900, 0, 1), 'Ça m\'etonnerait que tu aies plus de 120 ans.')
       .max(new Date(Date.now()), 'Marty reviens du futur.'),
   });
+
   const handleRegister = (formValue) => {
     const {
       username, email, birthday, password,
@@ -87,10 +89,7 @@ function SignUp() {
             <label className="signUp-form-label" htmlFor="username">
               Pseudo
             </label>
-            <Field
-              type="text"
-              name="username"
-            />
+            <Field type="text" name="username" />
             <ErrorMessage
               name="username"
               component="div"
