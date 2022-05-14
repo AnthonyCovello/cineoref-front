@@ -2,11 +2,12 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import randomDice from '../../../assets/randomDice.png';
+import { HiClipboardCopy } from 'react-icons/hi';
 import { setRandomRefData } from '../../../features/refSlice';
 
 // ? Import style
 import './styles.scss';
+import randomDice from '../../../assets/randomDice.png';
 
 // ? Composant
 function RandomRef() {
@@ -36,7 +37,7 @@ function RandomRef() {
       </span>
       <p className="randomRef-text">{randomRefData.ref}</p>
       <span className="ml-8 mt-6 text-[1.30rem]">{randomRefData.character}</span>
-      <span className="self-end cursor-pointer text-porange" title="Copier le texte">cc</span>
+      <HiClipboardCopy className="self-end cursor-pointer text-porange" title="Copier le texte" />
     </div>
   );
 }
