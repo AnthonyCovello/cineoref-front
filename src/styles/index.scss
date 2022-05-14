@@ -13,9 +13,9 @@ body {
 
 // ? empêche le footer d'aller plus haut que le bas de l'écran
 .app {
-  margin: 0;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
   align-items: end;
+  color: white;
 }

@@ -10,7 +10,7 @@ import { logout } from '../../../features/authSlice';
 import './styles.scss';
 
 // ? Composant
-function Profile() {
+function UserMenu() {
   const dispatch = useDispatch();
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownProfile);
   const user = useSelector(({ auth }) => auth.user.pseudo);
@@ -50,4 +50,4 @@ function Profile() {
   );
 }
 
-export default React.memo(Profile);
+export default React.memo(UserMenu);
