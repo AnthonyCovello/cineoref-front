@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
+    "@tippyjs/react": "^4.2.6",
     "autoprefixer": "^10.4.7",
     "axios": "^0.27.2",
     "clipboard": "^2.0.11",

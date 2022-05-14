@@ -614,6 +614,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
 }
 
+.bg-lblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 83 179 / var(--tw-bg-opacity));
+}
+
 .p-12 {
   padding: 3rem;
 }
