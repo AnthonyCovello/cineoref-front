@@ -2,11 +2,12 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import randomDice from '../../../assets/randomDice.png';
+import { HiClipboardCopy } from 'react-icons/hi';
 import { setRandomRefData } from '../../../features/refSlice';
 
 // ? Import style
 import './styles.scss';
+import randomDice from '../../../assets/randomDice.png';
 
 // ? Composant
 function RandomRef() {
@@ -21,22 +22,22 @@ function RandomRef() {
       });
   };
 
-  const getNewRandomRef = () => {
-    randomRefApi();
-  };
-
   useEffect(() => {
     randomRefApi();
   }, []);
 
+  const getNewRandomRef = () => {
+    randomRefApi();
+  };
+
   return (
-    <div className="randomRef">
-      <span type="button" className="randomRef-dice" onClick={getNewRandomRef}>
-        <img src={randomDice} title="Afficher une citation aléatoire" alt="dé à 20 faces" />
+    <div className="randomRef w-2/5 h-[17rem] rounded-3xl py-8 px-10 flex flex-col justify-between text-[1.25rem] font-medium cursor-context-menu">
+      <span type="button" className="self-end cursor-pointer" onClick={getNewRandomRef}>
+        <img src={randomDice} className="w-11 h-11" title="Afficher une citation aléatoire" alt="dé à 20 faces" />
       </span>
-      <p className="randomRef-text ">{randomRefData.ref}</p>
-      <span className="randomRef-author">{randomRefData.character}</span>
-      <span className="randomRef-cc" title="Copier le texte">cc</span>
+      <p className="randomRef-text">{randomRefData.ref}</p>
+      <span className="ml-8 mt-6 text-[1.30rem]">{randomRefData.character}</span>
+      <HiClipboardCopy className="self-end cursor-pointer text-porange" title="Copier le texte" />
     </div>
   );
 }
