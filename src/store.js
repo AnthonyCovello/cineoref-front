@@ -7,6 +7,7 @@ import messageReducer from './features/messageSlice';
 import refReducer from './features/refSlice';
 import topContributorsReducer from './features/topContributorsSlice';
 
+// ? Reducer
 const reducer = {
   dropdown: dropdownReducer,
   topNew: topNewReducer,

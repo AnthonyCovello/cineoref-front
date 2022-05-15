@@ -15,6 +15,8 @@
 * [Webpack](https://webpack.js.org/)
 * [Babel](https://babeljs.io/)
 * [tailwind](https://tailwindcss.com/)
+* [clipboard.js](https://clipboardjs.com/#example-target)
+* [tippy.js](https://github.com/atomiks/tippyjs-react#tippyjs-for-react)
 * [React Anchor Link Smooth Scroll](https://github.com/mauricevancooten/react-anchor-link-smooth-scroll#readme)
 
 ## Commande Tailwind

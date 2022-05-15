@@ -12,6 +12,7 @@ import SignUp from '../SignUp';
 import Profile from '../Profile';
 import ProposalForm from '../ProposalForm';
 import RefPage from '../RefPage';
+import ScrollToTop from '../ScrollToTop';
 //* Test
 import Protected from '../Protected';
 
@@ -23,7 +24,7 @@ function App() {
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
 
   return (
-    <div className="app">
+    <div className="app m-0 tracking-[1.5px]">
       <Header />
 
       <Routes>
@@ -45,6 +46,7 @@ function App() {
 
       </Routes>
 
+      <ScrollToTop />
       <Footer />
     </div>
   );

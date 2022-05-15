@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginDropdown } from '../../features/dropDownSlice';
+import { changeTabTitle } from '../../utlis';
 
 // ? Import composants
 import Description from './Description';
@@ -20,6 +21,8 @@ import { setTopContributorsData } from '../../features/topContributorsSlice';
 import './styles.scss';
 // ? Composant
 function Homepage() {
+  changeTabTitle('Acceuil');
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
@@ -59,13 +62,10 @@ function Homepage() {
         <RandomRef />
         <TopContributor />
       </div>
-      <span
-        className="addRefBtn"
-        onClick={handleAddRef}
-      > Ajouter une ref'
+      <span className="addRefBtn" onClick={handleAddRef}>
+        Ajouter une ref'
       </span>
       <TopNew />
-      <ScrollToTop />
     </div>
   );
 }

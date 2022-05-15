@@ -12,7 +12,6 @@ export const loginSlice = createSlice({
     setLoginDropdown: (state) => {
       state.dropdownLogin = !state.dropdownLogin;
     },
-
     setProfileDropdown: (state) => {
       state.dropdownProfile = !state.dropdownProfile;
     },

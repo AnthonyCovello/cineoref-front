@@ -1,3 +1,4 @@
+// ? Import modules
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,8 +15,9 @@ const cleanRefs = listOfRefs.filter((data) => data.status === true && data.matur
 
 // ? Composant
 function HomeList() {
-  const tabList = useSelector(({ topNew }) => topNew.tabList);
   const dispatch = useDispatch();
+  const tabList = useSelector(({ topNew }) => topNew.tabList);
+  const newRef = useSelector(({ ref }) => ref.newRef);
 
   useEffect(() => {
     axios
@@ -24,7 +26,6 @@ function HomeList() {
         dispatch(setNewRefData(res.data));
       });
   }, []);
-  const newRef = useSelector(({ ref }) => ref.newRef);
 
   return (
     <div className="citation">

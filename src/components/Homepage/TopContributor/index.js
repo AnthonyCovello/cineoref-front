@@ -1,3 +1,4 @@
+// ? Import modules
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -10,7 +11,7 @@ function TopContributor() {
 
   return (
     <div className="contributors">
-      <h2 className="contributors-title">Top contributeur</h2>
+      <h2 className="contributors-title">Top contributeurs</h2>
       <ul>
         {contributorsData.map((contributor, index) => (
           <li className="contributors-items" key={contributor.username}>

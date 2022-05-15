@@ -1,72 +1,58 @@
 .profile {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 80px;
-  color: white;
-  padding: 50px;
-  border: 1px solid black;
-  border-radius: 20px;
-  letter-spacing: 1px;
+  border: 1px solid #07142b;
 
   //? dégradé
-  background-image: linear-gradient(135deg,#30367b, rgba(48,54,123,0));
-  
-  //? opacité
-  background-color: rgba(28, 31, 54, 0.85);
+  background-image: linear-gradient(135deg, rgb(20,51,109,0.9), rgb(8,17,34,0.9));
 
   //? effet 3D
   -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
   box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
 
-  &-infos{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .avatar {
+    border: 2px solid #1f53b3;
 
-    &-avatar {
-      font-size: 15rem;
-    }
+    //? effet 3D
+    -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+    box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+  }
 
-    &-gradeInfo {
-      font-size: 0.8em;
-      margin-top: 0.3rem;
-    }
-
-    &-bar {
-      width: 50%;
-      background-color: rgb(53, 53, 53);
-      padding: 0.5rem;
-      border: 4px double black;
-      border-radius: 5px;
-      margin-top: 0.5rem;
-    }
+  &-bar {
+    width: 50%;
+    color: #ff7a20;
+    background-color: #081122;
+    border: 4px double #1f53b3;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
   }
 
   &-form {
-    width: 40%;
-    border: 6px double #30367b;
-    border-radius: 5px;
-    padding: 2rem 3rem;
+    border: 6px double #1f53b3;
 
     &-group {
       display: flex;
       flex-direction: column;
 
       &-label {
-        background-image: linear-gradient(135deg,#30367b, rgba(48,54,123,0));
+        background-image: linear-gradient(90deg, #1f53b3, rgba(48,54,123,0));
         color: #ff7a20;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 1.3rem;
+        letter-spacing: 3px;
         margin-bottom: 1rem;
         padding: 0.5rem;
       }
 
+      .enable {
+        background-color: #1f53b3;
+      }
+
       input {
         background: none;
-        font-size: 18px;
+        font-size: 1.125rem;
         border-radius: 5px;
         margin-bottom: 1.5rem;
         padding: 0.3rem 0.5rem;
@@ -81,20 +67,13 @@
       }
     }
 
-    &-button {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    &-button>button {
+    button {
       background-color: #FF7A20;
-      color: #fff;
       padding: 0.4rem 0.8rem;
       border-radius: 5px;
       border: 0;
-      font-size: 20px;
       font-weight: bold;
-      letter-spacing: 1px;
+      font-size: 1.3rem;
   
       &:hover {
         text-shadow: 0px 10px 15px #fff;
@@ -105,38 +84,20 @@
   }
 
   &-contributions {
-    border: 6px double #30367b;
+    border: 6px double #1f53b3;
     border-radius: 5px;
-    padding: 1rem 2rem;
-    margin-top: 1.5rem;
 
     &-title {
-      background-image: linear-gradient(135deg,#30367b, rgba(48,54,123,0));
+      background-image: linear-gradient(135deg,#1f53b3, rgba(48,54,123,0));
       color: #ff7a20;
-      font-weight: bold;
-      font-size: 20px;
-      text-align: center;
-      padding: 0.5rem;
     }
 
     &-item {
-      border: 1px solid black;
+      border: 1px solid #07142b;
       border-radius: 10px;
-      padding: 1rem;
-      margin-top: 1rem;
-      font-size: 16px;
-      line-height: 1.5rem;
 
       //? dégradé
-      background-image: linear-gradient(135deg, rgba(48,54,123,0), #30367b);
-
-      //? opacité
-      background-color: rgba(28, 31, 54, 0.85);
-
-      //? effet 3D
-      -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-      -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-      box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+      background-image: linear-gradient(135deg, rgb(20,51,109,0.9), rgb(8,17,34,0.9));
 
       span {
         color: #ff7a20;
