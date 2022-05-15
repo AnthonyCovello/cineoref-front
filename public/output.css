@@ -510,12 +510,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
-}
-
 .ml-8 {
   margin-left: 2rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
 }
 
 .block {
@@ -528,10 +528,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-60 {
   height: 15rem;
-}
-
-.h-64 {
-  height: 16rem;
 }
 
 .h-\[17rem\] {
@@ -550,24 +546,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 15rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-11 {
   width: 2.75rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .flex-grow {
   flex-grow: 1;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .cursor-context-menu {
   cursor: context-menu;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-col {
@@ -598,10 +594,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   scroll-behavior: smooth;
 }
 
-.text-clip {
-  text-overflow: clip;
-}
-
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -612,11 +604,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .rounded {
   border-radius: 0.25rem;
-}
-
-.bg-lblue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 83 179 / var(--tw-bg-opacity));
 }
 
 .p-12 {
@@ -681,6 +668,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-\[1\.30rem\] {
   font-size: 1.30rem;
+}
+
+.text-\[1\.5rem\] {
+  font-size: 1.5rem;
 }
 
 .font-bold {

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 // ? Import modules
 import axios from 'axios';
 import React, { useEffect } from 'react';
@@ -14,10 +15,11 @@ import randomDice from '../../../assets/randomDice.png';
 
 // ? Composant
 function RandomRef() {
-  const clipboard = new ClipboardJS('.copy-btn');
   const dispatch = useDispatch();
   const randomRefData = useSelector(({ ref }) => ref.randomRef);
 
+  // config module pour copier le texte
+  const clipboard = new ClipboardJS('.copy-btn');
   clipboard.on('success', (e) => {
     e.clearSelection();
     console.info('Action:', e.action);
@@ -48,9 +50,9 @@ function RandomRef() {
       </span>
       <p className="randomRef-text">{randomRefData.ref}</p>
       <span className="ml-8 mt-6 text-[1.30rem]">{randomRefData.character}</span>
-      <Tippy content={<span className="bg-lblue">Tooltip</span>} trigger="click">
+      <Tippy placement="right" content="Copié !" trigger="click" arrow={false}>
         <span className="self-end cursor-pointer">
-          <HiClipboardCopy className="copy-btn text-porange" data-clipboard-target=".randomRef-text" title="Copier le texte" />
+          <HiClipboardCopy className="copy-btn text-porange text-[1.5rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
         </span>
       </Tippy>
     </div>
