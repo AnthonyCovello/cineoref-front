@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // ? Import modules
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HiClipboardCopy } from 'react-icons/hi';
 import ClipboardJS from 'clipboard';
@@ -25,6 +25,13 @@ function RandomRef() {
     console.info('Action:', e.action);
     console.info('Text:', e.text);
   });
+  const [isVisible, setIsVisible] = useState(null);
+  const handleClick = () => {
+    setIsVisible(true);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 300);
+  };
 
   const randomRefApi = () => {
     axios
@@ -50,8 +57,8 @@ function RandomRef() {
       </span>
       <p className="randomRef-text">{randomRefData.ref}</p>
       <span className="ml-8 mt-6 text-[1.30rem]">{randomRefData.character}</span>
-      <Tippy placement="right" content="Copié !" trigger="click" arrow={false}>
-        <span className="self-end cursor-pointer">
+      <Tippy placement="right" content="Copié !" visible={isVisible} arrow={false}>
+        <span className="self-end cursor-pointer" onClick={handleClick}>
           <HiClipboardCopy className="copy-btn text-porange text-[1.5rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
         </span>
       </Tippy>
