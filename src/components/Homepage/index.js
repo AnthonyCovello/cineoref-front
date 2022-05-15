@@ -13,7 +13,6 @@ import RandomRef from './RandomRef';
 import SearchBarRef from './SearchBarRef';
 import TopContributor from './TopContributor';
 import TopNew from './TopNew';
-import ScrollToTop from '../ScrollToTop';
 import { setNewRefData, setRandomRefData } from '../../features/refSlice';
 import { setTopContributorsData } from '../../features/topContributorsSlice';
 
@@ -56,7 +55,7 @@ function Homepage() {
 
   return (
     <div className="app">
-      <Description />
+      {/* <Description /> */}
       <SearchBarRef />
       <div className="line-random-top">
         <RandomRef />
