@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   randomRef: {},
-  newRef: {},
+  newRef: [],
 };
 export const refSlice = createSlice({
   name: 'ref',

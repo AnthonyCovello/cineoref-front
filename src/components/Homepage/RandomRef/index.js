@@ -1,6 +1,6 @@
 // ? Import modules
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import randomDice from '../../../assets/randomDice.png';
 import { setRandomRefData } from '../../../features/refSlice';
@@ -21,9 +21,6 @@ function RandomRef() {
   const getNewRandomRef = () => {
     randomRefApi();
   };
-  useEffect(() => {
-    randomRefApi();
-  }, []);
 
   const randomRefData = useSelector(({ ref }) => ref.randomRef);
 

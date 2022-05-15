@@ -25,7 +25,6 @@ function HomeList() {
       });
   }, []);
   const newRef = useSelector(({ ref }) => ref.newRef);
-  console.log(newRef);
 
   return (
     <div className="citation">
