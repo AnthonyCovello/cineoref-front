@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // ? Import modules
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HiClipboardCopy } from 'react-icons/hi';
 import ClipboardJS from 'clipboard';
