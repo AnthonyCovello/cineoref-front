@@ -59,7 +59,7 @@ function RandomRef() {
       <span className="ml-8 mt-6 text-[1.30rem]">{randomRefData.character}</span>
       <Tippy content="Copié !" visible={isVisible}>
         <span className="self-end cursor-pointer" onClick={handleClick}>
-          <HiClipboardCopy className="copy-btn text-porange text-[1.5rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
+          <HiClipboardCopy className="copy-btn text-porange text-[1.3rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
         </span>
       </Tippy>
     </div>
