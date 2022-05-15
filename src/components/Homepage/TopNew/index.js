@@ -24,7 +24,6 @@ function HomeList() {
       .get('https://cinoref-api.herokuapp.com/mostrecent')
       .then((res) => {
         dispatch(setNewRefData(res.data));
-        console.log(res);
       });
   }, []);
 

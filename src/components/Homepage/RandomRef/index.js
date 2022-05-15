@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // ? Import modules
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HiClipboardCopy } from 'react-icons/hi';
 import ClipboardJS from 'clipboard';
@@ -41,14 +41,14 @@ function RandomRef() {
       });
   };
 
+  const getNewRandomRef = () => {
+    randomRefApi();
+  };
+
   useEffect(() => {
     randomRefApi();
     clipboard.destroy();
   }, []);
-
-  const getNewRandomRef = () => {
-    randomRefApi();
-  };
 
   return (
     <div className="randomRef w-2/5 h-[17rem] rounded-3xl py-8 px-10 flex flex-col justify-between text-[1.25rem] font-medium cursor-context-menu">
