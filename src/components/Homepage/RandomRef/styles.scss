@@ -21,7 +21,8 @@
     transition: transform 0.3s ease;
     transform: scale(1.1);
   }
-  
+
+  // ? Animation de rotation du dé
   span>img:hover {
     animation: loading 3s linear infinite;
 
@@ -35,10 +36,11 @@
     }
   }
 
+  // ? Limite l'affichage du texte en vertical
   &-text{
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
-    overflow: hidden;
+    -webkit-line-clamp: 5; //* limite de lignes
+    overflow: hidden; //* cache le texte en trop
   }
 }

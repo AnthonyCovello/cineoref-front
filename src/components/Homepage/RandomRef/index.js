@@ -18,13 +18,13 @@ function RandomRef() {
   const dispatch = useDispatch();
   const randomRefData = useSelector(({ ref }) => ref.randomRef);
 
-  // config module pour copier le texte
+  //* config module pour copier le texte
   const clipboard = new ClipboardJS('.copy-btn');
   clipboard.on('success', (e) => {
     e.clearSelection();
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
   });
+
+  //* tooltip
   const [isVisible, setIsVisible] = useState(null);
   const handleClick = () => {
     setIsVisible(true);
