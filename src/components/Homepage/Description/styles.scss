@@ -1,21 +1,8 @@
 .description-text {
-  color: #ff7a20;
-  left: 25%;
-  right: 25%;
-  text-align: center;
-  font-size: 1.57rem;
-  font-weight: 500;
-  width: 40%;
-  margin: auto;
-  margin-top: 80px;
-  padding: 50px;
-  border-radius: 20px;
   text-shadow: 0 0 30px #ff7a20;
-  border: 1px solid black;
 
   //? opacité
-  background-image: linear-gradient(135deg,#30367b, rgba(48,54,123,0));
-  background-color: rgba(28, 31, 54, 0.85);
+  background-image: linear-gradient(135deg, rgb(48,54,123,0.9), rgba(28,31,54,0.9));
 
   //? effet 3D
   -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
@@ -25,6 +12,5 @@
   &:hover {
     transition: transform 0.3s ease;
     transform: scale(1.1);
-    // cursor: no-drop;
   }
 }

@@ -6,7 +6,7 @@ body {
   background-color: #1A1D29;
 
   // * Image en fond
-  background-image: url(../assets/dots-ge22c6630e_1920.jpg);
+  background-image: url(../assets/shining_star_in_space-wallpaper-1920x1200.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -18,4 +18,6 @@ body {
   grid-template-rows: auto 1fr auto;
   align-items: end;
   color: white;
+
+  backdrop-filter:brightness(200%); //* luminosité de l'arrière plan
 }
