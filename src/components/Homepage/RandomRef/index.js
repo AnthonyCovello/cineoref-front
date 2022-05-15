@@ -3,7 +3,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { HiClipboardCopy } from 'react-icons/hi';
+import { FaClosedCaptioning } from 'react-icons/fa';
 import ClipboardJS from 'clipboard';
 import Tippy from '@tippyjs/react';
 import { setRandomRefData } from '../../../features/refSlice';
@@ -59,7 +59,7 @@ function RandomRef() {
       <span className="ml-8 mt-6 text-[1.30rem]">{randomRefData.character}</span>
       <Tippy content="Copié !" visible={isVisible}>
         <span className="self-end cursor-pointer" onClick={handleClick}>
-          <HiClipboardCopy className="copy-btn text-porange text-[1.3rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
+          <FaClosedCaptioning className="copy-btn text-porange text-[1.3rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
         </span>
       </Tippy>
     </div>

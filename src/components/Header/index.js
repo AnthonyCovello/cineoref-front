@@ -13,16 +13,18 @@ import './styles.scss';
 
 // ? Composant
 function Header() {
-  const activeLink = ({ isActive }) => (isActive ? 'activeLink header-navbar-button' : 'header-navbar-button');
+  const activeLink = ({ isActive }) => (isActive ? 'activeLink header-button p-4' : 'header-button p-4');
   const islogged = useSelector(({ auth }) => auth.isLoggedIn);
 
   return (
-    <header className="header">
-      <Link to="/" title="Page d'accueil" className="header-brand">
-        <FcFilmReel className="header-brand-logo" />
-        <span className="header-brand-title">Ciné<span>O</span>'Ref</span>
+    <header className="header fixed top-0 z-10 w-full h-16 p-4 flex items-center justify-between">
+      <Link to="/" title="Page d'accueil" className="flex items-center">
+        <FcFilmReel className="mr-1.5 text-[2rem]" />
+        <span className="text-[1.7rem] font-bold text-center">
+          Ciné<span className="header-titleSpan">O</span>'Ref
+        </span>
       </Link>
-      <nav className="header-navbar">
+      <nav className="font-bold flex gap-6">
         <NavLink to="/films" className={activeLink}>Films</NavLink>
         <NavLink to="/series" className={activeLink}>Séries</NavLink>
         <NavLink to="/animes" className={activeLink}>Animés</NavLink>
@@ -34,7 +36,7 @@ function Header() {
       {!islogged && (
         <div className="header-connection">
           <Login />
-          <Link to="/registration" className="signUp_button">Inscription</Link>
+          <Link to="/registration" className="signUp_button ml-4 py-1 px-2 rounded font-bold cursor-pointer">Inscription</Link>
         </div>
       )}
       {islogged && (
