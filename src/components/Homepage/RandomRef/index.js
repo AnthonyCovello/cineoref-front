@@ -30,7 +30,7 @@ function RandomRef() {
     setIsVisible(true);
     setTimeout(() => {
       setIsVisible(false);
-    }, 300);
+    }, 500);
   };
 
   const randomRefApi = () => {
@@ -57,7 +57,7 @@ function RandomRef() {
       </span>
       <p className="randomRef-text">{randomRefData.ref}</p>
       <span className="ml-8 mt-6 text-[1.30rem]">{randomRefData.character}</span>
-      <Tippy placement="right" content="Copié !" visible={isVisible} arrow={false}>
+      <Tippy content="Copié !" visible={isVisible}>
         <span className="self-end cursor-pointer" onClick={handleClick}>
           <HiClipboardCopy className="copy-btn text-porange text-[1.5rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
         </span>
