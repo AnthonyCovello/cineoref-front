@@ -90,7 +90,7 @@ function ProposalForm() {
           <label className="proposal-form-label" htmlFor="category">
             Média
           </label>
-          <Field as="select" name="category" className="selectInput">
+          <Field as="select" name="category" className="input">
             <option className="selectInput-options"> --Choisissez un média-- </option>
             <option className="selectInput-options" value="film">Film</option>
             <option className="selectInput-options" value="serie">Série</option>
