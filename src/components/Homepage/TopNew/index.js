@@ -28,7 +28,7 @@ function HomeList() {
   }, []);
 
   return (
-    <div className="citation">
+    <div className="citation rounded-xl">
       <nav className="citation-nav">
         <div
           onClick={() => dispatch(setTablist('topRated'))}
@@ -56,13 +56,13 @@ function HomeList() {
           {tabList === 'topRated'
             ? cleanRefs.map((data, index) => (
               index < 5 && (
-                <li key={data.id} className="refList-item">
+                <li key={data.id} className="refList-item rounded">
                   <p>{data.ref}</p>
                   <p>{data.character}</p>
                 </li>
               )))
             : newRef.map((ref) => (
-              <li key={ref.ref} className="refList-item">
+              <li key={ref.ref} className="refList-item rounded">
                 <p>{ref.ref}</p>
                 <p>{ref.character}</p>
               </li>

@@ -51,7 +51,7 @@ function RandomRef() {
   }, []);
 
   return (
-    <div className="randomRef w-2/5 h-[17rem] rounded-3xl py-8 px-10 flex flex-col justify-between text-[1.25rem] font-medium cursor-context-menu">
+    <div className="randomRef w-2/5 h-[17rem] rounded-xl py-8 px-10 flex flex-col justify-between text-[1.25rem] font-medium cursor-context-menu">
       <span type="button" className="self-end cursor-pointer" onClick={getNewRandomRef}>
         <img src={randomDice} className="w-11 h-11" title="Afficher une citation aléatoire" alt="dé à 20 faces" />
       </span>

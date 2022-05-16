@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .bottom-to-top{
   position: relative;
 }
@@ -5,13 +7,13 @@
 .icon-position-style{
   width: 50px;
   height: 50px;
-  color: #fff;
+  color: white;
   position: fixed;
   bottom: 40px;
   right: 25px;
   z-index: 3;
-  background-color: #FF7A20;
-  border: 2px solid #fff;
+  background-color: vars.$orange;
+  border: 2px solid white;
   border-radius: 50%;
   cursor: pointer;
   animation: movebtn 3s ease-in-out infinite;
@@ -19,9 +21,9 @@
 
   &:hover{
     animation: none;
-    background: #fff;
-    color: #FF7A20;
-    border: 2px solid #FF7A20;
+    background: white;
+    color: vars.$orange;
+    border: 2px solid vars.$orange;
   }
 }
 
