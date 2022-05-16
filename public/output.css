@@ -708,11 +708,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.75rem;
 }
 
-.rounded-l {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
 .bg-\[\#F8D7DA\] {
   --tw-bg-opacity: 1;
   background-color: rgb(248 215 218 / var(--tw-bg-opacity));
