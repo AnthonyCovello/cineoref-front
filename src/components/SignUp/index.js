@@ -11,6 +11,7 @@ import {
 import { register } from '../../features/authSlice';
 import { clearMessage } from '../../features/messageSlice';
 import { changeTabTitle } from '../../utlis';
+import { setLoginDropdown } from '../../features/dropDownSlice';
 
 // ? Import style
 import './styles.scss';
@@ -23,10 +24,16 @@ function SignUp() {
   const navigate = useNavigate();
   const [successful, setSuccessful] = useState(false);
   const { message } = useSelector((state) => state.message);
+  const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
 
   useEffect(() => {
     dispatch(clearMessage());
   }, [dispatch]);
+
+  // * Ouverture du menu de connexion
+  const toggleDropdown = () => {
+    dispatch(setLoginDropdown());
+  };
 
   const initialValues = {
     username: '',
@@ -76,7 +83,10 @@ function SignUp() {
   };
 
   return (
-    <div>
+    <div onClick={() => {
+      if (isOpen === true) toggleDropdown();
+    }}
+    >
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
