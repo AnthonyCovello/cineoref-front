@@ -146,15 +146,14 @@ function SignUp() {
             En cliquant sur <strong>S'inscrire</strong>, vous confirmez avoir lu et accepté les <Link to="/cgu">Conditions d'utilisation</Link>.
           </p>
           <button className="signUp-form-button" type="submit">Valider</button>
+          {message ? (
+            <div className="p-4 mt-4 text-center rounded bg-[#F8D7DA] text-[#82212F]" role="alert">
+              {message}
+            </div>
+          )
+            : ''}
         </Form>
       </Formik>
-      {message && (
-        <div className="form-group-signup">
-          <div className="alert-signup alert-danger" role="alert">
-            {message}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
