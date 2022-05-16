@@ -33,7 +33,7 @@ function UserMenu() {
       <CgProfile className="header-logged_logo" />
       {isOpen && (
         <div className="dropdownProfil-content">
-          <Link className="content-btn" to={`/user/${user.user_id}/profile`}> Profil </Link>
+          <Link className="content-btn" to={`/user/${user.user_id}/my-profile`}> Profil </Link>
           <Link className="content-btn" to="/proposal"> Ajouter une ref' </Link>
           <Link className="content-btn" to="/bookmarks"> Favoris </Link>
           <span className="content-btn" onClick={handleLogout}>

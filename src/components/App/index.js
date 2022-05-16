@@ -28,6 +28,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Homepage />} />
+        <Route path="/user/:id/my-profile" element={<Profile />} />
         <Route path="/user/:id/profile" element={<Profile />} />
         <Route path="/registration" element={<SignUp />} />
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} />

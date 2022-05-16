@@ -41,10 +41,6 @@ function RandomRef() {
       });
   };
 
-  const getNewRandomRef = () => {
-    randomRefApi();
-  };
-
   useEffect(() => {
     randomRefApi();
     clipboard.destroy();
@@ -52,7 +48,7 @@ function RandomRef() {
 
   return (
     <div className="randomRef w-2/5 h-[17rem] rounded-xl py-8 px-10 flex flex-col justify-between text-[1.25rem] font-medium cursor-context-menu">
-      <span type="button" className="self-end cursor-pointer" onClick={getNewRandomRef}>
+      <span type="button" className="self-end cursor-pointer" onClick={randomRefApi}>
         <img src={randomDice} className="w-11 h-11" title="Afficher une citation aléatoire" alt="dé à 20 faces" />
       </span>
       <p className="randomRef-text">{randomRefData.ref}</p>
