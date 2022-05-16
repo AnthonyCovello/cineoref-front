@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { changeTabTitle } from '../../utlis';
 
 // ? Import style
@@ -14,6 +15,8 @@ const image = 'https://imgsrc.cineserie.com/2019/10/deadpool-quand-ryan-reynolds
 function Profile() {
   changeTabTitle('Mon profil');
 
+  const user = useSelector(({ auth }) => auth.user);
+  // console.log(user);
   const [isDisable, setisDisable] = useState(true);
   const enable = !isDisable ? 'enable' : '';
 
@@ -23,10 +26,10 @@ function Profile() {
   // Todo: mettre en place Formik + executer modifyForm au submit
 
   return (
-    <div className="profile mx-auto mt-20 p-12 flex flex-wrap justify-around rounded-xl">
+    <div className="profile mx-auto mt-10 p-12 flex flex-wrap justify-around rounded-xl">
       <section className="flex flex-col items-center w-2/5 container text-center">
         <img className="avatar h-60 w-60 my-6 rounded-full" src={image} alt="Photo de profil" />
-        <p className="profile-bar">Anti-héro</p>
+        <p className="profile-bar">{user.role}</p>
         <p className="mt-1.5 text-sm">Grade suivant dans : 10 contributions</p>
         <p className="profile-bar">
           150 contributions
@@ -38,7 +41,7 @@ function Profile() {
       <form className="profile-form container w-2/5 py-8 px-12 rounded" action="" method="POST">
         <div className="profile-form-group">
           <label className="profile-form-group-label" htmlFor="pseudo">Pseudo</label>
-          <input className={enable} type="text" name="pseudo" placeholder="Deadpool" disabled={isDisable} />
+          <input className={enable} type="text" name="pseudo" placeholder={user.pseudo} disabled={isDisable} />
         </div>
         <div className="profile-form-group">
           <label className="profile-form-group-label" htmlFor="email">Adresse mail</label>
