@@ -13,7 +13,7 @@ import './styles.scss';
 // ? Composant
 function Profile() {
   const { id } = useParams();
-  const user = useSelector(({ auth }) => auth.user); console.log(user, id)
+  const user = useSelector(({ auth }) => auth.user);
   const [userData, setUserData] = useState({});
   const [contributionData, setContribution] = useState([]);
   const [isDisable, setIsDisable] = useState(true); //* Etat des inputs
