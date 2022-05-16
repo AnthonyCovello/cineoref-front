@@ -1,7 +1,7 @@
 .randomRef {
   //? opacité
-  background-image: linear-gradient(135deg, rgb(48,54,123,0.9), rgba(28,31,54,0.9));
-  
+  background-image: linear-gradient(135deg, rgb(40,10,175,0.8), rgba(4, 1, 18,0.8));
+
   //? effet 3D
   -ms-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75); /* IE 9 */
   -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75); /* Safari and Chrome */
@@ -21,7 +21,8 @@
     transition: transform 0.3s ease;
     transform: scale(1.1);
   }
-  
+
+  // ? Animation de rotation du dé
   span>img:hover {
     animation: loading 3s linear infinite;
 
@@ -35,10 +36,11 @@
     }
   }
 
+  // ? Limite l'affichage du texte en vertical
   &-text{
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
-    overflow: hidden;
+    -webkit-line-clamp: 5; //* limite de lignes
+    overflow: hidden; //* cache le texte en trop
   }
 }

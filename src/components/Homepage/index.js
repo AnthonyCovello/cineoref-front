@@ -54,8 +54,8 @@ function Homepage() {
   };
 
   return (
-    <div className="app">
-      <Description />
+    <div className="homePage">
+      {/* <Description /> */}
       <SearchBarRef />
       <div className="line-random-top">
         <RandomRef />
