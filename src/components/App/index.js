@@ -13,6 +13,7 @@ import Profile from '../Profile';
 import ProposalForm from '../ProposalForm';
 import RefPage from '../RefPage';
 import ScrollToTop from '../ScrollToTop';
+import Lists from '../Lists';
 //* Test
 import Protected from '../Protected';
 
@@ -32,6 +33,12 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/registration" element={<SignUp />} />
+        <Route path="/films" element={<Lists />} />
+        <Route path="/series" element={<Lists />} />
+        <Route path="/animes" element={<Lists />} />
+        <Route path="/cartoons" element={<Lists />} />
+        <Route path="/artists" element={<Lists />} />
+        <Route path="/characters" element={<Lists />} />
 
         {/* //* Test 1 */}
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} />
