@@ -95,7 +95,7 @@ function ProposalForm() {
             <option className="selectInput-options" value="Film">Film</option>
             <option className="selectInput-options" value="Série">Série</option>
             <option className="selectInput-options" value="Animé">Animé</option>
-            <option className="selectInput-options" value="Dessins animés">Dessins animés</option>
+            <option className="selectInput-options" value="Dessins_animés">Dessins animés</option>
           </Field>
           <ErrorMessage
             name="category"
