@@ -3,7 +3,7 @@ export default [
     id: 1,
     title: 'Judge Dredd',
     category: 'Film',
-    character: 'Dredd',
+    character: 'Joseph "Juge" Dredd',
     artist: 'Sylvester Stallon',
     ref: 'La loi c\'est moi! Et l\'ordre!',
     user: 'Povik',
