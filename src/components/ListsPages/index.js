@@ -18,11 +18,11 @@ function ListsPages() {
   const listFilters = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const dispatch = useDispatch();
+  const { listTheme, param } = useParams();
+  const [tabTitle, setTabTitle] = useState('');
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
   const listApi = useSelector(({ list }) => list.categoryList);
-  const { listTheme, param } = useParams();
-  const dispatch = useDispatch();
-  const [tabTitle, setTabTitle] = useState('');
 
   changeTabTitle(`Liste ${tabTitle}`);
 

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 // ? Composant
 function List({ letter, listTheme }) {
-  console.log(letter);
   return (
     <li>
       {letter.map((data) => (

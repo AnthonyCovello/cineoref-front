@@ -28,7 +28,7 @@ function Profile() {
         setContribution(res.data.contribution);
       });
   }, [id]);
-
+console.log(contributionData)
   const modifyForm = () => {
     setIsDisable(!isDisable);
   };
@@ -85,7 +85,7 @@ function Profile() {
               <p><span>Média : </span>{toFrench(item.category)}</p>
               <p><span>Personnage : </span>{item.character}</p>
               <p><span>Artiste : </span>{item.artist}</p>
-              <p><span>Partagé le : </span>{item.creation_date}</p>
+              <p><span>Partagé le : </span>{item.created_date}</p>
               <p className="test"><span>Citation : </span>{item.ref}</p>
             </li>
           ))}
