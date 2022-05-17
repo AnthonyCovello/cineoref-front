@@ -3,12 +3,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 
 // ? Import composants
 import SearchBarRef from '../Homepage/SearchBarRef';
-import AnchorListMenu from './AnchorListMenu';
+import ListPage from './ListPage';
 
 // ? Composant
 function Lists() {
@@ -43,34 +42,9 @@ function Lists() {
       <span className="addRefBtn" onClick={handleAddRef}>
         Ajouter une ref'
       </span>
-
-      {/* faire un tableau a-z avec les divs */}
-      <div className="bg-white mg-50 py-7" id="A">
-        <span>A</span>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div className="bg-white mg-100" id="B">
-        <span>B</span>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div className="bg-white mg-500" id="C">
-        <span>C</span>
-      </div>
+      <ListPage />
     </div>
   );
 }
 
 export default React.memo(Lists);
-
-{ /* Tentative de scroll sans Anchorlink */ }
-{ /* <a href="#C" onClick={(e) => e.preventDefault()} className="bg-white scroll-smooth">C</a> */ }
