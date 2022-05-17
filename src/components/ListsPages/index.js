@@ -29,10 +29,10 @@ function ListsPages() {
     if (listTheme === 'listcategory') {
       urlAPI = `https://cinoref-api.herokuapp.com/listcategory/${param}`;
       switch (param) {
-        case 'Film': setTabTitle('des films'); break;
-        case 'Série': setTabTitle('des séries'); break;
-        case 'Animé': setTabTitle('des animés'); break;
-        case 'Dessins_animés': setTabTitle('des dessins animés'); break;
+        case 'movie': setTabTitle('des films'); break;
+        case 'serie': setTabTitle('des séries'); break;
+        case 'anime': setTabTitle('des animés'); break;
+        case 'cartoon': setTabTitle('des dessins animés'); break;
         default:
       }
     }
@@ -51,6 +51,7 @@ function ListsPages() {
     axios.get(callAPI())
       .then((res) => {
         dispatch(setListData(res.data));
+        console.log(res);
       });
   }, [listTheme, param]);
 

@@ -25,10 +25,10 @@ function Header() {
         </span>
       </Link>
       <nav className="font-bold flex gap-6">
-        <NavLink to="/listcategory/Film" className={activeLink}>Films</NavLink>
-        <NavLink to="/listcategory/Serie" className={activeLink}>Séries</NavLink>
-        <NavLink to="/listcategory/Anime" className={activeLink}>Animés</NavLink>
-        <NavLink to="/listcategory/Dessins_animes" className={activeLink}>Dessins animés</NavLink>
+        <NavLink to="/listcategory/movie" className={activeLink}>Films</NavLink>
+        <NavLink to="/listcategory/serie" className={activeLink}>Séries</NavLink>
+        <NavLink to="/listcategory/anime" className={activeLink}>Animés</NavLink>
+        <NavLink to="/listcategory/cartoon" className={activeLink}>Dessins animés</NavLink>
         <NavLink to="/listartist" className={activeLink}>Artistes</NavLink>
         <NavLink to="/listcharacter" className={activeLink}>Personnages</NavLink>
         {islogged && (<NavLink to="/bookmarks" className={activeLink}>Favoris</NavLink>)}
