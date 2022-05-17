@@ -92,10 +92,10 @@ function ProposalForm() {
           </label>
           <Field as="select" name="category" className="input">
             <option className="selectInput-options"> --Choisissez un média-- </option>
-            <option className="selectInput-options" value="film">Film</option>
-            <option className="selectInput-options" value="serie">Série</option>
-            <option className="selectInput-options" value="anime">Animé</option>
-            <option className="selectInput-options" value="cartoon">Dessins animés</option>
+            <option className="selectInput-options" value="Film">Film</option>
+            <option className="selectInput-options" value="Série">Série</option>
+            <option className="selectInput-options" value="Animé">Animé</option>
+            <option className="selectInput-options" value="Dessins animés">Dessins animés</option>
           </Field>
           <ErrorMessage
             name="category"

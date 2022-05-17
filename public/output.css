@@ -540,8 +540,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 1rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-1\.5 {
@@ -562,6 +562,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .ml-8 {
@@ -620,6 +624,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 6rem;
 }
 
+.max-h-64 {
+  max-height: 16rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -640,8 +648,36 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 20%;
 }
 
+.w-3\/5 {
+  width: 60%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
+}
+
+.w-\[85\%\] {
+  width: 85%;
+}
+
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .min-w-\[10rem\] {
   min-width: 10rem;
+}
+
+.max-w-\[50\%\] {
+  max-width: 50%;
+}
+
+.max-w-\[70\%\] {
+  max-width: 70%;
+}
+
+.max-w-\[65\%\] {
+  max-width: 65%;
 }
 
 .flex-grow {
@@ -692,8 +728,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
 }
 
-.rounded-3xl {
-  border-radius: 1.5rem;
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .rounded-full {
@@ -704,8 +740,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.375rem;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
+.rounded-3xl {
+  border-radius: 1.5rem;
 }
 
 .bg-\[\#F8D7DA\] {

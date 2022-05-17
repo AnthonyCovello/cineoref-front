@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 import { changeTabTitle } from '../../utlis';
-import { setNewRefData, setRandomRefData } from '../../features/refSlice';
+import { setNewRefData } from '../../features/refSlice';
 import { setTopContributorsData } from '../../features/topContributorsSlice';
 
 // ? Import composants
@@ -37,11 +37,6 @@ function Homepage() {
       .get('https://cinoref-api.herokuapp.com/mostrecent')
       .then((res) => {
         dispatch(setNewRefData(res.data));
-      });
-    axios
-      .get('https://cinoref-api.herokuapp.com/random')
-      .then((res) => {
-        dispatch(setRandomRefData(res.data));
       });
   }, []);
 

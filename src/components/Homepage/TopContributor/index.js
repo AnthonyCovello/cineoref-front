@@ -1,6 +1,7 @@
 // ? Import modules
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // ? Import style
 import './styles.scss';
@@ -15,7 +16,7 @@ function TopContributor() {
       <ul>
         {contributorsData.map((contributor, index) => (
           <li className="p-1.5" key={contributor.username}>
-            <a href="#" className="contributors-links"> {index + 1} - {contributor.username}</a>
+            <Link to={`/user/${contributor.id}/profile`} className="contributors-links"> {index + 1} - {contributor.username}</Link>
           </li>
         ))}
       </ul>
