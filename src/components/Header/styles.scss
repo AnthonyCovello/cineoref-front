@@ -1,7 +1,6 @@
 @use 'src/styles/vars';
 
 .header {
-  //? dégradé
   background-image: linear-gradient(180deg, vars.$mainBlue, vars.$darkBlue-Opacity-0);
 
   &-titleSpan {

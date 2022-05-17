@@ -523,11 +523,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.5rem;
 }
 
-.my-12 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
 .mr-1\.5 {
   margin-right: 0.375rem;
 }
@@ -572,16 +567,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 2rem;
 }
 
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .mb-2\.5 {
   margin-bottom: 0.625rem;
 }
 
 .mb-2 {
   margin-bottom: 0.5rem;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
 }
 
 .inline-block {
@@ -620,6 +615,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 6rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
 .max-h-64 {
   max-height: 16rem;
 }
@@ -650,6 +657,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-1\/5 {
   width: 20%;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .min-w-\[10rem\] {

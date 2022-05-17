@@ -30,7 +30,7 @@ function UserMenu() {
   return (
     <div className="dropdownProfil" onClick={toggleDropdown}>
       <span className="text-porange font-bold text-2xl">{user.pseudo}</span>
-      <div className="w-14 ml-2">
+      <div className="w-12 h-12 ml-2">
         <img className="rounded-full" src={user.profile_picture} alt="Photo de profil" />
       </div>
       {isOpen && (
