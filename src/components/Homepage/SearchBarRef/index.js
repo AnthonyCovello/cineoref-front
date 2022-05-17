@@ -14,7 +14,7 @@ function SearchBarRef() {
   const toggleSearchBar = () => setIsHidden(!isHidden);
 
   return (
-    <form className="my-12 text-center">
+    <form className="mb-12 text-center">
       <label className="searchTitle p-8 text-porange font-bold text-3xl" htmlFor="searchInput" onClick={toggleSearchBar} hidden={isHidden}>
         Recherchez une citation
       </label>
