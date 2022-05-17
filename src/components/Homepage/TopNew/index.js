@@ -28,43 +28,43 @@ function HomeList() {
   }, []);
 
   return (
-    <div className="citation rounded-xl">
-      <nav className="citation-nav">
+    <div className="citation w-3/4 mx-auto rounded-xl text-center">
+      <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer">
         <div
           onClick={() => dispatch(setTablist('topRated'))}
           className={
             tabList !== 'topRated'
-              ? 'citation-nav-topleft inactiveTab'
-              : 'citation-nav-topleft'
+              ? 'topleft w-1/2 p-2 rounded-tl-lg inactiveTab'
+              : 'topleft w-1/2 p-2 rounded-tl-lg'
           }
         >
-          <span>Les mieux notées</span>
+          Les mieux notées
         </div>
         <div
           onClick={() => dispatch(setTablist('newests'))}
           className={
             tabList !== 'newests'
-              ? 'citation-nav-topright inactiveTab'
-              : 'citation-nav-topright'
+              ? 'topright w-1/2 p-2 rounded-tr-lg inactiveTab'
+              : 'topright w-1/2 p-2 rounded-tr-lg'
           }
         >
-          <span>Les plus récentes</span>
+          Les plus récentes
         </div>
       </nav>
       <div>
-        <ul className="refList">
+        <ul className="flex flex-col p-10 gap-8 items-start cursor-context-menu">
           {tabList === 'topRated'
             ? cleanRefs.map((data, index) => (
               index < 5 && (
-                <li key={data.id} className="refList-item rounded">
-                  <p>{data.ref}</p>
-                  <p>{data.character}</p>
+                <li key={data.id} className="item w-3/5 py-8 px-10 rounded-lg">
+                  <p className="item-ref">{data.ref}</p>
+                  <p className="mt-6 ml-6 max-h-14 text-sm font-bold text-left">{data.character}</p>
                 </li>
               )))
             : newRef.map((ref) => (
-              <li key={ref.ref} className="refList-item rounded">
-                <p>{ref.ref}</p>
-                <p>{ref.character}</p>
+              <li key={ref.ref} className="item w-3/5 py-8 px-10 rounded-lg">
+                <p className="item-ref">{ref.ref}</p>
+                <p className="mt-6 ml-6 max-h-14 text-sm font-bold text-left">{ref.character}</p>
               </li>
             ))}
         </ul>

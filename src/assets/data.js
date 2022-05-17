@@ -16,9 +16,9 @@ export default [
     category: 'Film',
     character: 'Braddock',
     artist: 'Chuck Norris',
-    ref: 'Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule.',
+    ref: 'Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule. Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule. Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule. Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule. Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule. Je met les pieds où je veux Little John. Et c\'est souvent dans la gueule.',
     user: 'Luxy',
-    mature: true,
+    mature: false,
     status: true,
   },
   {
