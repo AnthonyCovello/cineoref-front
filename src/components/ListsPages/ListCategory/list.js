@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// ? Composant
 function List({ letter }) {
-  console.log('datas', letter);
   return (
     <div>
       {letter.map((data) => (

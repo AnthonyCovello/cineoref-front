@@ -562,30 +562,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-5 {
   margin-top: 1.25rem;
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .mt-20 {
   margin-top: 5rem;
-
 }
 
 .ml-8 {
   margin-left: 2rem;
-}
-
-.mb-2\.5 {
-  margin-bottom: 0.625rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .mb-2\.5 {
@@ -640,6 +624,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.w-\[70\%\] {
+  width: 70%;
+}
+
 .w-2\/5 {
   width: 40%;
 }
@@ -656,40 +644,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 20%;
 }
 
-.w-3\/5 {
-  width: 60%;
-}
-
-.w-\[70\%\] {
-  width: 70%;
-}
-
-.w-\[85\%\] {
-  width: 85%;
-}
-
-.w-\[95\%\] {
-  width: 95%;
-}
-
 .min-w-\[10rem\] {
   min-width: 10rem;
-}
-
-.max-w-\[50\%\] {
-  max-width: 50%;
-}
-
-.max-w-\[70\%\] {
-  max-width: 70%;
-}
-
-.max-w-\[65\%\] {
-  max-width: 65%;
-}
-
-.flex-grow {
-  flex-grow: 1;
 }
 
 .cursor-pointer {
@@ -728,14 +684,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-self: flex-end;
 }
 
-
-.rounded {
-  border-radius: 0.25rem;
-
-.scroll-smooth {
-  scroll-behavior: smooth;
-}
-
 .rounded {
   border-radius: 0.25rem;
 }
@@ -750,7 +698,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .rounded-md {
   border-radius: 0.375rem;
-
 }
 
 .rounded-3xl {
@@ -762,10 +709,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(248 215 218 / var(--tw-bg-opacity));
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
+.bg-\[\#d3d3d3\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(211 211 211 / var(--tw-bg-opacity));
 }
-  
+
 .p-4 {
   padding: 1rem;
 }
@@ -776,7 +724,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-2 {
   padding: 0.5rem;
-
 }
 
 .p-6 {
@@ -805,11 +752,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.5rem;
 }
 
-.py-7 {
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
-}
-  
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;

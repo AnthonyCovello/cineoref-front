@@ -25,7 +25,7 @@ function Header() {
         </span>
       </Link>
       <nav className="font-bold flex gap-6">
-        <NavLink to="/films" className={activeLink}>Films</NavLink>
+        <NavLink to="/listcategory/Film" className={activeLink}>Films</NavLink>
         <NavLink to="/series" className={activeLink}>Séries</NavLink>
         <NavLink to="/animes" className={activeLink}>Animés</NavLink>
         <NavLink to="/cartoons" className={activeLink}>Dessins animés</NavLink>

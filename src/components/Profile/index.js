@@ -32,7 +32,6 @@ function Profile() {
   const modifyForm = () => {
     setIsDisable(!isDisable);
   };
-  console.log(userData)
   // Todo: mettre en place Formik + executer modifyForm au submit
   return (
     <div className="profile w-[70%] mx-auto mt-10 p-12 flex flex-wrap justify-around rounded-xl">
@@ -70,10 +69,10 @@ function Profile() {
         </div>
         {user.user_id === Number(id)
           && (
-          <div className="flex justify-around">
-            <button type="button" onClick={modifyForm}>Modifier</button>
-            <button type="submit">Sauvegarder</button>
-          </div>
+            <div className="flex justify-around">
+              <button type="button" onClick={modifyForm}>Modifier</button>
+              <button type="submit">Sauvegarder</button>
+            </div>
           )}
       </form>
       <section className="profile-contributions w-full mt-6 py-4 px-8">

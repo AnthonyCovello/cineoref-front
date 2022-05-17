@@ -3,14 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // ? Import composant
-import ListMenu from '../ListMenu';
 import List from './list';
 
-// const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
 // ? Composant
-function ListPage({ list, listFilters }) {
-  console.log('test:', list);
+function ListCategory({ list, listFilters }) {
+  // console.log('list:', list);
+  // console.log('listFilter', listFilters);
   const dataMapping = [];
 
   listFilters.forEach((listFilter) => {
@@ -23,7 +21,7 @@ function ListPage({ list, listFilters }) {
   const result = Object.keys(dataMapping).map((key) => [(key), dataMapping[key]]);
 
   return (
-    <div className="ListPage w-1/5 p-8 cursor-context-menu text-[1.25rem] font-bold rounded-3xl">
+    <div className="ListCategory w-1/5 p-8 cursor-context-menu text-[1.25rem] font-bold rounded-3xl">
       <div>
         <h2 className="letters mb-2.5 text-3xl text-center"> </h2>
         {result.map((letter) => (
@@ -39,7 +37,7 @@ function ListPage({ list, listFilters }) {
   );
 }
 
-ListPage.propTypes = {
+ListCategory.propTypes = {
   list: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -51,4 +49,4 @@ ListPage.propTypes = {
   ).isRequired,
 };
 
-export default React.memo(ListPage);
+export default React.memo(ListCategory);
