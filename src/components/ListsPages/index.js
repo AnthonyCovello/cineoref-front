@@ -5,6 +5,7 @@ import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeTabTitle } from '../../utlis';
 import { setListCategory } from '../../features/listSlice';
+import { setLoginDropdown } from '../../features/dropDownSlice';
 
 // ? Import composants
 import ListTheme from './ListTheme';
@@ -17,12 +18,18 @@ function ListsPages() {
   const listFilters = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  const listApi = useSelector(({ list }) => list.categoryList)
+  const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
+  const listApi = useSelector(({ list }) => list.categoryList);
   const { listTheme, param } = useParams();
   const dispatch = useDispatch();
   const [tabTitle, setTabTitle] = useState('');
 
   changeTabTitle(`Liste ${tabTitle}`);
+
+  // * Ouverture du menu de connexion
+  const toggleDropdown = () => {
+    dispatch(setLoginDropdown());
+  };
 
   function callAPI() {
     let urlAPI;
@@ -55,7 +62,10 @@ function ListsPages() {
   }, [listTheme, param]);
 
   return (
-    <div>
+    <div onClick={() => {
+      if (isOpen === true) toggleDropdown();
+    }}
+    >
       <ListMenu listFilters={listFilters} />
       <ListTheme list={listApi} listFilters={listFilters} listTheme={listTheme} />
     </div>

@@ -5,11 +5,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;
-
-  &:hover{
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &-content{
     top: 30px;
@@ -23,14 +19,6 @@
     right: 0;
     background-color: vars.$mainBlue-modale;
   }
-}
-
-.header-logged_profil{
-  font-size: 1.5rem;
-}
-
-.header-logged_logo {
-  font-size: 2rem;
 }
 
 .content-btn{

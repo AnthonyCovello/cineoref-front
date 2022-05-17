@@ -4,8 +4,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import PropTypes from 'prop-types';
 
 // ? Import style
-
-// ? Composant
 function ListMenu({ listFilters }) {
   return (
     <nav className="listmenu">

@@ -5,14 +5,24 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setListRef } from '../../features/listSlice';
+import { setLoginDropdown } from '../../features/dropDownSlice';
+import { changeTabTitle } from '../../utlis';
 
 // ? Import style
 
 // ? Composant
 function ListsRef() {
+  const dispatch = useDispatch();
   const { listTheme, category, id } = useParams();
   const refList = useSelector(({ list }) => list.refList);
-  const dispatch = useDispatch();
+  const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
+
+  changeTabTitle('Citation');
+
+  // * Ouverture du menu de connexion
+  const toggleDropdown = () => {
+    dispatch(setLoginDropdown());
+  };
 
   function callAPI() {
     let urlAPI;
@@ -33,7 +43,10 @@ function ListsRef() {
   }, [listTheme, category, id]);
 
   return (
-    <ul>
+    <ul onClick={() => {
+      if (isOpen === true) toggleDropdown();
+    }}
+    >
       {refList.map((item) => (
         <li key={item.id}>
           <Link to={`/ref/${item.id}`}>{item.ref}</Link>
