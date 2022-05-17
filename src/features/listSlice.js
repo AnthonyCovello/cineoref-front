@@ -1,18 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  list: [],
+  categoryList: [],
+  refList: [],
 };
 
 export const listSlice = createSlice({
   name: 'list',
   initialState,
   reducers: {
-    setListData: (state, { payload }) => {
-      state.list = payload;
+    setListCategory: (state, { payload }) => {
+      state.categoryList = payload;
+    },
+    setListRef: (state, { payload }) => {
+      state.refList = payload;
     },
   },
 });
 
 export default listSlice.reducer;
-export const { setListData } = listSlice.actions;
+export const { setListCategory, setListRef } = listSlice.actions;

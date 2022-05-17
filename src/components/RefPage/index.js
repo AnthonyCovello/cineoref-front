@@ -1,6 +1,9 @@
+/* eslint-disable camelcase */
 // ? Import modules
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
 import { changeTabTitle } from '../../utlis';
@@ -9,22 +12,26 @@ import { setLoginDropdown } from '../../features/dropDownSlice';
 // ? Import style
 import './styles.scss';
 
-// ? Data fictives
-import listOfRefs from '../../assets/data';
-
-// ! Refaire la page avec Tailwind ! \\
 // ? Composant
 function RefPage() {
   changeTabTitle('Citation');
 
   const dispatch = useDispatch();
-  const fakeRef = listOfRefs[16]; //* données fictives
+  const { ref_id } = useParams();
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
+  const [refData, setRefData] = useState({});
 
   // * Ouverture du menu de connexion
   const toggleDropdown = () => {
     dispatch(setLoginDropdown());
   };
+
+  useEffect(() => {
+    axios.get(`https://cinoref-api.herokuapp.com/ref/${ref_id}`)
+      .then((res) => {
+        setRefData(res.data[0]);
+      });
+  }, []);
 
   return (
     <div onClick={() => {
@@ -43,19 +50,19 @@ function RefPage() {
           />
         </div>
         <h2 className="refContainer-mediaTitle">Titre de l'œuvre</h2>
-        <p className="refContainer-data">{fakeRef.title}</p>
+        <p className="refContainer-data">{refData.title}</p>
         <h2 className="refContainer-category">Média</h2>
-        <p className="refContainer-data">{fakeRef.category}</p>
+        <p className="refContainer-data">{refData.category}</p>
         <h2 className="refContainer-character">Personnage</h2>
-        <p className="refContainer-data">{fakeRef.character}</p>
+        <p className="refContainer-data">{refData.character}</p>
         <h2 className="refContainer-artist">Artiste</h2>
-        <p className="refContainer-data">{fakeRef.artist}</p>
+        <p className="refContainer-data">{refData.artist}</p>
         <h2 className="refContainer-ref">Citation</h2>
-        <p className="refContainer-data">{fakeRef.ref}</p>
+        <p className="refContainer-data">{refData.ref}</p>
         <div className="user-score">
           <div>
             <h2 className="refContainer-user">Partagée par</h2>
-            <Link to="#" className="refContainer-data">{fakeRef.user}</Link>
+            <Link to="#" className="refContainer-data">{refData.user}</Link>
           </div>
           <div>
             <h2 className="refContainer-score">Note de la communauté</h2>

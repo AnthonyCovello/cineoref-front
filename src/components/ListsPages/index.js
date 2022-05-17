@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeTabTitle } from '../../utlis';
-import { setListData } from '../../features/listSlice';
+import { setListCategory } from '../../features/listSlice';
 
 // ? Import composants
 import ListTheme from './ListTheme';
@@ -17,7 +17,7 @@ function ListsPages() {
   const listFilters = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  const listApi = useSelector(({ list }) => list.list);
+  const listApi = useSelector(({ list }) => list.categoryList)
   const { listTheme, param } = useParams();
   const dispatch = useDispatch();
   const [tabTitle, setTabTitle] = useState('');
@@ -50,7 +50,7 @@ function ListsPages() {
   useEffect(() => {
     axios.get(callAPI())
       .then((res) => {
-        dispatch(setListData(res.data));
+        dispatch(setListCategory(res.data));
       });
   }, [listTheme, param]);
 

@@ -1,19 +1,19 @@
 // ? Import modules
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setListData } from '../../features/listSlice';
-
-// ? Import composants
+import { setListRef } from '../../features/listSlice';
 
 // ? Import style
 
 // ? Composant
 function ListsRef() {
   const { listTheme, category, id } = useParams();
+  const refList = useSelector(({ list }) => list.refList);
   const dispatch = useDispatch();
-  console.log(listTheme, category, id);
+
   function callAPI() {
     let urlAPI;
     if (listTheme === 'listcategory') {
@@ -28,16 +28,17 @@ function ListsRef() {
   useEffect(() => {
     axios.get(callAPI())
       .then((res) => {
-        dispatch(setListData(res.data));
-        console.log('axiosListRef', res);
+        dispatch(setListRef(res.data));
       });
   }, [listTheme, category, id]);
 
   return (
     <ul>
-      <li>
-        <span>toto</span>
-      </li>
+      {refList.map((item) => (
+        <li key={item.id}>
+          <Link to={`/ref/${item.id}`}>{item.ref}</Link>
+        </li>
+      ))}
     </ul>
   );
 }
