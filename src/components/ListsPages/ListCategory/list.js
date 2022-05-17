@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // ? Composant
 function List({ letter }) {
   return (
-    <div>
+    <li>
       {letter.map((data) => (
-        <li key={data.id}>{data.name}</li>
+        <Link to="#" key={data.id} className="block">{data.name}</Link>
       ))}
-    </div>
+    </li>
   );
 }
 

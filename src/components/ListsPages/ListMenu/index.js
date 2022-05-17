@@ -9,11 +9,9 @@ import PropTypes from 'prop-types';
 function ListMenu({ listFilters }) {
   return (
     <nav className="listmenu">
-      <div className="ScrollToElement">
-        {listFilters.map((listFilter) => (
-          <AnchorLink key={listFilter} href={`#${listFilter}`}>{listFilter}</AnchorLink>
-        ))}
-      </div>
+      {listFilters.map((listFilter) => (
+        <AnchorLink key={listFilter} href={`#${listFilter}`}>{listFilter}</AnchorLink>
+      ))}
     </nav>
   );
 }

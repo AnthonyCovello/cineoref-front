@@ -21,18 +21,15 @@ function ListCategory({ list, listFilters }) {
   const result = Object.keys(dataMapping).map((key) => [(key), dataMapping[key]]);
 
   return (
-    <div className="ListCategory w-1/5 p-8 cursor-context-menu text-[1.25rem] font-bold rounded-3xl">
-      <div>
-        <h2 className="letters mb-2.5 text-3xl text-center"> </h2>
-        {result.map((letter) => (
-          <div key={letter[0]}>
-            <span id={letter[0]}>{letter[0]}</span>
-            <ul>
-              <List letter={letter[1]} />
-            </ul>
-          </div>
-        ))}
-      </div>
+    <div className="ListCategory">
+      {result.map((letter) => (
+        <div key={letter[0]}>
+          <span id={letter[0]}>{letter[0]}</span>
+          <ol>
+            <List letter={letter[1]} />
+          </ol>
+        </div>
+      ))}
     </div>
   );
 }

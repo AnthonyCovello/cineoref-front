@@ -29,8 +29,8 @@ function Header() {
         <NavLink to="/listcategory/Série" className={activeLink}>Séries</NavLink>
         <NavLink to="/listcategory/Animé" className={activeLink}>Animés</NavLink>
         <NavLink to="/listcategory/Dessins_animés" className={activeLink}>Dessins animés</NavLink>
-        <NavLink to="/artists" className={activeLink}>Artistes</NavLink>
-        <NavLink to="/characters" className={activeLink}>Personnages</NavLink>
+        <NavLink to="/listartist" className={activeLink}>Artistes</NavLink>
+        <NavLink to="/listcharacter" className={activeLink}>Personnages</NavLink>
         {islogged && (<NavLink to="/bookmarks" className={activeLink}>Favoris</NavLink>)}
       </nav>
       {!islogged && (

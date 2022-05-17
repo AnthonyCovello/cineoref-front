@@ -14,19 +14,32 @@ import ListMenu from './ListMenu';
 
 // ? Composant
 function ListsPages() {
-  const { param } = useParams();
-  // const param = 'Animé';
+  const { listTheme, param } = useParams();
   const dispatch = useDispatch();
+
+  function callAPI() {
+    let urlAPI;
+    if (listTheme === 'listcategory') {
+      urlAPI = `https://cinoref-api.herokuapp.com/listcategory/${param}`;
+    }
+    if (listTheme === 'listartist') {
+      urlAPI = 'https://cinoref-api.herokuapp.com/listartist';
+    }
+    if (listTheme === 'listcharacter') {
+      urlAPI = 'https://cinoref-api.herokuapp.com/listcharacter';
+    }
+    return urlAPI;
+  }
 
   changeTabTitle(`Liste des ${param}s`);
 
   useEffect(() => {
-    axios.get(`https://cinoref-api.herokuapp.com/listcategory/${param}`)
+    axios.get(callAPI())
       .then((res) => {
         dispatch(setListData(res.data));
         console.log(res);
       });
-  }, [param]);
+  }, [listTheme, param]);
 
   const listApi = useSelector(({ list }) => list.list);
 
