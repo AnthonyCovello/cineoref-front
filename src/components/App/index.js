@@ -34,9 +34,6 @@ function App() {
         <Route path="/registration" element={<SignUp />} />
         <Route path="/:listTheme/:param" element={<ListsPages />} />
         <Route path="/:listTheme" element={<ListsPages />} />
-        {/* <Route path="/listcharacter" element={<ListsPages />} /> */}
-
-        {/* //* Test 1 */}
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} />
         <Route path="/ref" element={<RefPage />} />
         <Route path="*" element={<h1>Error</h1>} />

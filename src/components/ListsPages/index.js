@@ -22,11 +22,8 @@ function ListsPages() {
     if (listTheme === 'listcategory') {
       urlAPI = `https://cinoref-api.herokuapp.com/listcategory/${param}`;
     }
-    if (listTheme === 'listartist') {
-      urlAPI = 'https://cinoref-api.herokuapp.com/listartist';
-    }
-    if (listTheme === 'listcharacter') {
-      urlAPI = 'https://cinoref-api.herokuapp.com/listcharacter';
+    if (listTheme === 'listartist' || listTheme === 'listcharacter') {
+      urlAPI = `https://cinoref-api.herokuapp.com/${listTheme}`;
     }
     return urlAPI;
   }
