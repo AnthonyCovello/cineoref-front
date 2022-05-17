@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 // ? Import modules
 import React from 'react';
-import { CgProfile } from 'react-icons/cg';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { setProfileDropdown } from '../../../features/dropDownSlice';
@@ -29,8 +29,10 @@ function UserMenu() {
 
   return (
     <div className="dropdownProfil" onClick={toggleDropdown}>
-      <span className="header-logged_profil">{user.pseudo}</span>
-      <CgProfile className="header-logged_logo" />
+      <span className="text-porange font-bold text-2xl">{user.pseudo}</span>
+      <div className="w-14 ml-2">
+        <img className="rounded-full" src={user.profile_picture} alt="Photo de profil" />
+      </div>
       {isOpen && (
         <div className="dropdownProfil-content">
           <Link className="content-btn" to={`/user/${user.user_id}/my-profile`}> Profil </Link>

@@ -6,6 +6,7 @@ import authReducer from './features/authSlice';
 import messageReducer from './features/messageSlice';
 import refReducer from './features/refSlice';
 import topContributorsReducer from './features/topContributorsSlice';
+import listReducer from './features/listSlice';
 
 // ? Reducer
 const reducer = {
@@ -15,6 +16,7 @@ const reducer = {
   message: messageReducer,
   ref: refReducer,
   contributors: topContributorsReducer,
+  list: listReducer,
 };
 
 // ? Store

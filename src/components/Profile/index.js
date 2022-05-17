@@ -5,7 +5,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { changeTabTitle } from '../../utlis';
+import { changeTabTitle, toFrench } from '../../utlis';
 
 // ? Import style
 import './styles.scss';
@@ -32,12 +32,12 @@ function Profile() {
   const modifyForm = () => {
     setIsDisable(!isDisable);
   };
-  console.log(userData)
   // Todo: mettre en place Formik + executer modifyForm au submit
   return (
-    <div className="profile w-[70%] mx-auto mt-10 p-12 flex flex-wrap justify-around rounded-xl">
+    <div className="profile w-[70%] mx-auto p-12 flex flex-wrap justify-around rounded-xl">
       <section className="flex flex-col items-center w-2/5 container text-center">
         <img className="avatar h-60 w-60 my-6 rounded-full" src={userData.profile_picture} alt="Photo de profil" />
+        <p className="profile-bar">{userData.role}</p>
         <p className="profile-bar">{userData.grade}</p>
         <p className="profile-bar">
           {
@@ -46,7 +46,7 @@ function Profile() {
               : `${contributionData.length} ${contributionData.length > 1 ? 'contributions' : 'contribution'}`
           }
         </p>
-        <p className="mt-1.5 text-sm">Grade suivant dans : 10 contributions</p>
+        <p className="mt-1.5 text-xs">Grade suivant dans : 10 contributions</p>
         <p className="profile-bar">
           Inscris le : {userData.creation_date}
         </p>
@@ -70,10 +70,10 @@ function Profile() {
         </div>
         {user.user_id === Number(id)
           && (
-          <div className="flex justify-around">
-            <button type="button" onClick={modifyForm}>Modifier</button>
-            <button type="submit">Sauvegarder</button>
-          </div>
+            <div className="flex justify-around">
+              <button type="button" onClick={modifyForm}>Modifier</button>
+              <button type="submit">Sauvegarder</button>
+            </div>
           )}
       </form>
       <section className="profile-contributions w-full mt-6 py-4 px-8">
@@ -82,15 +82,14 @@ function Profile() {
           {contributionData.map((item) => (
             <li key={item.id} className="profile-contributions-item max-h-64 mt-4 p-6 leading-6">
               <p><span>Titre de l'oeuvre : </span>{item.show}</p>
-              <p><span>Média : </span>{item.category}</p>
+              <p><span>Média : </span>{toFrench(item.category)}</p>
               <p><span>Personnage : </span>{item.character}</p>
               <p><span>Artiste : </span>{item.artist}</p>
-              <p><span>Partagé le : </span>{item.created_at}</p>
+              <p><span>Partagé le : </span>{item.creation_date}</p>
               <p className="test"><span>Citation : </span>{item.ref}</p>
             </li>
           ))}
         </ul>
-
       </section>
     </div>
   );
