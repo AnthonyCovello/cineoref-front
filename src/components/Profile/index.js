@@ -32,7 +32,7 @@ function Profile() {
   const modifyForm = () => {
     setIsDisable(!isDisable);
   };
-
+  console.log(userData)
   // Todo: mettre en place Formik + executer modifyForm au submit
   return (
     <div className="profile w-[70%] mx-auto mt-10 p-12 flex flex-wrap justify-around rounded-xl">
@@ -48,7 +48,7 @@ function Profile() {
         </p>
         <p className="mt-1.5 text-sm">Grade suivant dans : 10 contributions</p>
         <p className="profile-bar">
-          Inscris le : {userData.created_at}
+          Inscris le : {userData.creation_date}
         </p>
       </section>
       <form className="profile-form container w-2/5 py-8 px-12 rounded" action="" method="PATCH">
