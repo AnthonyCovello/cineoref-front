@@ -5,7 +5,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { changeTabTitle } from '../../utlis';
+import { changeTabTitle, toFrench } from '../../utlis';
 
 // ? Import style
 import './styles.scss';
@@ -26,6 +26,7 @@ function Profile() {
       .then((res) => {
         setUserData(res.data.user);
         setContribution(res.data.contribution);
+        console.log(res.data.contribution);
       });
   }, [id]);
 
@@ -81,15 +82,14 @@ function Profile() {
           {contributionData.map((item) => (
             <li key={item.id} className="profile-contributions-item max-h-64 mt-4 p-6 leading-6">
               <p><span>Titre de l'oeuvre : </span>{item.show}</p>
-              <p><span>Média : </span>{item.category}</p>
+              <p><span>Média : </span>{toFrench(item.category)}</p>
               <p><span>Personnage : </span>{item.character}</p>
               <p><span>Artiste : </span>{item.artist}</p>
-              <p><span>Partagé le : </span>{item.created_at}</p>
+              <p><span>Partagé le : </span>{item.creation_date}</p>
               <p className="test"><span>Citation : </span>{item.ref}</p>
             </li>
           ))}
         </ul>
-
       </section>
     </div>
   );

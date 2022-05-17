@@ -51,7 +51,6 @@ function ListsPages() {
     axios.get(callAPI())
       .then((res) => {
         dispatch(setListData(res.data));
-        console.log(res);
       });
   }, [listTheme, param]);
 
