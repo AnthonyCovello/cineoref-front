@@ -6,9 +6,7 @@ import PropTypes from 'prop-types';
 import List from './list';
 
 // ? Composant
-function ListCategory({ list, listFilters }) {
-  // console.log('list:', list);
-  // console.log('listFilter', listFilters);
+function ListTheme({ list, listFilters }) {
   const dataMapping = [];
 
   listFilters.forEach((listFilter) => {
@@ -21,7 +19,7 @@ function ListCategory({ list, listFilters }) {
   const result = Object.keys(dataMapping).map((key) => [(key), dataMapping[key]]);
 
   return (
-    <div className="ListCategory">
+    <div className="ListTheme">
       {result.map((letter) => (
         <div key={letter[0]}>
           <span id={letter[0]}>{letter[0]}</span>
@@ -34,7 +32,7 @@ function ListCategory({ list, listFilters }) {
   );
 }
 
-ListCategory.propTypes = {
+ListTheme.propTypes = {
   list: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -46,4 +44,4 @@ ListCategory.propTypes = {
   ).isRequired,
 };
 
-export default React.memo(ListCategory);
+export default React.memo(ListTheme);

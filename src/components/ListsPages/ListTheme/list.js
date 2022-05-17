@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 
 // ? Composant
 function List({ letter }) {
+  console.log(letter);
   return (
     <li>
       {letter.map((data) => (
-        <Link to="#" key={data.id} className="block">{data.name}</Link>
+        <Link to={`/test/${data.category}/${data.id}`} key={data.id} className="">{data.name}</Link>
       ))}
     </li>
   );
