@@ -4,13 +4,15 @@
   background-image: linear-gradient(135deg, vars.$mainBlue-opacity-8, vars.$darkBlue-Opacity-8);
 
   //? ombre
+  box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2);
   -ms-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* IE 9 */
   -webkit-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Safari and Chrome */
   -o-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Opera */
   -moz-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Firefox */
-  box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2);
 
   &:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
     -ms-transition: transform 0.3s ease; /* IE 9 */
     -ms-transform: scale(1.1); /* IE 9 */
     -webkit-transition: transform 0.3s ease; /* Safari and Chrome */
@@ -19,8 +21,6 @@
     -o-transform: scale(1.1); /* Opera */
     -moz-transition: transform 0.3s ease; /* Firefox */
     -moz-transform: scale(1.1); /* Firefox */
-    transition: transform 0.3s ease;
-    transform: scale(1.1);
   }
 
   // ? Animation de rotation du dé
