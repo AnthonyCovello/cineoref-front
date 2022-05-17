@@ -32,11 +32,9 @@ function App() {
         <Route path="/user/:id/my-profile" element={<Profile />} />
         <Route path="/user/:id/profile" element={<Profile />} />
         <Route path="/registration" element={<SignUp />} />
-        <Route path="/:listTheme/:param" element={<ListsPages />}>
-          <Route path=":id" element={<div>JE SUIS TON PERE</div>}>
-            <Route path=":ref_id" element={<RefPage />} />
-          </Route>
-        </Route>
+        <Route path="/:listTheme/:param" element={<ListsPages />} />
+        <Route path="/:category/:id/refs" element={<div>JE SUIS TON PERE</div>} />
+        <Route path="ref/:ref_id" element={<RefPage />} />
 
         <Route path="/:listTheme" element={<ListsPages />} />
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} />

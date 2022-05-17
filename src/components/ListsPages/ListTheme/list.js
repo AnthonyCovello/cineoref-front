@@ -8,7 +8,12 @@ function List({ letter }) {
   return (
     <li>
       {letter.map((data) => (
-        <Link to={`/test/${data.category}/${data.id}`} key={data.id} className="">{data.name}</Link>
+        <Link
+          to={`/${data.category}/${data.id}/refs`}
+          key={data.id}
+          className=""
+        >{data.name}
+        </Link>
       ))}
     </li>
   );
