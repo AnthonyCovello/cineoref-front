@@ -6,18 +6,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 import { changeTabTitle } from '../../utlis';
+import { setNewRefData } from '../../features/refSlice';
+import { setTopContributorsData } from '../../features/topContributorsSlice';
 
 // ? Import composants
-import Description from './Description';
 import RandomRef from './RandomRef';
 import SearchBarRef from './SearchBarRef';
 import TopContributor from './TopContributor';
 import TopNew from './TopNew';
-import { setNewRefData, setRandomRefData } from '../../features/refSlice';
-import { setTopContributorsData } from '../../features/topContributorsSlice';
 
 // ? Import style
 import './styles.scss';
+
 // ? Composant
 function Homepage() {
   changeTabTitle('Acceuil');
@@ -25,6 +25,7 @@ function Homepage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
+  const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
 
   useEffect(() => {
     axios
@@ -37,11 +38,6 @@ function Homepage() {
       .then((res) => {
         dispatch(setNewRefData(res.data));
       });
-    axios
-      .get('https://cinoref-api.herokuapp.com/random')
-      .then((res) => {
-        dispatch(setRandomRefData(res.data));
-      });
   }, []);
 
   const handleAddRef = () => {
@@ -53,9 +49,18 @@ function Homepage() {
     }
   };
 
+  // * Ouverture du menu de connexion
+  const toggleDropdown = () => {
+    dispatch(setLoginDropdown());
+  };
+
   return (
-    <div className="homePage">
-      {/* <Description /> */}
+    <div
+      className="homePage"
+      onClick={() => {
+        if (isOpen === true) toggleDropdown();
+      }}
+    >
       <SearchBarRef />
       <div className="line-random-top">
         <RandomRef />

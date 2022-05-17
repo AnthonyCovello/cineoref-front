@@ -14,8 +14,6 @@ import ProposalForm from '../ProposalForm';
 import RefPage from '../RefPage';
 import ScrollToTop from '../ScrollToTop';
 import Lists from '../Lists';
-//* Test
-import Protected from '../Protected';
 
 // ? Import style
 import './styles.scss';
@@ -31,7 +29,8 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Homepage />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/user/:id/my-profile" element={<Profile />} />
+        <Route path="/user/:id/profile" element={<Profile />} />
         <Route path="/registration" element={<SignUp />} />
         <Route path="/films" element={<Lists />} />
         <Route path="/series" element={<Lists />} />
@@ -42,12 +41,6 @@ function App() {
 
         {/* //* Test 1 */}
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} />
-        {/* //* Test2 */}
-        {/* <Route
-          path="/proposal"
-          element={<Protected isLogged={isLogged}><ProposalForm /></Protected>}
-        /> */}
-
         <Route path="/ref" element={<RefPage />} />
         <Route path="*" element={<h1>Error</h1>} />
 

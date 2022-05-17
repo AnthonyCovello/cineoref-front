@@ -1,48 +1,64 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 import { changeTabTitle } from '../../utlis';
 
 // ? Import style
 import './styles.scss';
 
-// ? Image test
-const image = 'https://imgsrc.cineserie.com/2019/10/deadpool-quand-ryan-reynolds-rend-fou-son-equipe-de-maquillage.jpg?ver=1';
-
 // ? Composant
 function Profile() {
-  changeTabTitle('Mon profil');
+  const { id } = useParams();
+  const user = useSelector(({ auth }) => auth.user);
+  const [userData, setUserData] = useState({});
+  const [contributionData, setContribution] = useState([]);
+  const [isDisable, setIsDisable] = useState(true); //* Etat des inputs
+  const enable = !isDisable ? 'enable' : ''; //* ClassName des inputs
 
-  const [isDisable, setisDisable] = useState(true);
-  const enable = !isDisable ? 'enable' : '';
+  changeTabTitle(`Profil de ${userData.username}`);
+
+  useEffect(() => {
+    axios.get(`https://cinoref-api.herokuapp.com/user/profil/${id}`)
+      .then((res) => {
+        setUserData(res.data.user);
+        setContribution(res.data.contribution);
+      });
+  }, [id]);
 
   const modifyForm = () => {
-    setisDisable(!isDisable);
+    setIsDisable(!isDisable);
   };
+  console.log(userData)
   // Todo: mettre en place Formik + executer modifyForm au submit
-
   return (
-    <div className="profile mx-auto mt-20 p-12 flex flex-wrap justify-around rounded-3xl">
+    <div className="profile w-[70%] mx-auto mt-10 p-12 flex flex-wrap justify-around rounded-xl">
       <section className="flex flex-col items-center w-2/5 container text-center">
-        <img className="avatar h-60 w-60 my-6 rounded-full" src={image} alt="Photo de profil" />
-        <p className="profile-bar">Anti-héro</p>
+        <img className="avatar h-60 w-60 my-6 rounded-full" src={userData.profile_picture} alt="Photo de profil" />
+        <p className="profile-bar">{userData.grade}</p>
+        <p className="profile-bar">
+          {
+            contributionData.length === 0
+              ? 'Pas de contribution'
+              : `${contributionData.length} ${contributionData.length > 1 ? 'contributions' : 'contribution'}`
+          }
+        </p>
         <p className="mt-1.5 text-sm">Grade suivant dans : 10 contributions</p>
         <p className="profile-bar">
-          150 contributions
-        </p>
-        <p className="profile-bar">
-          Inscris le : 10/05/2022
+          Inscris le : {userData.creation_date}
         </p>
       </section>
-      <form className="profile-form container w-2/5 py-8 px-12 rounded" action="" method="POST">
+      <form className="profile-form container w-2/5 py-8 px-12 rounded" action="" method="PATCH">
         <div className="profile-form-group">
           <label className="profile-form-group-label" htmlFor="pseudo">Pseudo</label>
-          <input className={enable} type="text" name="pseudo" placeholder="Deadpool" disabled={isDisable} />
+          <input className={enable} type="text" name="pseudo" placeholder={userData.username} disabled={isDisable} />
         </div>
         <div className="profile-form-group">
           <label className="profile-form-group-label" htmlFor="email">Adresse mail</label>
-          <input className={enable} type="email" name="email" placeholder="imthepool@marvel.io" disabled={isDisable} />
+          <input className={enable} type="email" name="email" placeholder={userData.email} disabled={isDisable} />
         </div>
         <div className="profile-form-group">
           <label className="profile-form-group-label" htmlFor="password">Mot de passe</label>
@@ -50,32 +66,31 @@ function Profile() {
         </div>
         <div className="profile-form-group">
           <label className="profile-form-group-label" htmlFor="birthday">Date de naissance</label>
-          <input className={enable} type="text" name="birthday" placeholder="03/04/1990" disabled={isDisable} />
+          <input className={enable} type="text" name="birthday" placeholder={userData.birthday} disabled={isDisable} />
         </div>
-        <div className="flex justify-around">
-          <button type="button" onClick={modifyForm}>Modifier</button>
-          <button type="submit">Sauvegarder</button>
-        </div>
+        {user.user_id === Number(id)
+          && (
+          <div className="flex justify-around">
+            <button type="button" onClick={modifyForm}>Modifier</button>
+            <button type="submit">Sauvegarder</button>
+          </div>
+          )}
       </form>
-      <section className="profile-contributions container mt-6 py-4 px-8">
+      <section className="profile-contributions w-full mt-6 py-4 px-8">
         <h2 className="profile-contributions-title p-2 font-bold text-2xl text-center">Mes contributions</h2>
-        {/* //Todo: mapper les contributions d'un user */}
-        <div className="profile-contributions-item mt-4 p-6 leading-6">
-          <p><span>Titre de l'oeuvre : </span>6 Underground</p>
-          <p><span>Média : </span>Film</p>
-          <p><span>Personnage : </span>Numéro 1</p>
-          <p><span>Artiste : </span>Ryan Reynolds</p>
-          <p><span>Partagé le : </span>02/05/2022</p>
-          <p><span>Citation : </span>Vous pouvez reculer? Je sens le bout de votre membre.</p>
-        </div>
-        <div className="profile-contributions-item mt-4 p-6 leading-6">
-          <p><span>Titre de l'oeuvre : </span>OSS 117 : Rio ne répond plus</p>
-          <p><span>Média : </span>Film</p>
-          <p><span>Personnage : </span>Armand Lesignac</p>
-          <p><span>Artiste : </span>Pierre Bellemare</p>
-          <p><span>Partagé le : </span>15/04/2022</p>
-          <p><span>Citation : </span>Pour rencontrer M. Lee, vaut mieux une bonne couverture.</p>
-        </div>
+        <ul>
+          {contributionData.map((item) => (
+            <li key={item.id} className="profile-contributions-item max-h-64 mt-4 p-6 leading-6">
+              <p><span>Titre de l'oeuvre : </span>{item.show}</p>
+              <p><span>Média : </span>{item.category}</p>
+              <p><span>Personnage : </span>{item.character}</p>
+              <p><span>Artiste : </span>{item.artist}</p>
+              <p><span>Partagé le : </span>{item.created_at}</p>
+              <p className="test"><span>Citation : </span>{item.ref}</p>
+            </li>
+          ))}
+        </ul>
+
       </section>
     </div>
   );

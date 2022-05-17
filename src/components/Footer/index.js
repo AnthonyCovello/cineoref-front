@@ -1,15 +1,30 @@
 // ? Import modules
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FcFilmReel } from 'react-icons/fc';
+import { setLoginDropdown } from '../../features/dropDownSlice';
 
 // ? Import style
 import './styles.scss';
 
 // ? Composant
 function Footer() {
+  const dispatch = useDispatch();
+  const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
+
+  // * Ouverture du menu de connexion
+  const toggleDropdown = () => {
+    dispatch(setLoginDropdown());
+  };
+
   return (
-    <footer className="footer">
+    <footer
+      className="footer"
+      onClick={() => {
+        if (isOpen === true) toggleDropdown();
+      }}
+    >
       <Link to="/" title="Page d'accueil" className="footer-brand">
         <FcFilmReel className="footer-brand-logo" />
         <span className="footer-brand-title-copyright">
