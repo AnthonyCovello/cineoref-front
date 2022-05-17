@@ -14,6 +14,7 @@ import ProposalForm from '../ProposalForm';
 import RefPage from '../RefPage';
 import ScrollToTop from '../ScrollToTop';
 import ListsPages from '../ListsPages';
+import ListsRef from '../ListsRef';
 
 // ? Import style
 import './styles.scss';
@@ -33,7 +34,7 @@ function App() {
         <Route path="/user/:id/profile" element={<Profile />} />
         <Route path="/registration" element={<SignUp />} />
         <Route path="/:listTheme/:param" element={<ListsPages />} />
-        <Route path="/:category/:id/refs" element={<div>JE SUIS TON PERE</div>} />
+        <Route path="/:listTheme/:category/:id/refs" element={<ListsRef />} />
         <Route path="ref/:ref_id" element={<RefPage />} />
 
         <Route path="/:listTheme" element={<ListsPages />} />

@@ -26,7 +26,6 @@ function Profile() {
       .then((res) => {
         setUserData(res.data.user);
         setContribution(res.data.contribution);
-        console.log(res.data.contribution);
       });
   }, [id]);
 

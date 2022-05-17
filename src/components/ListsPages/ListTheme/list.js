@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // ? Composant
-function List({ letter }) {
+function List({ letter, listTheme }) {
   console.log(letter);
   return (
     <li>
       {letter.map((data) => (
         <Link
-          to={`/${data.category}/${data.id}/refs`}
+          to={`/${listTheme}/${data.category}/${data.id}/refs`}
           key={data.id}
           className=""
         >{data.name}
@@ -26,6 +26,7 @@ List.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  listTheme: PropTypes.string.isRequired,
 };
 
 export default React.memo(List);

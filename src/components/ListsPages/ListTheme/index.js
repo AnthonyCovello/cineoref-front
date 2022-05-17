@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import List from './list';
 
 // ? Composant
-function ListTheme({ list, listFilters }) {
+function ListTheme({ list, listFilters, listTheme }) {
   const dataMapping = [];
 
   listFilters.forEach((listFilter) => {
@@ -24,7 +24,7 @@ function ListTheme({ list, listFilters }) {
         <div key={letter[0]}>
           <span id={letter[0]}>{letter[0]}</span>
           <ol>
-            <List letter={letter[1]} />
+            <List letter={letter[1]} listTheme={listTheme} />
           </ol>
         </div>
       ))}
@@ -42,6 +42,7 @@ ListTheme.propTypes = {
   listFilters: PropTypes.arrayOf(
     PropTypes.string,
   ).isRequired,
+  listTheme: PropTypes.string.isRequired,
 };
 
 export default React.memo(ListTheme);

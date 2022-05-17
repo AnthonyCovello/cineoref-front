@@ -11,13 +11,13 @@ import { setListData } from '../../features/listSlice';
 
 // ? Composant
 function ListsRef() {
-  const { listTheme, param, id } = useParams();
+  const { listTheme, category, id } = useParams();
   const dispatch = useDispatch();
-
+  console.log(listTheme, category, id);
   function callAPI() {
     let urlAPI;
     if (listTheme === 'listcategory') {
-      urlAPI = `https://cinoref-api.herokuapp.com/listcategory/${param}/${id}/ref`;
+      urlAPI = `https://cinoref-api.herokuapp.com/listcategory/${category}/${id}/ref`;
     }
     if (listTheme === 'listartist' || listTheme === 'listcharacter') {
       urlAPI = `https://cinoref-api.herokuapp.com/${listTheme}/${id}/ref`;
@@ -29,13 +29,14 @@ function ListsRef() {
     axios.get(callAPI())
       .then((res) => {
         dispatch(setListData(res.data));
+        console.log('axiosListRef', res);
       });
-  }, [listTheme, param, id]);
+  }, [listTheme, category, id]);
 
   return (
     <ul>
       <li>
-
+        <span>toto</span>
       </li>
     </ul>
   );

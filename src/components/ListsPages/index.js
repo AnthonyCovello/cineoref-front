@@ -57,7 +57,7 @@ function ListsPages() {
   return (
     <div>
       <ListMenu listFilters={listFilters} />
-      <ListTheme list={listApi} listFilters={listFilters} />
+      <ListTheme list={listApi} listFilters={listFilters} listTheme={listTheme} />
     </div>
   );
 }
