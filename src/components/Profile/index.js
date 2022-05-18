@@ -5,7 +5,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../../features/authSlice';
 import { changeTabTitle, toFrench } from '../../utlis';
 
@@ -56,6 +56,7 @@ function Profile() {
     const passwordValue = valuePassword ? {
       password: valuePassword,
     } : {};
+
     axios.patch('https://cinoref-api.herokuapp.com/user/edit', {
       ...emailValue,
       ...passwordValue,
@@ -68,7 +69,7 @@ function Profile() {
   const modifyForm = () => {
     setIsDisable(!isDisable);
   };
-  // Todo: mettre en place Formik + executer modifyForm au submit
+
   return (
     <div className="profile w-[70%] mx-auto p-12 flex flex-wrap justify-around rounded-xl">
       <section className="flex flex-col items-center w-2/5 container text-center">
@@ -138,12 +139,14 @@ function Profile() {
         <ul>
           {contributionData.map((item) => (
             <li key={item.id} className="profile-contributions-item max-h-64 mt-4 p-6 leading-6">
-              <p><span>Titre de l'oeuvre : </span>{item.show}</p>
-              <p><span>Média : </span>{toFrench(item.category)}</p>
-              <p><span>Personnage : </span>{item.character}</p>
-              <p><span>Artiste : </span>{item.artist}</p>
-              <p><span>Partagé le : </span>{item.created_date}</p>
-              <p className="test"><span>Citation : </span>{item.ref}</p>
+              <Link to={`/ref/${item.id}`}>
+                <p><span>Titre de l'oeuvre : </span>{item.show}</p>
+                <p><span>Média : </span>{toFrench(item.category)}</p>
+                <p><span>Personnage : </span>{item.character}</p>
+                <p><span>Artiste : </span>{item.artist}</p>
+                <p><span>Partagé le : </span>{item.created_date}</p>
+                <p className="test"><span>Citation : </span>{item.ref}</p>
+              </Link>
             </li>
           ))}
         </ul>
