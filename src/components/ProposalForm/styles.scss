@@ -64,6 +64,7 @@
   
   // input citation
   textarea {
+    resize: both;
     min-height: 50px;
     max-height: 200px;
     min-width: 300px;
@@ -89,3 +90,6 @@
   }
 }
 
+.form-group>div {
+  background-color: rgb(35 200 95);
+}
