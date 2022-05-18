@@ -51,30 +51,31 @@ function Profile() {
           Inscris le : {userData.creation_date}
         </p>
       </section>
-      <form className="profile-form container w-2/5 py-8 px-12 rounded" action="" method="PATCH">
+      {/* // ? Formulaire utilisateur */}
+      <form className="profile-form w-2/5 py-8 px-12 cursor-context-menu rounded" action="" method="PATCH">
         <div className="profile-form-group">
-          <label className="profile-form-group-label" htmlFor="pseudo">Pseudo</label>
-          <input className={enable} type="text" name="pseudo" placeholder={userData.username} disabled={isDisable} />
+          <h3 className="profile-form-group-label" htmlFor="pseudo">Pseudo</h3>
+          <p className="">{userData.username}</p>
         </div>
         <div className="profile-form-group">
-          <label className="profile-form-group-label" htmlFor="email">Adresse mail</label>
+          <h3 className="profile-form-group-label" htmlFor="email">Adresse mail</h3>
           <input className={enable} type="email" name="email" placeholder={userData.email} disabled={isDisable} />
         </div>
         <div className="profile-form-group">
-          <label className="profile-form-group-label" htmlFor="password">Mot de passe</label>
+          <h3 className="profile-form-group-label" htmlFor="password">Mot de passe</h3>
           <input className={enable} type="password" name="password" placeholder="********" disabled={isDisable} />
         </div>
         <div className="profile-form-group">
-          <label className="profile-form-group-label" htmlFor="birthday">Date de naissance</label>
-          <input className={enable} type="text" name="birthday" placeholder={userData.birthday} disabled={isDisable} />
+          <h3 className="profile-form-group-label" htmlFor="birthday">Date de naissance</h3>
+          <p className="">{userData.birthday}</p>
         </div>
         {user.user_id === Number(id)
-          && (
-            <div className="flex justify-around">
+          ? (
+            <div className="flex justify-around my-4">
               <button type="button" onClick={modifyForm}>Modifier</button>
               <button type="submit">Sauvegarder</button>
             </div>
-          )}
+          ) : ''}
       </form>
       <section className="profile-contributions w-full mt-6 py-4 px-8">
         <h2 className="profile-contributions-title p-2 font-bold text-2xl text-center">Mes contributions</h2>
