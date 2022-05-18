@@ -28,7 +28,7 @@ function Profile() {
         setContribution(res.data.contribution);
       });
   }, [id]);
-console.log(contributionData)
+
   const modifyForm = () => {
     setIsDisable(!isDisable);
   };
