@@ -3,8 +3,10 @@
 // ? Import modules
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
+import { logout } from '../../features/authSlice';
 import { changeTabTitle, toFrench } from '../../utlis';
 
 // ? Import style
@@ -14,9 +16,15 @@ import './styles.scss';
 function Profile() {
   const { id } = useParams();
   const user = useSelector(({ auth }) => auth.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({});
   const [contributionData, setContribution] = useState([]);
   const [isDisable, setIsDisable] = useState(true); //* Etat des inputs
+  const [valueEmail, setValueEmail] = useState(null);
+  const [valuePassword, setValuePassword] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   const enable = !isDisable ? 'enable' : ''; //* ClassName des inputs
 
   changeTabTitle(`Profil de ${userData.username}`);
@@ -28,6 +36,34 @@ function Profile() {
         setContribution(res.data.contribution);
       });
   }, [id]);
+
+  const handleDelete = () => {
+    axios.delete(`https://cinoref-api.herokuapp.com/user/delete/${id}`)
+      .then((res) => {
+        console.log(res);
+        navigate('/');
+        dispatch(logout());
+      });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const emailValue = valueEmail ? {
+      email: valueEmail,
+    } : {};
+
+    const passwordValue = valuePassword ? {
+      password: valuePassword,
+    } : {};
+    axios.patch('https://cinoref-api.herokuapp.com/user/edit', {
+      ...emailValue,
+      ...passwordValue,
+      id: id,
+    }).then((res) => {
+      console.log(res);
+    });
+  };
 
   const modifyForm = () => {
     setIsDisable(!isDisable);
@@ -52,18 +88,37 @@ function Profile() {
         </p>
       </section>
       {/* // ? Formulaire utilisateur */}
-      <form className="profile-form w-2/5 py-8 px-12 cursor-context-menu rounded" action="" method="PATCH">
+      <form
+        className="profile-form w-2/5 py-8 px-12 cursor-context-menu rounded"
+        action=""
+        method="PATCH"
+        onSubmit={handleSubmit}
+      >
         <div className="profile-form-group">
           <h3 className="profile-form-group-label" htmlFor="pseudo">Pseudo</h3>
           <p className="">{userData.username}</p>
         </div>
         <div className="profile-form-group">
           <h3 className="profile-form-group-label" htmlFor="email">Adresse mail</h3>
-          <input className={enable} type="email" name="email" placeholder={userData.email} disabled={isDisable} />
+          <input
+            className={enable}
+            type="email"
+            name="email"
+            placeholder={userData.email}
+            disabled={isDisable}
+            onChange={(e) => setValueEmail(e.target.value)}
+          />
         </div>
         <div className="profile-form-group">
           <h3 className="profile-form-group-label" htmlFor="password">Mot de passe</h3>
-          <input className={enable} type="password" name="password" placeholder="********" disabled={isDisable} />
+          <input
+            className={enable}
+            type="password"
+            name="password"
+            placeholder="********"
+            disabled={isDisable}
+            onChange={(e) => setValuePassword(e.target.value)}
+          />
         </div>
         <div className="profile-form-group">
           <h3 className="profile-form-group-label" htmlFor="birthday">Date de naissance</h3>
@@ -73,7 +128,8 @@ function Profile() {
           ? (
             <div className="flex justify-around my-4">
               <button type="button" onClick={modifyForm}>Modifier</button>
-              <button type="submit">Sauvegarder</button>
+              <button type="submit" onClick={modifyForm}>Sauvegarder</button>
+              <button type="button" onClick={() => setShowModal(true)}>Supprimer mon compte</button>
             </div>
           ) : ''}
       </form>
@@ -92,6 +148,14 @@ function Profile() {
           ))}
         </ul>
       </section>
+      {showModal
+        ? (
+          <div>
+            <h3> êtes vous sur de vouloir supprimer votre compte ? </h3>
+            <button type="button" onClick={handleDelete}>Oui</button>
+            <button type="button" onClick={() => setShowModal(true)}>Non</button>
+          </div>
+        ) : null}
     </div>
   );
 }
