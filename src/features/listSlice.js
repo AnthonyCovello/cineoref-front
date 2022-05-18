@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   categoryList: [],
   refList: [],
+  searchList: [],
 };
 
 export const listSlice = createSlice({
@@ -15,8 +16,11 @@ export const listSlice = createSlice({
     setListRef: (state, { payload }) => {
       state.refList = payload;
     },
+    setListSearch: (state, { payload }) => {
+      state.searchList = payload;
+    },
   },
 });
 
 export default listSlice.reducer;
-export const { setListCategory, setListRef } = listSlice.actions;
+export const { setListCategory, setListRef, setListSearch } = listSlice.actions;
