@@ -134,7 +134,7 @@ function ProposalForm() {
       </Formik>
       {message && (
         <div className="form-group">
-          <div className="alert alert-danger" role="alert">
+          <div className="py-4 px-8 font-bold rounded" role="alert">
             {message}
           </div>
         </div>
