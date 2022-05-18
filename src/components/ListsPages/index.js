@@ -12,6 +12,7 @@ import ListTheme from './ListTheme';
 import ListMenu from './ListMenu';
 
 // ? Import style
+import './styles.scss';
 
 // ? Composant
 function ListsPages() {
@@ -62,9 +63,11 @@ function ListsPages() {
   }, [listTheme, param]);
 
   return (
-    <div onClick={() => {
-      if (isOpen === true) toggleDropdown();
-    }}
+    <div
+      className="listPages w-4/5 mx-auto p-12 rounded-xl"
+      onClick={() => {
+        if (isOpen === true) toggleDropdown();
+      }}
     >
       <ListMenu listFilters={listFilters} />
       <ListTheme list={listApi} listFilters={listFilters} listTheme={listTheme} />
