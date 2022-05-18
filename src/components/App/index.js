@@ -15,6 +15,7 @@ import RefPage from '../RefPage';
 import ScrollToTop from '../ScrollToTop';
 import ListsPages from '../ListsPages';
 import ListsRef from '../ListsRef';
+import SearchResult from '../SearchResult';
 
 // ? Import style
 import './styles.scss';
@@ -39,6 +40,7 @@ function App() {
 
         <Route path="/:listTheme" element={<ListsPages />} />
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} />
+        <Route path="/searchResult" element={<SearchResult />} />
         <Route path="*" element={<h1>Error</h1>} />
 
       </Routes>
