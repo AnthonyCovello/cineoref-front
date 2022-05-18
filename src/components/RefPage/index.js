@@ -1,16 +1,21 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable camelcase */
 // ? Import modules
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import ClipboardJS from 'clipboard';
+import Tippy from '@tippyjs/react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
+import { FaClosedCaptioning } from 'react-icons/fa';
 import { changeTabTitle, toFrench } from '../../utlis';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 
 // ? Import style
 import './styles.scss';
+import 'tippy.js/dist/tippy.css';
 
 // ? Composant
 function RefPage() {
@@ -32,6 +37,21 @@ function RefPage() {
         setRefData(res.data[0]);
       });
   }, []);
+
+  //* config module pour copier le texte
+  const clipboard = new ClipboardJS('.copy-btn');
+  clipboard.on('success', (e) => {
+    e.clearSelection();
+  });
+
+  //* tooltip
+  const [isVisible, setIsVisible] = useState(null);
+  const handleClick = () => {
+    setIsVisible(true);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 500);
+  };
 
   return (
     <div
@@ -63,7 +83,9 @@ function RefPage() {
       <div className="user-score">
         <div>
           <h2 className="refContainer-user">Partagée par</h2>
-          <Link to="#" className="refContainer-data">{refData.user}</Link>
+          {refData.user
+            ? <Link to={`/user/${refData.user_id}/profile`} className="refContainer-data">{refData.user}</Link>
+            : 'Anonyme'}
         </div>
         <div>
           <h2 className="refContainer-score">Note de la communauté</h2>
@@ -71,8 +93,11 @@ function RefPage() {
           <p className="refContainer-data">{ }</p>
         </div>
       </div>
-      {/* // Todo: utiliser react-icons */}
-      <span className="refContainer-cc" title="Copier le texte">cc</span>
+      <Tippy content="Copié !" visible={isVisible}>
+        <span className="self-end cursor-pointer" onClick={handleClick}>
+          <FaClosedCaptioning className="copy-btn text-porange text-[1.3rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
+        </span>
+      </Tippy>
       {/* // Todo: faire un système pour signaler une erreur */}
       <a className="signal">Signaler une erreur</a>
     </div>
