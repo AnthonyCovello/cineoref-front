@@ -34,11 +34,11 @@ function App() {
         <Route path="/user/:id/my-profile" element={<Profile />} />
         <Route path="/user/:id/profile" element={<Profile />} />
         <Route path="/registration" element={<SignUp />} />
+        <Route path="/:listTheme" element={<ListsPages />} />
         <Route path="/:listTheme/:param" element={<ListsPages />} />
         <Route path="/:listTheme/:category/:id/refs" element={<ListsRef />} />
-        <Route path="ref/:ref_id" element={<RefPage />} />
+        <Route path="/ref/:ref_id" element={<RefPage />} />
 
-        <Route path="/:listTheme" element={<ListsPages />} />
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} />
         <Route path="/searchResult" element={<SearchResult />} />
         <Route path="*" element={<h1>Error</h1>} />

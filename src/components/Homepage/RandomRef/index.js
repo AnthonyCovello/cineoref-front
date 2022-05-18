@@ -2,6 +2,7 @@
 // ? Import modules
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaClosedCaptioning } from 'react-icons/fa';
 import ClipboardJS from 'clipboard';
@@ -51,8 +52,12 @@ function RandomRef() {
       <span type="button" className="self-end cursor-pointer" onClick={randomRefApi}>
         <img src={randomDice} className="w-11 h-11" title="Afficher une citation aléatoire" alt="dé à 20 faces" />
       </span>
-      <p className="randomRef-text">{randomRefData.ref}</p>
-      <span className="ml-8 mt-6 text-[1.30rem]">{randomRefData.character}</span>
+      <Link className="randomRef-text" to={`/ref/${randomRefData.id}`}>
+        {randomRefData.ref}
+      </Link>
+      <Link className="ml-8 mt-6 mr-auto flex text-[1.30rem]" to={`/listcharacter/character/${randomRefData.character_id}/refs`}>
+        {randomRefData.character}
+      </Link>
       <Tippy content="Copié !" visible={isVisible}>
         <span className="self-end cursor-pointer" onClick={handleClick}>
           <FaClosedCaptioning className="copy-btn text-porange text-[1.3rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
