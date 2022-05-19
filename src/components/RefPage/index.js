@@ -1,16 +1,21 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable camelcase */
 // ? Import modules
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import ClipboardJS from 'clipboard';
+import Tippy from '@tippyjs/react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
+import { FaClosedCaptioning } from 'react-icons/fa';
 import { changeTabTitle, toFrench } from '../../utlis';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 
 // ? Import style
 import './styles.scss';
+import 'tippy.js/dist/tippy.css';
 
 // ? Composant
 function RefPage() {
@@ -26,13 +31,30 @@ function RefPage() {
     dispatch(setLoginDropdown());
   };
 
+  //* config module pour copier le texte
+  const clipboard = new ClipboardJS('.copy-btn');
+  clipboard.on('success', (e) => {
+    e.clearSelection();
+  });
+
+  //* tooltip
+  const [isVisible, setIsVisible] = useState(null);
+  const handleClick = () => {
+    setIsVisible(true);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 500);
+  };
+
   useEffect(() => {
     axios.get(`https://cinoref-api.herokuapp.com/ref/${ref_id}`)
       .then((res) => {
         setRefData(res.data[0]);
       });
-  }, []);
+    clipboard.destroy();
+  }, [ref_id]);
 
+console.log(refData);
   return (
     <div
       className="refContainer"
@@ -50,20 +72,31 @@ function RefPage() {
           alt=""
         />
       </div>
+      {/* // Todo: besoin de title_id */}
       <h2 className="refContainer-mediaTitle">Titre de l'œuvre</h2>
       <p className="refContainer-data">{refData.title}</p>
       <h2 className="refContainer-category">Média</h2>
       <p className="refContainer-data">{toFrench(refData.category)}</p>
+      {/* // Todo: besoin de character_id */}
       <h2 className="refContainer-character">Personnage</h2>
       <p className="refContainer-data">{refData.character}</p>
+      {/* // Todo: besoin de artist_id */}
       <h2 className="refContainer-artist">Artiste</h2>
       <p className="refContainer-data">{refData.artist}</p>
       <h2 className="refContainer-ref">Citation</h2>
-      <p className="refContainer-data">{refData.ref}</p>
-      <div className="user-score">
+      <p className="refContainer-data data-ref text-lg">{refData.ref}</p>
+      <Tippy content="Copié !" visible={isVisible}>
+        <span className="ml-1/2 mr-1/2 cursor-pointer" onClick={handleClick}>
+          <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem]" data-clipboard-target=".data-ref" title="Copier le texte" />
+        </span>
+      </Tippy>
+      <div className="user-score text-center">
         <div>
           <h2 className="refContainer-user">Partagée par</h2>
-          <Link to="#" className="refContainer-data">{refData.user}</Link>
+          {/* // Todo: besoin de user_id */}
+          {refData.user
+            ? <Link to={`/user/${refData.user_id}/profile`} className="refContainer-data">{refData.user}</Link>
+            : 'Anonyme'}
         </div>
         <div>
           <h2 className="refContainer-score">Note de la communauté</h2>
@@ -71,8 +104,6 @@ function RefPage() {
           <p className="refContainer-data">{ }</p>
         </div>
       </div>
-      {/* // Todo: utiliser react-icons */}
-      <span className="refContainer-cc" title="Copier le texte">cc</span>
       {/* // Todo: faire un système pour signaler une erreur */}
       <a className="signal">Signaler une erreur</a>
     </div>
