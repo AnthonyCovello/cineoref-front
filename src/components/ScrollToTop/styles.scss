@@ -1,20 +1,8 @@
 @use 'src/styles/vars';
 
-.bottom-to-top{
-  position: relative;
-}
-
 .icon-position-style{
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  bottom: 5.5rem;
-  right: 0.5rem;
-  z-index: 3;
   background-color: vars.$orange;
   border: 2px solid white;
-  border-radius: 50%;
-  cursor: pointer;
   animation: movebtn 3s ease-in-out infinite;
   transition: all .5s ease-in-out;
 
