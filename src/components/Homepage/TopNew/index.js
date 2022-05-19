@@ -22,7 +22,8 @@ function HomeList() {
   const dispatch = useDispatch();
   const tabList = useSelector(({ topNew }) => topNew.tabList);
   const newRef = useSelector(({ ref }) => ref.newRef);
-
+  const topRef = useSelector(({ ref }) => ref.topRef);
+  console.log('topRef', topRef);
   //* config module pour copier le texte
   const clipboard = new ClipboardJS('.copy-btn');
   clipboard.on('success', (e) => {
@@ -86,9 +87,9 @@ function HomeList() {
               </Tippy>
             </li>
           ))
-          : listOfRefs.map((data, index) => (
+          : topRef.map((data, index) => (
             index < 5 && (
-              <li key={data.id} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-md tablet:w-full">
+              <li key={data.ref_id} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-md tablet:w-full">
                 <Link to={`/ref/${data.ref_id}`} className="item-ref my-3 text-lg">{data.ref}</Link>
                 <Link to={`/listcharacter/character/${data.character_id}/refs`} className="ml-6 mt-6 max-h-14 text-left phone:text-sm">{data.character}</Link>
                 <Tippy content="Copié !" visible={isVisible}>
