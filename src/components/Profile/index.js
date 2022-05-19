@@ -154,7 +154,7 @@ function Profile() {
       {showModal
         ? (
           <div>
-            <h3> êtes vous sur de vouloir supprimer votre compte ? </h3>
+            <h3> êtes vous sûre de vouloir supprimer votre compte ? </h3>
             <button type="button" onClick={handleDelete}>Oui</button>
             <button type="button" onClick={() => setShowModal(true)}>Non</button>
           </div>
