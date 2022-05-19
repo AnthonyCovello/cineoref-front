@@ -31,13 +31,6 @@ function RefPage() {
     dispatch(setLoginDropdown());
   };
 
-  useEffect(() => {
-    axios.get(`https://cinoref-api.herokuapp.com/ref/${ref_id}`)
-      .then((res) => {
-        setRefData(res.data[0]);
-      });
-  }, []);
-
   //* config module pour copier le texte
   const clipboard = new ClipboardJS('.copy-btn');
   clipboard.on('success', (e) => {
@@ -53,6 +46,15 @@ function RefPage() {
     }, 500);
   };
 
+  useEffect(() => {
+    axios.get(`https://cinoref-api.herokuapp.com/ref/${ref_id}`)
+      .then((res) => {
+        setRefData(res.data[0]);
+      });
+    clipboard.destroy();
+  }, []);
+
+console.log(refData);
   return (
     <div
       className="refContainer"
@@ -79,8 +81,13 @@ function RefPage() {
       <h2 className="refContainer-artist">Artiste</h2>
       <p className="refContainer-data">{refData.artist}</p>
       <h2 className="refContainer-ref">Citation</h2>
-      <p className="refContainer-data">{refData.ref}</p>
-      <div className="user-score">
+      <p className="refContainer-data data-ref">{refData.ref}</p>
+      <Tippy content="Copié !" visible={isVisible}>
+        <span className="ml-1/2 mr-1/2 cursor-pointer" onClick={handleClick}>
+          <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem]" data-clipboard-target=".data-ref" title="Copier le texte" />
+        </span>
+      </Tippy>
+      <div className="user-score text-center">
         <div>
           <h2 className="refContainer-user">Partagée par</h2>
           {refData.user
@@ -93,11 +100,6 @@ function RefPage() {
           <p className="refContainer-data">{ }</p>
         </div>
       </div>
-      <Tippy content="Copié !" visible={isVisible}>
-        <span className="self-end cursor-pointer" onClick={handleClick}>
-          <FaClosedCaptioning className="copy-btn text-porange text-[1.3rem]" data-clipboard-target=".randomRef-text" title="Copier le texte" />
-        </span>
-      </Tippy>
       {/* // Todo: faire un système pour signaler une erreur */}
       <a className="signal">Signaler une erreur</a>
     </div>
