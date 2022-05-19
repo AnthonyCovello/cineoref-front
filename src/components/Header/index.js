@@ -10,6 +10,7 @@ import UserMenu from './UserMenu';
 
 // ? Import style
 import './styles.scss';
+import PhoneNav from './PhoneNav';
 
 // ? Composant
 function Header() {
@@ -17,14 +18,15 @@ function Header() {
   const islogged = useSelector(({ auth }) => auth.isLoggedIn);
 
   return (
-    <header className="header fixed top-0 z-10 w-full h-16 p-4 flex items-center justify-between">
+    <header className="header fixed top-0 z-10 w-full h-16 p-4 flex items-center justify-between phone:h-12">
       <Link to="/" title="Page d'accueil" className="flex items-center">
-        <FcFilmReel className="mr-1.5 text-[2rem]" />
-        <span className="text-[1.7rem] font-bold text-center">
+        <FcFilmReel className="mr-1.5 text-[2rem] tablet:hidden" />
+        <span className="text-[1.7rem] font-bold text-center tablet:text-[1.2rem]">
           Ciné<span className="header-titleSpan">O</span>'Ref
         </span>
       </Link>
-      <nav className="font-bold flex gap-6">
+      <PhoneNav />
+      <nav className="font-bold flex gap-6 tablet:hidden">
         <NavLink to="/listcategory/movie" className={activeLink}>Films</NavLink>
         <NavLink to="/listcategory/serie" className={activeLink}>Séries</NavLink>
         <NavLink to="/listcategory/anime" className={activeLink}>Animés</NavLink>
