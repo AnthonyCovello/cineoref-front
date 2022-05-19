@@ -56,17 +56,17 @@ function Homepage() {
 
   return (
     <div
-      className="homePage"
+      className="grid"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}
     >
       <SearchBarRef />
-      <div className="line-random-top">
+      <div className="flex justify-center gap-20">
         <RandomRef />
         <TopContributor />
       </div>
-      <span className="addRefBtn my-8 mx-auto p-3.5 font-bold cursor-pointer" onClick={handleAddRef}>
+      <span className="addRefBtn my-8 mx-auto p-3.5 font-bold rounded cursor-pointer" onClick={handleAddRef}>
         Ajouter une ref'
       </span>
       <TopNew />

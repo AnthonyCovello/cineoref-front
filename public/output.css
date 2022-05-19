@@ -635,6 +635,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: table;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -751,6 +755,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: flex-start;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -765,6 +773,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .gap-y-6 {
@@ -1041,6 +1053,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
+  .tablet\:w-4\/5 {
+    width: 80%;
+  }
+
   .tablet\:flex-wrap {
     flex-wrap: wrap;
   }
@@ -1140,6 +1156,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 2.5rem;
   }
 
+  .phone\:w-4\/5 {
+    width: 80%;
+  }
+
   .phone\:pl-32 {
     padding-left: 8rem;
   }
@@ -1151,6 +1171,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   .phone\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .phone\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .phone\:text-\[1\.2rem\] {
+    font-size: 1.2rem;
+  }
+
+  .phone\:text-\[1\.1rem\] {
+    font-size: 1.1rem;
   }
 }
 
