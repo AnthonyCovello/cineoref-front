@@ -6,8 +6,8 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { changeTabTitle } from '../../utlis';
-import OtherProfile from './other-profile';
-import MyProfile from './my-Profile';
+import OtherProfile from './OtherProfile';
+import MyProfile from './MyProfile';
 
 // ? Import style
 import './styles.scss';
