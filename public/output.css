@@ -950,8 +950,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (max-width: 1024px) {
+  .tablet\:mt-20 {
+    margin-top: 5rem;
+  }
+
+  .tablet\:mt-24 {
+    margin-top: 6rem;
+  }
+
   .tablet\:hidden {
     display: none;
+  }
+
+  .tablet\:pl-36 {
+    padding-left: 9rem;
   }
 
   .tablet\:text-\[1\.2rem\] {
@@ -961,6 +973,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .tablet\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
@@ -981,6 +998,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: 6rem;
   }
 
+  .phone\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .phone\:hidden {
     display: none;
   }
@@ -993,8 +1014,25 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 2rem;
   }
 
+  .phone\:h-16 {
+    height: 4rem;
+  }
+
   .phone\:w-8 {
     width: 2rem;
+  }
+
+  .phone\:pl-32 {
+    padding-left: 8rem;
+  }
+
+  .phone\:pl-28 {
+    padding-left: 7rem;
+  }
+
+  .phone\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
