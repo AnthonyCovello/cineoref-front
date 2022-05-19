@@ -24,8 +24,8 @@
   }
 
   // ? Animation de rotation du dé
-  span>img:hover {
-    animation: loading 3s linear infinite;
+  span>img {
+    animation: loading 5s linear infinite;
 
     @keyframes loading {
       0% { 
@@ -43,5 +43,13 @@
     display: -webkit-box;
     -webkit-line-clamp: 5; //* limite de lignes
     overflow: hidden; //* cache le texte en trop
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .randomRef:hover {
+    transition: initial;
+    transform: initial;
   }
 }

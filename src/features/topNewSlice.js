@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const topNewSlice = createSlice({
   name: 'topNew',
   initialState: {
-    tabList: 'topRated',
+    tabList: 'newests',
   },
   reducers: {
     setTablist: (state, { payload }) => {

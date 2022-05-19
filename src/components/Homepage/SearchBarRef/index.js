@@ -32,7 +32,7 @@ function SearchBarRef() {
         Recherchez une citation
       </label>
       <input
-        className="searchInput h-24 w-full pl-40 text-[2.5rem]"
+        className="searchInput h-24 w-full pl-40 text-[2.5rem] phone:h-16 phone:pl-28 phone:text-2xl tablet:pl-36 tablet:text-3xl"
         id="searchInput"
         type="text"
         placeholder="Rechercher..."

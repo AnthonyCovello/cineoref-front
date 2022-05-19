@@ -25,7 +25,8 @@ function App() {
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
 
   return (
-    <div className="app m-0 mt-28 tracking-[1.5px]">
+    <div className="app m-0 mt-28 tracking-[1.5px] phone:mt-20 tablet:mt-24">
+      <ScrollToTop />
       <Header />
 
       <Routes>
@@ -45,7 +46,6 @@ function App() {
 
       </Routes>
 
-      <ScrollToTop />
       <Footer />
     </div>
   );
