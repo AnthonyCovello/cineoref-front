@@ -11,3 +11,11 @@
     transform: scale(1.3);
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .addRefBtn:hover {
+    background-color: inherit;
+    transition: initial;
+    transform: initial;
+  }
+}

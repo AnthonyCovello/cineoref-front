@@ -17,3 +17,12 @@
     }
   }
 }
+
+
+@media screen and (max-width: 1024px) {
+  .footer-navbar>a:hover {
+    transition: initial;
+    transform: initial;
+    text-shadow: none;
+  }
+}
