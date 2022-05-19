@@ -20,7 +20,7 @@ function Footer() {
 
   return (
     <footer
-      className="footer w-full h-20 mt-12 px-4 flex items-center justify-around phone:w-full tablet:mt-8"
+      className="footer w-full h-20 mt-12 px-4 flex items-center justify-around tablet:mt-8"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}
