@@ -78,7 +78,7 @@ function HomeList() {
           ? newRef.map((ref) => (
             <li key={ref.ref} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-md tablet:w-full">
               <Link to={`/ref/${ref.ref_id}`} className="item-ref my-3 text-lg">{ref.ref}</Link>
-              <Link to={`/listcharacter/character/${ref.character_id}`} className="ml-6 mt-6 max-h-14 text-left phone:text-sm">{ref.character}</Link>
+              <Link to={`/listcharacter/character/${ref.character_id}/refs`} className="ml-6 mt-6 max-h-14 text-left phone:text-sm">{ref.character}</Link>
               <Tippy content="Copié !" visible={isVisible}>
                 <span className="cursor-pointer self-end" onClick={handleClick}>
                   <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem]" data-clipboard-target=".item-ref" title="Copier le texte" />
@@ -90,7 +90,7 @@ function HomeList() {
             index < 5 && (
               <li key={data.id} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-md tablet:w-full">
                 <Link to={`/ref/${data.ref_id}`} className="item-ref my-3 text-lg">{data.ref}</Link>
-                <Link to={`/listcharacter/character/${data.character_id}`} className="ml-6 mt-6 max-h-14 text-left phone:text-sm">{data.character}</Link>
+                <Link to={`/listcharacter/character/${data.character_id}/refs`} className="ml-6 mt-6 max-h-14 text-left phone:text-sm">{data.character}</Link>
                 <Tippy content="Copié !" visible={isVisible}>
                   <span className="cursor-pointer self-end" onClick={handleClick}>
                     <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem]" data-clipboard-target=".item-ref" title="Copier le texte" />
