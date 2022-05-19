@@ -29,8 +29,8 @@ function UserMenu() {
   // Todo: la photo de profil ne se met pas à jour après une incription
   return (
     <div className="dropdownProfil" onClick={toggleDropdown}>
-      <span className="text-porange font-bold text-2xl">{user.pseudo}</span>
-      <div className="w-12 h-12 ml-2">
+      <span className="text-porange font-bold text-2xl phone:hidden tablet:text-xl">{user.pseudo}</span>
+      <div className="w-12 h-12 ml-2 phone:w-8 phone:h-8 phone:ml-24">
         <img className="rounded-full" src={user.profile_picture} alt="Photo de profil" />
       </div>
       {isOpen && (

@@ -472,9 +472,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-@media (min-width: 770px) {
+@media (min-width: 1025px) {
   .container {
-    max-width: 770px;
+    max-width: 1025px;
   }
 }
 
@@ -614,10 +614,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-16 {
   height: 4rem;
 }
@@ -648,10 +644,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-h-14 {
   max-height: 3.5rem;
-}
-
-.w-screen {
-  width: 100vw;
 }
 
 .w-full {
@@ -957,7 +949,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1024px) {
   .tablet\:hidden {
     display: none;
   }
@@ -965,9 +957,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:text-\[1\.2rem\] {
     font-size: 1.2rem;
   }
+
+  .tablet\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
-@media (max-width: 639px) {
+@media (max-width: 480px) {
+  .phone\:ml-12 {
+    margin-left: 3rem;
+  }
+
+  .phone\:ml-16 {
+    margin-left: 4rem;
+  }
+
+  .phone\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .phone\:ml-24 {
+    margin-left: 6rem;
+  }
+
   .phone\:hidden {
     display: none;
   }
@@ -976,12 +989,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 3rem;
   }
 
-  .phone\:text-\[1\.2rem\] {
-    font-size: 1.2rem;
+  .phone\:h-8 {
+    height: 2rem;
+  }
+
+  .phone\:w-8 {
+    width: 2rem;
   }
 }
 
-@media (min-width: 770px) {
+@media (min-width: 1025px) {
   .desk\:hidden {
     display: none;
   }

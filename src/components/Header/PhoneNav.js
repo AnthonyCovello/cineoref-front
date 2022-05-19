@@ -14,14 +14,14 @@ function PhoneNav() {
     <div className="font-bold desk:hidden">
       <button
         type="button"
-        className="menu-button font-bold"
+        className="menu-button font-bold rounded"
         onClick={toggleMenu}
       >
         Menu
       </button>
       {openMenu
         && (
-          <nav className="navMenu flex flex-col w-full text-center text-black" onClick={toggleMenu}>
+          <nav className="navMenu flex flex-col w-full text-center" onClick={toggleMenu}>
             <Link to="/listcategory/movie">Films</Link>
             <Link to="/listcategory/serie">Séries</Link>
             <Link to="/listcategory/anime">Animés</Link>

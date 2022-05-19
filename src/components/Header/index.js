@@ -18,9 +18,9 @@ function Header() {
   const islogged = useSelector(({ auth }) => auth.isLoggedIn);
 
   return (
-    <header className="header fixed top-0 z-10 w-full h-16 p-4 flex items-center justify-between phone:h-12">
+    <header className="header fixed top-0 z-10 w-full h-16 p-4 flex justify-between items-center phone:h-12">
       <Link to="/" title="Page d'accueil" className="flex items-center">
-        <FcFilmReel className="mr-1.5 text-[2rem] tablet:hidden" />
+        <FcFilmReel className="mr-1.5 text-[2rem]" />
         <span className="text-[1.7rem] font-bold text-center tablet:text-[1.2rem]">
           Ciné<span className="header-titleSpan">O</span>'Ref
         </span>
