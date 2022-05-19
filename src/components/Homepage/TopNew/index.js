@@ -14,16 +14,12 @@ import { setNewRefData } from '../../../features/refSlice';
 import './styles.scss';
 import 'tippy.js/dist/tippy.css';
 
-// ? Data fictives
-import listOfRefs from '../../../assets/data';
-
 // ? Composant
 function HomeList() {
   const dispatch = useDispatch();
   const tabList = useSelector(({ topNew }) => topNew.tabList);
   const newRef = useSelector(({ ref }) => ref.newRef);
   const topRef = useSelector(({ ref }) => ref.topRef);
-  console.log('topRef', topRef);
   //* config module pour copier le texte
   const clipboard = new ClipboardJS('.copy-btn');
   clipboard.on('success', (e) => {
@@ -49,7 +45,6 @@ function HomeList() {
     clipboard.destroy();
   }, []);
   // ! Besoin des id de ref et de character ! \\
-  console.log('ref - ', newRef);
   return (
     <div className="citation w-3/4 mx-auto rounded-md text-center tablet:w-11/12">
       <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer tablet:text-base">
