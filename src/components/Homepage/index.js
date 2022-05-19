@@ -66,7 +66,7 @@ function Homepage() {
         <RandomRef />
         <TopContributor />
       </div>
-      <span className="addRefBtn" onClick={handleAddRef}>
+      <span className="addRefBtn my-8 mx-auto p-3.5 font-bold cursor-pointer" onClick={handleAddRef}>
         Ajouter une ref'
       </span>
       <TopNew />

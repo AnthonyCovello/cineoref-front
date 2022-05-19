@@ -20,24 +20,26 @@ function Footer() {
 
   return (
     <footer
-      className="footer"
+      className="footer w-full h-20 mt-12 px-4 flex items-center justify-around phone:w-full tablet:mt-8"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}
     >
-      <Link to="/" title="Page d'accueil" className="footer-brand">
-        <FcFilmReel className="footer-brand-logo" />
-        <span className="footer-brand-title-copyright">
-          <span className="footer-brand-title">Ciné<span>O</span>'Ref</span>
-          <span className="copyright">© Copyright 2022</span>
+      <Link to="/" title="Page d'accueil" className="footer-brand flex justify-start">
+        <FcFilmReel className="mr-1.5 text-[2rem]" />
+        <span>
+          <span className="font-bold text-center text-[1.5rem] tablet:text-[1.2rem]">
+            Ciné<span className="ospan text-porange">O</span>'Ref
+          </span>
+          <span className="flex mt-0.5 text-center text-[0.7rem]">© Copyright 2022</span>
         </span>
       </Link>
-      <nav className="footer-navbar">
+      <nav className="footer-navbar flex gap-x-6 font-bold tablet:text-xs tablet:flex-wrap tablet:gap-x-3 tablet:justify-evenly">
         <Link to="/proposal">Proposer sa citation</Link>
         <Link to="/team">L'équipe</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/legal-policies">Mentions légales</Link>
-        <Link to="/cgu">Conditions générales d'utilisation</Link>
+        <Link to="/cgu">CGU</Link>
       </nav>
     </footer>
   );
