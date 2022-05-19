@@ -472,6 +472,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1025px;
+  }
+}
+
 .visible {
   visibility: visible;
 }
@@ -522,6 +528,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.mt-28 {
+  margin-top: 7rem;
 }
 
 .mr-1\.5 {
@@ -873,16 +883,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-\[1\.3rem\] {
+  font-size: 1.3rem;
+}
+
 .text-\[1\.25rem\] {
   font-size: 1.25rem;
 }
 
 .text-\[1\.30rem\] {
   font-size: 1.30rem;
-}
-
-.text-\[1\.3rem\] {
-  font-size: 1.3rem;
 }
 
 .text-3xl {
@@ -896,11 +911,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-xl {
   font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
@@ -925,16 +935,71 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: 1.5px;
 }
 
-.text-\[\#82212F\] {
-  --tw-text-opacity: 1;
-  color: rgb(130 33 47 / var(--tw-text-opacity));
-}
-
 .text-porange {
   --tw-text-opacity: 1;
   color: rgb(255 122 32 / var(--tw-text-opacity));
 }
 
+.text-\[\#82212F\] {
+  --tw-text-opacity: 1;
+  color: rgb(130 33 47 / var(--tw-text-opacity));
+}
+
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (max-width: 1024px) {
+  .tablet\:hidden {
+    display: none;
+  }
+
+  .tablet\:text-\[1\.2rem\] {
+    font-size: 1.2rem;
+  }
+
+  .tablet\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .phone\:ml-12 {
+    margin-left: 3rem;
+  }
+
+  .phone\:ml-16 {
+    margin-left: 4rem;
+  }
+
+  .phone\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .phone\:ml-24 {
+    margin-left: 6rem;
+  }
+
+  .phone\:hidden {
+    display: none;
+  }
+
+  .phone\:h-12 {
+    height: 3rem;
+  }
+
+  .phone\:h-8 {
+    height: 2rem;
+  }
+
+  .phone\:w-8 {
+    width: 2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .desk\:hidden {
+    display: none;
+  }
 }

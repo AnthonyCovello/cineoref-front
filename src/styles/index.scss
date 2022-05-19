@@ -3,6 +3,7 @@
 
 body {
   font-family: 'Alegreya';
+  max-width: 100vw;
 
   // * Image en fond
   background-image: url(../assets/background-image.jpg);
@@ -12,10 +13,7 @@ body {
 
 // ? empêche le footer d'aller plus haut que le bas de l'écran
 .app {
-  min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  align-items: end;
   color: white;
-  margin-top: 7rem;
 }
