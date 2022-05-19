@@ -518,6 +518,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0px;
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -820,6 +824,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-right-radius: 0.5rem;
 }
 
+.rounded-tl-md {
+  border-top-left-radius: 0.375rem;
+}
+
+.rounded-tr-md {
+  border-top-right-radius: 0.375rem;
+}
+
 .bg-\[\#F8D7DA\] {
   --tw-bg-opacity: 1;
   background-color: rgb(248 215 218 / var(--tw-bg-opacity));
@@ -1033,6 +1045,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (max-width: 1024px) {
+  .tablet\:m-5 {
+    margin: 1.25rem;
+  }
+
+  .tablet\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tablet\:my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
   .tablet\:mt-20 {
     margin-top: 5rem;
   }
@@ -1057,8 +1083,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 80%;
   }
 
+  .tablet\:w-11\/12 {
+    width: 91.666667%;
+  }
+
+  .tablet\:w-full {
+    width: 100%;
+  }
+
   .tablet\:flex-wrap {
     flex-wrap: wrap;
+  }
+
+  .tablet\:items-center {
+    align-items: center;
   }
 
   .tablet\:justify-evenly {
@@ -1096,6 +1134,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .tablet\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -1184,6 +1227,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:text-\[1\.1rem\] {
     font-size: 1.1rem;
+  }
+
+  .phone\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
