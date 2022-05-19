@@ -11,7 +11,7 @@ function PhoneNav() {
   const toggleMenu = () => setOpenMenu(!openMenu);
 
   return (
-    <div className="font-bold desk:hidden">
+    <div className="phoneNav font-bold">
       <button
         type="button"
         className="menu-button font-bold rounded"

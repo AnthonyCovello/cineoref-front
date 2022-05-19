@@ -26,7 +26,7 @@ function Header() {
         </span>
       </Link>
       <PhoneNav />
-      <nav className="font-bold flex gap-6 tablet:hidden">
+      <nav className="deskNav font-bold flex gap-6">
         <NavLink to="/listcategory/movie" className={activeLink}>Films</NavLink>
         <NavLink to="/listcategory/serie" className={activeLink}>Séries</NavLink>
         <NavLink to="/listcategory/anime" className={activeLink}>Animés</NavLink>
