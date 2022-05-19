@@ -2,6 +2,7 @@
 // ? Import modules
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaClosedCaptioning } from 'react-icons/fa';
 import ClipboardJS from 'clipboard';
@@ -13,17 +14,12 @@ import { setNewRefData } from '../../../features/refSlice';
 import './styles.scss';
 import 'tippy.js/dist/tippy.css';
 
-// ? Data fictives
-import listOfRefs from '../../../assets/data';
-
-const cleanRefs = listOfRefs.filter((data) => data.status === true && data.mature === false);
-
 // ? Composant
 function HomeList() {
   const dispatch = useDispatch();
   const tabList = useSelector(({ topNew }) => topNew.tabList);
   const newRef = useSelector(({ ref }) => ref.newRef);
-
+  const topRef = useSelector(({ ref }) => ref.topRef);
   //* config module pour copier le texte
   const clipboard = new ClipboardJS('.copy-btn');
   clipboard.on('success', (e) => {
@@ -48,59 +44,57 @@ function HomeList() {
       });
     clipboard.destroy();
   }, []);
-
+  // ! Besoin des id de ref et de character ! \\
   return (
-    <div className="citation w-3/4 mx-auto rounded-xl text-center">
-      <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer">
-        <div
-          onClick={() => dispatch(setTablist('topRated'))}
-          className={
-            tabList !== 'topRated'
-              ? 'topleft w-1/2 p-2 rounded-tl-lg inactiveTab'
-              : 'topleft w-1/2 p-2 rounded-tl-lg'
-          }
-        >
-          Les mieux notées
-        </div>
+    <div className="citation w-3/4 mx-auto rounded-md text-center tablet:w-11/12">
+      <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer tablet:text-base">
         <div
           onClick={() => dispatch(setTablist('newests'))}
           className={
             tabList !== 'newests'
-              ? 'topright w-1/2 p-2 rounded-tr-lg inactiveTab'
-              : 'topright w-1/2 p-2 rounded-tr-lg'
+              ? 'topright w-1/2 p-2 rounded-tr-md inactiveTab'
+              : 'topright w-1/2 p-2 rounded-tr-md'
           }
         >
           Les plus récentes
         </div>
+        <div
+          onClick={() => dispatch(setTablist('topRated'))}
+          className={
+            tabList !== 'topRated'
+              ? 'topleft w-1/2 p-2 rounded-tl-md inactiveTab'
+              : 'topleft w-1/2 p-2 rounded-tl-md'
+          }
+        >
+          Les mieux notées
+        </div>
       </nav>
-      <div>
-        <ul className="flex flex-col p-10 gap-8 items-start cursor-context-menu">
-          {tabList === 'topRated'
-            ? cleanRefs.map((data, index) => (
-              index < 5 && (
-                <li key={data.id} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-lg">
-                  <p className="item-ref my-3 text-lg">{data.ref}</p>
-                  <p className="ml-6 max-h-14 text-sm font-bold text-left">{data.character}</p>
-                  <Tippy content="Copié !" visible={isVisible}>
-                    <span className="cursor-pointer self-end" onClick={handleClick}>
-                      <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem]" data-clipboard-target=".item-ref" title="Copier le texte" />
-                    </span>
-                  </Tippy>
-                </li>
-              )))
-            : newRef.map((ref) => (
-              <li key={ref.ref} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-lg">
-                <p className="item-ref my-3 text-lg">{ref.ref}</p>
-                <p className="ml-6 max-h-14 text-sm font-bold text-left">{ref.character}</p>
+      <ul className="flex flex-col m-10 gap-8 items-start cursor-context-menu tablet:w-11/12 tablet:my-5 tablet:mx-auto tablet:items-center">
+        {tabList === 'newests'
+          ? newRef.map((ref) => (
+            <li key={ref.ref} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-md tablet:w-full">
+              <Link to={`/ref/${ref.ref_id}`} className="item-ref my-3 text-lg">{ref.ref}</Link>
+              <Link to={`/listcharacter/character/${ref.character_id}/refs`} className="ml-6 mt-6 max-h-14 text-left phone:text-sm">{ref.character}</Link>
+              <Tippy content="Copié !" visible={isVisible}>
+                <span className="cursor-pointer self-end" onClick={handleClick}>
+                  <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem]" data-clipboard-target=".item-ref" title="Copier le texte" />
+                </span>
+              </Tippy>
+            </li>
+          ))
+          : topRef.map((data, index) => (
+            index < 5 && (
+              <li key={data.ref_id} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-md tablet:w-full">
+                <Link to={`/ref/${data.ref_id}`} className="item-ref my-3 text-lg">{data.ref}</Link>
+                <Link to={`/listcharacter/character/${data.character_id}/refs`} className="ml-6 mt-6 max-h-14 text-left phone:text-sm">{data.character}</Link>
                 <Tippy content="Copié !" visible={isVisible}>
                   <span className="cursor-pointer self-end" onClick={handleClick}>
                     <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem]" data-clipboard-target=".item-ref" title="Copier le texte" />
                   </span>
                 </Tippy>
               </li>
-            ))}
-        </ul>
-      </div>
+            )))}
+      </ul>
     </div>
   );
 }

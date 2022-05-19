@@ -48,14 +48,14 @@ function RandomRef() {
   }, []);
 
   return (
-    <div className="randomRef w-2/5 h-[17rem] rounded-xl py-8 px-10 flex flex-col justify-between text-[1.25rem] font-medium cursor-context-menu">
+    <div className="randomRef w-2/5 h-[17rem] rounded-xl py-8 px-10 flex flex-col justify-between text-[1.25rem] font-medium cursor-context-menu tablet:w-4/5 phone:text-[1.2rem]">
       <span type="button" className="self-end cursor-pointer" onClick={randomRefApi}>
         <img src={randomDice} className="w-11 h-11" title="Afficher une citation aléatoire" alt="dé à 20 faces" />
       </span>
       <Link className="randomRef-text" to={`/ref/${randomRefData.id}`}>
         {randomRefData.ref}
       </Link>
-      <Link className="ml-8 mt-6 mr-auto flex text-[1.30rem]" to={`/listcharacter/character/${randomRefData.character_id}/refs`}>
+      <Link className="ml-8 mt-6 mr-auto flex text-[1.30rem] phone:text-[1.1rem]" to={`/listcharacter/character/${randomRefData.character_id}/refs`}>
         {randomRefData.character}
       </Link>
       <Tippy content="Copié !" visible={isVisible}>

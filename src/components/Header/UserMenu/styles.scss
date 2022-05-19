@@ -36,3 +36,13 @@
     text-shadow: 0px 0px 15px vars.$orange;
   }
 }
+
+
+@media screen and (max-width: 1024px) {
+  .content-btn:hover {
+    transition: initial;
+    transform: initial;
+    color: inherit;
+    text-shadow: none;
+  }
+}

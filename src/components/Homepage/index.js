@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 import { changeTabTitle } from '../../utlis';
-import { setNewRefData } from '../../features/refSlice';
+import { setNewRefData, setBestRefData } from '../../features/refSlice';
 import { setTopContributorsData } from '../../features/topContributorsSlice';
 
 // ? Import composants
@@ -38,6 +38,11 @@ function Homepage() {
       .then((res) => {
         dispatch(setNewRefData(res.data));
       });
+    axios
+      .get('https://cinoref-api.herokuapp.com/mostrated')
+      .then((res) => {
+        dispatch(setBestRefData(res.data));
+      });
   }, []);
 
   const handleAddRef = () => {
@@ -56,17 +61,17 @@ function Homepage() {
 
   return (
     <div
-      className="homePage"
+      className="grid"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}
     >
       <SearchBarRef />
-      <div className="line-random-top">
+      <div className="flex justify-center gap-20">
         <RandomRef />
         <TopContributor />
       </div>
-      <span className="addRefBtn" onClick={handleAddRef}>
+      <span className="addRefBtn my-8 mx-auto p-3.5 font-bold rounded cursor-pointer" onClick={handleAddRef}>
         Ajouter une ref'
       </span>
       <TopNew />
