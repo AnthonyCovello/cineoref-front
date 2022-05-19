@@ -30,7 +30,7 @@ function OtherProfile() {
     <div className="profile w-[70%] mx-auto p-12 flex flex-wrap justify-around rounded-xl">
       <section className="flex flex-col items-center w-2/5 container text-center">
         <div className="profile-form-group">
-          <h3 className="text-[150%]">{userData.username}</h3>
+          <h3 className="text-[200%] text-porange font-bold">{userData.username}</h3>
         </div>
         <img className="avatar h-60 w-60 my-6 rounded-full" src={userData.profile_picture} alt="Photo de profil" />
         <p className="profile-bar">{userData.role}</p>

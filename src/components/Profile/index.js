@@ -24,19 +24,14 @@ function Profile() {
 
   const test = () => {
     let testing;
-
     if (isLoggedIn) {
       testing = (
-        <div>
-          {user.user_id === Number(id) ? <MyProfile /> : <OtherProfile />}
-        </div>
+        user.user_id === Number(id) ? <MyProfile /> : <OtherProfile />
       );
     }
     else {
       testing = (
-        <div>
-          <OtherProfile />
-        </div>
+        <OtherProfile />
       );
     }
     return testing;
