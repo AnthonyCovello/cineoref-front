@@ -26,7 +26,7 @@ function UserMenu() {
     toggleDropdown();
     navigate('/');
   };
-  // Todo: la photo de profil ne se met pas à jour après une incription
+
   return (
     <div className="dropdownProfil" onClick={toggleDropdown}>
       <span className="text-porange font-bold text-2xl phone:hidden tablet:text-xl">{user.pseudo}</span>

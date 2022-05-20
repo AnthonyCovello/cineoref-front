@@ -52,8 +52,8 @@ function HomeList() {
           onClick={() => dispatch(setTablist('newests'))}
           className={
             tabList !== 'newests'
-              ? 'topright w-1/2 p-2 rounded-tr-md inactiveTab'
-              : 'topright w-1/2 p-2 rounded-tr-md'
+              ? 'topleft w-1/2 p-2 rounded-tl-md inactiveTab'
+              : 'topleft w-1/2 p-2 rounded-tl-md'
           }
         >
           Les plus récentes
@@ -62,8 +62,8 @@ function HomeList() {
           onClick={() => dispatch(setTablist('topRated'))}
           className={
             tabList !== 'topRated'
-              ? 'topleft w-1/2 p-2 rounded-tl-md inactiveTab'
-              : 'topleft w-1/2 p-2 rounded-tl-md'
+              ? 'topright w-1/2 p-2 rounded-tr-md inactiveTab'
+              : 'topright w-1/2 p-2 rounded-tr-md'
           }
         >
           Les mieux notées

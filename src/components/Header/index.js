@@ -26,7 +26,7 @@ function Header() {
         </span>
       </Link>
       <PhoneNav />
-      <nav className="font-bold flex gap-6 tablet:hidden">
+      <nav className="deskNav font-bold flex gap-6">
         <NavLink to="/listcategory/movie" className={activeLink}>Films</NavLink>
         <NavLink to="/listcategory/serie" className={activeLink}>Séries</NavLink>
         <NavLink to="/listcategory/anime" className={activeLink}>Animés</NavLink>
@@ -38,7 +38,7 @@ function Header() {
       {!islogged && (
         <div className="header-connection">
           <Login />
-          <Link to="/registration" className="signUp_button ml-4 py-1 px-2 rounded font-bold cursor-pointer">Inscription</Link>
+          <Link to="/registration" className="signUp_button ml-4 py-1 px-2 rounded font-bold cursor-pointer tablet:ml-2 tablet:px-1 tablet:text-[0.8rem]">Inscription</Link>
         </div>
       )}
       {islogged && (

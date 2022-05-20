@@ -10,10 +10,7 @@ const proposal = (title, category, character, artist, reference) => axios.post(`
   artist,
   reference,
   user_id: user.user_id,
-}).then(
-  (response) => response.data,
-  console.log(title, category, character, artist, reference, user.user_id),
-);
+}).then((response) => response.data);
 
 const proposalService = {
   proposal,
