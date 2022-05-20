@@ -639,6 +639,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.25rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1124,6 +1128,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-bottom: 1rem;
   }
 
+  .tablet\:ml-4 {
+    margin-left: 1rem;
+  }
+
   .tablet\:hidden {
     display: none;
   }
@@ -1169,6 +1177,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:gap-x-3 {
     -moz-column-gap: 0.75rem;
          column-gap: 0.75rem;
+  }
+
+  .tablet\:truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .tablet\:text-ellipsis {
+    text-overflow: ellipsis;
   }
 
   .tablet\:px-1 {
@@ -1243,6 +1261,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 1rem;
   }
 
+  .phone\:ml-0 {
+    margin-left: 0px;
+  }
+
+  .phone\:mr-0 {
+    margin-right: 0px;
+  }
+
+  .phone\:inline {
+    display: inline;
+  }
+
   .phone\:hidden {
     display: none;
   }
@@ -1275,6 +1305,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 15rem;
   }
 
+  .phone\:max-h-min {
+    max-height: -webkit-min-content;
+    max-height: -moz-min-content;
+    max-height: min-content;
+  }
+
   .phone\:w-10 {
     width: 2.5rem;
   }
@@ -1297,6 +1333,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:w-60 {
     width: 15rem;
+  }
+
+  .phone\:flex-none {
+    flex: none;
   }
 
   .phone\:py-1 {

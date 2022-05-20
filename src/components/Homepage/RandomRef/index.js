@@ -52,10 +52,10 @@ function RandomRef() {
       <span type="button" className="self-end cursor-pointer" onClick={randomRefApi}>
         <img src={randomDice} className="w-11 h-11" title="Afficher une citation aléatoire" alt="dé à 20 faces" />
       </span>
-      <Link className="randomRef-text" to={`/ref/${randomRefData.id}`}>
+      <Link className="randomRef-text mb-6" to={`/ref/${randomRefData.id}`}>
         {randomRefData.ref}
       </Link>
-      <Link className="ml-8 mt-6 mr-auto flex text-[1.30rem] phone:text-[1rem]" to={`/listcharacter/character/${randomRefData.character_id}/refs`}>
+      <Link className="ml-8 mr-auto text-[1.30rem] phone:text-[1rem] phone:ml-0 phone:mr-0 tablet:truncate tablet:w-4/5" to={`/listcharacter/character/${randomRefData.character_id}/refs`}>
         {randomRefData.character}
       </Link>
       <Tippy content="Copié !" visible={isVisible}>
