@@ -44,7 +44,7 @@ function HomeList() {
       });
     clipboard.destroy();
   }, []);
-  // ! Besoin des id de ref et de character ! \\
+
   return (
     <div className="citation w-3/4 mx-auto rounded-md text-center tablet:w-11/12">
       <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer tablet:text-base">
@@ -52,8 +52,8 @@ function HomeList() {
           onClick={() => dispatch(setTablist('newests'))}
           className={
             tabList !== 'newests'
-              ? 'topright w-1/2 p-2 rounded-tr-md inactiveTab'
-              : 'topright w-1/2 p-2 rounded-tr-md'
+              ? 'topleft w-1/2 p-2 rounded-tl-md inactiveTab'
+              : 'topleft w-1/2 p-2 rounded-tl-md'
           }
         >
           Les plus récentes
@@ -62,8 +62,8 @@ function HomeList() {
           onClick={() => dispatch(setTablist('topRated'))}
           className={
             tabList !== 'topRated'
-              ? 'topleft w-1/2 p-2 rounded-tl-md inactiveTab'
-              : 'topleft w-1/2 p-2 rounded-tl-md'
+              ? 'topright w-1/2 p-2 rounded-tr-md inactiveTab'
+              : 'topright w-1/2 p-2 rounded-tr-md'
           }
         >
           Les mieux notées

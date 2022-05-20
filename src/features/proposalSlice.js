@@ -15,9 +15,11 @@ export const proposal = createAsyncThunk(
         artist,
         reference,
       );
+
       thunkAPI.dispatch(setMessage(response.message));
       return response.message;
     }
+
     catch (error) {
       const message = (error.response
         && error.response.data

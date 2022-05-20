@@ -29,7 +29,7 @@ function SearchBarRef() {
   return (
     <form className="mb-12 text-center" onSubmit={handleSubmit}>
       <label className="searchTitle p-8 text-porange font-bold text-3xl" htmlFor="searchInput" onClick={toggleSearchBar} hidden={isHidden}>
-        Recherchez une citation
+        Rechercher
       </label>
       <input
         className="searchInput h-24 w-full pl-40 text-[2.5rem] phone:h-16 phone:pl-28 phone:text-2xl tablet:pl-36 tablet:text-3xl"

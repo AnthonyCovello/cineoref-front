@@ -79,7 +79,7 @@ function ProposalForm() {
             Veuillez vérifier les informations avant de valider la proposition.
           </p>
           <label className="proposal-form-label" htmlFor="title">
-            Titre
+            Titre de l'oeuvre
           </label>
           <Field type="text" className="input" name="title" required />
           <ErrorMessage

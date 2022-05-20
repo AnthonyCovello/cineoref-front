@@ -8,11 +8,10 @@ const register = (username, email, birthday, password) => axios.post(`${API_URL}
   birthday,
   password,
 }).then((response) => {
-  console.log(response);
   if (response.data.token) {
     localStorage.setItem('user', JSON.stringify(response.data));
   }
-  console.log('register - ', response.data);
+
   return response.data;
 });
 
@@ -23,7 +22,7 @@ const login = (username, password) => axios.post(`${API_URL}login`, {
   if (response.data.token) {
     localStorage.setItem('user', JSON.stringify(response.data));
   }
-  console.log('login - ', response.data);
+
   return response.data;
 });
 
