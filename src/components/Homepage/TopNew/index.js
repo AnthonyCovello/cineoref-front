@@ -14,15 +14,12 @@ import { setNewRefData } from '../../../features/refSlice';
 import './styles.scss';
 import 'tippy.js/dist/tippy.css';
 
-// ? Data fictives
-import listOfRefs from '../../../assets/data';
-
 // ? Composant
 function HomeList() {
   const dispatch = useDispatch();
   const tabList = useSelector(({ topNew }) => topNew.tabList);
   const newRef = useSelector(({ ref }) => ref.newRef);
-
+  const topRef = useSelector(({ ref }) => ref.topRef);
   //* config module pour copier le texte
   const clipboard = new ClipboardJS('.copy-btn');
   clipboard.on('success', (e) => {
@@ -47,8 +44,7 @@ function HomeList() {
       });
     clipboard.destroy();
   }, []);
-  // ! Besoin des id de ref et de character ! \\
-  console.log('ref - ', newRef);
+
   return (
     <div className="citation w-3/4 mx-auto rounded-md text-center tablet:w-11/12">
       <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer tablet:text-base">
@@ -56,8 +52,8 @@ function HomeList() {
           onClick={() => dispatch(setTablist('newests'))}
           className={
             tabList !== 'newests'
-              ? 'topright w-1/2 p-2 rounded-tr-md inactiveTab'
-              : 'topright w-1/2 p-2 rounded-tr-md'
+              ? 'topleft w-1/2 p-2 rounded-tl-md inactiveTab'
+              : 'topleft w-1/2 p-2 rounded-tl-md'
           }
         >
           Les plus récentes
@@ -66,8 +62,8 @@ function HomeList() {
           onClick={() => dispatch(setTablist('topRated'))}
           className={
             tabList !== 'topRated'
-              ? 'topleft w-1/2 p-2 rounded-tl-md inactiveTab'
-              : 'topleft w-1/2 p-2 rounded-tl-md'
+              ? 'topright w-1/2 p-2 rounded-tr-md inactiveTab'
+              : 'topright w-1/2 p-2 rounded-tr-md'
           }
         >
           Les mieux notées
@@ -86,9 +82,9 @@ function HomeList() {
               </Tippy>
             </li>
           ))
-          : listOfRefs.map((data, index) => (
+          : topRef.map((data, index) => (
             index < 5 && (
-              <li key={data.id} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-md tablet:w-full">
+              <li key={data.ref_id} className="item flex flex-col justify-between w-3/5 py-4 px-10 rounded-md tablet:w-full">
                 <Link to={`/ref/${data.ref_id}`} className="item-ref my-3 text-lg">{data.ref}</Link>
                 <Link to={`/listcharacter/character/${data.character_id}/refs`} className="ml-6 mt-6 max-h-14 text-left phone:text-sm">{data.character}</Link>
                 <Tippy content="Copié !" visible={isVisible}>

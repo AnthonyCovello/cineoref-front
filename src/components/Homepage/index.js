@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoginDropdown } from '../../features/dropDownSlice';
 import { changeTabTitle } from '../../utlis';
-import { setNewRefData } from '../../features/refSlice';
+import { setNewRefData, setBestRefData } from '../../features/refSlice';
 import { setTopContributorsData } from '../../features/topContributorsSlice';
 import { FaTrophy } from 'react-icons/fa';
 
@@ -40,6 +40,11 @@ function Homepage() {
       .get('https://cinoref-api.herokuapp.com/mostrecent')
       .then((res) => {
         dispatch(setNewRefData(res.data));
+      });
+    axios
+      .get('https://cinoref-api.herokuapp.com/mostrated')
+      .then((res) => {
+        dispatch(setBestRefData(res.data));
       });
   }, []);
 

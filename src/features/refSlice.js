@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   randomRef: {},
   newRef: [],
+  topRef: [],
 };
 
 export const refSlice = createSlice({
@@ -15,8 +16,11 @@ export const refSlice = createSlice({
     setNewRefData: (state, { payload }) => {
       state.newRef = payload;
     },
+    setBestRefData: (state, { payload }) => {
+      state.topRef = payload;
+    },
   },
 });
 
 export default refSlice.reducer;
-export const { setRandomRefData, setNewRefData } = refSlice.actions;
+export const { setRandomRefData, setNewRefData, setBestRefData } = refSlice.actions;
