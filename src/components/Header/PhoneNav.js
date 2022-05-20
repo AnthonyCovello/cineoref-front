@@ -22,6 +22,7 @@ function PhoneNav() {
       {openMenu
         && (
           <nav className="navMenu absolute top-14 left-[-29.5rem] flex flex-col text-center phone:top-10" onClick={toggleMenu}>
+            <Link to="/registration">Inscription</Link>
             <Link to="/listcategory/movie">Films</Link>
             <Link to="/listcategory/serie">Séries</Link>
             <Link to="/listcategory/anime">Animés</Link>

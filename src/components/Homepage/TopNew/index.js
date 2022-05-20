@@ -44,7 +44,7 @@ function HomeList() {
       });
     clipboard.destroy();
   }, []);
-  // ! Besoin des id de ref et de character ! \\
+
   return (
     <div className="citation w-3/4 mx-auto rounded-md text-center tablet:w-11/12">
       <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer tablet:text-base">

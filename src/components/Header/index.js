@@ -20,7 +20,7 @@ function Header() {
   return (
     <header className="header fixed top-0 z-10 w-full h-16 p-4 flex justify-between items-center phone:h-12">
       <Link to="/" title="Page d'accueil" className="flex items-center">
-        <FcFilmReel className="mr-1.5 text-[2rem]" />
+        <FcFilmReel className="mr-1.5 text-[2rem] phone:hidden" />
         <span className="text-[1.7rem] font-bold text-center tablet:text-[1.2rem]">
           Ciné<span className="header-titleSpan">O</span>'Ref
         </span>
@@ -38,7 +38,7 @@ function Header() {
       {!islogged && (
         <div className="header-connection">
           <Login />
-          <Link to="/registration" className="signUp_button ml-4 py-1 px-2 rounded font-bold cursor-pointer tablet:ml-2 tablet:px-1 tablet:text-[0.8rem]">Inscription</Link>
+          <Link to="/registration" className="signUp_button ml-4 py-1 px-2 rounded font-bold cursor-pointer tablet:ml-2 tablet:px-1 tablet:text-[0.8rem] phone:hidden">Inscription</Link>
         </div>
       )}
       {islogged && (

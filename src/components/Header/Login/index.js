@@ -59,7 +59,7 @@ function Login() {
       </span>
       {isOpen
         && (
-          <div className="dropdown-content absolute z-10 -left-4 w-[16rem] mt-5 p-4 rounded-md tablet:-left-0 tablet:w-[12rem] tablet:text-[0.8rem]">
+          <div className="dropdown-content absolute z-10 -left-4 w-[16rem] mt-5 p-4 rounded-md tablet:-left-0 tablet:w-[12rem] tablet:text-[0.8rem] phone:left-[-5rem]">
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
