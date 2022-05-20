@@ -494,6 +494,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
+.inset-x-1\/4 {
+  left: 25%;
+  right: 25%;
+}
+
+.inset-x-2\/4 {
+  left: 50%;
+  right: 50%;
+}
+
+.inset-x-auto {
+  left: auto;
+  right: auto;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -508,6 +528,70 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .-left-4 {
   left: -1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.left-2\/4 {
+  left: 50%;
+}
+
+.left-1\/4 {
+  left: 25%;
+}
+
+.right-1\/4 {
+  right: 25%;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.top-3 {
+  top: 0.75rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.left-\[45\%\] {
+  left: 45%;
+}
+
+.left-\[47\%\] {
+  left: 47%;
+}
+
+.left-\[46\%\] {
+  left: 46%;
+}
+
+.left-96 {
+  left: 24rem;
+}
+
+.-left-96 {
+  left: -24rem;
+}
+
+.top-14 {
+  top: 3.5rem;
+}
+
+.left-\[-29rem\] {
+  left: -29rem;
+}
+
+.left-\[-30rem\] {
+  left: -30rem;
+}
+
+.left-\[-29\.5rem\] {
+  left: -29.5rem;
 }
 
 .z-10 {
@@ -743,8 +827,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 16rem;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
+.w-2\/4 {
+  width: 50%;
+}
+
 .min-w-\[10rem\] {
   min-width: 10rem;
+}
+
+.grow-0 {
+  flex-grow: 0;
 }
 
 .cursor-pointer {
@@ -840,6 +936,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#d3d3d3\] {
   --tw-bg-opacity: 1;
   background-color: rgb(211 211 211 / var(--tw-bg-opacity));
+}
+
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-4 {
@@ -1254,6 +1355,42 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (max-width: 480px) {
+  .phone\:top-12 {
+    top: 3rem;
+  }
+
+  .phone\:left-\[-30\.5rem\] {
+    left: -30.5rem;
+  }
+
+  .phone\:top-10 {
+    top: 2.5rem;
+  }
+
+  .phone\:left-\[43\%\] {
+    left: 43%;
+  }
+
+  .phone\:left-\[40\%\] {
+    left: 40%;
+  }
+
+  .phone\:left-\[0\] {
+    left: 0;
+  }
+
+  .phone\:left-\[2rem\] {
+    left: 2rem;
+  }
+
+  .phone\:left-\[42\%\] {
+    left: 42%;
+  }
+
+  .phone\:left-\[-30rem\] {
+    left: -30rem;
+  }
+
   .phone\:m-0 {
     margin: 0px;
   }
@@ -1312,6 +1449,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:w-8 {
     width: 2rem;
+  }
+
+  .phone\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .phone\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .phone\:pl-28 {
