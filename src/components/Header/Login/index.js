@@ -45,7 +45,7 @@ function Login() {
     dispatch(login({ username, password }))
       .unwrap()
       .catch((error) => {
-        dispatch(setMessage(error.message));
+        console.error(error);
       });
     if (islogged) {
       toggleDropdown();

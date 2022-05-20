@@ -559,6 +559,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1rem;
 }
 
+.mx-\[25\%\] {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 .mt-28 {
   margin-top: 7rem;
 }
@@ -637,6 +642,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-1 {
   margin-top: 0.25rem;
+}
+
+.block {
+  display: block;
 }
 
 .inline-block {
@@ -1019,6 +1028,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 200%;
 }
 
+.text-\[0\.6rem\] {
+  font-size: 0.6rem;
+}
+
+.text-\[0\.8rem\] {
+  font-size: 0.8rem;
+}
+
+.text-\[1\.2rem\] {
+  font-size: 1.2rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1043,6 +1064,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[\#82212F\] {
   --tw-text-opacity: 1;
   color: rgb(130 33 47 / var(--tw-text-opacity));
+}
+
+.text-\[\#DC2626\] {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .filter {
