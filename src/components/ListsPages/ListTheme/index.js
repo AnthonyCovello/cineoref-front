@@ -23,7 +23,7 @@ function ListTheme({ list, listFilters, listTheme }) {
       {result.map((letter) => (
         <div key={letter[0]}>
           <span id={letter[0]} className="ListThemeLetter flex py-[0.5rem] text-[150%] font-bold">{letter[0]}</span>
-          <ol className="ListThemeContent hover:text-porange flex">
+          <ol className="ListThemeContent hover:text-porange flex py-[0.2rem] phone:text-[1.2rem]">
             <List letter={letter[1]} listTheme={listTheme} />
           </ol>
         </div>
