@@ -82,3 +82,13 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .signIn_button, .signUp_button {
+    font-size: 0.6rem;
+  }
+
+  .dropdown-content {
+    left: -2rem;
+  }
+}
