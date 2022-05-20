@@ -494,6 +494,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.inset-10 {
+  top: 2.5rem;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  left: 2.5rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -508,6 +522,38 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .-left-4 {
   left: -1rem;
+}
+
+.top-20 {
+  top: 5rem;
+}
+
+.top-28 {
+  top: 7rem;
+}
+
+.top-32 {
+  top: 8rem;
+}
+
+.top-36 {
+  top: 9rem;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
+.left-12 {
+  left: 3rem;
+}
+
+.left-14 {
+  left: 3.5rem;
+}
+
+.left-16 {
+  left: 4rem;
 }
 
 .z-10 {
@@ -587,6 +633,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.5rem;
 }
 
+.mb-2\.5 {
+  margin-bottom: 0.625rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .ml-8 {
   margin-left: 2rem;
 }
@@ -601,14 +655,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-12 {
   margin-bottom: 3rem;
-}
-
-.mb-2\.5 {
-  margin-bottom: 0.625rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .ml-6 {
@@ -675,12 +721,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 15rem;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .max-h-14 {
   max-height: 3.5rem;
 }
 
 .max-h-64 {
   max-height: 16rem;
+}
+
+.max-h-min {
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
 }
 
 .w-full {
@@ -695,16 +751,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3rem;
 }
 
+.w-1\/5 {
+  width: 20%;
+}
+
 .w-2\/5 {
   width: 40%;
 }
 
 .w-11 {
   width: 2.75rem;
-}
-
-.w-1\/5 {
-  width: 20%;
 }
 
 .w-3\/4 {
@@ -725,6 +781,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-60 {
   width: 15rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-2\/4 {
+  width: 50%;
 }
 
 .min-w-\[10rem\] {
@@ -790,6 +854,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .self-end {
   align-self: flex-end;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rounded {
@@ -958,13 +1028,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.25rem;
 }
 
-.text-\[1\.30rem\] {
-  font-size: 1.30rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-\[1\.30rem\] {
+  font-size: 1.30rem;
 }
 
 .text-\[2\.5rem\] {
@@ -981,12 +1051,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1rem;
 }
 
-.text-\[150\%\] {
-  font-size: 150%;
-}
-
 .text-\[200\%\] {
   font-size: 200%;
+}
+
+.text-\[1\.1rem\] {
+  font-size: 1.1rem;
 }
 
 .font-bold {
