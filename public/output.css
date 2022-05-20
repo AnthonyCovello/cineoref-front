@@ -751,12 +751,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 15rem;
 }
 
+.min-w-\[10rem\] {
+  min-width: 10rem;
+}
+
+.max-w-\[4\/5\] {
+  max-width: 4 / 5;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
 
 .cursor-context-menu {
   cursor: context-menu;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -937,9 +949,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.5rem;
 }
 
+.py-\[0\.2rem\] {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.px-\[0\.5rem\] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-\[0\.2rem\] {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.px-\[0\.1rem\] {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
 }
 
 .pl-40 {
@@ -1216,6 +1248,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 1rem;
     line-height: 1.5rem;
   }
+
+  .tablet\:text-\[0\.75rem\] {
+    font-size: 0.75rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1298,6 +1334,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   .phone\:w-60 {
     width: 15rem;
   }
+
+  .phone\:px-\[0\.5rem\] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .phone\:px-\[0\.1rem\] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
+
+  .phone\:py-\[0\.1rem\] {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+  }
+
+  .phone\:px-\[0\.2rem\] {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
 
   .phone\:py-1 {
     padding-top: 0.25rem;
