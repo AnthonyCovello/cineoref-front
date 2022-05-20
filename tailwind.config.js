@@ -4,9 +4,9 @@ module.exports = {
   content: ['./src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      'tablet': {'max': '1024px'},
-      'phone': {'max': '480px'},
-      'desk': {'min': '1025px'},
+      'tablet': { 'max': '1024px' },
+      'phone': { 'max': '480px' },
+      'desk': { 'min': '1025px' },
     },
     colors: {
       transparent: 'transparent',
