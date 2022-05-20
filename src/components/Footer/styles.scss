@@ -18,6 +18,11 @@
   }
 }
 
+@media screen and (max-width: 480px) {
+  .footer-navbar>a {
+    padding: 0.2rem;
+  }
+}
 
 @media screen and (max-width: 1024px) {
   .footer-navbar>a:hover {

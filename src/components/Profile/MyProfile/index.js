@@ -10,7 +10,7 @@ import { logout } from '../../../features/authSlice';
 import { changeTabTitle, toFrench } from '../../../utlis';
 
 // ? Import style
-import './styles.scss';
+import '../styles.scss';
 
 // ? Composant
 function MyProfile() {
@@ -70,11 +70,12 @@ function MyProfile() {
   };
 
   return (
-    <div className="profile w-[70%] mx-auto p-12 flex flex-wrap justify-around rounded-xl">
+    <div className="profile w-[70%] mx-auto p-12 flex flex-wrap justify-around rounded-xl cursor-context-menu">
       <section className="flex flex-col items-center w-2/5 container text-center">
         <img className="avatar h-60 w-60 my-6 rounded-full" src={userData.profile_picture} alt="Photo de profil" />
         <p className="profile-bar">{userData.role}</p>
-        <p className="profile-bar">{userData.grade}</p>
+        {(userData.role !== 'Fondateur' && userData.role !== 'Admin')
+          && (<p className="profile-bar">{userData.grade}</p>)}
         <p className="profile-bar">
           {
             contributionData.length === 0
@@ -82,7 +83,8 @@ function MyProfile() {
               : `${contributionData.length} ${contributionData.length > 1 ? 'contributions' : 'contribution'}`
           }
         </p>
-        <p className="mt-1.5 text-xs">Grade suivant dans : 10 contributions</p>
+        {(userData.role !== 'Fondateur' && userData.role !== 'Admin')
+          && (<p className="mt-1.5 text-xs">Grade suivant dans : 10 contributions</p>)}
         <p className="profile-bar">
           Inscris le : {userData.creation_date}
         </p>
@@ -125,10 +127,12 @@ function MyProfile() {
           <p className="">{userData.birthday}</p>
         </div>
         <div className="flex justify-around my-4">
-          <button type="button" onClick={modifyForm}>Modifier</button>
-          <button type="submit" onClick={modifyForm}>Sauvegarder</button>
-          <button type="button" onClick={() => setShowModal(true)}>Supprimer mon compte</button>
+          <button className="ml-4 py-2 px-4 rounded font-bold text-[1.2rem]" type="button" onClick={modifyForm}>Modifier</button>
+          <button className="ml-4 py-2 px-4 rounded font-bold text-[1.2rem]" type="submit" onClick={modifyForm}>Sauvegarder</button>
         </div>
+        <span className="deleteBtn block p-2 mx-auto text-center text-[0.8rem] font-bold text-[#DC2626] cursor-pointer" onClick={() => setShowModal(true)}>
+          Supprimer mon compte
+        </span>
       </form>
       <section className="profile-contributions w-full mt-6 py-4 px-8">
         <h2 className="profile-contributions-title p-2 font-bold text-2xl text-center">Mes contributions</h2>
@@ -141,7 +145,7 @@ function MyProfile() {
                 <p><span>Personnage : </span>{item.character}</p>
                 <p><span>Artiste : </span>{item.artist}</p>
                 <p><span>Partagé le : </span>{item.created_date}</p>
-                <p className="test"><span>Citation : </span>{item.ref}</p>
+                <p className="refText"><span>Citation : </span>{item.ref}</p>
               </Link>
             </li>
           ))}

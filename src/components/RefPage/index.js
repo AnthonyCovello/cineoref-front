@@ -54,10 +54,9 @@ function RefPage() {
     clipboard.destroy();
   }, [ref_id]);
 
-console.log(refData);
   return (
     <div
-      className="refContainer"
+      className="refContainer cursor-context-menu"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}
@@ -72,17 +71,14 @@ console.log(refData);
           alt=""
         />
       </div>
-      {/* // Todo: besoin de title_id */}
       <h2 className="refContainer-mediaTitle">Titre de l'œuvre</h2>
-      <p className="refContainer-data">{refData.title}</p>
+      <Link to={`/listcategory/movie/${refData.show_id}/refs`} className="refContainer-data">{refData.title}</Link>
       <h2 className="refContainer-category">Média</h2>
       <p className="refContainer-data">{toFrench(refData.category)}</p>
-      {/* // Todo: besoin de character_id */}
       <h2 className="refContainer-character">Personnage</h2>
-      <p className="refContainer-data">{refData.character}</p>
-      {/* // Todo: besoin de artist_id */}
+      <Link to={`/listcharacter/character/${refData.character_id}/refs`} className="refContainer-data">{refData.character}</Link>
       <h2 className="refContainer-artist">Artiste</h2>
-      <p className="refContainer-data">{refData.artist}</p>
+      <Link to={`/listartist/artist/${refData.artist_id}/refs`} className="refContainer-data">{refData.artist}</Link>
       <h2 className="refContainer-ref">Citation</h2>
       <p className="refContainer-data data-ref text-lg">{refData.ref}</p>
       <Tippy content="Copié !" visible={isVisible}>
@@ -93,7 +89,6 @@ console.log(refData);
       <div className="user-score text-center">
         <div>
           <h2 className="refContainer-user">Partagée par</h2>
-          {/* // Todo: besoin de user_id */}
           {refData.user
             ? <Link to={`/user/${refData.user_id}/profile`} className="refContainer-data">{refData.user}</Link>
             : 'Anonyme'}

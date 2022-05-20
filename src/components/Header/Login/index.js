@@ -7,7 +7,7 @@ import {
 } from 'formik';
 import { setLoginDropdown } from '../../../features/dropDownSlice';
 import { login } from '../../../features/authSlice';
-import { clearMessage } from '../../../features/messageSlice';
+import { clearMessage, setMessage } from '../../../features/messageSlice';
 
 // ? Import style
 import './styles.scss';
@@ -37,6 +37,7 @@ function Login() {
   // * Ouverture du menu de connexion
   const toggleDropdown = () => {
     dispatch(setLoginDropdown());
+    dispatch(setMessage(''));
   };
 
   const handleLogin = (formValue) => {
@@ -44,7 +45,7 @@ function Login() {
     dispatch(login({ username, password }))
       .unwrap()
       .catch((error) => {
-        console.log('Connexion échouée - ', error);
+        console.error(error);
       });
     if (islogged) {
       toggleDropdown();
@@ -52,58 +53,56 @@ function Login() {
   };
 
   return (
-    <div className="inline-block">
-      <div className="inline-block relative">
-        <span className="signIn_button py-1 px-2 rounded-md font-bold cursor-pointer" onClick={toggleDropdown}>
-          Connexion
-        </span>
-        {isOpen
-          && (
-            <div className="dropdown-content absolute z-1 -left-4 min-w-[10rem] mt-5 p-4 rounded-xl">
-              <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={handleLogin}
-              >
-                <Form>
-                  <div className="form-group-login">
-                    <Field
-                      className="content-input rounded py-2 px-3 bg-[#d3d3d3]"
-                      name="username"
-                      type="text"
-                      placeholder="Pseudo"
-                    />
-                    <ErrorMessage
-                      name="username"
-                      component="div"
-                      className="alert-login"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <Field
-                      className="content-input rounded py-2 px-3 bg-[#d3d3d3]"
-                      name="password"
-                      type="password"
-                      placeholder="Mot de passe"
-                    />
-                    <ErrorMessage
-                      name="password"
-                      component="div"
-                      className="alert-login"
-                    />
-                  </div>
-                  <button type="submit" className="login-button table mt-4 mx-auto py-2 px-3 rounded font-bold text-white"> Se connecter </button>
-                </Form>
-              </Formik>
-              {message ? (
-                <div className="p-1.5 mt-4 text-center rounded bg-[#F8D7DA] text-[#82212F]" role="alert">
-                  {message}
+    <div className="inline-block relative">
+      <span className="signIn_button py-1 px-2 rounded font-bold cursor-pointer tablet:text-[0.8rem] tablet:px-1" onClick={toggleDropdown}>
+        Connexion
+      </span>
+      {isOpen
+        && (
+          <div className="dropdown-content absolute z-10 -left-4 w-[16rem] mt-5 p-4 rounded-md tablet:-left-0 tablet:w-[12rem] tablet:text-[0.8rem] phone:left-[-5rem]">
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={handleLogin}
+            >
+              <Form>
+                <div>
+                  <Field
+                    className="content-input rounded py-2 px-3 bg-[#d3d3d3] w-full tablet:py-1"
+                    name="username"
+                    type="text"
+                    placeholder="Pseudo"
+                  />
+                  <ErrorMessage
+                    name="username"
+                    component="div"
+                    className="alert-login py-2 px-6 rounded mt-2 text-center font-bold tablet:py-1 tablet:px-2"
+                  />
                 </div>
-              )
-                : ''}
-            </div>
-          )}
-      </div>
+                <div className="mt-4 tablet:mt-2">
+                  <Field
+                    className="content-input rounded py-2 px-3 bg-[#d3d3d3] w-full tablet:py-1"
+                    name="password"
+                    type="password"
+                    placeholder="Mot de passe"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="div"
+                    className="alert-login py-2 px-6 rounded mt-2 text-center font-bold tablet:py-1 tablet:px-2"
+                  />
+                </div>
+                <button type="submit" className="login-button table mt-4 mx-auto py-2 px-3 rounded font-bold text-white tablet:py-1 tablet:px-2 tablet:mt-2"> Se connecter </button>
+              </Form>
+            </Formik>
+            {message ? (
+              <div className="p-1.5 mt-4 text-center rounded bg-[#F8D7DA] text-[#82212F]" role="alert">
+                {message}
+              </div>
+            )
+              : ''}
+          </div>
+        )}
     </div>
   );
 }
