@@ -763,6 +763,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: context-menu;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -944,6 +948,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.px-\[0\.5rem\] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-\[0\.2rem\] {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 
 .pl-40 {
@@ -1367,6 +1381,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   .phone\:px-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+  }
+
+  .phone\:px-\[0\.2rem\] {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .phone\:py-\[0\.1rem\] {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
   }
 
   .phone\:pl-28 {
