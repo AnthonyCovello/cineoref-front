@@ -9,6 +9,7 @@ import { setLoginDropdown } from '../../features/dropDownSlice';
 import { changeTabTitle } from '../../utlis';
 
 // ? Import style
+import './styles.scss';
 
 // ? Composant
 function ListsRef() {
@@ -43,13 +44,18 @@ function ListsRef() {
   }, [listTheme, category, id]);
 
   return (
-    <ul onClick={() => {
-      if (isOpen === true) toggleDropdown();
-    }}
+    <ul
+      className="listRef w-4/5 mx-auto py-8 px-12 rounded-md h-min"
+      onClick={() => {
+        if (isOpen === true) toggleDropdown();
+      }}
     >
       {refList.map((item) => (
-        <li key={item.id}>
-          <Link to={`/ref/${item.id}`}>{item.ref}</Link>
+        <li key={item.id} className="listRefItem max-h-64 p-4 mb-4 leading-6 rounded tablet:max-h-min">
+          <Link className="listRefItem-item" to={`/ref/${item.id}`}>
+            <p><span>Personnage : </span>{item.character}</p>
+            <p className="listRefItem-item-ref"><span>Citation : </span>{item.ref}</p>
+          </Link>
         </li>
       ))}
     </ul>
