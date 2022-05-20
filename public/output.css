@@ -1133,8 +1133,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 0.5rem;
   }
 
+  .tablet\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
   .tablet\:hidden {
     display: none;
+  }
+
+  .tablet\:max-h-min {
+    max-height: -webkit-min-content;
+    max-height: -moz-min-content;
+    max-height: min-content;
   }
 
   .tablet\:w-\[12rem\] {
@@ -1153,12 +1163,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 100%;
   }
 
+  .tablet\:flex-col {
+    flex-direction: column;
+  }
+
   .tablet\:flex-wrap {
     flex-wrap: wrap;
   }
 
   .tablet\:items-center {
     align-items: center;
+  }
+
+  .tablet\:justify-center {
+    justify-content: center;
   }
 
   .tablet\:justify-evenly {
@@ -1168,6 +1186,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:gap-x-3 {
     -moz-column-gap: 0.75rem;
          column-gap: 0.75rem;
+  }
+
+  .tablet\:p-8 {
+    padding: 2rem;
   }
 
   .tablet\:px-1 {
@@ -1187,6 +1209,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .tablet\:pl-36 {
     padding-left: 9rem;
+  }
+
+  .tablet\:pt-0 {
+    padding-top: 0px;
   }
 
   .tablet\:text-\[1\.2rem\] {
@@ -1243,6 +1269,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: 6rem;
   }
 
+  .phone\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
   .phone\:hidden {
     display: none;
   }
@@ -1263,6 +1293,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 4rem;
   }
 
+  .phone\:h-28 {
+    height: 7rem;
+  }
+
+  .phone\:max-h-min {
+    max-height: -webkit-min-content;
+    max-height: -moz-min-content;
+    max-height: min-content;
+  }
+
   .phone\:w-10 {
     width: 2.5rem;
   }
@@ -1275,6 +1315,22 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 2rem;
   }
 
+  .phone\:w-28 {
+    width: 7rem;
+  }
+
+  .phone\:w-3\/6 {
+    width: 50%;
+  }
+
+  .phone\:w-4\/5 {
+    width: 80%;
+  }
+
+  .phone\:w-full {
+    width: 100%;
+  }
+
   .phone\:py-1 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -1285,8 +1341,35 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 0.5rem;
   }
 
+  .phone\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .phone\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .phone\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .phone\:pl-28 {
     padding-left: 7rem;
+  }
+
+  .phone\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .phone\:pb-6 {
+    padding-bottom: 1.5rem;
+  }
+
+  .phone\:pt-1 {
+    padding-top: 0.25rem;
   }
 
   .phone\:text-\[1\.2rem\] {
