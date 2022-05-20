@@ -559,11 +559,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1rem;
 }
 
-.mx-\[25\%\] {
-  margin-left: 25%;
-  margin-right: 25%;
-}
-
 .mt-28 {
   margin-top: 7rem;
 }
@@ -1024,20 +1019,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1rem;
 }
 
-.text-\[200\%\] {
-  font-size: 200%;
-}
-
-.text-\[0\.6rem\] {
-  font-size: 0.6rem;
+.text-\[1\.2rem\] {
+  font-size: 1.2rem;
 }
 
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
-}
-
-.text-\[1\.2rem\] {
-  font-size: 1.2rem;
 }
 
 .font-bold {
@@ -1175,10 +1162,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     align-items: center;
   }
 
-  .tablet\:justify-center {
-    justify-content: center;
-  }
-
   .tablet\:justify-evenly {
     justify-content: space-evenly;
   }
@@ -1186,10 +1169,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:gap-x-3 {
     -moz-column-gap: 0.75rem;
          column-gap: 0.75rem;
-  }
-
-  .tablet\:p-8 {
-    padding: 2rem;
   }
 
   .tablet\:px-1 {
@@ -1211,17 +1190,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 9rem;
   }
 
-  .tablet\:pt-0 {
-    padding-top: 0px;
-  }
-
   .tablet\:text-\[1\.2rem\] {
     font-size: 1.2rem;
   }
 
-  .tablet\:text-xs {
+  .tablet\:text-\[0\.75rem\] {
     font-size: 0.75rem;
-    line-height: 1rem;
   }
 
   .tablet\:text-\[0\.8rem\] {
@@ -1241,10 +1215,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-
-  .tablet\:text-\[0\.75rem\] {
-    font-size: 0.75rem;
   }
 }
 
@@ -1269,8 +1239,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: 6rem;
   }
 
-  .phone\:mb-4 {
-    margin-bottom: 1rem;
+  .phone\:mt-4 {
+    margin-top: 1rem;
   }
 
   .phone\:hidden {
@@ -1293,42 +1263,40 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 4rem;
   }
 
-  .phone\:h-28 {
-    height: 7rem;
+  .phone\:h-40 {
+    height: 10rem;
   }
 
-  .phone\:max-h-min {
-    max-height: -webkit-min-content;
-    max-height: -moz-min-content;
-    max-height: min-content;
+  .phone\:h-44 {
+    height: 11rem;
+  }
+
+  .phone\:h-60 {
+    height: 15rem;
   }
 
   .phone\:w-10 {
     width: 2.5rem;
   }
 
-  .phone\:w-\[10rem\] {
-    width: 10rem;
-  }
-
   .phone\:w-8 {
     width: 2rem;
-  }
-
-  .phone\:w-28 {
-    width: 7rem;
-  }
-
-  .phone\:w-3\/6 {
-    width: 50%;
   }
 
   .phone\:w-4\/5 {
     width: 80%;
   }
 
-  .phone\:w-full {
-    width: 100%;
+  .phone\:w-40 {
+    width: 10rem;
+  }
+
+  .phone\:w-44 {
+    width: 11rem;
+  }
+
+  .phone\:w-60 {
+    width: 15rem;
   }
 
   .phone\:py-1 {
@@ -1341,9 +1309,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 0.5rem;
   }
 
-  .phone\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .phone\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .phone\:py-6 {
@@ -1351,9 +1319,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 1.5rem;
   }
 
-  .phone\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .phone\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .phone\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 
   .phone\:pl-28 {
@@ -1368,16 +1341,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 1.5rem;
   }
 
-  .phone\:pt-1 {
-    padding-top: 0.25rem;
-  }
-
   .phone\:text-\[1\.2rem\] {
     font-size: 1.2rem;
   }
 
-  .phone\:text-\[1\.1rem\] {
-    font-size: 1.1rem;
+  .phone\:text-\[1rem\] {
+    font-size: 1rem;
   }
 
   .phone\:text-2xl {
@@ -1390,8 +1359,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 1.25rem;
   }
 
-  .phone\:text-\[1rem\] {
-    font-size: 1rem;
+  .phone\:text-\[1\.5rem\] {
+    font-size: 1.5rem;
+  }
+
+  .phone\:text-\[0\.8rem\] {
+    font-size: 0.8rem;
+  }
+
+  .phone\:text-\[0\.9rem\] {
+    font-size: 0.9rem;
   }
 
   .phone\:font-normal {

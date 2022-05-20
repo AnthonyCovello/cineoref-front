@@ -69,9 +69,9 @@ function MyProfile() {
   };
 
   return (
-    <div className="profile w-[70%] mx-auto p-12 flex flex-wrap justify-around rounded-md cursor-context-menu tablet:w-11/12 tablet:flex-col tablet:justify-center tablet:items-center phone:pt-0 phone:pb-6 phone:px-8">
+    <div className="profile w-[70%] mx-auto p-12 flex flex-wrap justify-around rounded-md cursor-context-menu tablet:w-11/12 tablet:flex-col tablet:items-center phone:pt-0 phone:pb-6 phone:px-4">
       <section className="flex flex-col items-center w-2/5 container text-center font-bold tablet:mb-4 phone:w-4/5">
-        <img className="avatar h-60 w-60 my-6 rounded-full" src={userData.profile_picture} alt="Photo de profil" />
+        <img className="avatar h-60 w-60 my-6 rounded-full phone:h-44 phone:w-44" src={userData.profile_picture} alt="Photo de profil" />
         <p className="profile-bar">{userData.role}</p>
         {(userData.role !== 'Fondateur' && userData.role !== 'Admin')
           && (<p className="profile-bar">{userData.grade}</p>)}
@@ -85,12 +85,12 @@ function MyProfile() {
         {(userData.role !== 'Fondateur' && userData.role !== 'Admin')
           && (<p className="mt-1.5 text-xs">Grade suivant dans : 10 contributions</p>)}
         <p className="profile-bar">
-          Inscris le : {userData.creation_date}
+          Inscrit le : {userData.creation_date}
         </p>
       </section>
       {/* // ? Formulaire utilisateur */}
       <form
-        className="profile-form w-2/5 py-8 px-12 cursor-context-menu rounded tablet:w-full"
+        className="profile-form w-2/5 py-8 px-12 cursor-context-menu rounded tablet:w-full phone:py-6 phone:px-8"
         action=""
         method="PATCH"
         onSubmit={handleSubmit}
