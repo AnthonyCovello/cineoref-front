@@ -34,7 +34,7 @@ function UserMenu() {
         <img className="rounded-full" src={user.profile_picture} alt="Photo de profil" />
       </div>
       {isOpen && (
-        <div className="dropdownProfil-content">
+        <div className="dropdownProfil-content z-30">
           <Link className="content-btn" to={`/user/${user.user_id}/my-profile`}> Profil </Link>
           <Link className="content-btn" to="/proposal"> Ajouter une ref' </Link>
           <Link className="content-btn" to="/bookmarks"> Favoris </Link>
