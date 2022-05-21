@@ -1367,6 +1367,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 1rem;
   }
 
+  .phone\:ml-2 {
+    margin-left: 0.5rem;
+  }
+
+  .phone\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
   .phone\:hidden {
     display: none;
   }
@@ -1491,6 +1499,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:text-\[0\.8rem\] {
     font-size: 0.8rem;
+  }
+
+  .phone\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .phone\:text-\[0\.5rem\] {
+    font-size: 0.5rem;
+  }
+
+  .phone\:text-\[1\.8rem\] {
+    font-size: 1.8rem;
   }
 
   .phone\:font-normal {

@@ -20,21 +20,21 @@ function Footer() {
 
   return (
     <footer
-      className="footer w-full h-20 mt-12 px-4 flex items-center justify-around tablet:mt-8"
+      className="footer w-full h-20 mt-12 px-4 flex items-center justify-around tablet:mt-8 phone:mt-6"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}
     >
       <Link to="/" title="Page d'accueil" className="footer-brand flex justify-start">
-        <FcFilmReel className="mr-1.5 text-[2rem] " />
+        <FcFilmReel className="mr-1.5 text-[2rem] phone:hidden" />
         <span>
-          <span className="font-bold text-center text-[1.5rem] tablet:text-[1.2rem]">
+          <span className="font-bold text-center text-[1.5rem] tablet:text-[1.2rem] phone:text-base">
             Ciné<span className="ospan text-porange">O</span>'Ref
           </span>
-          <span className="flex mt-0.5 text-center text-[0.7rem]">© Copyright 2022</span>
+          <span className="flex mt-0.5 text-center text-[0.7rem] phone:text-[0.5rem]">© Copyright 2022</span>
         </span>
       </Link>
-      <nav className="footer-navbar flex gap-x-6 font-bold tablet:text-[0.75rem] tablet:flex-wrap tablet:gap-x-3 tablet:justify-evenly phone:font-normal">
+      <nav className="footer-navbar flex gap-x-6 font-bold tablet:text-[0.75rem] tablet:flex-wrap tablet:gap-x-3 tablet:justify-evenly phone:font-normal phone:ml-2">
         <Link to="/proposal">Proposer sa citation</Link>
         <Link to="/team">L'équipe</Link>
         <Link to="/contact">Contact</Link>
