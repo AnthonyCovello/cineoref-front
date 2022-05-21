@@ -41,7 +41,7 @@
     padding: 0.25rem;
 
     &:focus {
-      box-shadow: 0px 0px 10px vars.$orange;
+      box-shadow: 0px 0px 15px vars.$orange;
     }
   }
 
@@ -53,6 +53,7 @@
     background-color: vars.$orange-opacity-3;
     border: 2px solid vars.$orange;
     box-shadow: 0px 0px 10px vars.$orange;
+    font-family: 'Alegreya-sans';
 
     &:hover {
       background-color: vars.$orange;

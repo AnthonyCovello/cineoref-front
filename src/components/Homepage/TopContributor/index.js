@@ -12,7 +12,7 @@ function TopContributor() {
 
   return (
     <div className="contributors w-1/5 p-8 cursor-context-menu text-[1.25rem] font-bold rounded-xl tablet:hidden">
-      <h2 className="contributors-title mb-2.5 text-3xl text-center">Top</h2>
+      <h2 className="contributors-title mb-2.5 text-3xl text-center">Top contributeurs</h2>
       <ul>
         {contributorsData.map((contributor, index) => (
           <li className="p-1.5" key={contributor.username}>

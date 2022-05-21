@@ -817,6 +817,34 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-height: 16rem;
 }
 
+.max-h-\[200px\] {
+  max-height: 200px;
+}
+
+.max-h-\[13rem\] {
+  max-height: 13rem;
+}
+
+.max-h-\[20rem\] {
+  max-height: 20rem;
+}
+
+.max-h-\[15rem\] {
+  max-height: 15rem;
+}
+
+.min-h-\[50px\] {
+  min-height: 50px;
+}
+
+.min-h-\[3rem\] {
+  min-height: 3rem;
+}
+
+.min-h-\[5rem\] {
+  min-height: 5rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -899,6 +927,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: fit-content;
 }
 
+.min-w-\[300px\] {
+  min-width: 300px;
+}
+
+.min-w-\[19rem\] {
+  min-width: 19rem;
+}
+
+.min-w-\[20rem\] {
+  min-width: 20rem;
+}
+
 .max-w-\[50\%\] {
   max-width: 50%;
 }
@@ -911,12 +951,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 80%;
 }
 
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-w-\[40rem\] {
+  max-width: 40rem;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
 
 .cursor-context-menu {
   cursor: context-menu;
+}
+
+.resize {
+  resize: both;
 }
 
 .flex-row {
@@ -1022,6 +1078,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#d3d3d3\] {
   --tw-bg-opacity: 1;
   background-color: rgb(211 211 211 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#C8C8C8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(200 200 200 / var(--tw-bg-opacity));
 }
 
 .p-4 {
@@ -1264,6 +1325,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
+.text-\[\#000\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -1376,8 +1442,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 75%;
   }
 
+  .tablet\:min-w-\[30rem\] {
+    min-width: 30rem;
+  }
+
   .tablet\:max-w-\[50\%\] {
     max-width: 50%;
+  }
+
+  .tablet\:max-w-\[30rem\] {
+    max-width: 30rem;
+  }
+
+  .tablet\:max-w-\[35rem\] {
+    max-width: 35rem;
   }
 
   .tablet\:flex-col {
@@ -1540,6 +1618,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 1.9rem;
   }
 
+  .phone\:max-h-\[10rem\] {
+    max-height: 10rem;
+  }
+
   .phone\:w-10 {
     width: 2.5rem;
   }
@@ -1560,8 +1642,48 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 91.666667%;
   }
 
+  .phone\:w-\[90\%\] {
+    width: 90%;
+  }
+
+  .phone\:min-w-\[90\%\] {
+    min-width: 90%;
+  }
+
+  .phone\:min-w-\[100\%\] {
+    min-width: 100%;
+  }
+
+  .phone\:min-w-\[10rem\] {
+    min-width: 10rem;
+  }
+
+  .phone\:min-w-\[12rem\] {
+    min-width: 12rem;
+  }
+
+  .phone\:min-w-\[14rem\] {
+    min-width: 14rem;
+  }
+
+  .phone\:min-w-\[15rem\] {
+    min-width: 15rem;
+  }
+
+  .phone\:min-w-\[18rem\] {
+    min-width: 18rem;
+  }
+
+  .phone\:min-w-\[17rem\] {
+    min-width: 17rem;
+  }
+
   .phone\:max-w-\[90\%\] {
     max-width: 90%;
+  }
+
+  .phone\:resize-y {
+    resize: vertical;
   }
 
   .phone\:p-1 {
