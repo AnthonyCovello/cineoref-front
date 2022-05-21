@@ -28,13 +28,13 @@ function UserMenu() {
   };
 
   return (
-    <div className="dropdownProfil" onClick={toggleDropdown}>
+    <div className="relative flex items-center gap-2 cursor-pointer" onClick={toggleDropdown}>
       <span className="text-porange font-bold text-2xl phone:hidden tablet:text-xl">{user.pseudo}</span>
       <div className="w-12 h-12 ml-2 phone:w-8 phone:h-8">
         <img className="rounded-full" src={user.profile_picture} alt="Photo de profil" />
       </div>
       {isOpen && (
-        <div className="dropdownProfil-content z-30">
+        <div className="content absolute rounded-md top-14 right-0 z-30 p-3 text-center phone:top-10 phone:-right-2 phone:text-[0.8rem] phone:p-1">
           <Link className="content-btn" to={`/user/${user.user_id}/my-profile`}> Profil </Link>
           <Link className="content-btn" to="/proposal"> Ajouter une ref' </Link>
           <Link className="content-btn" to="/bookmarks"> Favoris </Link>
