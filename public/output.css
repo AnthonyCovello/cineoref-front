@@ -829,6 +829,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 15rem;
 }
 
+.max-w-\[50\%\] {
+  max-width: 50%;
+}
+
+.max-w-\[60\%\] {
+  max-width: 60%;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1254,6 +1262,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .tablet\:w-full {
     width: 100%;
+  }
+
+  .tablet\:w-2\/4 {
+    width: 50%;
+  }
+
+  .tablet\:max-w-\[50\%\] {
+    max-width: 50%;
   }
 
   .tablet\:flex-col {

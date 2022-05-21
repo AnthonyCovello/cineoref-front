@@ -11,7 +11,7 @@ function PhoneTopContributor() {
   const contributorsData = useSelector(({ contributors }) => contributors.topContributors);
 
   return (
-    <div className="contributors-phone top-26 left-16 w-3/5 p-2 font-bold rounded-md absolute max-h-min truncate">
+    <div className="contributors-phone top-26 left-16 max-w-[60%] p-3 font-bold rounded-md absolute max-h-min truncate">
       <h2 className="contributors-title mb-2.5 text-[1.1rem] text-center">Top contributeur</h2>
       <ul>
         {contributorsData.map((contributor, index) => (
