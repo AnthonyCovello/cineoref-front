@@ -629,6 +629,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 33%;
 }
 
+.mx-\[50\%\] {
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+.mx-\[25\%\] {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 .mt-28 {
   margin-top: 7rem;
 }
@@ -715,6 +725,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ml-\[50\%\] {
+  margin-left: 50%;
 }
 
 .block {
@@ -861,12 +879,36 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: max-content;
 }
 
+.w-min {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.w-\[1\.3rem\] {
+  width: 1.3rem;
+}
+
+.w-\[100\%\] {
+  width: 100%;
+}
+
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .max-w-\[50\%\] {
   max-width: 50%;
 }
 
 .max-w-\[60\%\] {
   max-width: 60%;
+}
+
+.max-w-\[80\%\] {
+  max-width: 80%;
 }
 
 .cursor-pointer {
@@ -911,6 +953,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-around {
   justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .gap-6 {
@@ -1082,6 +1128,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.px-40 {
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
 
 .pl-40 {
@@ -1312,6 +1368,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 75%;
   }
 
+  .tablet\:w-2\/5 {
+    width: 40%;
+  }
+
+  .tablet\:w-9\/12 {
+    width: 75%;
+  }
+
   .tablet\:max-w-\[50\%\] {
     max-width: 50%;
   }
@@ -1356,6 +1420,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  .tablet\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .tablet\:pl-36 {
@@ -1491,6 +1560,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 91.666667%;
   }
 
+  .phone\:max-w-\[90\%\] {
+    max-width: 90%;
+  }
+
   .phone\:p-1 {
     padding: 0.25rem;
   }
@@ -1537,6 +1610,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   .phone\:px-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+  }
+
+  .phone\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .phone\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .phone\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .phone\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .phone\:pl-28 {

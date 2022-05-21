@@ -19,12 +19,12 @@ import 'tippy.js/dist/tippy.css';
 
 // ? Composant
 function RefPage() {
-  changeTabTitle('Citation');
-
   const dispatch = useDispatch();
   const { ref_id } = useParams();
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
   const [refData, setRefData] = useState({});
+
+  changeTabTitle('Citation');
 
   // * Ouverture du menu de connexion
   const toggleDropdown = () => {
@@ -56,51 +56,51 @@ function RefPage() {
 
   return (
     <div
-      className="refContainer cursor-context-menu"
+      className="refContainer w-2/4 py-12 px-40 mx-auto rounded-md cursor-context-menu tablet:w-4/5 tablet:px-20 phone:w-11/12 phone:py-4 phone:px-4"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}
     >
-      <Link className="refContainer-returnButton" to="/" title="Retourner à la page d'accueil">
+      <Link className="refContainer-returnButton inline-block text-porange text-[2rem] mr-auto h-[2.3rem] rounded phone:text-[1.5rem] phone:h-[1.9rem]" to="/" title="Retourner à la page d'accueil">
         <BsFillArrowLeftSquareFill />
       </Link>
-      <div className="refContainer-image">
+      <div className="max-w-[80%] phone:max-w-[90%]">
         {/* // Todo: tester une image pour régler le style */}
         <img
           src=""
           alt=""
         />
       </div>
-      <h2 className="refContainer-mediaTitle">Titre de l'œuvre</h2>
+      <h2 className="refContainer-title mt-4 phone:mt-2">Titre de l'œuvre</h2>
       <Link to={`/listcategory/movie/${refData.show_id}/refs`} className="refContainer-data">{refData.title}</Link>
-      <h2 className="refContainer-category">Média</h2>
+      <h2 className="refContainer-title">Média</h2>
       <p className="refContainer-data">{toFrench(refData.category)}</p>
-      <h2 className="refContainer-character">Personnage</h2>
+      <h2 className="refContainer-title">Personnage</h2>
       <Link to={`/listcharacter/character/${refData.character_id}/refs`} className="refContainer-data">{refData.character}</Link>
-      <h2 className="refContainer-artist">Artiste</h2>
+      <h2 className="refContainer-title">Artiste</h2>
       <Link to={`/listartist/artist/${refData.artist_id}/refs`} className="refContainer-data">{refData.artist}</Link>
-      <h2 className="refContainer-ref">Citation</h2>
+      <h2 className="refContainer-title">Citation</h2>
       <p className="refContainer-data data-ref text-lg">{refData.ref}</p>
       <Tippy content="Copié !" visible={isVisible}>
-        <span className="ml-1/2 mr-1/2 cursor-pointer" onClick={handleClick}>
-          <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem]" data-clipboard-target=".data-ref" title="Copier le texte" />
+        <span className="block w-fit mb-8 mx-auto" onClick={handleClick}>
+          <FaClosedCaptioning className="copy-btn inline text-porange text-[1.3rem] cursor-pointer" data-clipboard-target=".data-ref" title="Copier le texte" />
         </span>
       </Tippy>
-      <div className="user-score text-center">
+      <div className="flex justify-evenly text-center">
         <div>
-          <h2 className="refContainer-user">Partagée par</h2>
+          <h2 className="refContainer-title">Partagée par</h2>
           {refData.user
-            ? <Link to={`/user/${refData.user_id}/profile`} className="refContainer-data">{refData.user}</Link>
+            ? <Link to={`/user/${refData.user_id}/profile`} className="refContainer-data truncate">{refData.user}</Link>
             : 'Anonyme'}
         </div>
         <div>
-          <h2 className="refContainer-score">Note de la communauté</h2>
+          <h2 className="refContainer-title">Note de la citation</h2>
           {/* // Todo: importer la note moyenne  */}
-          <p className="refContainer-data">{ }</p>
+          <p className="refContainer-data">4.6 / 5</p>
         </div>
       </div>
       {/* // Todo: faire un système pour signaler une erreur */}
-      <a className="signal">Signaler une erreur</a>
+      <a className="block text-center p-2 font-bold phone:text-[0.8rem]">Signaler une erreur</a>
     </div>
   );
 }

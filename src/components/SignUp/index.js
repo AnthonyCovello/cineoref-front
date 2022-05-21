@@ -93,7 +93,7 @@ function SignUp() {
         onSubmit={handleRegister}
       >
         <Form className="signUp-form flex flex-col items-center w-2/5 mx-auto p-12 rounded-md cursor-context-menu tablet:w-4/5 phone:w-11/12 phone:p-6" action="" method="post">
-          <Link className="signUp-form-returnButton text-porange text-[2rem] mr-auto h-[2.3rem] phone:text-[1.5rem] phone:h-[1.9rem]" to="/" title="Retourner à la page d'accueil">
+          <Link className="signUp-form-returnButton text-porange text-[2rem] mr-auto h-[2.3rem] rounded phone:text-[1.5rem] phone:h-[1.9rem]" to="/" title="Retourner à la page d'accueil">
             <BsFillArrowLeftSquareFill />
           </Link>
           <h1 className="signUp-form-title text-[2rem] font-bold text-porange phone:text-[1.9rem] phone:mt-2">Créer un compte</h1>
