@@ -21,7 +21,7 @@ function PhoneNav() {
       </button>
       {openMenu
         && (
-          <nav className="navMenu absolute z-20 top-14 left-[-29.5rem] flex flex-col text-center phone:top-10" onClick={() => setOpenMenu(!openMenu)}>
+          <nav className="navMenu absolute z-20 top-14 left-[-29.5rem] flex flex-col text-center phone:top-10" onClick={() => dispatch(setOpenMenu())}>
             <Link to="/registration">Inscription</Link>
             <Link to="/listcategory/movie">Films</Link>
             <Link to="/listcategory/serie">Séries</Link>
