@@ -78,7 +78,7 @@ function Homepage() {
         />
         )}
       <SearchBarRef />
-      <div className="flex justify-center gap-20">
+      <div className="flex justify-center items-start gap-20">
         <RandomRef />
         <TopContributor />
       </div>

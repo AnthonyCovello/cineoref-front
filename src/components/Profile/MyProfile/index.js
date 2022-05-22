@@ -134,11 +134,12 @@ function MyProfile() {
           Supprimer mon compte
         </span>
       </form>
+      {/* // ? Contributions utilisateur */}
       <section className="profile-contributions w-full mt-6 py-4 px-8 phone:px-4">
         <h2 className="profile-contributions-title p-2 font-bold text-[1.5rem] text-center">Mes contributions</h2>
         <ul>
           {contributionData.map((item) => (
-            <li key={item.id} className="profile-contributions-item max-h-64 mt-4 p-6 leading-6 rounded tablet:max-h-min">
+            <li key={item.id} className="profile-contributions-item max-h-64 mt-4 p-6 leading-6 rounded tablet:max-h-min phone:p-4">
               <Link to={`/ref/${item.id}`}>
                 <p><span>Titre de l'oeuvre : </span>{item.show}</p>
                 <p><span>Média : </span>{toFrench(item.category)}</p>
