@@ -64,12 +64,12 @@ function ListsPages() {
 
   return (
     <div
-      className="listPages w-4/5 mx-auto p-12 rounded-xl"
+      className="listPages w-4/5 mx-auto py-6 px-12 rounded-md cursor-context-menu tablet:w-11/12 phone:py-2 phone:px-2"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}
     >
-      <ListMenu listFilters={listFilters} />
+      <ListMenu />
       <ListTheme list={listApi} listFilters={listFilters} listTheme={listTheme} />
     </div>
   );
