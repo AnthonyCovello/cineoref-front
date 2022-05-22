@@ -613,6 +613,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 1rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mt-28 {
   margin-top: 7rem;
 }
@@ -1556,6 +1561,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  
+  .tablet\:px-28 {
+    padding-left: 7rem;
+
+  }
 
   .tablet\:pl-36 {
     padding-left: 9rem;
@@ -1616,6 +1626,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:-right-2 {
     right: -0.5rem;
+  }
+
+  .phone\:left-\[-28rem\] {
+    left: -28rem;
+  }
+
+  .phone\:left-\[-31rem\] {
+    left: -31rem;
+  }
+
+  .phone\:left-\[-30rem\] {
+    left: -30rem;
   }
 
   .phone\:mt-20 {
@@ -1781,6 +1803,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
+ 
+  .phone\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+  }
 
   .phone\:pl-28 {
     padding-left: 7rem;
@@ -1792,6 +1820,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:pb-6 {
     padding-bottom: 1.5rem;
+  }
+
+  .phone\:pl-14 {
+    padding-left: 3.5rem;
   }
 
   .phone\:text-base {
