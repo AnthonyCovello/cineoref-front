@@ -10,7 +10,6 @@ function SearchResult() {
   const show = useSelector(({ list }) => list.searchList.getShowBySearchBar);
   const characters = useSelector(({ list }) => list.searchList.getCharacterBySearchBar);
   const artists = useSelector(({ list }) => list.searchList.getArtistBySearchBar);
-  console.log(refs);
   return (
     <div>
       <div>
