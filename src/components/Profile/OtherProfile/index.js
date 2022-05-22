@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { changeTabTitle, toFrench } from '../../../utlis';
 
 // ? Import style
-import '../styles.scss';
+import './styles.scss';
 
 // ? Composant
 function OtherProfile() {
@@ -27,16 +27,14 @@ function OtherProfile() {
   }, [id]);
 
   return (
-    <div className="profile w-[70%] mx-auto p-12 flex flex-wrap justify-around rounded-xl cursor-context-menu">
-      <section className="flex flex-col items-center w-2/5 container text-center">
-        <div className="profile-form-group">
-          <h3 className="text-[200%] text-porange font-bold">{userData.username}</h3>
-        </div>
-        <img className="avatar h-60 w-60 my-6 rounded-full" src={userData.profile_picture} alt="Photo de profil" />
-        <p className="profile-bar">{userData.role}</p>
+    <div className="otherProfile w-[70%] mx-auto p-12 flex flex-col items-center rounded-md cursor-context-menu tablet:w-11/12 phone:pt-0 phone:pb-6 phone:px-4">
+      <h3 className="text-[2rem] text-porange font-bold phone:mt-4 phone:text-[1.5rem]">{userData.username}</h3>
+      <section className="flex flex-col items-center w-2/5 container text-center font-bold phone:w-4/5 phone:text-[0.9rem]">
+        <img className="avatar h-60 w-60 my-6 rounded-full phone:h-44 phone:w-44" src={userData.profile_picture} alt="Photo de profil" />
+        <p className="otherProfile-bar">{userData.role}</p>
         {(userData.role !== 'Fondateur' && userData.role !== 'Admin')
-          && (<p className="profile-bar">{userData.grade}</p>)}
-        <p className="profile-bar">
+          && (<p className="otherProfile-bar">{userData.grade}</p>)}
+        <p className="otherProfile-bar">
           {
             contributionData.length === 0
               ? 'Pas de contribution'
@@ -45,15 +43,15 @@ function OtherProfile() {
         </p>
         {(userData.role !== 'Fondateur' && userData.role !== 'Admin')
           && (<p className="mt-1.5 text-xs">Grade suivant dans : 10 contributions</p>)}
-        <p className="profile-bar">
-          Inscris le : {userData.creation_date}
+        <p className="otherProfile-bar">
+          Inscrit le : {userData.creation_date}
         </p>
       </section>
-      <section className="profile-contributions w-full mt-6 py-4 px-8">
-        <h2 className="profile-contributions-title p-2 font-bold text-2xl text-center">Mes contributions</h2>
+      <section className="otherProfile-contributions w-full mt-6 py-4 px-8 phone:px-4">
+        <h2 className="otherProfile-contributions-title p-2 font-bold text-[1.5rem] text-center phone:px-1">Mes contributions</h2>
         <ul>
           {contributionData.map((item) => (
-            <li key={item.id} className="profile-contributions-item max-h-64 mt-4 p-6 leading-6">
+            <li key={item.id} className="otherProfile-contributions-item max-h-64 mt-4 p-6 leading-6 rounded tablet:max-h-min">
               <Link to={`/ref/${item.id}`}>
                 <p><span>Titre de l'oeuvre : </span>{item.show}</p>
                 <p><span>Média : </span>{toFrench(item.category)}</p>

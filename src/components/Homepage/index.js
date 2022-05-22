@@ -4,11 +4,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setLoginDropdown } from '../../features/dropDownSlice';
+import { FaTrophy } from 'react-icons/fa';
 import { changeTabTitle } from '../../utlis';
+import { setLoginDropdown } from '../../features/dropDownSlice';
 import { setNewRefData, setBestRefData } from '../../features/refSlice';
 import { setTopContributorsData } from '../../features/topContributorsSlice';
-import { FaTrophy } from 'react-icons/fa';
 
 // ? Import composants
 import RandomRef from './RandomRef';
@@ -28,6 +28,7 @@ function Homepage() {
   const dispatch = useDispatch();
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
+  const openMenu = useSelector(({ list }) => list.openMenu);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -69,10 +70,13 @@ function Homepage() {
         if (isOpen === true) toggleDropdown();
       }}
     >
-      <FaTrophy
-        className="icon-trophy-style absolute w-10 h-10 p-1 z-10 top-36 right-2 rounded-full cursor-pointer desk:hidden"
-        onClick={() => setShowModal(!showModal)}
-      />
+      {!openMenu
+        && (
+        <FaTrophy
+          className="icon-trophy-style absolute w-10 h-10 p-1 z-10 top-10 left-2 rounded-full cursor-pointer desk:hidden"
+          onClick={() => setShowModal(!showModal)}
+        />
+        )}
       <SearchBarRef />
       <div className="flex justify-center gap-20">
         <RandomRef />
