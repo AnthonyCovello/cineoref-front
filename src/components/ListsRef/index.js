@@ -42,7 +42,7 @@ function ListsRef() {
         dispatch(setListRef(res.data));
       });
   }, [listTheme, category, id]);
-console.log(refList)
+
   return (
     <div
       onClick={() => {
@@ -50,7 +50,6 @@ console.log(refList)
       }}
       className="listRef w-4/5 mx-auto py-8 px-12 rounded-md h-min"
     >
-      <h2 className="">{}</h2>
       <ul>
         {refList.map((item) => (
           <li key={item.id} className="listRefItem max-h-64 p-4 mb-4 leading-6 rounded tablet:max-h-min">

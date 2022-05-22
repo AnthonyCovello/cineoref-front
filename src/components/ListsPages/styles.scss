@@ -38,6 +38,11 @@
   text-shadow: 0px 0px 15px vars.$orange;
 }
 
-.ListTheme:first-child {
-  border: none;
+@media screen and (max-width: 480px) {
+  .anchorLetter:hover{
+    transition: unset;
+    transform: unset;
+    color: white;
+    text-shadow: none;
+  }
 }

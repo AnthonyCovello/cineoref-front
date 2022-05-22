@@ -64,7 +64,7 @@ function ListsPages() {
 
   return (
     <div
-      className="listPages w-4/5 mx-auto py-6 px-12 rounded-md cursor-context-menu tablet:w-11/12 phone:py-2 phone:px-2"
+      className="listPages w-4/5 mx-auto py-6 px-12 rounded-md cursor-context-menu tablet:w-11/12 tablet:px-8 phone:py-2 phone:px-1"
       onClick={() => {
         if (isOpen === true) toggleDropdown();
       }}

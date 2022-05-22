@@ -14,10 +14,10 @@ function List({ letter, listTheme }) {
         <Link
           to={`/${listTheme}/${data.category}/${data.id}/refs`}
           key={data.id}
-          className="linkToMedia w-48 flex flex-col p-2 m-2 rounded tablet:w-[22%]"
+          className="linkToMedia w-[15%] flex flex-col p-2 m-2 rounded tablet:w-[22%] phone:w-[44%]"
         >
-          <img className="placeHolder mb-2 rounded" src="https://cdn.pixabay.com/photo/2022/05/17/04/39/cat-7201639_960_720.jpg" alt="Placeholder" />
-          <p className="linkToMedia-text font-bold text-center">{data.name}</p>
+          <img className="placeHolder mb-2 rounded" src="https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_960_720.jpg" alt="Placeholder" />
+          <p className="linkToMedia-text font-bold text-center phone:text-[0.8rem]">{data.name}</p>
         </Link>
       ))}
     </li>
