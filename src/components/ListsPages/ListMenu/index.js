@@ -1,23 +1,28 @@
 // ? Import modules
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import PropTypes from 'prop-types';
 
 // ? Import style
-function ListMenu({ listFilters }) {
+import '../styles.scss';
+
+const listLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const listNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+function ListMenu() {
   return (
-    <nav className="listmenu flex-wrap text-[150%] pb-[1rem] font-bold flex justify-between items-center">
-      {listFilters.map((listFilter) => (
-        <AnchorLink key={listFilter} href={`#${listFilter}`} className="anchorletter flex py-[0.5rem] flex-row hover:text-porange hover:scale-150 transition duration 150 ease-out hover:ease-in phone:px-[0.2rem] phone:py-[0.1rem] tablet px-[0.5rem]">{listFilter}</AnchorLink>
-      ))}
-    </nav>
+    <>
+      <nav className="text-[1.5rem] flex flex-wrap justify-center gap-2 font-bold tablet:text-[1rem] tablet:gap-1 phone:hidden">
+        {listLetters.map((listLetter) => (
+          <AnchorLink offset={() => 60} key={listLetter} href={`#${listLetter}`} className="anchorLetter flex flex-row py-1 px-2">{listLetter}</AnchorLink>
+        ))}
+      </nav>
+      <nav className="text-[1.7rem] flex flex-wrap justify-center gap-2 mb-4 font-bold tablet:text-[1.2rem] tablet:gap-1 phone:hidden">
+        {listNumbers.map((listNumber) => (
+          <AnchorLink offset={() => 60} key={listNumber} href={`#${listNumber}`} className="anchorLetter flex flex-row py-1 px-2">{listNumber}</AnchorLink>
+        ))}
+      </nav>
+    </>
   );
 }
-
-ListMenu.propTypes = {
-  listFilters: PropTypes.arrayOf(
-    PropTypes.string,
-  ).isRequired,
-};
 
 export default React.memo(ListMenu);

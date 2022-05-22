@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 // ? Import composant
 import List from './list';
 
+// ? Import styles
+import '../styles.scss';
+
 // ? Composant
 function ListTheme({ list, listFilters, listTheme }) {
   const dataMapping = [];
@@ -19,11 +22,11 @@ function ListTheme({ list, listFilters, listTheme }) {
   const result = Object.keys(dataMapping).map((key) => [(key), dataMapping[key]]);
 
   return (
-    <div className="ListTheme">
+    <div className="ListTheme border-t-4 border-porange border-double">
       {result.map((letter) => (
-        <div key={letter[0]}>
-          <span id={letter[0]} className="ListThemeLetter flex py-[0.5rem] text-[150%] font-bold">{letter[0]}</span>
-          <ol className="ListThemeContent flex py-[0.2rem] phone:text-[1.2rem]">
+        <div key={letter[0]} className="mt-4 pb-4 block border-b-2 border-[#1f53b3] border-solid text-center">
+          <span id={letter[0]} className="ListThemeLetter py-2 text-[1.5rem] font-bold tablet:text-[1rem]">{letter[0]}</span>
+          <ol className="ListThemeContent flex py-1">
             <List letter={letter[1]} listTheme={listTheme} />
           </ol>
         </div>

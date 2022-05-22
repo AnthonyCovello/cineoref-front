@@ -18,12 +18,26 @@
   -webkit-box-shadow: vars.$effect-3D-black; /* Safari and Chrome */
   -o-box-shadow: vars.$effect-3D-black; /* Opera */
   -moz-box-shadow: vars.$effect-3D-black; /* Firefox */
-  -webkit-box-orient: vertical;
 
-  &-item {
+  &-text {
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-line-clamp: 2; //* limite de lignes
+    -webkit-line-clamp: 3; //* limite de lignes
     overflow: hidden; //* cache le texte en trop
   }
+
+  &:hover {
+    color: vars.$orange;
+  }
+}
+
+.anchorLetter:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.4);
+  color: vars.$orange;
+  text-shadow: 0px 0px 15px vars.$orange;
+}
+
+.ListTheme:first-child {
+  border: none;
 }
