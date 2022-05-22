@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+// ? import Style
+import '../styles.scss';
+
 // ? Composant
 function List({ letter, listTheme }) {
   return (
@@ -10,7 +13,7 @@ function List({ letter, listTheme }) {
         <Link
           to={`/${listTheme}/${data.category}/${data.id}/refs`}
           key={data.id}
-          className=""
+          className="linkToMedia flex flex-col hover:text-porange p-3 my-2 rounded tablet:max-h-min"
         >{data.name}
         </Link>
       ))}
