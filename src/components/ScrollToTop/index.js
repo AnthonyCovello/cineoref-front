@@ -29,13 +29,12 @@ function ScrollToTop() {
 
   return (
     <div className="relative">
-      {' '}
       {showTopBtn && (
         <FaAngleUp
           className="icon-position-style w-12 h-12 fixed z-10 bottom-20 right-2 rounded-full cursor-pointer phone:w-10 phone:h-10"
           onClick={goToTop}
         />
-      )}{' '}
+      )}
     </div>
   );
 }

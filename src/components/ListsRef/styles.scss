@@ -10,7 +10,7 @@
   -moz-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Firefox */
 }
 
-.listRefItem {
+.listRef-li {
   background-color: rgba(15, 15, 15, 0.9);
   box-shadow: vars.$effect-3D-black;
   -ms-box-shadow: vars.$effect-3D-black; /* IE 9 */
@@ -21,12 +21,6 @@
 
   &-item {
     background-color: vars.$darkBlue-Opacity-8;
-    
-    span {
-      color: vars.$orange;
-      font-weight: bold;
-      font-size: 18px;
-    }
 
     &-ref {
       -webkit-box-orient: vertical;
