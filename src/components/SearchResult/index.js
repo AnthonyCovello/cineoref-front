@@ -7,7 +7,9 @@ import { useSelector } from 'react-redux';
 // ? Composant
 function SearchResult() {
   const refs = useSelector(({ list }) => list.searchList.getRefBySearchBar);
-  console.log(refs);
+  const show = useSelector(({ list }) => list.searchList.getShowBySearchBar);
+  const characters = useSelector(({ list }) => list.searchList.getCharacterBySearchBar);
+  const artists = useSelector(({ list }) => list.searchList.getArtistBySearchBar);
   return (
     <div>
       <div>
@@ -17,13 +19,22 @@ function SearchResult() {
         ))}
       </div>
       <div>
-        <p> Médias </p>
+        <h3> Films /séries /animés / dessins-animés </h3>
+        {show.map((item) => (
+          <li key={item.id}> {item.name} </li>
+        ))}
+      </div>
+      <div>
+        <h3> Personnages </h3>
+        {characters.map((item) => (
+          <li key={item.id}> {item.name} </li>
+        ))}
       </div>
       <div>
         <p> Artistes </p>
-      </div>
-      <div>
-        <p> Personnages </p>
+        {artists.map((item) => (
+          <li key={item.id}> {item.name} </li>
+        ))}
       </div>
     </div>
   );
