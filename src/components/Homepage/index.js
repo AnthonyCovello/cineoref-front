@@ -73,12 +73,12 @@ function Homepage() {
       {!openMenu
         && (
         <FaTrophy
-          className="icon-trophy-style absolute w-10 h-10 p-1 z-10 top-10 left-2 rounded-full cursor-pointer desk:hidden"
+          className="icon-trophy-style absolute w-10 h-10 p-1 z-10 top-36 left-2 rounded-full cursor-pointer desk:hidden"
           onClick={() => setShowModal(!showModal)}
         />
         )}
       <SearchBarRef />
-      <div className="flex justify-center gap-20">
+      <div className="flex justify-center items-start gap-20">
         <RandomRef />
         <TopContributor />
       </div>

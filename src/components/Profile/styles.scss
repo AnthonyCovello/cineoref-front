@@ -121,7 +121,7 @@
       span {
         color: vars.$orange;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 1.125rem;
       }
     }
   }
@@ -140,6 +140,16 @@
   }
 
   @media screen and (max-width: 480px) {
+    .profile-contributions-item {
+      p {
+        font-size: 0.9rem;
+      }
+
+      span {
+        font-size: 1rem;
+      }
+    }
+
     .refText {
       -webkit-box-orient: vertical;
       display: -webkit-box;

@@ -9,7 +9,7 @@ import '../styles.scss';
 // ? Composant
 function List({ letter, listTheme }) {
   return (
-    <li className="flex flex-wrap">
+    <li className="flex flex-wrap w-full">
       {letter.map((data) => (
         <Link
           to={`/${listTheme}/${data.category}/${data.id}/refs`}

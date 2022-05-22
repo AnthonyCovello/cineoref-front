@@ -48,7 +48,7 @@ function RandomRef() {
   }, []);
 
   return (
-    <div className="randomRef w-2/5 h-[17rem] rounded-md py-8 px-10 flex flex-col justify-evenly text-[1.25rem] font-medium cursor-context-menu tablet:w-4/5 phone:py-4 phone:px-5 phone:text-[1.2rem]">
+    <div className="randomRef w-2/5 h-fit rounded-md py-8 px-10 flex flex-col gap-2 text-[1.25rem] font-medium cursor-context-menu tablet:w-4/5 phone:py-4 phone:px-5 phone:text-[1.2rem]">
       <span type="button" className="self-end cursor-pointer" onClick={randomRefApi}>
         <img src={randomDice} className="w-11 h-11 phone:w-8 phone:h-8" title="Afficher une citation aléatoire" alt="dé à 20 faces" />
       </span>
