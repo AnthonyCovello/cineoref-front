@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 1024px) {
   .addRefBtn:hover {
-    background-color: inherit;
+    background-color: vars.$orange-opacity-3;
     transition: initial;
     transform: initial;
   }

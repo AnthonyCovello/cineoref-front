@@ -32,7 +32,7 @@ function SearchBarRef() {
         Rechercher
       </label>
       <input
-        className="searchInput h-24 w-full pl-40 text-[2.5rem] phone:h-16 phone:pl-28 phone:text-2xl tablet:pl-36 tablet:text-3xl"
+        className="searchInput h-24 w-full pl-40 text-[2.5rem] phone:h-16 phone:px-12 phone:text-2xl tablet:px-28 tablet:text-3xl"
         id="searchInput"
         type="text"
         placeholder="Rechercher..."
