@@ -4,6 +4,7 @@ const initialState = {
   categoryList: [],
   refList: [],
   searchList: [],
+  openMenu: false,
 };
 
 export const listSlice = createSlice({
@@ -19,8 +20,13 @@ export const listSlice = createSlice({
     setListSearch: (state, { payload }) => {
       state.searchList = payload;
     },
+    setOpenMenu: (state) => {
+      state.openMenu = !state.openMenu;
+    },
   },
 });
 
 export default listSlice.reducer;
-export const { setListCategory, setListRef, setListSearch } = listSlice.actions;
+export const {
+  setListCategory, setListRef, setListSearch, setOpenMenu,
+} = listSlice.actions;

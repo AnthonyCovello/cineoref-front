@@ -47,7 +47,7 @@ function HomeList() {
 
   return (
     <div className="citation w-3/4 mx-auto rounded-md text-center tablet:w-11/12">
-      <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer tablet:text-base">
+      <nav className="flex justify-around items-center text-xl font-bold text-porange cursor-pointer tablet:text-base phone:text-[0.9rem]">
         <div
           onClick={() => dispatch(setTablist('newests'))}
           className={
