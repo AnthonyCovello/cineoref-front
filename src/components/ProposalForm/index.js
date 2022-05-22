@@ -35,7 +35,6 @@ function ProposalForm() {
     reference: '',
   };
 
-  // Todo: ErrorMessage à régler
   const validationSchema = Yup.object().shape({
     title: Yup.string(),
     category: Yup.string(),

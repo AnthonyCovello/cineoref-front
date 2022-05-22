@@ -11,7 +11,7 @@ function PhoneNav() {
   const openMenu = useSelector(({ list }) => list.openMenu);
 
   return (
-    <div className="phoneNav absolute left-[45%] font-bold phone:left-[42%]">
+    <div className="phoneNav absolute left-[45%] font-bold phone:left-[40%]">
       <button
         type="button"
         className="menu-button py-2 px-3 font-bold rounded phone:py-1 phone:px-2"
