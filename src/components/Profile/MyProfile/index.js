@@ -23,7 +23,7 @@ function MyProfile() {
   const [valueEmail, setValueEmail] = useState(null);
   const [valuePassword, setValuePassword] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
+  const [isSucces, setIsSucces] = useState(false);
   const enable = !isDisable ? 'enable' : ''; //* ClassName des inputs
 
   changeTabTitle(`Profil de ${userData.username}`);
@@ -60,12 +60,12 @@ function MyProfile() {
       ...passwordValue,
       id: id,
     }).then((res) => {
-      console.log(res);
+      setIsDisable(!isDisable);
+      if (res) {
+        setIsSucces(true);
+        setTimeout(() => setIsSucces(false), 3000);
+      }
     });
-  };
-
-  const modifyForm = () => {
-    setIsDisable(!isDisable);
   };
 
   return (
@@ -127,8 +127,25 @@ function MyProfile() {
         </div>
         <div className="flex justify-around my-4">
           {isDisable
-            ? <button className="py-2 px-4 rounded font-bold text-[1.2rem]" type="button" onClick={modifyForm}>Modifier</button>
-            : <button className="py-2 px-4 rounded font-bold text-[1.2rem]" type="submit" onClick={modifyForm}>Sauvegarder</button>}
+            ? <button className="py-2 px-4 rounded font-bold text-[1.2rem]" type="button" onClick={() => setIsDisable(!isDisable)}>Modifier</button>
+            : (
+              <>
+                <button className="py-2 px-4 rounded font-bold text-[1.2rem]" type="submit">Sauvegarder</button>
+                <button
+                  className="py-2 px-4 rounded font-bold text-[1.2rem]"
+                  type="button"
+                  onClick={() => {
+                    setIsDisable(!isDisable);
+                    setValueEmail(null);
+                    setValuePassword(null);
+                  }}
+                >annuler
+                </button>
+              </>
+            )}
+          {isSucces && (
+            <p> modifications enregistrées </p>
+          )}
         </div>
         <span className="deleteBtn block p-2 mx-auto text-center text-[0.8rem] font-bold text-[#DC2626] cursor-pointer" onClick={() => setShowModal(true)}>
           Supprimer mon compte
