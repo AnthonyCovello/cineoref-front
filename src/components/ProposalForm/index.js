@@ -37,11 +37,45 @@ function ProposalForm() {
   };
 
   const validationSchema = Yup.object().shape({
-    title: Yup.string(),
-    category: Yup.string(),
-    character: Yup.string(),
-    artist: Yup.string(),
-    ref: Yup.string(),
+    title: Yup.string()
+      .test(
+        'len',
+        'Le titre doit contenir au moins deux caractères.',
+        (val) => val
+          && val.toString().length >= 2,
+      ),
+    category: Yup.string()
+      .test(
+        'len',
+        'Veuillez sélectionner un média.',
+        (val) => val.toString() === 'movie'
+          || val.toString() === 'serie'
+          || val.toString() === 'anime'
+          || val.toString() === 'cartoon',
+      ),
+    character: Yup.string()
+      .test(
+        'len',
+        'Le nom du personnage doit contenir 3 à 20 caractères',
+        (val) => val
+          && val.toString().length >= 3
+          && val.toString().length <= 20,
+      ),
+    artist: Yup.string()
+      .test(
+        'len',
+        'Le nom de l\'artiste doit contenir 3 à 20 caractères',
+        (val) => val
+          && val.toString().length >= 3
+          && val.toString().length <= 20,
+      ),
+    reference: Yup.string()
+      .test(
+        'len',
+        'La citation doit contenir au moins dix caractères.',
+        (val) => val
+          && val.toString().length >= 10,
+      ),
   });
 
   const user = JSON.parse(localStorage.getItem('user'));
@@ -59,14 +93,13 @@ function ProposalForm() {
       .unwrap()
       .then(() => {
         setSuccessful(true);
-        // Todo: afficher un message
         actions.resetForm();
       })
       .catch(() => setSuccessful(false));
   };
 
   return (
-    <>
+    <div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -84,11 +117,11 @@ function ProposalForm() {
             <label className="proposal-form-label" htmlFor="title">
               Titre de l'oeuvre
             </label>
-            <Field type="text" className="input" name="title" id="title" required />
+            <Field type="text" className="input" name="title" id="title" />
             <ErrorMessage
               name="title"
               component="div"
-              className="alert alert-danger"
+              className="errorMessage"
             />
           </div>
           <div className="proposal-form-group">
@@ -105,29 +138,29 @@ function ProposalForm() {
             <ErrorMessage
               name="category"
               component="div"
-              className="alert alert-danger"
+              className="errorMessage"
             />
           </div>
           <div className="proposal-form-group">
             <label className="proposal-form-label" htmlFor="character">
               Personnage
             </label>
-            <Field type="text" className="input" name="character" id="character" required />
+            <Field type="text" className="input" name="character" id="character" />
             <ErrorMessage
               name="character"
               component="div"
-              className="alert alert-danger"
+              className="errorMessage"
             />
           </div>
           <div className="proposal-form-group">
             <label className="proposal-form-label" htmlFor="artist">
               Artiste
             </label>
-            <Field type="text" className="input" name="artist" id="artist" required />
+            <Field type="text" className="input" name="artist" id="artist" />
             <ErrorMessage
               name="artist"
               component="div"
-              className="alert alert-danger"
+              className="errorMessage"
             />
           </div>
           <div className="proposal-form-group">
@@ -139,25 +172,30 @@ function ProposalForm() {
               className="bg-[#C8C8C8] text-[#000] text-center p-1 rounded-md resize min-h-[5rem] min-w-[20rem] max-h-[15rem] max-w-[40rem] tablet:max-w-[35rem] phone:resize-y phone:max-h-[10rem] phone:min-w-[17rem]"
               name="reference"
               id="reference"
-              required
             />
             <ErrorMessage
               name="reference"
               component="div"
-              className="alert alert-danger"
+              className="errorMessage"
             />
           </div>
           <button className="proposal-form-button mx-auto py-1 px-4 text-[1.5rem] font-bold rounded" type="submit">Valider</button>
+          {message ? (
+            <div
+              className={
+              successful
+                ? 'bg-[#33CC66] text-[#003300] p-4 mt-4 text-center rounded phone:text-[0.9rem]'
+                : 'bg-[#F8D7DA] text-[#82212F] p-4 mt-4 text-center rounded phone:text-[0.9rem]'
+              }
+              role="alert"
+            >
+              {message}
+            </div>
+          )
+            : ''}
         </Form>
       </Formik>
-      {message && (
-        <div className="form-group">
-          <div className="py-4 px-8 font-bold rounded" role="alert">
-            {message}
-          </div>
-        </div>
-      )}
-    </>
+    </div>
   );
 }
 
