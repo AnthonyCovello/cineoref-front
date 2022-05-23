@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import React, { useEffect, useState } from 'react';
@@ -43,6 +44,8 @@ function ProposalForm() {
     ref: Yup.string(),
   });
 
+  const user = JSON.parse(localStorage.getItem('user'));
+  const { user_id } = user;
   const handleSubmit = (formValue, actions) => {
     const {
       title, category, character, artist, reference,
@@ -50,7 +53,7 @@ function ProposalForm() {
     setSuccessful(false);
     dispatch(
       proposal({
-        title, category, character, artist, reference,
+        title, category, character, artist, reference, user_id,
       }),
     )
       .unwrap()

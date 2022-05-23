@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import ProposalService from '../services/proposal.service';
 import { setMessage } from './messageSlice';
@@ -5,7 +6,7 @@ import { setMessage } from './messageSlice';
 export const proposal = createAsyncThunk(
   'proposal/post',
   async ({
-    title, category, character, artist, reference,
+    title, category, character, artist, reference, user_id,
   }, thunkAPI) => {
     try {
       const response = await ProposalService.proposal(
@@ -14,6 +15,7 @@ export const proposal = createAsyncThunk(
         character,
         artist,
         reference,
+        user_id,
       );
 
       thunkAPI.dispatch(setMessage(response.message));
