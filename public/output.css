@@ -989,6 +989,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(211 211 211 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#33CC66\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 204 102 / var(--tw-bg-opacity));
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -1222,6 +1227,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[\#DC2626\] {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-\[\#006600\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 102 0 / var(--tw-text-opacity));
+}
+
+.text-\[\#003300\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 51 0 / var(--tw-text-opacity));
 }
 
 .filter {

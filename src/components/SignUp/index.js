@@ -96,7 +96,7 @@ function SignUp() {
           <Link className="signUp-form-returnButton text-porange text-[2rem] mr-auto h-[2.3rem] rounded phone:text-[1.5rem] phone:h-[1.9rem]" to="/" title="Retourner à la page d'accueil">
             <BsFillArrowLeftSquareFill />
           </Link>
-          <h1 className="signUp-form-title text-[2rem] font-bold text-porange phone:text-[1.9rem] phone:mt-2">Créer un compte</h1>
+          <h1 className="signUp-form-title text-[2rem] text-center font-bold text-porange phone:text-[1.9rem] phone:mt-2">Créer un compte</h1>
           <p className="my-6 text-center tablet:text-[0.9rem] phone:text-[0.8rem]">Votre pseudo sera visible par les utilisateurs.</p>
           <div className="signUp-form-group">
             <label className="signUp-form-label" htmlFor="username">
