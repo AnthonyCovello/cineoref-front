@@ -15,12 +15,11 @@ import './styles.scss';
 // ? Composant
 function Profile() {
   const { id } = useParams();
+  const isLoggedIn = useSelector(({ auth }) => auth.isLoggedIn);
   const user = useSelector(({ auth }) => auth.user);
   const [userData, setUserData] = useState({});
 
   changeTabTitle(`Profil de ${userData.username}`);
-
-  const isLoggedIn = useSelector(({ auth }) => auth.isLoggedIn);
 
   const test = () => {
     let testing;
@@ -48,7 +47,6 @@ function Profile() {
     <div>
       {test()}
     </div>
-
   );
 }
 
