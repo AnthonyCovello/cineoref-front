@@ -171,10 +171,16 @@ function MyProfile() {
       </section>
       {showModal
         ? (
-          <div>
-            <h3> êtes vous sur de vouloir supprimer votre compte ? </h3>
-            <button type="button" onClick={handleDelete}>Oui</button>
-            <button type="button" onClick={() => setShowModal(true)}>Non</button>
+          <div className="bg-mblue opacity-80 fixed inset-0 z-50" onClick={() => setShowModal(false)}>
+            <div className="flex h-screen justify-center items-center">
+              <div className="flex-col justify-center border-4 bg-lblue py-6 px-12">
+                <div className="mb-5 text-lg">Supprimer mon compte ?</div>
+                <div className="flex justify-between">
+                  <button type="button" className="rounded px-8 py-4 bg-porange" onClick={handleDelete}>Oui</button>
+                  <button type="button" className="rounded px-8 py-4 bg-porange" onClick={() => setShowModal(false)}>Non</button>
+                </div>
+              </div>
+            </div>
           </div>
         ) : null}
     </div>

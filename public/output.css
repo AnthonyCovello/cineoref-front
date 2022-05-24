@@ -494,6 +494,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 .left-\[45\%\] {
   left: 45%;
 }
@@ -699,6 +706,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 4rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -767,6 +782,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-60 {
   height: 15rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .max-h-64 {
@@ -988,6 +1007,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-right-radius: 0.375rem;
 }
 
+.border-4 {
+  border-width: 4px;
+}
+
 .border-t-4 {
   border-top-width: 4px;
 }
@@ -1042,6 +1065,34 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#ccc\] {
   --tw-bg-opacity: 1;
   background-color: rgb(204 204 204 / var(--tw-bg-opacity));
+}
+
+.bg-lblueo {
+  background-color: rgb(31,83,179,09);
+}
+
+.bg-mblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 51 109 / var(--tw-bg-opacity));
+}
+
+.bg-porange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 122 32 / var(--tw-bg-opacity));
+}
+
+.bg-dblueo {
+  background-color: rgb(8,17,34,09);
+}
+
+.bg-dblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 17 34 / var(--tw-bg-opacity));
+}
+
+.bg-lblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 83 179 / var(--tw-bg-opacity));
 }
 
 .p-4 {
@@ -1138,6 +1189,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 .py-4 {
@@ -1298,6 +1364,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-transparent {
   color: transparent;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .filter {
