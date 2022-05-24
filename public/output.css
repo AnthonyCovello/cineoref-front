@@ -538,6 +538,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 4rem;
 }
 
+.top-12 {
+  top: 3rem;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.left-4 {
+  left: 1rem;
+}
+
+.left-\[0\.8rem\] {
+  left: 0.8rem;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -548,6 +564,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .z-30 {
   z-index: 30;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-0 {
@@ -673,6 +693,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-1 {
   margin-top: 0.25rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .block {
@@ -1015,6 +1039,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#ccc\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -1131,6 +1160,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-left {
@@ -1439,6 +1476,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (max-width: 480px) {
+  .phone\:fixed {
+    position: fixed;
+  }
+
   .phone\:left-\[40\%\] {
     left: 40%;
   }
@@ -1457,6 +1498,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:-right-2 {
     right: -0.5rem;
+  }
+
+  .phone\:z-10 {
+    z-index: 10;
   }
 
   .phone\:mt-6 {
@@ -1485,6 +1530,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:mt-4 {
     margin-top: 1rem;
+  }
+
+  .phone\:flex {
+    display: flex;
   }
 
   .phone\:hidden {
@@ -1541,6 +1590,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:w-44 {
     width: 11rem;
+  }
+
+  .phone\:w-9\/12 {
+    width: 75%;
   }
 
   .phone\:min-w-\[17rem\] {
@@ -1627,6 +1680,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:pb-6 {
     padding-bottom: 1.5rem;
+  }
+
+  .phone\:pr-4 {
+    padding-right: 1rem;
   }
 
   .phone\:text-base {

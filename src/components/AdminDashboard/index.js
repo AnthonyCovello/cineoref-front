@@ -13,9 +13,11 @@ function AdminDashboard() {
   changeTabTitle('Administration');
 
   return (
-    <div className="dashboard grid gap-4 h-11/12 w-11/12 mx-auto overflow-hidden rounded-md cursor-context-menu phone:p-4">
+    <div className="dashboard grid gap-4 h-11/12 w-11/12 mx-auto py-2 overflow-hidden rounded-md cursor-context-menu phone:p-4">
       <Sidebar />
-      {/* <h2 className="dashboard-title text-center text-[2rem] font-bold text-porange phone:text-[1.9rem]">Tableau de bord</h2> */}
+      <div>
+        <h2 className="dashboard-title text-center text-[2rem] font-bold text-porange phone:text-[1.9rem]">Tableau de bord</h2>
+      </div>
     </div>
   );
 }
