@@ -1,23 +1,28 @@
 /* eslint-disable react/no-array-index-key */
 // ? Import modules
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AiOutlineSecurityScan } from 'react-icons/ai';
 import { FaBars, FaSignInAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { SidebarData } from '../Data';
+import { setSidebarSelected } from '../../../features/adminSlice';
 
 // ? Import styles
 import './styles.scss';
 
 // ? Composant
 function Sidebar() {
-  const [selected, setSelected] = useState(0);
+  const dispatch = useDispatch();
+  const selected = useSelector(({ admin }) => admin.sidebarSelected);
   const [expanded, setExpaned] = useState(false);
   const sidebarVariants = {
     true: { left: '0' },
     false: { left: '-75%' },
   };
+
+  useEffect(() => dispatch(setSidebarSelected(0)), []);
 
   return (
     <>
@@ -40,7 +45,7 @@ function Sidebar() {
             <div
               className={selected === index ? 'menuItem active' : 'menuItem'}
               key={index}
-              onClick={() => setSelected(index)}
+              onClick={() => dispatch(setSidebarSelected(index))}
             >
               <item.icon className="text-[1.5rem]" />
               <span>{item.heading}</span>
