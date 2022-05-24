@@ -1,0 +1,9 @@
+@use 'src/styles/vars';
+
+.sidebar {
+}
+
+@media screen and (max-width: 1024px) {
+  .sidebar {
+  }
+}
