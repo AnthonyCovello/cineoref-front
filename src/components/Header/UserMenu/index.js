@@ -35,6 +35,7 @@ function UserMenu() {
       </div>
       {isOpen && (
         <div className="content absolute flex flex-col items-center rounded-md top-14 right-0 z-30 p-3 text-center phone:top-10 phone:-right-2 phone:text-[0.8rem] phone:p-1">
+          {(user.role === 'Fondateur' || user.role === 'Admin') && <Link className="content-btn" to="/admin"> Administration </Link>}
           <Link className="content-btn" to={`/user/${user.user_id}/my-profile`}> Profil </Link>
           <Link className="content-btn" to="/proposal"> Ajouter une ref' </Link>
           <Link className="content-btn" to="/bookmarks"> Favoris </Link>

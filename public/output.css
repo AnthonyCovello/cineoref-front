@@ -545,6 +545,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 4rem;
 }
 
+.top-12 {
+  top: 3rem;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.left-4 {
+  left: 1rem;
+}
+
+.left-\[0\.8rem\] {
+  left: 0.8rem;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -690,6 +706,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.25rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -720,6 +740,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid {
   display: grid;
+}
+
+.contents {
+  display: contents;
 }
 
 .hidden {
@@ -856,6 +880,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 15rem;
 }
 
+.w-11\/12 {
+  width: 91.666667%;
+}
+
 .min-w-\[20rem\] {
   min-width: 20rem;
 }
@@ -936,6 +964,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 2rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-x-6 {
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
@@ -943,6 +975,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .self-end {
   align-self: flex-end;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .truncate {
@@ -1028,6 +1064,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#d3d3d3\] {
   --tw-bg-opacity: 1;
   background-color: rgb(211 211 211 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#fff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#ccc\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
 }
 
 .bg-lblueo {
@@ -1183,8 +1229,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 7rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.pt-28 {
+  padding-top: 7rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .pl-40 {
@@ -1272,6 +1336,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 0.8rem;
 }
 
+.text-\[5rem\] {
+  font-size: 5rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1311,6 +1379,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[\#DC2626\] {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-transparent {
+  color: transparent;
 }
 
 .opacity-80 {
@@ -1501,6 +1573,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (max-width: 480px) {
+  .phone\:fixed {
+    position: fixed;
+  }
+
   .phone\:left-\[40\%\] {
     left: 40%;
   }
@@ -1519,6 +1595,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:-right-2 {
     right: -0.5rem;
+  }
+
+  .phone\:z-10 {
+    z-index: 10;
   }
 
   .phone\:mt-6 {
@@ -1547,6 +1627,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:mt-4 {
     margin-top: 1rem;
+  }
+
+  .phone\:flex {
+    display: flex;
   }
 
   .phone\:hidden {
@@ -1603,6 +1687,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:w-44 {
     width: 11rem;
+  }
+
+  .phone\:w-9\/12 {
+    width: 75%;
   }
 
   .phone\:min-w-\[17rem\] {
@@ -1689,6 +1777,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .phone\:pb-6 {
     padding-bottom: 1.5rem;
+  }
+
+  .phone\:pr-4 {
+    padding-right: 1rem;
   }
 
   .phone\:text-base {

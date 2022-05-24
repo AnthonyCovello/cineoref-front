@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -14,22 +13,22 @@ import { setTopContributorsData } from '../../features/topContributorsSlice';
 import RandomRef from './RandomRef';
 import SearchBarRef from './SearchBarRef';
 import TopContributor from './TopContributor';
+import PhoneTopContributor from './PhoneTopContributor';
 import TopNew from './TopNew';
 
 // ? Import style
 import './styles.scss';
-import PhoneTopContributor from './PhoneTopContributor';
 
 // ? Composant
 function Homepage() {
-  changeTabTitle('Acceuil');
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector(({ auth }) => auth.isLoggedIn);
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
   const openMenu = useSelector(({ list }) => list.openMenu);
   const [showModal, setShowModal] = useState(false);
+
+  changeTabTitle('Acceuil');
 
   useEffect(() => {
     axios
