@@ -1,8 +1,6 @@
 // ? Import modules
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { changeTabTitle } from '../../utlis';
-import { setLoginDropdown } from '../../features/dropDownSlice';
 
 // ? Import composants
 
@@ -11,22 +9,11 @@ import './styles.scss';
 
 // ? Composant
 function AdminDashboard() {
-  const dispatch = useDispatch();
-  const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
-
   changeTabTitle('Administration');
 
-  // * Ouverture du menu de connexion
-  const toggleDropdown = () => {
-    dispatch(setLoginDropdown());
-  };
-
   return (
-    <div onClick={() => {
-      if (isOpen === true) toggleDropdown();
-    }}
-    >
-      <h1>Interface admin</h1>
+    <div className="dashboard grid gap-4 h-11/12 w-11/12 mx-auto overflow-hidden rounded-md cursor-context-menu phone:p-4">
+      <h2 className="dashboard-title text-center text-[2rem] font-bold text-porange phone:text-[1.9rem]">Tableau de bord</h2>
     </div>
   );
 }

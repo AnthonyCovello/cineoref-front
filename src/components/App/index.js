@@ -19,7 +19,7 @@ import ListsRef from '../ListsRef';
 import SearchResult from '../SearchResult';
 
 // ? Import style
-import './styles.scss';
+import '../../styles/index.scss';
 
 // ? Composant
 function App() {
@@ -40,7 +40,7 @@ function App() {
         <Route path="/user/:id/my-profile" element={<Profile />} /> // * Profil personnel
         <Route path="/user/:id/profile" element={<Profile />} /> //* Profil d'un autre utilisateur
         <Route path="/:listTheme" element={<ListsPages />} /> // * Liste des artistes / personnages
-        <Route path="/:listTheme/:param" element={<ListsPages />} /> // * Lsite des médias films / séries / animés / dessins animés
+        <Route path="/:listTheme/:param" element={<ListsPages />} /> // * Liste des médias films / séries / animés / dessins animés
         <Route path="/:listTheme/:category/:id/refs" element={<ListsRef />} /> // * Liste des citations associées à un film / série / animé / dessins animés / artiste / personnage
         <Route path="/ref/:ref_id" element={<RefPage />} /> // * Page d'une citation
 
