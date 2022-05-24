@@ -10,10 +10,6 @@
   -webkit-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Safari and Chrome */
   -o-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Opera */
   -moz-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Firefox */
-
-  &-title {
-    text-shadow: 0 0 30px vars.$orange;
-  }
 }
 
 @media screen and (max-width: 1024px) {

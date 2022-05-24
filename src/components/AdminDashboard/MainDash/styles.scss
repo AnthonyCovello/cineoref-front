@@ -1,0 +1,7 @@
+@use 'src/styles/vars';
+
+.mainDash {
+  &-title {
+    text-shadow: 0 0 30px vars.$orange;
+  }
+}
