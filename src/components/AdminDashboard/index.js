@@ -21,9 +21,11 @@ function AdminDashboard() {
   return (
     <div className="dashboard grid gap-4 h-11/12 w-11/12 mx-auto py-2 overflow-hidden rounded-md cursor-context-menu phone:p-4">
       <Sidebar />
-      {selected === 0 && <MainDash />}
-      {selected === 1 && <Users />}
-      {selected === 2 && <PendingProposals />}
+      <div className="dashboard-mainContainer py-2">
+        {selected === 0 && <MainDash />}
+        {selected === 1 && <Users />}
+        {selected === 2 && <PendingProposals />}
+      </div>
     </div>
   );
 }

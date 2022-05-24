@@ -23,7 +23,7 @@ function Sidebar() {
   };
 
   useEffect(() => dispatch(setSidebarSelected(0)), []);
-  console.log(selected);
+
   return (
     <>
       {/* Logo */}
