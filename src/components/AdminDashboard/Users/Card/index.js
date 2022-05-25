@@ -25,7 +25,7 @@ function Card(props) {
 function CompactCard({ param, setExpanded }) {
   return (
     <motion.div
-      className="CompactCard"
+      className="CompactCard relative h-12 p-4 w-full flex items-center gap-12 text-[1.5rem] rounded cursor-pointer tablet:text-[0.9rem]"
       layoutId={param.user_id}
       onClick={setExpanded}
     >

@@ -27,7 +27,7 @@ function App() {
   const user = useSelector(({ auth }) => auth.user);
 
   return (
-    <div className="app relative max-h-screen m-0 pt-24 tracking-[1.5px] phone:pt-20 tablet:pt-24">
+    <div className="app relative max-h-screen m-0 pt-24 tracking-[1.5px] phone:pt-16 tablet:pt-20">
       <Header />
       <ScrollToTop />
 

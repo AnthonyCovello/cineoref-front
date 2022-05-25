@@ -16,7 +16,7 @@ import './styles.scss';
 function Sidebar() {
   const dispatch = useDispatch();
   const selected = useSelector(({ admin }) => admin.sidebarSelected);
-  const [expanded, setExpaned] = useState(false);
+  const [expanded, setExpaned] = useState(true);
   const sidebarVariants = {
     true: { left: '0' },
     false: { left: '-75%' },
@@ -40,7 +40,7 @@ function Sidebar() {
         </div>
 
         {/* Menu */}
-        <div className="sidebar-menu flex flex-col gap-8 mt-16">
+        <div className="sidebar-menu flex flex-col gap-8 mt-16 tablet:mt-12">
           {SidebarData.map((item, index) => (
             <div
               className={selected === index ? 'menuItem active' : 'menuItem'}

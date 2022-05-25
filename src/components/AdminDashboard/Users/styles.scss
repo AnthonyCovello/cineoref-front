@@ -13,21 +13,25 @@
   row-gap: 10px;
   width: 100%;
 }
+
 .users-list-item{
   width: 45%;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .users-list{
+    flex-wrap: unset;
     flex-direction: column;
+    justify-content: unset;
+    // height: 20rem;
   }
+
   .users-list-item{
-    height: 9rem;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 768px)
-{
+@media screen and (max-width: 480px) {
   .users-list{
     width: 90%;
   }

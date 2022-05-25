@@ -22,7 +22,6 @@
     position: relative;
     margin-top: 6rem;
     margin-bottom: 1rem;
-    // bottom: 2rem;
     width: unset;
     margin-left: 1rem;
   }
@@ -52,6 +51,10 @@
     &>span{
       display: none;
     }
+  }
+
+  .sidebar-menu .menuItem:last-child {
+    margin-top: 0;
   }
 }
 

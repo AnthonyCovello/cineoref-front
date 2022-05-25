@@ -1,18 +1,7 @@
 @use 'src/styles/vars';
 
 .CompactCard {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  border-radius: 4px;
-  height: 3rem;
-  padding: 1rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-
-  background-color: red;
+  background-color: rgba(15, 15, 15, 0.9);
 
   .username {
     flex: 2;
@@ -26,6 +15,7 @@
     color: vars.$orange;
     font-weight: bold;
     font-size: 1.6rem;
+    margin-right: 1rem;
   }
 }
 
@@ -46,18 +36,23 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .ExpandedCard {
-    top: 2rem;
-    height: 45vh;
-    left: 6rem;
+  .CompactCard {
+    p>span {
+      font-size: 1rem;
+    }
   }
+  // .ExpandedCard {
+  //   top: 2rem;
+  //   height: 45vh;
+  //   left: 6rem;
+  // }
 }
 
-@media screen and (max-width: 480px) {
-  .ExpandedCard {
-    top: 8rem;
-    height: 50%;
-    left: 25px;
-    width: 80%;
-  }
-}
+// @media screen and (max-width: 480px) {
+//   .ExpandedCard {
+//     top: 8rem;
+//     height: 50%;
+//     left: 25px;
+//     width: 80%;
+//   }
+// }
