@@ -1,6 +1,8 @@
+// ? Import modules
 import React, { useState } from 'react';
 import { motion, LayoutGroup } from 'framer-motion';
 import PropTypes from 'prop-types';
+import { FaWindowClose } from 'react-icons/fa';
 
 // ? Import styles
 import './styles.scss';
@@ -12,45 +14,79 @@ function ProposalCard(props) {
   return (
     <LayoutGroup>
       {expanded ? (
-        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
+        <ExpandedProposalCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
-        <CompactCard param={props} setExpanded={() => setExpanded(true)} />
+        <CompactProposalCard param={props} setExpanded={() => setExpanded(true)} />
       )}
     </LayoutGroup>
   );
 }
 
-// ? Composant Compact Card
-function CompactCard({ param, setExpanded }) {
+// ? Compact Card
+function CompactProposalCard({ param, setExpanded }) {
   return (
     <motion.div
-      className="CompactCard relative h-12 p-4 w-full flex items-center gap-12 text-[1.5rem] rounded cursor-pointer tablet:text-[1.2rem]"
+      className="compactProposalCard relative h-12 p-4 w-full flex items-center gap-12 text-[1.5rem] rounded cursor-pointer tablet:text-[1.2rem]"
       layoutId={param.refId}
       onClick={setExpanded}
     >
-      <p className="username truncate"><span>Ref: </span>{param.citation}</p>
-      <p className="role"><span>Personnage: </span>{param.character}</p>
+      <p className="ref truncate"><span>Ref: </span>{param.citation}</p>
+      <p className="caractere truncate"><span>Personnage: </span>{param.character}</p>
     </motion.div>
   );
 }
 
-// ? Composant Expanded Card
-function ExpandedCard({ param, setExpanded }) {
+// ? Expanded Card
+function ExpandedProposalCard({ param, setExpanded }) {
+  const [isDisable, setIsDisable] = useState(true);
+  const enable = !isDisable ? 'enable' : '';
   return (
     <motion.div
-      className="ExpandedCard"
+      className="expandedProposalCard"
       layoutId={param.refId}
-      onClick={setExpanded}
+      // onClick={setExpanded}
     >
-      <span>{param.citation}</span>
-      <span>{param.show}</span>
-      <span>{param.character}</span>
-      <span>{param.artist}</span>
+      <FaWindowClose className="text-porange cursor-pointer" onClick={setExpanded} />
+      <input
+        type="text"
+        className={enable}
+        placeholder={param.citation}
+      />
+      <input
+        type="text"
+        className={enable}
+        placeholder={param.show}
+      />
+      <input
+        type="text"
+        className={enable}
+        placeholder={param.character}
+      />
+      <input
+        type="text"
+        className={enable}
+        placeholder={param.artist}
+      />
+      {isDisable
+        ? <button className="py-2 px-4 rounded font-bold text-[1.2rem]" type="button" onClick={() => setIsDisable(!isDisable)}>Modifier</button>
+        : (
+          <>
+            <button className="py-2 px-4 rounded font-bold text-[1.2rem]" type="submit">Sauvegarder</button>
+            <button
+              className="py-2 px-4 rounded font-bold text-[1.2rem]"
+              type="button"
+              onClick={() => {
+                setIsDisable(!isDisable);
+              }}
+            >annuler
+            </button>
+          </>
+        )}
     </motion.div>
   );
 }
 
-CompactCard.propTypes = {
+CompactProposalCard.propTypes = {
   setExpanded: PropTypes.func.isRequired,
   param: PropTypes.shape({
     citation: PropTypes.string.isRequired,
@@ -61,7 +97,7 @@ CompactCard.propTypes = {
   }).isRequired,
 };
 
-ExpandedCard.propTypes = {
+ExpandedProposalCard.propTypes = {
   setExpanded: PropTypes.func.isRequired,
   param: PropTypes.shape({
     citation: PropTypes.string.isRequired,

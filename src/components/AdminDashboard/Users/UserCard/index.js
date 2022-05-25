@@ -2,30 +2,31 @@
 import React, { useState } from 'react';
 import { motion, LayoutGroup } from 'framer-motion';
 import PropTypes from 'prop-types';
+import { FaWindowClose } from 'react-icons/fa';
 
 // ? Import styles
 import './styles.scss';
 
 // ? Composant Card
-function Card(props) {
+function UserCard(props) {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <LayoutGroup>
       {expanded ? (
-        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
+        <ExpandedUserCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
-        <CompactCard param={props} setExpanded={() => setExpanded(true)} />
+        <CompactUserCard param={props} setExpanded={() => setExpanded(true)} />
       )}
     </LayoutGroup>
   );
 }
 
 // ? Composant Compact Card
-function CompactCard({ param, setExpanded }) {
+function CompactUserCard({ param, setExpanded }) {
   return (
     <motion.div
-      className="CompactCard relative h-12 p-4 w-full flex items-center gap-12 text-[1.5rem] rounded cursor-pointer tablet:text-[0.9rem]"
+      className="compactUserCard relative h-12 p-4 w-full flex items-center gap-12 text-[1.5rem] rounded cursor-pointer tablet:text-[0.9rem]"
       layoutId={param.user_id}
       onClick={setExpanded}
     >
@@ -36,13 +37,14 @@ function CompactCard({ param, setExpanded }) {
 }
 
 // ? Composant Expanded Card
-function ExpandedCard({ param, setExpanded }) {
+function ExpandedUserCard({ param, setExpanded }) {
   return (
     <motion.div
-      className="ExpandedCard"
+      className="expandedUserCard"
       layoutId={param.user_id}
       onClick={setExpanded}
     >
+      <FaWindowClose className="text-porange cursor-pointer" onClick={setExpanded} />
       <span>{param.username}</span>
       <span>{param.role}</span>
       <span>{param.grade}</span>
@@ -53,7 +55,7 @@ function ExpandedCard({ param, setExpanded }) {
   );
 }
 
-CompactCard.propTypes = {
+CompactUserCard.propTypes = {
   setExpanded: PropTypes.func.isRequired,
   param: PropTypes.shape({
     username: PropTypes.string.isRequired,
@@ -66,7 +68,7 @@ CompactCard.propTypes = {
   }).isRequired,
 };
 
-ExpandedCard.propTypes = {
+ExpandedUserCard.propTypes = {
   setExpanded: PropTypes.func.isRequired,
   param: PropTypes.shape({
     username: PropTypes.string.isRequired,
@@ -79,4 +81,4 @@ ExpandedCard.propTypes = {
   }).isRequired,
 };
 
-export default React.memo(Card);
+export default React.memo(UserCard);

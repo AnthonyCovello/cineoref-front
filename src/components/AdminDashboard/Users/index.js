@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 // ? Import composants
-import Card from './Card';
+import UserCard from './UserCard';
 
 // ? Import styles
 import './styles.scss';
@@ -25,7 +25,7 @@ function Users() {
       <ol className="users-list mt-4 desk:max-h-[32rem] overflow-y-auto scrollbar-hide tablet:max-h-[25rem]">
         {usersList.map((user) => (
           <li key={user.id} className="users-list-item">
-            <Card
+            <UserCard
               user_id={user.id}
               username={user.username}
               email={user.email}

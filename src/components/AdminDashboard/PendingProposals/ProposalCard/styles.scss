@@ -1,0 +1,58 @@
+@use 'src/styles/vars';
+
+.compactProposalCard {
+  background-color: rgba(15, 15, 15, 0.9);
+
+  .ref {
+    flex: 2;
+  }
+
+  .caractere {
+    flex: 1;
+  }
+
+  p>span {
+    color: vars.$orange;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+  }
+}
+
+.expandedProposalCard {
+  position: absolute;
+  width: 60%;
+  height: 70vh;
+  z-index: 9;
+  left: 13rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+
+  background-color: yellow;
+}
+
+@media screen and (max-width: 1024px) {
+  .compactProposalCard {
+    p>span {
+      font-size: 1rem;
+    }
+  }
+  // .expandedProposalCard {
+  //   top: 2rem;
+  //   height: 45vh;
+  //   left: 6rem;
+  // }
+}
+
+// @media screen and (max-width: 480px) {
+//   .expandedProposalCard {
+//     top: 8rem;
+//     height: 50%;
+//     left: 25px;
+//     width: 80%;
+//   }
+// }

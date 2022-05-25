@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProposalCard from './ProposalCard';
+
 // ? Import styles
 import './styles.scss';
 
@@ -17,11 +18,11 @@ function PendingProposals() {
   }, []);
   console.log(proposalList);
   return (
-    <div className="pendingProposals">
+    <div className="pendingProposals pr-4">
       <h2 className="pendingProposals-title text-center text-[2rem] font-bold text-porange phone:text-[1.9rem]">Propositions en attente</h2>
-      <ol className="users-list mt-4 desk:max-h-[32rem] overflow-y-auto scrollbar-hide">
+      <ol className="pendingProposals-list mt-4 desk:max-h-[32rem] overflow-y-auto scrollbar-hide tablet:max-h-[25rem]">
         {proposalList.map((item) => (
-          <li key={item.id} className="users-list-item">
+          <li key={item.id} className="pendingProposals-list-item">
             <ProposalCard
               refId={item.id}
               citation={item.ref}
