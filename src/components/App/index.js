@@ -16,6 +16,7 @@ import ScrollToTop from '../ScrollToTop';
 import ListsPages from '../ListsPages';
 import ListsRef from '../ListsRef';
 import SearchResult from '../SearchResult';
+import TeamPage from '../TeamPage';
 
 // ? Import style
 import './styles.scss';
@@ -41,6 +42,7 @@ function App() {
         <Route path="/:listTheme/:param" element={<ListsPages />} />
         <Route path="/:listTheme/:category/:id/refs" element={<ListsRef />} />
         <Route path="/ref/:ref_id" element={<RefPage />} />
+        <Route path="/teampage" element={<TeamPage />} />
 
         <Route path="*" element={<h1>Error</h1>} />
 
