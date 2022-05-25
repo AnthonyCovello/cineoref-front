@@ -77,6 +77,14 @@ function ExpandedProposalCard({ param, setExpanded }) {
     });
   };
 
+  const handleDelete = () => {
+    axios.delete(`https://cinoref-api.herokuapp.com/ref/${param.refId}`).then((res) => {
+      if (res) {
+        setIsDisable(!isDisable);
+      }
+    });
+  };
+
   return (
     <motion.div
       className="expandedProposalCard"
@@ -138,6 +146,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
               <button
                 className="py-2 px-4 rounded font-bold text-[1.2rem]"
                 type="button"
+                onClick={handleDelete}
               >
                 Supprimer
               </button>
