@@ -152,7 +152,7 @@ function MyProfile() {
         </span>
       </form>
       {/* // ? Contributions utilisateur */}
-      <section className="profile-contributions w-full mt-6 py-4 px-8 phone:px-4">
+      <section className="profile-contributions w-full mt-6 py-4 px-8 phone:px-4 max-h-[48rem] overflow-y-auto scrollbar-hide">
         <h2 className="profile-contributions-title p-2 font-bold text-[1.5rem] text-center">Mes contributions</h2>
         <ul>
           {contributionData.map((item) => (
@@ -171,13 +171,13 @@ function MyProfile() {
       </section>
       {showModal
         ? (
-          <div className="bg-mblue opacity-80 fixed inset-0 z-50" onClick={() => setShowModal(false)}>
+          <div className="bg-mblue opacity-80 fixed inset-0 z-50">
             <div className="flex h-screen justify-center items-center">
-              <div className="flex-col justify-center border-4 bg-lblue py-6 px-12">
-                <div className="mb-5 text-lg">Supprimer mon compte ?</div>
+              <div className="flex-col justify-center border-4 bg-lblue py-6 px-12 rounded-md">
+                <div className="mb-5 font-bold text-lg">Supprimer mon compte ?</div>
                 <div className="flex justify-between">
-                  <button type="button" className="rounded px-8 py-4 bg-porange" onClick={handleDelete}>Oui</button>
-                  <button type="button" className="rounded px-8 py-4 bg-porange" onClick={() => setShowModal(false)}>Non</button>
+                  <button type="button" className="btn-modal py-2 px-4 rounded font-bold text-[1.2rem]" onClick={handleDelete}>Oui</button>
+                  <button type="button" className="btn-modal py-2 px-4 rounded font-bold text-[1.2rem]" onClick={() => setShowModal(false)}>Non</button>
                 </div>
               </div>
             </div>
