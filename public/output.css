@@ -794,6 +794,34 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-height: 48rem;
 }
 
+.max-h-screen {
+  max-height: 100vh;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
+.max-h-\[99\%\] {
+  max-height: 99%;
+}
+
+.max-h-96 {
+  max-height: 24rem;
+}
+
+.max-h-\[30rem\] {
+  max-height: 30rem;
+}
+
+.max-h-\[31rem\] {
+  max-height: 31rem;
+}
+
+.max-h-\[32rem\] {
+  max-height: 32rem;
+}
+
 .min-h-\[5rem\] {
   min-height: 5rem;
 }
@@ -1180,6 +1208,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pl-40 {
   padding-left: 10rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
 }
 
 .text-left {

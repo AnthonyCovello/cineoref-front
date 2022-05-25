@@ -5,3 +5,30 @@
     text-shadow: 0 0 30px vars.$orange;
   }
 }
+
+.users-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 10px;
+  width: 100%;
+}
+.users-list-item{
+  width: 45%;
+}
+
+@media screen and (max-width: 1200px) {
+  .users-list{
+    flex-direction: column;
+  }
+  .users-list-item{
+    height: 9rem;
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .users-list{
+    width: 90%;
+  }
+}

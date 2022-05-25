@@ -1,0 +1,63 @@
+@use 'src/styles/vars';
+
+.CompactCard {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border-radius: 4px;
+  height: 3rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  background-color: red;
+
+  .username {
+    flex: 2;
+  }
+
+  .role {
+    flex: 1;
+  }
+
+  p>span {
+    color: vars.$orange;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+}
+
+.ExpandedCard {
+  position: absolute;
+  width: 60%;
+  height: 70vh;
+  z-index: 9;
+  left: 13rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+
+  background-color: yellow;
+}
+
+@media screen and (max-width: 1024px) {
+  .ExpandedCard {
+    top: 2rem;
+    height: 45vh;
+    left: 6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ExpandedCard {
+    top: 8rem;
+    height: 50%;
+    left: 25px;
+    width: 80%;
+  }
+}

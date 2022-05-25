@@ -2,6 +2,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
+// ? Import composants
+import Card from './Card';
+
 // ? Import styles
 import './styles.scss';
 
@@ -12,18 +15,27 @@ function Users() {
   useEffect(() => {
     axios.get('https://cinoref-api.herokuapp.com/admin/dashboard')
       .then((res) => {
-        console.log(res);
         setUsersList(res.data.profils);
       });
   }, []);
-  console.log('liste - ', usersList);
+
   return (
-    <div className="users bg-[#c6c6c6] h-fit">
+    <div className="users pr-4">
       <h2 className="users-title text-center text-[2rem] font-bold text-porange phone:text-[1.9rem]">Utilisateurs</h2>
-      <ol className="users-list">
-        <li className="users-list-item">utilisateur 1</li>
-        <li className="users-list-item">utilisateur 2</li>
-        <li className="users-list-item">utilisateur 3</li>
+      <ol className="users-list mt-4 max-h-[32rem] overflow-y-auto scrollbar-hide">
+        {usersList.map((user) => (
+          <li key={user.id} className="users-list-item">
+            <Card
+              user_id={user.id}
+              username={user.username}
+              email={user.email}
+              role={user.role}
+              grade={user.grade}
+              birthday={user.birthday}
+              signup={user.created_date}
+            />
+          </li>
+        ))}
       </ol>
     </div>
   );
