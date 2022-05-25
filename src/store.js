@@ -7,6 +7,7 @@ import messageReducer from './features/messageSlice';
 import refReducer from './features/refSlice';
 import topContributorsReducer from './features/topContributorsSlice';
 import listReducer from './features/listSlice';
+import adminReducer from './features/adminSlice';
 
 // ? Reducer
 const reducer = {
@@ -17,6 +18,7 @@ const reducer = {
   ref: refReducer,
   contributors: topContributorsReducer,
   list: listReducer,
+  admin: adminReducer,
 };
 
 // ? Store

@@ -1,0 +1,7 @@
+@use 'src/styles/vars';
+
+.pendingProposals {
+  &-title {
+    text-shadow: 0 0 30px vars.$orange;
+  }
+}

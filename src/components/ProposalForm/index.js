@@ -18,11 +18,13 @@ import './styles.scss';
 
 // ? Composant
 function ProposalForm() {
-  changeTabTitle('Proposition de citation');
-
   const dispatch = useDispatch();
   const [successful, setSuccessful] = useState(false);
   const { message } = useSelector((state) => state.message);
+  const user = JSON.parse(localStorage.getItem('user'));
+  const { user_id } = user;
+
+  changeTabTitle('Proposition de citation');
 
   useEffect(() => {
     dispatch(clearMessage());
@@ -78,8 +80,6 @@ function ProposalForm() {
       ),
   });
 
-  const user = JSON.parse(localStorage.getItem('user'));
-  const { user_id } = user;
   const handleSubmit = (formValue, actions) => {
     const {
       title, category, character, artist, reference,
