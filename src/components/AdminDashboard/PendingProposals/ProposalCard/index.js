@@ -69,6 +69,14 @@ function ExpandedProposalCard({ param, setExpanded }) {
     });
   };
 
+  const handleValidation = () => {
+    axios.patch(`https://cinoref-api.herokuapp.com/admin/dashboard/validating/${param.refId}`).then((res) => {
+      if (res) {
+        setIsDisable(!isDisable);
+      }
+    });
+  };
+
   return (
     <motion.div
       className="expandedProposalCard"
@@ -76,7 +84,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
     // onClick={setExpanded}
     >
       <FaWindowClose className="text-porange cursor-pointer" onClick={setExpanded} />
-      <form action="PATCH" onSubmit={handleSubmit} className="text-porange">
+      <form action="PATCH" onSubmit={handleSubmit} className="text-black">
         <textarea
           type="text"
           className={enable}
@@ -136,6 +144,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
               <button
                 className="py-2 px-4 rounded font-bold text-[1.2rem]"
                 type="button"
+                onClick={handleValidation}
               >
                 Valider
               </button>
