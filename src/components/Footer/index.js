@@ -36,7 +36,7 @@ function Footer() {
       </Link>
       <nav className="footer-navbar flex gap-x-6 font-bold tablet:text-[0.75rem] tablet:flex-wrap tablet:gap-x-3 tablet:justify-evenly phone:font-normal phone:ml-2">
         <Link to="/proposal">Proposer sa citation</Link>
-        <Link to="/team">L'équipe</Link>
+        <Link to="/teampage">L'équipe</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/legal-policies">Mentions légales</Link>
         <Link to="/cgu">CGU</Link>
