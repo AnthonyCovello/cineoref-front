@@ -108,6 +108,7 @@ function MyProfile() {
             placeholder={userData.email}
             disabled={isDisable}
             onChange={(e) => setValueEmail(e.target.value)}
+            value={valueEmail}
           />
         </div>
         <div className="profile-form-group">
@@ -119,6 +120,7 @@ function MyProfile() {
             placeholder="********"
             disabled={isDisable}
             onChange={(e) => setValuePassword(e.target.value)}
+            value={valuePassword}
           />
         </div>
         <div className="profile-form-group">
@@ -136,8 +138,8 @@ function MyProfile() {
                   type="button"
                   onClick={() => {
                     setIsDisable(!isDisable);
-                    setValueEmail(null);
-                    setValuePassword(null);
+                    setValueEmail('');
+                    setValuePassword('');
                   }}
                 >annuler
                 </button>

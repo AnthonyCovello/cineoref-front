@@ -133,7 +133,7 @@ function ProposalForm() {
               <option className="selectInput-options" value="movie">Film</option>
               <option className="selectInput-options" value="serie">Série</option>
               <option className="selectInput-options" value="anime">Animé</option>
-              <option className="selectInput-options" value="cartoon">Dessins animés</option>
+              <option className="selectInput-options" value="cartoon">Dessin animé</option>
             </Field>
             <ErrorMessage
               name="category"
@@ -183,9 +183,9 @@ function ProposalForm() {
           {message ? (
             <div
               className={
-              successful
-                ? 'bg-[#33CC66] text-[#003300] p-4 mt-4 text-center rounded phone:text-[0.9rem]'
-                : 'bg-[#F8D7DA] text-[#82212F] p-4 mt-4 text-center rounded phone:text-[0.9rem]'
+                successful
+                  ? 'bg-[#33CC66] text-[#003300] p-4 mt-4 text-center rounded phone:text-[0.9rem]'
+                  : 'bg-[#F8D7DA] text-[#82212F] p-4 mt-4 text-center rounded phone:text-[0.9rem]'
               }
               role="alert"
             >

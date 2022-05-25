@@ -29,6 +29,7 @@ function PendingProposals() {
               show={item.show}
               character={item.character}
               artist={item.artist}
+              media={item.media}
             />
           </li>
         ))}
