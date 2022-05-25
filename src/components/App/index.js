@@ -17,6 +17,7 @@ import ScrollToTop from '../ScrollToTop';
 import ListsPages from '../ListsPages';
 import ListsRef from '../ListsRef';
 import SearchResult from '../SearchResult';
+import TeamPage from '../TeamPage';
 
 // ? Import style
 import '../../styles/index.scss';
@@ -31,11 +32,10 @@ function App() {
       <Header />
       <ScrollToTop />
 
-      <Routes>
-
+      <Routes>    
         <Route path="/" element={<Homepage />} /> // * Page d'accueil
-        <Route path="/searchResult" element={<SearchResult />} /> //* Page de résultats de recherche
-        <Route path="/registration" element={<SignUp />} /> //* Page d'inscription
+        <Route path="/searchResult" element={<SearchResult />} /> // * Page de résultats de recherche
+        <Route path="/registration" element={<SignUp />} /> // * Page d'inscription
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} /> // * Formulaire de proposition de citation - connexion requise
         <Route path="/user/:id/my-profile" element={<Profile />} /> // * Profil personnel
         <Route path="/user/:id/profile" element={<Profile />} /> //* Profil d'un autre utilisateur
@@ -43,13 +43,10 @@ function App() {
         <Route path="/:listTheme/:param" element={<ListsPages />} /> // * Liste des médias films / séries / animés / dessins animés
         <Route path="/:listTheme/:category/:id/refs" element={<ListsRef />} /> // * Liste des citations associées à un film / série / animé / dessins animés / artiste / personnage
         <Route path="/ref/:ref_id" element={<RefPage />} /> // * Page d'une citation
-
+        <Route path="/teampage" element={<TeamPage />} />
         <Route path="*" element={<h1>Error</h1>} /> // * 404
-
         <Route path="/admin" element={(isLogged && (user.role === 'Fondateur' || user.role === 'Admin')) ? <AdminDashboard /> : <Navigate to="/" replace />} /> //* Interface admin
-
       </Routes>
-
       <Footer />
     </div>
   );
