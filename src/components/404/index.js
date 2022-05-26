@@ -2,8 +2,6 @@
 import React, { useEffect } from 'react';
 import initGame from './game/game';
 
-// ? Import composants
-
 // ? Import style
 import './styles.scss';
 
@@ -19,7 +17,7 @@ function Page404() {
       </h1>
       <h2 className="invadersResults my-6 text-[1.7rem] font-bold text-center tablet:text-[1.2rem]">0</h2>
       <div className="invadersGrid" />
-      <p className="text-center mt-6 font-bold">Utilisez les flèches du clavier pour vous déplacer et la flèche du haut pour tirer</p>
+      <p className="text-center mt-6 font-bold">Utilisez les flèches du clavier pour vous déplacer et la flèche du haut pour tirer.</p>
     </div>
   );
 }

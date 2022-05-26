@@ -20,7 +20,6 @@ import SearchResult from '../SearchResult';
 import Page404 from '../404/index';
 import TeamPage from '../TeamPage';
 
-
 // ? Import style
 import '../../styles/index.scss';
 
@@ -34,7 +33,7 @@ function App() {
       <Header />
       <ScrollToTop />
 
-      <Routes>    
+      <Routes>
         <Route path="/" element={<Homepage />} /> // * Page d'accueil
         <Route path="/searchResult" element={<SearchResult />} /> // * Page de résultats de recherche
         <Route path="/registration" element={<SignUp />} /> // * Page d'inscription
@@ -46,7 +45,7 @@ function App() {
         <Route path="/:listTheme/:category/:id/refs" element={<ListsRef />} /> // * Liste des citations associées à un film / série / animé / dessins animés / artiste / personnage
         <Route path="/ref/:ref_id" element={<RefPage />} /> // * Page d'une citation
         <Route path="/teampage" element={<TeamPage />} />
-        <Route path="*" element={<Page404 />} /> // * 404
+        <Route path="/*" element={<Page404 />} /> // * 404
         <Route path="/admin" element={(isLogged && (user.role === 'Fondateur' || user.role === 'Admin')) ? <AdminDashboard /> : <Navigate to="/" replace />} /> //* Interface admin
       </Routes>
       <Footer />
