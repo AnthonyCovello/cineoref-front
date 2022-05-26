@@ -33,19 +33,25 @@
 
     &-label {
       font-size: 1.125rem;
+      font-weight: bold;
       margin-bottom: 0.8rem;
     }
 
-    .input {
-      background-color: rgb(200,200,200);
-      color: black;
-      border-radius: 6px;
+    input, select {
+      background: #1f53b3;
+      border-radius: 4px;
+      border: 1px solid vars.$darkBlue;
       width: 100%;
       text-align: center;
       padding: 0.25rem;
     }
 
-    .input:focus, #reference:focus {
+    #reference {
+      background: #1f53b3;
+      border: 1px solid vars.$darkBlue;
+    }
+
+    input:focus, select:focus, #reference:focus {
       box-shadow: 0px 0px 15px vars.$orange;
     }
 

@@ -10,12 +10,15 @@ import './styles.scss';
 function PendingProposals() {
   const [proposalList, setProposalList] = useState([]);
 
-  useEffect(() => {
+  const pendingCallAPI = () => {
     axios.get('https://cinoref-api.herokuapp.com/admin/dashboard')
       .then((res) => {
         setProposalList(res.data.request);
-        console.log('useEffect');
       });
+  };
+
+  useEffect(() => {
+    pendingCallAPI();
   }, []);
 
   return (
@@ -31,6 +34,7 @@ function PendingProposals() {
               character={item.character}
               artist={item.artist}
               media={item.media}
+              callAPI={pendingCallAPI}
             />
           </li>
         ))}

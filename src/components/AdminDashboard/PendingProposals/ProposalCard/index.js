@@ -15,11 +15,8 @@ function ProposalCard(props) {
 
   return (
     <LayoutGroup>
-      {expanded ? (
-        <ExpandedProposalCard param={props} setExpanded={() => setExpanded(false)} />
-      ) : (
-        <CompactProposalCard param={props} setExpanded={() => setExpanded(true)} />
-      )}
+      {expanded && (<ExpandedProposalCard param={props} setExpanded={() => setExpanded(false)} />)}
+      <CompactProposalCard param={props} setExpanded={() => setExpanded(true)} />
     </LayoutGroup>
   );
 }
@@ -47,8 +44,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
   const [valueArtist, setValueArtist] = useState(param.artist);
   const [valueShow, setValueShow] = useState(param.show);
   const [isSucces, setIsSucces] = useState(false);
-
-  const enable = !isDisable ? 'enable' : '';
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   // ? function to handleChanges
   const handleSubmit = (e) => {
@@ -64,7 +60,8 @@ function ExpandedProposalCard({ param, setExpanded }) {
       setIsDisable(!isDisable);
       if (res) {
         setIsSucces(true);
-        setTimeout(() => setIsSucces(false), 3000);
+        param.callAPI();
+        setTimeout(() => setIsSucces(false), 2000);
       }
     });
   };
@@ -73,6 +70,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
     axios.patch(`https://cinoref-api.herokuapp.com/admin/dashboard/validating/${param.refId}`).then((res) => {
       if (res) {
         setIsDisable(!isDisable);
+        param.callAPI();
       }
     });
   };
@@ -80,7 +78,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
   const handleDelete = () => {
     axios.delete(`https://cinoref-api.herokuapp.com/ref/${param.refId}`).then((res) => {
       if (res) {
-        setIsDisable(!isDisable);
+        param.callAPI();
       }
     });
   };
@@ -100,7 +98,6 @@ function ExpandedProposalCard({ param, setExpanded }) {
             name="title"
             id="title"
             type="text"
-            className={`${enable} input`}
             value={valueShow}
             disabled={isDisable}
             onChange={(e) => setValueShow(e.target.value)}
@@ -113,7 +110,6 @@ function ExpandedProposalCard({ param, setExpanded }) {
           <select
             name="media"
             id="category"
-            className="input"
             defaultValue={valueMedia}
             disabled={isDisable}
             onChange={(e) => setValueMedia(e.target.value)}
@@ -121,7 +117,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
             <option value="movie">Film</option>
             <option value="serie">Série</option>
             <option value="anime">Animé</option>
-            <option value="cartoon">Dessin animé</option>
+            <option value="cartoon">Dessins animés</option>
           </select>
         </div>
         <div className="expandedProposalCard-form-group">
@@ -131,7 +127,6 @@ function ExpandedProposalCard({ param, setExpanded }) {
           <input
             type="text"
             id="character"
-            className={`${enable} input`}
             value={valueCharacter}
             disabled={isDisable}
             onChange={(e) => setValueCharacter(e.target.value)}
@@ -144,7 +139,6 @@ function ExpandedProposalCard({ param, setExpanded }) {
           <input
             type="text"
             id="artist"
-            className={`${enable} input`}
             value={valueArtist}
             disabled={isDisable}
             onChange={(e) => setValueArtist(e.target.value)}
@@ -157,7 +151,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
           <textarea
             type="text"
             id="reference"
-            className="bg-[#C8C8C8] text-[#000] text-center p-1 rounded-md resize min-h-[5rem] min-w-[20rem] max-h-[15rem] max-w-[40rem] tablet:max-w-[35rem] phone:resize-y phone:max-h-[10rem] phone:min-w-[17rem]"
+            className="text-center p-1 rounded-md resize min-h-[5rem] min-w-[20rem] max-h-[15rem] max-w-[40rem] tablet:max-w-[35rem] phone:resize-y phone:max-h-[10rem] phone:min-w-[17rem]"
             value={valueCitation}
             disabled={isDisable}
             onChange={(e) => setValueCitation(e.target.value)}
@@ -177,7 +171,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
                 <button
                   className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
                   type="button"
-                  onClick={handleDelete}
+                  onClick={() => setShowDeleteModal(true)}
                 >
                   Supprimer
                 </button>
@@ -210,6 +204,20 @@ function ExpandedProposalCard({ param, setExpanded }) {
           </p>
         )}
       </form>
+      {showDeleteModal
+        ? (
+          <div className="bg-mblue opacity-80 fixed inset-0 z-50">
+            <div className="flex h-screen justify-center items-center">
+              <div className="flex-col justify-center border-4 bg-lblue py-6 px-12 rounded-md">
+                <div className="mb-5 font-bold text-lg">Supprimer la proposition ?</div>
+                <div className="flex justify-between">
+                  <button type="button" className="btn-modal py-2 px-4 rounded font-bold text-[1.2rem]" onClick={handleDelete}>Oui</button>
+                  <button type="button" className="btn-modal py-2 px-4 rounded font-bold text-[1.2rem]" onClick={() => setShowDeleteModal(false)}>Non</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null}
     </motion.div>
   );
 }
@@ -234,6 +242,7 @@ ExpandedProposalCard.propTypes = {
     artist: PropTypes.string.isRequired,
     refId: PropTypes.number.isRequired,
     media: PropTypes.string.isRequired,
+    callAPI: PropTypes.func.isRequired,
   }).isRequired,
 };
 
