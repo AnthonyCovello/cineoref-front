@@ -69,7 +69,7 @@ function ProposalForm() {
         'Le nom de l\'artiste doit contenir 3 à 20 caractères',
         (val) => val
           && val.toString().length >= 3
-          && val.toString().length <= 20,
+          && val.toString().length <= 25,
       ),
     reference: Yup.string()
       .test(
