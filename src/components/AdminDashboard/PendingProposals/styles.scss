@@ -11,11 +11,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   row-gap: 10px;
-  width: 100%;
-}
-
-.pendingProposals-list-item{
-  width: 100%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -24,14 +19,8 @@
     flex-direction: column;
     justify-content: unset;
   }
-
-  .pendingProposals-list-item{
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 480px) {
-  .pendingProposals-list{
-    width: 90%;
-  }
+
 }

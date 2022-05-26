@@ -553,6 +553,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 4rem;
 }
 
+.left-\[32rem\] {
+  left: 32rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
+.top-20 {
+  top: 5rem;
+}
+
+.top-28 {
+  top: 7rem;
+}
+
+.top-40 {
+  top: 10rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -706,6 +726,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.25rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .block {
   display: block;
 }
@@ -784,6 +808,38 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100vh;
 }
 
+.h-\[60vh\] {
+  height: 60vh;
+}
+
+.h-\[60\%\] {
+  height: 60%;
+}
+
+.h-\[40rem\] {
+  height: 40rem;
+}
+
+.h-\[30rem\] {
+  height: 30rem;
+}
+
+.h-\[28rem\] {
+  height: 28rem;
+}
+
+.h-\[32rem\] {
+  height: 32rem;
+}
+
+.h-\[35rem\] {
+  height: 35rem;
+}
+
+.h-full {
+  height: 100%;
+}
+
 .max-h-screen {
   max-height: 100vh;
 }
@@ -794,6 +850,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-h-\[15rem\] {
   max-height: 15rem;
+}
+
+.max-h-\[32rem\] {
+  max-height: 32rem;
 }
 
 .max-h-min {
@@ -1195,6 +1255,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .pt-24 {

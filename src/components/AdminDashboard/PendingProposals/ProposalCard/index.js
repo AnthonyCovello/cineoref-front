@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
+import axios from 'axios';
 import React, { useState } from 'react';
-import { motion, LayoutGroup } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { FaWindowClose } from 'react-icons/fa';
-import axios from 'axios';
+import { motion, LayoutGroup } from 'framer-motion';
 
 // ? Import styles
 import './styles.scss';
@@ -50,7 +51,6 @@ function ExpandedProposalCard({ param, setExpanded }) {
   const enable = !isDisable ? 'enable' : '';
 
   // ? function to handleChanges
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -87,93 +87,127 @@ function ExpandedProposalCard({ param, setExpanded }) {
 
   return (
     <motion.div
-      className="expandedProposalCard"
+      className="expandedProposalCard absolute z-10 top-36 left-[32rem] h-fit w-3/5 p-4 rounded-md"
       layoutId={param.refId}
-    // onClick={setExpanded}
     >
-      <FaWindowClose className="text-porange cursor-pointer" onClick={setExpanded} />
-      <form action="PATCH" onSubmit={handleSubmit} className="text-black">
-        <textarea
-          type="text"
-          className={enable}
-          value={valueCitation}
-          disabled={isDisable}
-          onChange={(e) => setValueCitation(e.target.value)}
-        />
-        <input
-          type="text"
-          className={enable}
-          value={valueShow}
-          disabled={isDisable}
-          onChange={(e) => setValueShow(e.target.value)}
-        />
-        <select
-          name="media"
-          disabled={isDisable}
-          defaultValue={valueMedia}
-          onChange={(e) => setValueMedia(e.target.value)}
-          className="text-porange"
-        >
-          <option value="movie">Film</option>
-          <option value="serie">Série</option>
-          <option value="anime">Animé</option>
-          <option value="cartoon">Dessin animé</option>
-        </select>
-        <input
-          type="text"
-          className={enable}
-          value={valueCharacter}
-          disabled={isDisable}
-          onChange={(e) => setValueCharacter(e.target.value)}
-        />
-        <input
-          type="text"
-          className={enable}
-          value={valueArtist}
-          disabled={isDisable}
-          onChange={(e) => setValueArtist(e.target.value)}
-        />
-        {isDisable
-          ? (
-            <div>
-              <button
-                className="py-2 px-4 rounded font-bold text-[1.2rem]"
-                type="button"
-                onClick={() => setIsDisable(!isDisable)}
-              >
-                Modifier
-              </button>
-              <button
-                className="py-2 px-4 rounded font-bold text-[1.2rem]"
-                type="button"
-                onClick={handleDelete}
-              >
-                Supprimer
-              </button>
-              <button
-                className="py-2 px-4 rounded font-bold text-[1.2rem]"
-                type="button"
-                onClick={handleValidation}
-              >
-                Valider
-              </button>
-            </div>
-          )
-          : (
-            <>
-              <button className="py-2 px-4 rounded font-bold text-[1.2rem]" type="submit">Sauvegarder</button>
-              <button
-                className="py-2 px-4 rounded font-bold text-[1.2rem]"
-                type="button"
-                onClick={() => {
-                  setIsDisable(!isDisable);
-                }}
-              >annuler
-              </button>
-            </>
-          )}
+      <FaWindowClose className="ml-auto text-[1.5rem] text-porange cursor-pointer" onClick={setExpanded} />
+      <form action="PATCH" onSubmit={handleSubmit} className="expandedProposalCard-form flex flex-col items-center h-full w-3/5 px-20 mb-4 mx-auto tablet:w-4/5 tablet:px-20 phone:w-11/12 phone:py-4 phone:px-4">
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="title">
+            Titre de l'oeuvre
+          </label>
+          <input
+            name="title"
+            id="title"
+            type="text"
+            className={`${enable} input`}
+            value={valueShow}
+            disabled={isDisable}
+            onChange={(e) => setValueShow(e.target.value)}
+          />
+        </div>
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="category">
+            Média
+          </label>
+          <select
+            name="media"
+            id="category"
+            className="input"
+            defaultValue={valueMedia}
+            disabled={isDisable}
+            onChange={(e) => setValueMedia(e.target.value)}
+          >
+            <option value="movie">Film</option>
+            <option value="serie">Série</option>
+            <option value="anime">Animé</option>
+            <option value="cartoon">Dessin animé</option>
+          </select>
+        </div>
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="character">
+            Personnage
+          </label>
+          <input
+            type="text"
+            id="character"
+            className={`${enable} input`}
+            value={valueCharacter}
+            disabled={isDisable}
+            onChange={(e) => setValueCharacter(e.target.value)}
+          />
+        </div>
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="artist">
+            Artiste
+          </label>
+          <input
+            type="text"
+            id="artist"
+            className={`${enable} input`}
+            value={valueArtist}
+            disabled={isDisable}
+            onChange={(e) => setValueArtist(e.target.value)}
+          />
+        </div>
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="reference">
+            Citation
+          </label>
+          <textarea
+            type="text"
+            id="reference"
+            className="bg-[#C8C8C8] text-[#000] text-center p-1 rounded-md resize min-h-[5rem] min-w-[20rem] max-h-[15rem] max-w-[40rem] tablet:max-w-[35rem] phone:resize-y phone:max-h-[10rem] phone:min-w-[17rem]"
+            value={valueCitation}
+            disabled={isDisable}
+            onChange={(e) => setValueCitation(e.target.value)}
+          />
+        </div>
+        <div className="w-full flex justify-evenly">
+          {isDisable
+            ? (
+              <>
+                <button
+                  className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
+                  type="button"
+                  onClick={() => setIsDisable(!isDisable)}
+                >
+                  Modifier
+                </button>
+                <button
+                  className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
+                  type="button"
+                  onClick={handleDelete}
+                >
+                  Supprimer
+                </button>
+                <button
+                  className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
+                  type="button"
+                  onClick={handleValidation}
+                >
+                  Valider
+                </button>
+              </>
+            )
+            : (
+              <>
+                <button
+                  className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
+                  type="button"
+                  onClick={() => {
+                    setIsDisable(!isDisable);
+                  }}
+                >Annuler
+                </button>
+                <button className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded" type="submit">Sauvegarder</button>
+              </>
+            )}
+        </div>
         {isSucces && (
-          <p> modifications enregistrées </p>
+          <p className="bg-[#33CC66] text-[#003300] p-4 mt-4 text-center rounded phone:text-[0.9rem]">
+            Modifications enregistrées
+          </p>
         )}
       </form>
     </motion.div>
