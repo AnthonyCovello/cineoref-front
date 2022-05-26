@@ -19,7 +19,7 @@ function SearchResult(searchListTheme) {
         {show.map((item) => (
           <li key={item.id}>
             <Link
-              to={`/${searchListTheme}/${item.category}/${item.id}/refs`}
+              to={`/list/${searchListTheme}/${item.category}/${item.id}/refs`}
               key={item.id}
               className="searchLinkToMedia w-[15%] flex flex-col p-2 m-2 rounded tablet:w-[22%] phone:w-[44%]"
             >
@@ -34,7 +34,7 @@ function SearchResult(searchListTheme) {
         {artists.map((item) => (
           <li key={item.id}>
             <Link
-              to={`/${searchListTheme}/${item.category}/${item.id}/refs`}
+              to={`/list/${searchListTheme}/${item.category}/${item.id}/refs`}
               key={item.id}
               className="searchLinkToMedia w-[15%] flex flex-col p-2 m-2 rounded tablet:w-[22%] phone:w-[44%]"
             >
@@ -49,7 +49,7 @@ function SearchResult(searchListTheme) {
         {characters.map((item) => (
           <li key={item.id}>
             <Link
-              to={`/${searchListTheme}/${item.category}/${item.id}/refs`}
+              to={`/list/${searchListTheme}/${item.category}/${item.id}/refs`}
               key={item.id}
               className="searchLinkToMedia w-[15%] flex flex-col p-2 m-2 rounded tablet:w-[22%] phone:w-[44%]"
             >

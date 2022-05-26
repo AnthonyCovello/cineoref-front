@@ -12,7 +12,7 @@ function List({ letter, listTheme }) {
     <li className="flex flex-wrap w-full">
       {letter.map((data) => (
         <Link
-          to={`/${listTheme}/${data.category}/${data.id}/refs`}
+          to={`/list/${listTheme}/${data.category}/${data.id}/refs`}
           key={data.id}
           className="linkToMedia w-[15%] flex flex-col p-2 m-2 rounded tablet:w-[22%] phone:w-[44%]"
         >

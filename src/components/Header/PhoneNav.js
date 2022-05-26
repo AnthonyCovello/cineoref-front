@@ -23,12 +23,12 @@ function PhoneNav() {
         && (
           <nav className="navMenu absolute z-50 top-14 left-[-29.5rem] flex flex-col text-center phone:top-10 phone:left-[-30rem]" onClick={() => dispatch(setOpenMenu())}>
             {!islogged && <Link to="/registration">Inscription</Link>}
-            <Link to="/listcategory/movie">Films</Link>
-            <Link to="/listcategory/serie">Séries</Link>
-            <Link to="/listcategory/anime">Animés</Link>
-            <Link to="/listcategory/cartoon">Dessins animés</Link>
-            <Link to="/listartist">Artistes</Link>
-            <Link to="/listcharacter">Personnages</Link>
+            <Link to="/list/listcategory/movie">Films</Link>
+            <Link to="/list/listcategory/serie">Séries</Link>
+            <Link to="/list/listcategory/anime">Animés</Link>
+            <Link to="/list/listcategory/cartoon">Dessins animés</Link>
+            <Link to="/list/listartist">Artistes</Link>
+            <Link to="/list/listcharacter">Personnages</Link>
             {islogged && (<Link to="/bookmarks">Favoris</Link>)}
           </nav>
         )}

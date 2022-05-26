@@ -27,12 +27,12 @@ function Header() {
       </Link>
       <PhoneNav />
       <nav className="deskNav font-bold flex gap-6">
-        <NavLink to="/listcategory/movie" className={activeLink}>Films</NavLink>
-        <NavLink to="/listcategory/serie" className={activeLink}>Séries</NavLink>
-        <NavLink to="/listcategory/anime" className={activeLink}>Animés</NavLink>
-        <NavLink to="/listcategory/cartoon" className={activeLink}>Dessins animés</NavLink>
-        <NavLink to="/listartist" className={activeLink}>Artistes</NavLink>
-        <NavLink to="/listcharacter" className={activeLink}>Personnages</NavLink>
+        <NavLink to="/list/listcategory/movie" className={activeLink}>Films</NavLink>
+        <NavLink to="/list/listcategory/serie" className={activeLink}>Séries</NavLink>
+        <NavLink to="/list/listcategory/anime" className={activeLink}>Animés</NavLink>
+        <NavLink to="/list/listcategory/cartoon" className={activeLink}>Dessins animés</NavLink>
+        <NavLink to="/list/listartist" className={activeLink}>Artistes</NavLink>
+        <NavLink to="/list/listcharacter" className={activeLink}>Personnages</NavLink>
         {islogged && (<NavLink to="/bookmarks" className={activeLink}>Favoris</NavLink>)}
       </nav>
       {!islogged && (

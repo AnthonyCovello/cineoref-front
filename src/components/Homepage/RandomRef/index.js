@@ -55,7 +55,7 @@ function RandomRef() {
       <Link className="randomRef-text mb-6" to={`/ref/${randomRefData.id}`}>
         {randomRefData.ref}
       </Link>
-      <Link className="ml-8 mr-auto text-[1.30rem] phone:text-[1rem] phone:ml-0 phone:mr-0 tablet:truncate tablet:w-4/5" to={`/listcharacter/character/${randomRefData.character_id}/refs`}>
+      <Link className="ml-8 mr-auto text-[1.30rem] phone:text-[1rem] phone:ml-0 phone:mr-0 tablet:truncate tablet:w-4/5" to={`/list/listcharacter/character/${randomRefData.character_id}/refs`}>
         {randomRefData.character}
       </Link>
       <Tippy content="Copié !" visible={isVisible}>

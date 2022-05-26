@@ -40,9 +40,9 @@ function App() {
         <Route path="/proposal" element={isLogged ? <ProposalForm /> : <Navigate to="/" replace />} /> // * Formulaire de proposition de citation - connexion requise
         <Route path="/user/:id/my-profile" element={<Profile />} /> // * Profil personnel
         <Route path="/user/:id/profile" element={<Profile />} /> //* Profil d'un autre utilisateur
-        <Route path="/:listTheme" element={<ListsPages />} /> // * Liste des artistes / personnages
-        <Route path="/:listTheme/:param" element={<ListsPages />} /> // * Liste des médias films / séries / animés / dessins animés
-        <Route path="/:listTheme/:category/:id/refs" element={<ListsRef />} /> // * Liste des citations associées à un film / série / animé / dessins animés / artiste / personnage
+        <Route path="/list/:listTheme" element={<ListsPages />} /> // * Liste des artistes / personnages
+        <Route path="/list/:listTheme/:param" element={<ListsPages />} /> // * Liste des médias films / séries / animés / dessins animés
+        <Route path="/list/:listTheme/:category/:id/refs" element={<ListsRef />} /> // * Liste des citations associées à un film / série / animé / dessins animés / artiste / personnage
         <Route path="/ref/:ref_id" element={<RefPage />} /> // * Page d'une citation
         <Route path="/teampage" element={<TeamPage />} />
         <Route path="/*" element={<Page404 />} /> // * 404

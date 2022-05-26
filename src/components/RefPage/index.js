@@ -72,13 +72,13 @@ function RefPage() {
         />
       </div>
       <h2 className="refContainer-title mt-4 phone:mt-2">Titre de l'œuvre</h2>
-      <Link to={`/listcategory/movie/${refData.show_id}/refs`} className="refContainer-data">{refData.title}</Link>
+      <Link to={`/list/listcategory/movie/${refData.show_id}/refs`} className="refContainer-data">{refData.title}</Link>
       <h2 className="refContainer-title">Média</h2>
       <p className="refContainer-data">{toFrench(refData.category)}</p>
       <h2 className="refContainer-title">Personnage</h2>
-      <Link to={`/listcharacter/character/${refData.character_id}/refs`} className="refContainer-data">{refData.character}</Link>
+      <Link to={`/list/listcharacter/character/${refData.character_id}/refs`} className="refContainer-data">{refData.character}</Link>
       <h2 className="refContainer-title">Artiste</h2>
-      <Link to={`/listartist/artist/${refData.artist_id}/refs`} className="refContainer-data">{refData.artist}</Link>
+      <Link to={`/list/listartist/artist/${refData.artist_id}/refs`} className="refContainer-data">{refData.artist}</Link>
       <h2 className="refContainer-title">Citation</h2>
       <p className="refContainer-data data-ref text-lg">{refData.ref}</p>
       <Tippy content="Copié !" visible={isVisible}>
