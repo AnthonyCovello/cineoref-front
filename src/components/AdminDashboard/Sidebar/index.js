@@ -22,7 +22,7 @@ function Sidebar() {
     false: { left: '-75%' },
   };
 
-  useEffect(() => dispatch(setSidebarSelected(2)), []);
+  useEffect(() => dispatch(setSidebarSelected(0)), []);
 
   return (
     <>

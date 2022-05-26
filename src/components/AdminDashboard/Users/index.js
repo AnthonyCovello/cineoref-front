@@ -18,7 +18,6 @@ function Users() {
         setUsersList(res.data.profils);
       });
   }, []);
-
   return (
     <div className="users pr-4">
       <h2 className="users-title text-center text-[2rem] font-bold text-porange phone:text-[1.9rem]">Utilisateurs</h2>

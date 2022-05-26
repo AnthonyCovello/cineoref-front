@@ -149,7 +149,10 @@ function MyProfile() {
             <p> modifications enregistrées </p>
           )}
         </div>
-        <span className="deleteBtn block p-2 mx-auto text-center text-[0.8rem] font-bold text-[#DC2626] cursor-pointer" onClick={() => setShowModal(true)}>
+        <span
+          className="deleteBtn block p-2 mx-auto text-center text-[0.8rem] font-bold text-[#DC2626] cursor-pointer"
+          onClick={() => setShowModal(true)}
+        >
           Supprimer mon compte
         </span>
       </form>

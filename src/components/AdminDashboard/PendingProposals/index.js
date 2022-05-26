@@ -10,19 +10,23 @@ import './styles.scss';
 function PendingProposals() {
   const [proposalList, setProposalList] = useState([]);
 
-  useEffect(() => {
+  const pendingCallAPI = () => {
     axios.get('https://cinoref-api.herokuapp.com/admin/dashboard')
       .then((res) => {
         setProposalList(res.data.request);
       });
+  };
+
+  useEffect(() => {
+    pendingCallAPI();
   }, []);
-  console.log(proposalList);
+
   return (
     <div className="pendingProposals pr-4">
       <h2 className="pendingProposals-title text-center text-[2rem] font-bold text-porange phone:text-[1.9rem]">Propositions en attente</h2>
-      <ol className="pendingProposals-list mt-4 desk:max-h-[32rem] overflow-y-auto scrollbar-hide tablet:max-h-[25rem]">
+      <ol className="pendingProposals-list w-full mt-4 max-h-[32rem] overflow-y-auto scrollbar-hide tablet:max-h-[25rem] phone:w-11/12">
         {proposalList.map((item) => (
-          <li key={item.id} className="pendingProposals-list-item">
+          <li key={item.id} className="w-full">
             <ProposalCard
               refId={item.id}
               citation={item.ref}
@@ -30,6 +34,7 @@ function PendingProposals() {
               character={item.character}
               artist={item.artist}
               media={item.media}
+              callAPI={pendingCallAPI}
             />
           </li>
         ))}

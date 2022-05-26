@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // ? Import modules
+import axios from 'axios';
 import React, { useState } from 'react';
-import { motion, LayoutGroup } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { FaWindowClose } from 'react-icons/fa';
-import axios from 'axios';
+import { motion, LayoutGroup } from 'framer-motion';
 
 // ? Import styles
 import './styles.scss';
@@ -14,11 +15,8 @@ function ProposalCard(props) {
 
   return (
     <LayoutGroup>
-      {expanded ? (
-        <ExpandedProposalCard param={props} setExpanded={() => setExpanded(false)} />
-      ) : (
-        <CompactProposalCard param={props} setExpanded={() => setExpanded(true)} />
-      )}
+      {expanded && (<ExpandedProposalCard param={props} setExpanded={() => setExpanded(false)} />)}
+      <CompactProposalCard param={props} setExpanded={() => setExpanded(true)} />
     </LayoutGroup>
   );
 }
@@ -31,8 +29,8 @@ function CompactProposalCard({ param, setExpanded }) {
       layoutId={param.refId}
       onClick={setExpanded}
     >
-      <p className="ref truncate"><span>Ref: </span>{param.citation}</p>
-      <p className="caractere truncate"><span>Personnage: </span>{param.character}</p>
+      <p className="ref"><span>Ref:</span>{param.citation}</p>
+      <p className="caractere"><span>Personnage:</span>{param.character}</p>
     </motion.div>
   );
 }
@@ -46,11 +44,9 @@ function ExpandedProposalCard({ param, setExpanded }) {
   const [valueArtist, setValueArtist] = useState(param.artist);
   const [valueShow, setValueShow] = useState(param.show);
   const [isSucces, setIsSucces] = useState(false);
-
-  const enable = !isDisable ? 'enable' : '';
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   // ? function to handleChanges
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -64,7 +60,8 @@ function ExpandedProposalCard({ param, setExpanded }) {
       setIsDisable(!isDisable);
       if (res) {
         setIsSucces(true);
-        setTimeout(() => setIsSucces(false), 3000);
+        param.callAPI();
+        setTimeout(() => setIsSucces(false), 2000);
       }
     });
   };
@@ -73,6 +70,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
     axios.patch(`https://cinoref-api.herokuapp.com/admin/dashboard/validating/${param.refId}`).then((res) => {
       if (res) {
         setIsDisable(!isDisable);
+        param.callAPI();
       }
     });
   };
@@ -80,102 +78,146 @@ function ExpandedProposalCard({ param, setExpanded }) {
   const handleDelete = () => {
     axios.delete(`https://cinoref-api.herokuapp.com/ref/${param.refId}`).then((res) => {
       if (res) {
-        setIsDisable(!isDisable);
+        param.callAPI();
       }
     });
   };
 
   return (
     <motion.div
-      className="expandedProposalCard"
+      className="expandedProposalCard absolute z-10 top-36 left-[32rem] h-fit w-3/5 p-4 rounded-md"
       layoutId={param.refId}
-    // onClick={setExpanded}
     >
-      <FaWindowClose className="text-porange cursor-pointer" onClick={setExpanded} />
-      <form action="PATCH" onSubmit={handleSubmit} className="text-black">
-        <textarea
-          type="text"
-          className={enable}
-          value={valueCitation}
-          disabled={isDisable}
-          onChange={(e) => setValueCitation(e.target.value)}
-        />
-        <input
-          type="text"
-          className={enable}
-          value={valueShow}
-          disabled={isDisable}
-          onChange={(e) => setValueShow(e.target.value)}
-        />
-        <select
-          name="media"
-          disabled={isDisable}
-          defaultValue={valueMedia}
-          onChange={(e) => setValueMedia(e.target.value)}
-          className="text-porange"
-        >
-          <option value="movie">Film</option>
-          <option value="serie">Série</option>
-          <option value="anime">Animé</option>
-          <option value="cartoon">Dessin animé</option>
-        </select>
-        <input
-          type="text"
-          className={enable}
-          value={valueCharacter}
-          disabled={isDisable}
-          onChange={(e) => setValueCharacter(e.target.value)}
-        />
-        <input
-          type="text"
-          className={enable}
-          value={valueArtist}
-          disabled={isDisable}
-          onChange={(e) => setValueArtist(e.target.value)}
-        />
-        {isDisable
-          ? (
-            <div>
-              <button
-                className="py-2 px-4 rounded font-bold text-[1.2rem]"
-                type="button"
-                onClick={() => setIsDisable(!isDisable)}
-              >
-                Modifier
-              </button>
-              <button
-                className="py-2 px-4 rounded font-bold text-[1.2rem]"
-                type="button"
-                onClick={handleDelete}
-              >
-                Supprimer
-              </button>
-              <button
-                className="py-2 px-4 rounded font-bold text-[1.2rem]"
-                type="button"
-                onClick={handleValidation}
-              >
-                Valider
-              </button>
-            </div>
-          )
-          : (
-            <>
-              <button className="py-2 px-4 rounded font-bold text-[1.2rem]" type="submit">Sauvegarder</button>
-              <button
-                className="py-2 px-4 rounded font-bold text-[1.2rem]"
-                type="button"
-                onClick={() => {
-                  setIsDisable(!isDisable);
-                }}
-              >annuler
-              </button>
-            </>
-          )}
+      <FaWindowClose className="ml-auto text-[1.5rem] text-porange cursor-pointer" onClick={setExpanded} />
+      <form action="PATCH" onSubmit={handleSubmit} className="expandedProposalCard-form flex flex-col items-center h-full w-3/5 px-20 mb-4 mx-auto tablet:w-4/5 tablet:px-20 phone:w-11/12 phone:py-4 phone:px-4">
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="title">
+            Titre de l'oeuvre
+          </label>
+          <input
+            name="title"
+            id="title"
+            type="text"
+            value={valueShow}
+            disabled={isDisable}
+            onChange={(e) => setValueShow(e.target.value)}
+          />
+        </div>
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="category">
+            Média
+          </label>
+          <select
+            name="media"
+            id="category"
+            defaultValue={valueMedia}
+            disabled={isDisable}
+            onChange={(e) => setValueMedia(e.target.value)}
+          >
+            <option value="movie">Film</option>
+            <option value="serie">Série</option>
+            <option value="anime">Animé</option>
+            <option value="cartoon">Dessins animés</option>
+          </select>
+        </div>
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="character">
+            Personnage
+          </label>
+          <input
+            type="text"
+            id="character"
+            value={valueCharacter}
+            disabled={isDisable}
+            onChange={(e) => setValueCharacter(e.target.value)}
+          />
+        </div>
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="artist">
+            Artiste
+          </label>
+          <input
+            type="text"
+            id="artist"
+            value={valueArtist}
+            disabled={isDisable}
+            onChange={(e) => setValueArtist(e.target.value)}
+          />
+        </div>
+        <div className="expandedProposalCard-form-group">
+          <label className="expandedProposalCard-form-label" htmlFor="reference">
+            Citation
+          </label>
+          <textarea
+            type="text"
+            id="reference"
+            className="text-center p-1 rounded-md resize min-h-[5rem] min-w-[20rem] max-h-[15rem] max-w-[40rem] tablet:max-w-[35rem] phone:resize-y phone:max-h-[10rem] phone:min-w-[17rem]"
+            value={valueCitation}
+            disabled={isDisable}
+            onChange={(e) => setValueCitation(e.target.value)}
+          />
+        </div>
+        <div className="w-full flex justify-evenly">
+          {isDisable
+            ? (
+              <>
+                <button
+                  className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
+                  type="button"
+                  onClick={() => setIsDisable(!isDisable)}
+                >
+                  Modifier
+                </button>
+                <button
+                  className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
+                  type="button"
+                  onClick={() => setShowDeleteModal(true)}
+                >
+                  Supprimer
+                </button>
+                <button
+                  className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
+                  type="button"
+                  onClick={handleValidation}
+                >
+                  Valider
+                </button>
+              </>
+            )
+            : (
+              <>
+                <button
+                  className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded"
+                  type="button"
+                  onClick={() => {
+                    setIsDisable(!isDisable);
+                  }}
+                >Annuler
+                </button>
+                <button className="expandedProposalCard-form-button py-1 px-4 text-[1.5rem] font-bold rounded" type="submit">Sauvegarder</button>
+              </>
+            )}
+        </div>
         {isSucces && (
-          <p> modifications enregistrées </p>
+          <p className="bg-[#33CC66] text-[#003300] p-4 mt-4 text-center rounded phone:text-[0.9rem]">
+            Modifications enregistrées
+          </p>
         )}
       </form>
+      {showDeleteModal
+        ? (
+          <div className="bg-mblue opacity-80 fixed inset-0 z-50">
+            <div className="flex h-screen justify-center items-center">
+              <div className="flex-col justify-center border-4 bg-lblue py-6 px-12 rounded-md">
+                <div className="mb-5 font-bold text-lg">Supprimer la proposition ?</div>
+                <div className="flex justify-between">
+                  <button type="button" className="btn-modal py-2 px-4 rounded font-bold text-[1.2rem]" onClick={handleDelete}>Oui</button>
+                  <button type="button" className="btn-modal py-2 px-4 rounded font-bold text-[1.2rem]" onClick={() => setShowDeleteModal(false)}>Non</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null}
     </motion.div>
   );
 }
@@ -200,6 +242,7 @@ ExpandedProposalCard.propTypes = {
     artist: PropTypes.string.isRequired,
     refId: PropTypes.number.isRequired,
     media: PropTypes.string.isRequired,
+    callAPI: PropTypes.func.isRequired,
   }).isRequired,
 };
 
