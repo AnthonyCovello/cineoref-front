@@ -1,0 +1,49 @@
+@use 'src/styles/vars';
+
+.teamPage {
+  background-image: linear-gradient(135deg, vars.$mainBlue-opacity-8, vars.$darkBlue-Opacity-8);
+
+  //? ombre
+  box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2);
+  -ms-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* IE 9 */
+  -webkit-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Safari and Chrome */
+  -o-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Opera */
+  -moz-box-shadow: 12px 29px 81px 0px rgba(40,10,175,0.2); /* Firefox */
+}
+
+.teamMember {
+  background-color: rgba(15, 15, 15, 0.9);
+  box-shadow: vars.$effect-3D-black;
+  -ms-box-shadow: vars.$effect-3D-black; /* IE 9 */
+  -webkit-box-shadow: vars.$effect-3D-black; /* Safari and Chrome */
+  -o-box-shadow: vars.$effect-3D-black; /* Opera */
+  -moz-box-shadow: vars.$effect-3D-black; /* Firefox */
+
+
+  &-image {
+    border: 3px solid vars.$mainBlue;
+
+    //? ombre
+    box-shadow: vars.$effect-3D-black;
+    -ms-box-shadow: vars.$effect-3D-black; /* IE 9 */
+    -webkit-box-shadow: vars.$effect-3D-black; /* Safari and Chrome */
+    -o-box-shadow: vars.$effect-3D-black; /* Opera */
+    -moz-box-shadow: vars.$effect-3D-black; /* Firefox */
+  }
+
+  &-bar {
+    color: vars.$orange;
+    background-color: vars.$darkBlue-Opacity-8;
+    border: 4px double #1f53b3;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+
+    &-info{
+      text-align:center;
+      color: white;
+    }
+  }
+}

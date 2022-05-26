@@ -5,3 +5,22 @@
     text-shadow: 0 0 30px vars.$orange;
   }
 }
+
+.pendingProposals-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  row-gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .pendingProposals-list{
+    flex-wrap: unset;
+    flex-direction: column;
+    justify-content: unset;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+}
