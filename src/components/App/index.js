@@ -17,6 +17,7 @@ import ScrollToTop from '../ScrollToTop';
 import ListsPages from '../ListsPages';
 import ListsRef from '../ListsRef';
 import SearchResult from '../SearchResult';
+import Page404 from '../404/index';
 
 // ? Import style
 import '../../styles/index.scss';
@@ -44,7 +45,7 @@ function App() {
         <Route path="/:listTheme/:category/:id/refs" element={<ListsRef />} /> // * Liste des citations associées à un film / série / animé / dessins animés / artiste / personnage
         <Route path="/ref/:ref_id" element={<RefPage />} /> // * Page d'une citation
 
-        <Route path="*" element={<h1>Error</h1>} /> // * 404
+        <Route path="/page404" element={<Page404 />} />
 
         <Route path="/admin" element={(isLogged && (user.role === 'Fondateur' || user.role === 'Admin')) ? <AdminDashboard /> : <Navigate to="/" replace />} /> //* Interface admin
 
