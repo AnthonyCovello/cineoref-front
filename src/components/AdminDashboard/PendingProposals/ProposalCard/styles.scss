@@ -11,11 +11,18 @@
     flex: 1;
   }
 
-  p>span {
-    color: vars.$orange;
-    font-weight: bold;
-    font-size: 1.6rem;
-    margin-right: 1rem;
+  p {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; //* limite de lignes
+    overflow: hidden; //* cache le texte en trop
+
+    &>span {
+      color: vars.$orange;
+      font-weight: bold;
+      font-size: 1.6rem;
+      margin-right: 1rem;
+    }
   }
 }
 

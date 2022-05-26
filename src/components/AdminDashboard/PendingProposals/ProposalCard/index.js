@@ -29,8 +29,8 @@ function CompactProposalCard({ param, setExpanded }) {
       layoutId={param.refId}
       onClick={setExpanded}
     >
-      <p className="ref truncate"><span>Ref: </span>{param.citation}</p>
-      <p className="caractere truncate"><span>Personnage: </span>{param.character}</p>
+      <p className="ref"><span>Ref:</span>{param.citation}</p>
+      <p className="caractere"><span>Personnage:</span>{param.character}</p>
     </motion.div>
   );
 }
