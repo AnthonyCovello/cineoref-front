@@ -557,22 +557,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 32rem;
 }
 
-.top-8 {
-  top: 2rem;
-}
-
-.top-20 {
-  top: 5rem;
-}
-
-.top-28 {
-  top: 7rem;
-}
-
-.top-40 {
-  top: 10rem;
-}
-
 .z-50 {
   z-index: 50;
 }
@@ -808,34 +792,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100vh;
 }
 
-.h-\[60vh\] {
-  height: 60vh;
-}
-
-.h-\[60\%\] {
-  height: 60%;
-}
-
-.h-\[40rem\] {
-  height: 40rem;
-}
-
-.h-\[30rem\] {
-  height: 30rem;
-}
-
-.h-\[28rem\] {
-  height: 28rem;
-}
-
-.h-\[32rem\] {
-  height: 32rem;
-}
-
-.h-\[35rem\] {
-  height: 35rem;
-}
-
 .h-full {
   height: 100%;
 }
@@ -956,20 +912,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 15rem;
 }
 
-.w-\[33\%\] {
-  width: 33%;
+.w-\[20\%\] {
+  width: 20%;
 }
 
-.w-min {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-}
-
-.w-max {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+.w-\[23\%\] {
+  width: 23%;
 }
 
 .min-w-\[20rem\] {
@@ -1435,11 +1383,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[\#DC2626\] {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
