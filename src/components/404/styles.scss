@@ -1,0 +1,62 @@
+@use 'src/styles/vars';
+
+.page404 {
+  background-image: linear-gradient(135deg, vars.$mainBlue-opacity-8, vars.$darkBlue-Opacity-8);
+
+  //? effet 3D
+  box-shadow: vars.$effect-3D-blue;
+  -ms-box-shadow: vars.$effect-3D-blue; /* IE 9 */
+  -webkit-box-shadow: vars.$effect-3D-blue; /* Safari and Chrome */
+  -o-box-shadow: vars.$effect-3D-blue; /* Opera */
+  -moz-box-shadow: vars.$effect-3D-blue; /* Firefox */
+
+  &-Title-Span{
+    color: vars.$orange;
+    text-shadow: 0px 0px 20px vars.$orange;
+  }
+}
+
+.invadersGrid {
+	width: 610px;
+	height: 300px;
+	border: 2px solid #1f53b3;
+	display: flex;
+	flex-wrap: wrap;
+  background-color: vars.$darkBlue-Opacity-8;
+}
+
+.invadersGrid div {
+	width: 20px;
+	height: 20px;
+}
+
+.invader {
+	background-color: vars.$orange-opacity-3;
+  border: 2px solid vars.$orange;
+  box-shadow: 0px 0px 10px vars.$orange;
+  border-radius: 10px;
+  
+}
+
+.shooter {
+	width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #1f53b3;
+}
+
+.laser {
+	width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+}
+
+.boom {
+	background-color: red;
+  border: 2px solid red;
+  box-shadow: 0px 0px 10px red;
+  border-radius: 10px;
+}
