@@ -20,7 +20,6 @@ import './styles.scss';
 function SignUp() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const [successful, setSuccessful] = useState(false);
   const { message } = useSelector((state) => state.message);
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownLogin);
 
@@ -68,17 +67,15 @@ function SignUp() {
     const {
       username, email, birthday, password,
     } = formValue;
-    // setSuccessful(false);
     dispatch(register({
       username, email, birthday, password,
     }))
       .unwrap()
       .then(() => {
-        // setSuccessful(true);
         navigate('/');
       })
-      .catch(() => {
-        // setSuccessful(false);
+      .catch((error) => {
+        console.error(error);
       });
   };
 

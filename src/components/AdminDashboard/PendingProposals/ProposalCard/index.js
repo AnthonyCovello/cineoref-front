@@ -91,7 +91,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
       <FaWindowClose className="ml-auto text-[1.5rem] text-porange cursor-pointer" onClick={setExpanded} />
       <form action="PATCH" onSubmit={handleSubmit} className="expandedProposalCard-form flex flex-col items-center h-full w-3/5 px-20 mb-4 mx-auto tablet:w-4/5 tablet:px-20 phone:w-11/12 phone:py-4 phone:px-4">
         <div className="expandedProposalCard-form-group">
-          <label className="expandedProposalCard-form-label" htmlFor="title">
+          <label className="expandedProposalCard-form-group-label" htmlFor="title">
             Titre de l'oeuvre
           </label>
           <input
@@ -104,7 +104,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
           />
         </div>
         <div className="expandedProposalCard-form-group">
-          <label className="expandedProposalCard-form-label" htmlFor="category">
+          <label className="expandedProposalCard-form-group-label" htmlFor="category">
             Média
           </label>
           <select
@@ -121,7 +121,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
           </select>
         </div>
         <div className="expandedProposalCard-form-group">
-          <label className="expandedProposalCard-form-label" htmlFor="character">
+          <label className="expandedProposalCard-form-group-label" htmlFor="character">
             Personnage
           </label>
           <input
@@ -133,7 +133,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
           />
         </div>
         <div className="expandedProposalCard-form-group">
-          <label className="expandedProposalCard-form-label" htmlFor="artist">
+          <label className="expandedProposalCard-form-group-label" htmlFor="artist">
             Artiste
           </label>
           <input
@@ -145,7 +145,7 @@ function ExpandedProposalCard({ param, setExpanded }) {
           />
         </div>
         <div className="expandedProposalCard-form-group">
-          <label className="expandedProposalCard-form-label" htmlFor="reference">
+          <label className="expandedProposalCard-form-group-label" htmlFor="reference">
             Citation
           </label>
           <textarea

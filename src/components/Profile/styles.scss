@@ -93,14 +93,6 @@
       }
     }
 
-    @media screen and (max-width: 1024px) {
-      button:hover {
-        transition: initial;
-        transform: initial;
-        background-color: vars.$orange-opacity-3;
-      }
-    }
-
     .deleteBtn:hover {
       text-decoration: underline;
     }
@@ -133,9 +125,25 @@
     overflow: hidden; //* cache le texte en trop
   }
 
+  .btn-modal {
+    background-color: vars.$orange-opacity-3;
+    border: 2px solid vars.$orange;
+  
+    &:hover {
+      transition: transform 0.3s ease;
+      background-color: vars.$orange;
+    }
+  }
+
   @media screen and (max-width: 1024px) {
     .profile-bar {
       width: 100%;
+    }
+
+    .profile-form>button:hover {
+      transition: initial;
+      transform: initial;
+      background-color: vars.$orange-opacity-3;
     }
   }
 
@@ -156,16 +164,5 @@
       -webkit-line-clamp: 2; //* limite de lignes
       overflow: hidden; //* cache le texte en trop
     }
-  }
-
-}
-
-.btn-modal {
-  background-color: vars.$orange-opacity-3;
-  border: 2px solid vars.$orange;
-
-  &:hover {
-    transition: transform 0.3s ease;
-    background-color: vars.$orange;
   }
 }

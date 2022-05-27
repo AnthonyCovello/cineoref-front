@@ -5,14 +5,17 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setListSearch } from '../../../features/listSlice';
+
 // ? Import style
 import './styles.scss';
+
 // ? Composant
 function SearchBarRef() {
   const [isHidden, setIsHidden] = useState(false);
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   useEffect(() => setIsHidden(false), []);
 
   const handleSubmit = (e) => {

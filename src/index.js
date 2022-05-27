@@ -6,10 +6,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 // ? Import composants
 import App from 'src/components/App';
+import ScrollToTopOnNavigate from './components/ScrollToTopOnNavigate';
 
 // ? Import store
 import store from './store';
-import ScrollToTopOnNavigate from './components/ScrollToTopOnNavigate';
 
 const rootReactElement = (
   <StrictMode>

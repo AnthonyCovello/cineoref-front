@@ -73,8 +73,7 @@ function MyProfile() {
       <section className="flex flex-col items-center w-2/5 container text-center font-bold tablet:mb-4 phone:w-4/5">
         <img className="avatar h-60 w-60 my-6 rounded-full phone:h-44 phone:w-44" src={userData.profile_picture} alt="Photo de profil" />
         <p className="profile-bar">{userData.role}</p>
-        {(userData.role !== 'Fondateur' && userData.role !== 'Admin')
-          && (<p className="profile-bar">{userData.grade}</p>)}
+        <p className="profile-bar">{userData.grade}</p>
         <p className="profile-bar">
           {
             contributionData.length === 0
@@ -96,11 +95,11 @@ function MyProfile() {
         onSubmit={handleSubmit}
       >
         <div className="profile-form-group">
-          <h3 className="profile-form-group-label" htmlFor="pseudo">Pseudo</h3>
+          <h3 className="profile-form-group-label">Pseudo</h3>
           <p className="">{userData.username}</p>
         </div>
         <div className="profile-form-group">
-          <h3 className="profile-form-group-label" htmlFor="email">Adresse mail</h3>
+          <h3 className="profile-form-group-label">Adresse mail</h3>
           <input
             className={enable}
             type="email"
@@ -112,7 +111,7 @@ function MyProfile() {
           />
         </div>
         <div className="profile-form-group">
-          <h3 className="profile-form-group-label" htmlFor="password">Mot de passe</h3>
+          <h3 className="profile-form-group-label">Mot de passe</h3>
           <input
             className={enable}
             type="password"
@@ -124,7 +123,7 @@ function MyProfile() {
           />
         </div>
         <div className="profile-form-group">
-          <h3 className="profile-form-group-label" htmlFor="birthday">Date de naissance</h3>
+          <h3 className="profile-form-group-label">Date de naissance</h3>
           <p>{userData.birthday}</p>
         </div>
         <div className="flex justify-around my-4">

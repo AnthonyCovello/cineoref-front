@@ -32,8 +32,7 @@ function OtherProfile() {
       <section className="flex flex-col items-center w-2/5 container text-center font-bold phone:w-4/5 phone:text-[0.9rem]">
         <img className="avatar h-60 w-60 my-6 rounded-full phone:h-44 phone:w-44" src={userData.profile_picture} alt="Photo de profil" />
         <p className="otherProfile-bar">{userData.role}</p>
-        {(userData.role !== 'Fondateur' && userData.role !== 'Admin')
-          && (<p className="otherProfile-bar">{userData.grade}</p>)}
+        <p className="otherProfile-bar">{userData.grade}</p>
         <p className="otherProfile-bar">
           {
             contributionData.length === 0

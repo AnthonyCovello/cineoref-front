@@ -12,6 +12,7 @@ function SearchResult(searchListTheme) {
   const show = useSelector(({ list }) => list.searchList.getShowBySearchBar);
   const characters = useSelector(({ list }) => list.searchList.getCharacterBySearchBar);
   const artists = useSelector(({ list }) => list.searchList.getArtistBySearchBar);
+
   return (
     <div className="searchListRef w-4/5 mx-auto py-8 px-12 rounded-md h-fit tablet:w-4/5 tablet:py-6 tablet:px-8 phone:w-11/12 phone:py-4 phone:px-2">
       <h3 className="searchRefCathegory flex flex-wrap justify-center mt-4 phone:mt-2"> Films - Séries - Animés - Dessins-animés </h3>

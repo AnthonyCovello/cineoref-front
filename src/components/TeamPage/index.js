@@ -1,9 +1,12 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
+// ? Import modules
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// ? Import styles
 import './styles.scss';
 
+// ? Composant
 function TeamPage() {
   return (
     <div className="teamPage flex justify-between w-4/5 mx-auto py-8 px-6 rounded-md cursor-context-menu tablet:w-11/12 tablet:px-8 phone:py-2 phone:px-1">
