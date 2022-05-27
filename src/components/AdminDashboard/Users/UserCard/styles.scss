@@ -77,6 +77,16 @@
       }
     }
   }
+
+  .btn-modal {
+    background-color: vars.$orange-opacity-3;
+    border: 2px solid vars.$orange;
+  
+    &:hover {
+      transition: transform 0.3s ease;
+      background-color: vars.$orange;
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {
