@@ -20,8 +20,8 @@ function MyProfile() {
   const [userData, setUserData] = useState({});
   const [contributionData, setContribution] = useState([]);
   const [isDisable, setIsDisable] = useState(true); //* Etat des inputs
-  const [valueEmail, setValueEmail] = useState(null);
-  const [valuePassword, setValuePassword] = useState(null);
+  const [valueEmail, setValueEmail] = useState('');
+  const [valuePassword, setValuePassword] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [isSucces, setIsSucces] = useState(false);
   const enable = !isDisable ? 'enable' : ''; //* ClassName des inputs

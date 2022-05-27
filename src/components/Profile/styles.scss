@@ -75,6 +75,7 @@
       .enable {
         background: rgb(200,200,200);
         border: 1px solid vars.$darkBlue;
+        color: black;
 
         &::placeholder {
           color: black;
