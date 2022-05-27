@@ -44,10 +44,11 @@ function App() {
         <Route path="/list/:listTheme/:param" element={<ListsPages />} /> // * Liste des médias films / séries / animés / dessins animés
         <Route path="/list/:listTheme/:category/:id/refs" element={<ListsRef />} /> // * Liste des citations associées à un film / série / animé / dessins animés / artiste / personnage
         <Route path="/ref/:ref_id" element={<RefPage />} /> // * Page d'une citation
-        <Route path="/teampage" element={<TeamPage />} />
+        <Route path="/teampage" element={<TeamPage />} /> // * Page de présentation de l'équipe
         <Route path="/*" element={<Page404 />} /> // * 404
         <Route path="/admin" element={(isLogged && (user.role === 'Fondateur' || user.role === 'Admin')) ? <AdminDashboard /> : <Navigate to="/" replace />} /> //* Interface admin
       </Routes>
+
       <Footer />
     </div>
   );

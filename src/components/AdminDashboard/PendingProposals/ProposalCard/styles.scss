@@ -35,20 +35,27 @@
       flex-direction: column;
       align-items: center;
       margin-bottom: 1rem;
-      width: 30%;
-    }
+      width: 50%;
 
-    &-label {
-      font-size: 1.125rem;
-      font-weight: bold;
-      margin-bottom: 0.8rem;
+      &-label {
+        background-image: linear-gradient(90deg, #1f53b3, vars.$darkBlue-Opacity-0);
+        color: vars.$orange;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        padding-right: 0;
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        width: 130%;
+      }
     }
 
     input, select {
       background: #1f53b3;
       border-radius: 4px;
       border: 1px solid vars.$darkBlue;
-      width: 100%;
+      width: 80%;
       text-align: center;
       padding: 0.25rem;
     }

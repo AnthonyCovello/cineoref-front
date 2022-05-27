@@ -16,7 +16,7 @@ function UserMenu() {
   const isOpen = useSelector(({ dropdown }) => dropdown.dropdownProfile);
   const user = useSelector(({ auth }) => auth.user);
 
-  // * open profile menue
+  // * open profile menu
   const toggleDropdown = () => {
     dispatch(setProfileDropdown());
   };

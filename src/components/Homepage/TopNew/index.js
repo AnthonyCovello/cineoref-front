@@ -20,6 +20,7 @@ function HomeList() {
   const tabList = useSelector(({ topNew }) => topNew.tabList);
   const newRef = useSelector(({ ref }) => ref.newRef);
   const topRef = useSelector(({ ref }) => ref.topRef);
+
   //* config module pour copier le texte
   const clipboard = new ClipboardJS('.copy-btn');
   clipboard.on('success', (e) => {

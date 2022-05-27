@@ -1,6 +1,8 @@
+// ? Import modules
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+// ? Scroll en haut au changement de page
 export default function ScrollToTopOnNavigate() {
   const { pathname } = useLocation();
 

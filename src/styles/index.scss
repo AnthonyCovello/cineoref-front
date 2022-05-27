@@ -11,10 +11,11 @@ body {
   background-attachment: fixed;
 }
 
-// ? empêche le footer d'aller plus haut que le bas de l'écran
 .app {
+  color: white;
+
+  // ? empêche le footer d'aller plus haut que le bas de l'écran
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  color: white;
 }

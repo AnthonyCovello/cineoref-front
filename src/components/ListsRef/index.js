@@ -27,12 +27,15 @@ function ListsRef() {
 
   function callAPI() {
     let urlAPI;
+
     if (listTheme === 'listcategory') {
       urlAPI = `https://cinoref-api.herokuapp.com/listcategory/${category}/${id}/ref`;
     }
+
     if (listTheme === 'listartist' || listTheme === 'listcharacter') {
       urlAPI = `https://cinoref-api.herokuapp.com/${listTheme}/${id}/ref`;
     }
+
     return urlAPI;
   }
 

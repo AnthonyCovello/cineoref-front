@@ -17,9 +17,7 @@ function PendingProposals() {
       });
   };
 
-  useEffect(() => {
-    pendingCallAPI();
-  }, []);
+  useEffect(() => pendingCallAPI(), []);
 
   return (
     <div className="pendingProposals pr-4">

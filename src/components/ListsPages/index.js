@@ -34,6 +34,7 @@ function ListsPages() {
 
   function callAPI() {
     let urlAPI;
+
     if (listTheme === 'listcategory') {
       urlAPI = `https://cinoref-api.herokuapp.com/listcategory/${param}`;
       switch (param) {
@@ -44,6 +45,7 @@ function ListsPages() {
         default:
       }
     }
+
     if (listTheme === 'listartist' || listTheme === 'listcharacter') {
       urlAPI = `https://cinoref-api.herokuapp.com/${listTheme}`;
       switch (listTheme) {
@@ -52,6 +54,7 @@ function ListsPages() {
         default:
       }
     }
+
     return urlAPI;
   }
 
