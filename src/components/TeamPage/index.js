@@ -24,7 +24,7 @@ function TeamPage() {
         <img className="teamMember-image self-center mb-2 h-[12rem] w-[12rem] rounded-full phone:h-30 phone:w-30" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8oG2rBbnbfdD7oqxNDGd9viF77dzIEnNGWA&usqp=CAU" alt="Photo de profil" />
         <div className="teamMember-bar"><p className="teamMember-bar-info">Florian Le Cossec</p></div>
         <div className="teamMember-bar"><p className="teamMember-bar-info">Git Master / Référent technique</p></div>
-        <Link to="/ref/69" className="teamMember-bar">Citation préférée<br /><p className="teamMember-bar-info italic justify-center">"C'est pas faux!"</p></Link>
+        <Link to="/ref/161" className="teamMember-bar">Citation préférée<br /><p className="teamMember-bar-info italic justify-center">"Ouais c'est pas faux!"</p></Link>
         <ul className="flex mt-auto mb-2 justify-around">
           <a className="inline-block h-16 w-16" href="https://www.github.com/Florian-LeCossec" rel="noreferrer" target="_blank"><img className=" rounded-full h-16 w-16" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHubLink" /></a>
           <a className="inline-block h-16 w-16" href="https://www.linkedin.com/in/florian-le-cossec-105747206" rel="noreferrer" target="_blank"><img className=" h-16 w-16" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedinLink" /></a>
