@@ -7,10 +7,10 @@ import { FcFilmReel } from 'react-icons/fc';
 // ? Import component
 import Login from './Login';
 import UserMenu from './UserMenu';
+import PhoneNav from './PhoneNav';
 
 // ? Import style
 import './styles.scss';
-import PhoneNav from './PhoneNav';
 
 // ? Composant
 function Header() {
